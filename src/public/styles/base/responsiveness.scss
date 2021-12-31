@@ -1,23 +1,43 @@
-@media only screen and (min-width: 961px) {
-	.row {
-		width: calc(100% + 30px);
-		display: flex;
-		flex-wrap: wrap;
-		box-sizing: border-box;
-		margin: 0 -20px;
-	}
-	.md3 {
-		flex-grow: 0;
-		max-width: 25%;
-		flex-basis: 25%;
-		padding: 0 20px;
-		box-sizing: inherit;
-	}
-	.md9 {
-		flex-grow: 0;
-		max-width: 75%;
-		flex-basis: 75%;
-		padding: 0 20px;
-		box-sizing: inherit;
-	}
+@media only screen and (max-width: 1599px) {
+}
+
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+  .section {
+    height: max-content !important;
+    .fp-tableCell {
+      height: max-content !important;
+    }
+  }
+
+  .main-header {
+    height: 70px;
+    .menus {
+      display: flex;
+      justify-content: center;
+      .topMenuList,
+      .botMenuList {
+        display: none;
+      }
+      .burger {
+        height: 40px;
+        width: 40px;
+        .burger-line {
+          height: 4px;
+        }
+      }
+    }
+  }
+
+  .page {
+    margin-top: 88px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
 }

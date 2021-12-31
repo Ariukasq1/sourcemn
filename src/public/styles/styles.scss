@@ -1,9 +1,11 @@
 // base
-@import './base/mixins.scss';
-@import './base/variables.scss';
-@import './base/general.scss';
-@import './base/header.scss';
-@import './base/footer.scss';
-@import './base/responsiveness.scss';
+@import "./base/mixins.scss";
+@import "./base/variables.scss";
+@import "./base/general.scss";
+@import "./base/header.scss";
+@import "./base/footer.scss";
+@import "./pages.scss";
+@import "./global.scss";
+@import "./base/responsiveness.scss";
 
-@import './main.scss';
+@import "./main.scss";
