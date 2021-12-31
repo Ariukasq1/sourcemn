@@ -1,4 +1,15 @@
 .main-header {
+  border-bottom: 2px solid #e2e8f0;
+  height: 114px;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 999;
+  background-color: #fff;
+  justify-content: space-between;
   .logo img {
     width: 120px;
   }
