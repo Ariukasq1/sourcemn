@@ -1,9 +1,54 @@
 footer {
-  background: #eee;
-
-  .copyright { 
-    opacity: .9;
-
-    img { width: 110px; }
+  height: calc(100vh - 132px);
+  background-color: #262626;
+  color: #fff;
+  padding: 0 5rem;
+  display: flex;
+  align-items: center;
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+    .contacts {
+      > h2:last-child {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5rem;
+        cursor: pointer;
+        > a {
+          cursor: pointer;
+          line-height: 0;
+          padding: 10px;
+          border-radius: 50%;
+          color: #fff;
+          &:hover {
+            background-color: #fff;
+            color: #262626;
+          }
+        }
+      }
+    }
+    .contactUs {
+      input,
+      textArea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        background: 0 0;
+        display: inline-block;
+        border: 1px solid #e4e4e4;
+        box-sizing: border-box;
+        color: #e4e4e4;
+      }
+      input {
+        height: 58px;
+        &:last-child {
+          cursor: pointer;
+        }
+      }
+      textArea {
+        height: 10rem;
+      }
+    }
   }
 }

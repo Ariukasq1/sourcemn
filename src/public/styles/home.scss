@@ -1,0 +1,36 @@
+.homeSlider {
+  height: calc(100vh - 132px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  .sliderText {
+    > h1 {
+      font-size: 64px;
+      line-height: normal;
+    }
+  }
+}
+// home capabilitiy
+.homeCapability {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: calc(100vh - 132px);
+  .capability-home-text {
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+    > div {
+      > div {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// home industry
+.homeIndustries {
+  height: calc(100vh - 132px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

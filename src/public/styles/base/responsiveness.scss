@@ -1,7 +1,62 @@
 @media only screen and (max-width: 1599px) {
+  .main-header {
+    height: 95px;
+  }
+  .homeSlider {
+    height: calc(100vh - 113px);
+  }
+  .homeCapability {
+    height: calc(100vh - 113px);
+  }
+  footer {
+    height: calc(100vh - 113px);
+  }
+  .page {
+    margin-top: 113px;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
+  .homeSlider {
+    padding: 0 3rem;
+    .sliderText {
+      > h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+  .homeCapability {
+    .capability-home-text {
+      padding: 0 3rem;
+    }
+  }
+
+  .read-more-button {
+    padding: 0.5rem 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .gold-title {
+    font-size: 1.25rem;
+  }
+
+  footer {
+    padding: 0 3rem;
+    .footer {
+      gap: 1rem;
+      .contactUs {
+        input {
+          height: 50px;
+        }
+        textArea {
+          height: 8rem;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -9,6 +64,16 @@
     height: max-content !important;
     .fp-tableCell {
       height: max-content !important;
+    }
+  }
+
+  .homeCapability {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    .capability-home-text {
+      padding: 2rem;
     }
   }
 
@@ -34,10 +99,31 @@
   .page {
     margin-top: 88px;
   }
+
+  footer {
+    height: auto;
+    padding: 2rem;
+    .footer {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      .contacts {
+        > h2:last-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
 }
 
 @media only screen and (max-width: 575px) {
+  footer {
+    padding: 1rem;
+  }
+  .homeCapability {
+    .capability-home-text {
+      padding: 1rem;
+    }
+  }
 }

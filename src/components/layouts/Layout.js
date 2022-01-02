@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./header";
-import Footer from "./footer";
 import Menu from "./menu";
 
 class Layout extends React.Component {
@@ -14,7 +13,6 @@ class Layout extends React.Component {
           <Menu mainMenu={mainMenu} topMenu={topMenu} />
           {children}
         </main>
-        <Footer />
       </>
     );
   }

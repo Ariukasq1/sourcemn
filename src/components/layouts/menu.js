@@ -3,6 +3,7 @@ import TopMenu from "./top-menu";
 import MainMenu from "./main-menu";
 import SideDrawer from "./sideDrawer/sideDrawer";
 import Backdrop from "./sideDrawer/backDrop";
+import Link from "next/link";
 
 class MenuComponent extends React.Component {
   constructor(props) {
@@ -51,9 +52,11 @@ class MenuComponent extends React.Component {
 
     return (
       <div className="main-header">
-        <div className="logo">
-          <img src="/images/mms-logo.png" />
-        </div>
+        <Link href={"/"}>
+          <div className="logo">
+            <img src="/images/mms-logo.png" />
+          </div>
+        </Link>
         <div className="menus">
           <TopMenu topMenu={topMenu} />
           <MainMenu menu={mainMenu} handler={this.drawerToggleClickOn} />

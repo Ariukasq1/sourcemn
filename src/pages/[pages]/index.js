@@ -3,17 +3,25 @@ import Layout from "../../components/layouts/Layout";
 import config, { fetcher } from "../../config";
 import WPAPI from "wpapi";
 import FirstPart from "../../components/indCap/firstPart";
+import Footer from "../../components/layouts/footer";
 
 const Page = ({ mainMenu, topMenu, data, slug }) => {
-  console.log(data, "-----------");
   const renderData = () => {
     switch (slug) {
       case "brands":
         return <>brands</>;
       case "about":
-        return <>about</>;
+        return (
+          <>
+            <Footer contact={data[0]} />
+          </>
+        );
       case "contact":
-        return <>contact</>;
+        return (
+          <>
+            <Footer contact={data[0]} />
+          </>
+        );
       case "career":
         return <>career</>;
       case "news":
