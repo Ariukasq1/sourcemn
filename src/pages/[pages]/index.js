@@ -4,12 +4,17 @@ import config, { fetcher } from "../../config";
 import WPAPI from "wpapi";
 import FirstPart from "../../components/indCap/firstPart";
 import Footer from "../../components/layouts/footer";
+import HomeBrands from "../../components/home/brands";
 
-const Page = ({ mainMenu, topMenu, data, slug }) => {
+const Page = ({ mainMenu, topMenu, data, slug, childCats }) => {
   const renderData = () => {
     switch (slug) {
       case "brands":
-        return <>brands</>;
+        return (
+          <>
+            <HomeBrands brandCats={childCats} brands={data} page={slug} />
+          </>
+        );
       case "about":
         return (
           <>
@@ -27,11 +32,15 @@ const Page = ({ mainMenu, topMenu, data, slug }) => {
       case "news":
         return <>news</>;
       case "portfolio":
-        return <>portfolio</>;
+        return (
+          <>
+            <FirstPart clas={slug} data={data} />
+          </>
+        );
       default:
         return (
           <>
-            <FirstPart />
+            <FirstPart clas={slug} data={data} />
           </>
         );
     }
@@ -57,6 +66,8 @@ Page.getInitialProps = async (context) => {
 
   const data = await wp.posts().categories(catId.id).embed();
 
+  const childCats = await wp.categories().parent(catId.id).embed();
+
   const mainMenu = await fetcher(
     `${config(context).apiUrl}/menus/v1/menus/nav-menu`
   );
@@ -70,6 +81,7 @@ Page.getInitialProps = async (context) => {
     data,
     slug,
     catId,
+    childCats,
   };
 };
 

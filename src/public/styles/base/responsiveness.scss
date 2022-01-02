@@ -23,6 +23,22 @@
       }
     }
   }
+  .homeBrands {
+    height: calc(100vh - 113px);
+    .brandList {
+      .brand-image {
+        height: 150px;
+      }
+    }
+  }
+
+  .catList {
+    margin: 1rem 0;
+    > div {
+      font-size: 1rem;
+    }
+  }
+
   footer {
     height: calc(100vh - 113px);
   }
@@ -36,6 +52,23 @@
   }
   .page {
     margin-top: 113px;
+  }
+
+  .firstPart {
+    height: calc(100vh - 113px);
+
+    .sub-title {
+      margin-bottom: 1rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 1rem;
+      .squad-image {
+        height: 300px;
+      }
+    }
   }
 }
 
@@ -55,7 +88,6 @@
   }
 
   .homeIndustries {
-    height: calc(100vh - 113px);
     .industry-button {
       padding: 0.5rem 0 0 3rem;
       > div {
@@ -82,6 +114,28 @@
     padding: 0.5rem 2rem;
   }
 
+  .homeBrands {
+    .brandList {
+      padding: 0 3rem;
+      .brand-logo {
+        height: 40px;
+      }
+      .brand-image {
+        max-width: 300px;
+        height: 140px;
+      }
+    }
+  }
+
+  .catList {
+    padding: 0 3rem;
+    margin: 0.5rem 0;
+  }
+
+  .read-more-detail {
+    margin: 0.5rem 0;
+  }
+
   h2 {
     font-size: 1rem;
   }
@@ -104,6 +158,28 @@
       }
     }
   }
+
+  .firstPart {
+    padding: 0 3rem;
+
+    .sub-title {
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 0.75rem;
+      .squad-image {
+        height: 240px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -112,6 +188,10 @@
     .fp-tableCell {
       height: max-content !important;
     }
+  }
+
+  .homeSlider {
+    height: calc(100vh - 88px);
   }
 
   .homeCapability {
@@ -123,6 +203,7 @@
       padding: 2rem;
     }
   }
+
   .homeIndustries {
     height: auto;
     display: flex;
@@ -139,6 +220,18 @@
         margin-top: 1rem !important;
       }
     }
+  }
+
+  .homeBrands {
+    height: auto;
+    margin: 88px 0;
+    .brandList {
+      padding: 0 2rem;
+    }
+  }
+
+  .catList {
+    padding: 0 2rem;
   }
 
   .half-back-image-with-text {
@@ -203,6 +296,7 @@
       padding: 1rem;
     }
   }
+
   .homeIndustries {
     height: auto;
     display: flex;
@@ -220,10 +314,29 @@
       }
     }
   }
+
   .half-back-image-with-text {
-    height: 600px;
+    height: 550px;
   }
+
   .overlayText {
     margin: 0 1rem;
+  }
+
+  .homeBrands {
+    .brandList {
+      padding: 0 1rem;
+      .brand-image {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .catList {
+    padding: 0 1rem;
+    justify-content: flex-start;
+    > div {
+      border: none;
+    }
   }
 }

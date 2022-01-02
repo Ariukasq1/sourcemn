@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
+import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Link from "next/link";
 
 const HomeBrands = ({ brandCats, brands, page }) => {
   const parent = brandCats[0].parent;
   const [brandsId, setCatID] = useState(parent);
 
+  const filteredBrands = brands.filter((el) =>
+    el.categories.includes(brandsId)
+  );
+
+  const showBrands = filteredBrands.length > 4 ? 4 : filteredBrands.length;
+  const break992 = filteredBrands.length > 4 ? 3 : filteredBrands.length;
+
   const settings_slider = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: showBrands,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -19,7 +26,7 @@ const HomeBrands = ({ brandCats, brands, page }) => {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: break992,
           slidesToScroll: 2,
           infinite: true,
         },
@@ -39,11 +46,10 @@ const HomeBrands = ({ brandCats, brands, page }) => {
     page = "brands";
   }
 
-  const brandsList = (id) => {
+  const brandsList = () => {
     return (
       <Slider {...settings_slider} className="brandList">
-        {brands.map((brand, ind) => {
-          console.log(brand, "----------");
+        {filteredBrands.map((brand, ind) => {
           return (
             <div key={ind}>
               <div className="brand-logo">
@@ -53,15 +59,15 @@ const HomeBrands = ({ brandCats, brands, page }) => {
                 href={"/[categories]/[detail]"}
                 as={`/${page}/${brand.slug}`}
               >
-                <a className="read-more">Read more</a>
+                <div className="read-more-detail">{__("Read more")}</div>
               </Link>
               <Link
                 href={"/[categories]/[detail]"}
                 as={`/${page}/${brand.slug}`}
               >
-                <a className="brand-image">
+                <div className="brand-image">
                   <img src={getData(brand._embedded, "image")} />
-                </a>
+                </div>
               </Link>
             </div>
           );
@@ -72,8 +78,8 @@ const HomeBrands = ({ brandCats, brands, page }) => {
 
   return (
     <div className="homeBrands">
-      <div className="heading-tag">Brands</div>
-      <div className="heading-title">Our products</div>
+      <div className="gold-title">Brands</div>
+      <div className="sub-title">Our products</div>
       <div className="catList">
         <div onClick={() => setCatID(parent)}>All Brands</div>
         {brandCats.map((cat, ind) => {
@@ -85,7 +91,7 @@ const HomeBrands = ({ brandCats, brands, page }) => {
           );
         })}
       </div>
-      {brandsList(brandsId)}
+      {brandsList()}
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.firstPart {
+  height: calc(100vh - 132px);
+  padding: 0 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .sub-title {
+    margin-bottom: 2rem;
+  }
+
+  .industries,
+  .capabilities {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .industries,
+  .capabilities,
+  .portfolio {
+    gap: 2rem;
+    .squad-image {
+      height: 450px;
+    }
+  }
+}
