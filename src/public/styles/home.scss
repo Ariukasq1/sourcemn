@@ -9,6 +9,9 @@
       font-size: 64px;
       line-height: normal;
     }
+    > h2 {
+      font-weight: 500;
+    }
   }
 }
 // home capabilitiy
@@ -33,4 +36,27 @@
   height: calc(100vh - 132px);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  .industry-button {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 5rem 0 0 5rem;
+    > div {
+      margin-bottom: 2rem;
+    }
+    .big-buttons {
+      font-size: 5rem;
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 700;
+      width: max-content;
+      line-height: normal;
+      &:hover {
+        color: #00488d;
+        cursor: pointer;
+      }
+    }
+    .read-more-button {
+      margin-top: 5rem !important;
+    }
+  }
 }

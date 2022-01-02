@@ -7,6 +7,7 @@ import Footer from "../components/layouts/footer";
 import HomeSlider from "../components/home/slider";
 import HomeCapabilty from "../components/home/capability";
 import HomeIndustries from "../components/home/industries";
+import HomeBrands from "../components/home/brands";
 
 const Index = ({
   mainMenu,
@@ -32,7 +33,9 @@ const Index = ({
             <div className="section Industry">
               <HomeIndustries data={industries} />
             </div>
-            <div className="section Brands">slider</div>
+            <div className="section Brands">
+              <HomeBrands brandCats={brandsCat} brands={brands} />
+            </div>
             <div className="section Footer">
               <Footer contact={contact} />
             </div>

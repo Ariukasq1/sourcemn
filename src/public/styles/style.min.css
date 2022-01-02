@@ -440,6 +440,9 @@ footer .footer .contactUs textArea {
   font-size: 64px;
   line-height: normal;
 }
+.homeSlider .sliderText > h2 {
+  font-weight: 500;
+}
 
 .homeCapability {
   display: grid;
@@ -459,6 +462,29 @@ footer .footer .contactUs textArea {
   height: calc(100vh - 132px);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.homeIndustries .industry-button {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 5rem 0 0 5rem;
+}
+.homeIndustries .industry-button > div {
+  margin-bottom: 2rem;
+}
+.homeIndustries .industry-button .big-buttons {
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  width: max-content;
+  line-height: normal;
+}
+.homeIndustries .industry-button .big-buttons:hover {
+  color: #00488d;
+  cursor: pointer;
+}
+.homeIndustries .industry-button .read-more-button {
+  margin-top: 5rem !important;
 }
 
 .firstPart {
@@ -590,8 +616,28 @@ p {
     height: calc(100vh - 113px);
   }
 
+  .homeIndustries {
+    height: calc(100vh - 113px);
+  }
+  .homeIndustries .industry-button {
+    padding: 0.5rem 0 0 5rem;
+  }
+  .homeIndustries .industry-button > div {
+    margin-bottom: 1.5rem;
+  }
+  .homeIndustries .industry-button .big-buttons {
+    font-size: 3.5rem;
+  }
+  .homeIndustries .industry-button .read-more-button {
+    margin-top: 2rem !important;
+  }
+
   footer {
     height: calc(100vh - 113px);
+  }
+
+  .half-back-image-with-text:hover .overlayText {
+    transform: translateY(-25%);
   }
 
   .page {
@@ -608,6 +654,26 @@ p {
 
   .homeCapability .capability-home-text {
     padding: 0 3rem;
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 113px);
+  }
+  .homeIndustries .industry-button {
+    padding: 0.5rem 0 0 3rem;
+  }
+  .homeIndustries .industry-button > div {
+    margin-bottom: 1rem;
+  }
+  .homeIndustries .industry-button .big-buttons {
+    font-size: 3rem;
+  }
+  .homeIndustries .industry-button .read-more-button {
+    margin-top: 1.75rem !important;
+  }
+
+  .half-back-image-with-text:hover .overlayText {
+    transform: translateY(-5%);
   }
 
   .read-more-button {
@@ -653,6 +719,28 @@ p {
     padding: 2rem;
   }
 
+  .homeIndustries {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .homeIndustries .industry-button {
+    padding: 2rem;
+  }
+  .homeIndustries .industry-button > div {
+    margin-bottom: 1rem;
+  }
+  .homeIndustries .industry-button .big-buttons {
+    font-size: 3rem;
+  }
+  .homeIndustries .industry-button .read-more-button {
+    margin-top: 1rem !important;
+  }
+
+  .half-back-image-with-text {
+    height: 500px;
+  }
+
   .main-header {
     height: 70px;
   }
@@ -692,8 +780,42 @@ p {
     padding: 1rem;
   }
 
+  .homeSlider {
+    padding: 0 1rem;
+    height: 400px;
+  }
+  .homeSlider .sliderText > h1 {
+    font-size: 2.25rem;
+  }
+
   .homeCapability .capability-home-text {
     padding: 1rem;
+  }
+
+  .homeIndustries {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .homeIndustries .industry-button {
+    padding: 1rem;
+  }
+  .homeIndustries .industry-button > div {
+    margin-bottom: 1rem;
+  }
+  .homeIndustries .industry-button .big-buttons {
+    font-size: 2.25rem;
+  }
+  .homeIndustries .industry-button .read-more-button {
+    margin-top: 1rem !important;
+  }
+
+  .half-back-image-with-text {
+    height: 600px;
+  }
+
+  .overlayText {
+    margin: 0 1rem;
   }
 }
 .alignleft {

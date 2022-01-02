@@ -1,5 +1,16 @@
 import T from "i18n-react";
 import queryString from "query-string";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+
+export const SampleNextArrow = (props) => {
+  const { onClick } = props;
+  return <RightOutlined onClick={onClick} className="next-arrow" />;
+};
+
+export const SamplePrevArrow = (props) => {
+  const { onClick } = props;
+  return <LeftOutlined onClick={onClick} className="prev-arrow" />;
+};
 
 export const setLocale = (currentLanguage, callback) => {
   import(`./locales/${currentLanguage}.json`)
