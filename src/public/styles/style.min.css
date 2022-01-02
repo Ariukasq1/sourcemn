@@ -482,7 +482,7 @@ footer .footer .contactUs textArea {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 h1,
@@ -507,35 +507,56 @@ p {
 
 .half-back-image-with-text {
   height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   position: relative;
 }
-.half-back-image-with-text::before {
+.half-back-image-with-text:hover:after {
+  height: 100%;
+}
+.half-back-image-with-text:hover .overlayText {
+  transform: translateY(-50%);
+}
+.half-back-image-with-text:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  transition: 0.5s;
+}
+.half-back-image-with-text:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
-}
-.half-back-image-with-text:hover {
-  cursor: pointer;
-}
-.half-back-image-with-text:hover::before {
-  content: none;
 }
 
 .overlayText {
-  color: #fff;
-  top: 45%;
   position: absolute;
+  margin: 0 30px;
+  bottom: 30px;
+  color: #fff;
+  z-index: 3;
+  transition: 0.5s;
+  padding-bottom: 30px;
+  font-weight: 500;
 }
-.overlayText:after {
-  content: none;
+.overlayText::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 1px;
+  background-color: #fff;
+  bottom: 0;
 }
 
 .read-more-button {

@@ -20,7 +20,7 @@ const HomeIndustries = ({ data }) => {
   return (
     <div className="homeIndustries">
       <div className="tab-button">
-        <Link href={`/industries/${slug}`}>
+        <Link href={`/industries`}>
           <div className="read-more-button">Read more</div>
         </Link>
         {data.map((item, ind) => {
