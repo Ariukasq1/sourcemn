@@ -1,6 +1,5 @@
 import React from "react";
 import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
-import Link from "next/link";
 import Slider from "react-slick";
 
 const SecondPart = ({ post }) => {
@@ -59,7 +58,7 @@ const SecondPart = ({ post }) => {
   };
 
   return (
-    <div className="secondPart" id="section2">
+    <div className="secondPart">
       <div className="product-cards">
         <div
           className="blue-title"

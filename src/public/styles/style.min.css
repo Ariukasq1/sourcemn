@@ -544,6 +544,10 @@ footer .footer .contactUs textArea {
   height: 450px;
 }
 
+#section2 {
+  padding-top: 132px;
+}
+
 .secondPart {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -588,6 +592,52 @@ footer .footer .contactUs textArea {
   object-fit: contain;
   object-position: center;
   margin-bottom: 1rem;
+}
+
+.thirdPart {
+  height: calc(100vh - 132px);
+  margin-top: 132px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Additional {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 132px;
+}
+.Additional > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  padding: 2rem;
+}
+.Additional > div > img {
+  height: 50px;
+  width: 50px;
+}
+.Additional > div > div > h4 {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.Additional .odd {
+  background-color: rgba(240, 240, 240, 0.6);
+}
+
+.relations {
+  margin-top: 132px;
+  padding: 0 5rem;
+}
+.relations .relBrands {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.relations .relations-image {
+  max-width: 400px;
+  height: 230px;
 }
 
 .firstPart {
@@ -790,6 +840,10 @@ p {
     height: calc(100vh - 113px);
   }
 
+  #section2 {
+    padding-top: 113px;
+  }
+
   .homeIndustries {
     height: calc(100vh - 113px);
   }
@@ -810,6 +864,13 @@ p {
     height: calc(100vh - 113px);
   }
   .homeBrands .brandList .brand-image {
+    height: 150px;
+  }
+
+  .relations {
+    margin-top: 113px;
+  }
+  .relations .relations-image {
     height: 150px;
   }
 
@@ -852,7 +913,6 @@ p {
   .secondPart {
     height: calc(100vh - 113px);
   }
-
   .secondPart .product-cards .little-cards {
     width: 100%;
   }
@@ -863,6 +923,10 @@ p {
   .secondPart .product-cards .little-cards .card img {
     height: 40px;
     width: 40px;
+  }
+
+  .Additional {
+    margin-top: 113px;
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -909,6 +973,14 @@ p {
     height: 40px;
   }
   .homeBrands .brandList .brand-image {
+    max-width: 300px;
+    height: 140px;
+  }
+
+  .relations {
+    padding: 0 3rem;
+  }
+  .relations .relations-image {
     max-width: 300px;
     height: 140px;
   }
@@ -968,6 +1040,10 @@ p {
   p {
     font-size: 1rem;
   }
+
+  .Additional > div > div > h4 {
+    font-size: 1.25rem;
+  }
 }
 @media only screen and (max-width: 991px) {
   .section {
@@ -975,6 +1051,10 @@ p {
   }
   .section .fp-tableCell {
     height: max-content !important;
+  }
+
+  #section2 {
+    padding-top: 88px;
   }
 
   .firstPart {
@@ -994,6 +1074,11 @@ p {
   }
   .secondPart .product-cards {
     padding: 2rem 2rem 3rem 2rem;
+  }
+
+  .Additional {
+    margin-top: 88px;
+    display: block;
   }
 
   .homeSlider {
@@ -1033,6 +1118,11 @@ p {
     margin: 88px 0;
   }
   .homeBrands .brandList {
+    padding: 0 2rem;
+  }
+
+  .relations {
+    margin-top: 88px;
     padding: 0 2rem;
   }
 
@@ -1137,6 +1227,13 @@ p {
     max-width: 100%;
   }
 
+  .relations {
+    padding: 0 1rem;
+  }
+  .relations .relations-image {
+    max-width: 100%;
+  }
+
   .catList {
     padding: 0 1rem;
     justify-content: flex-start;
@@ -1154,6 +1251,10 @@ p {
   }
   .secondPart .product-cards .little-cards .card span {
     font-size: 14px;
+  }
+
+  .Additional > div {
+    padding: 1rem;
   }
 }
 .alignleft {
