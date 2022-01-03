@@ -36,7 +36,6 @@ body {
 }
 
 img {
-  max-width: 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -545,6 +544,52 @@ footer .footer .contactUs textArea {
   height: 450px;
 }
 
+.secondPart {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: calc(100vh - 132px);
+}
+.secondPart .product-cards {
+  padding: 1rem 1rem 0 5rem;
+}
+.secondPart .product-cards .little-cards {
+  width: 100%;
+}
+.secondPart .product-cards .little-cards .card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  height: 140px;
+  width: 180px !important;
+  text-align: center;
+  line-height: normal;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(127, 122, 122, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.375rem;
+}
+.secondPart .product-cards .little-cards .card:hover {
+  background-color: #004894;
+  color: #fff;
+  box-shadow: 0 0 10px -2px rgba(127, 122, 122, 0.9);
+}
+.secondPart .product-cards .little-cards .card:hover span {
+  color: #fff;
+}
+.secondPart .product-cards .little-cards .card span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.secondPart .product-cards .little-cards .card img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 1rem;
+}
+
 .firstPart {
   height: calc(100vh - 132px);
 }
@@ -725,6 +770,13 @@ p {
   text-overflow: ellipsis;
 }
 
+.blue-title {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 1599px) {
   .main-header {
     height: 95px;
@@ -796,6 +848,22 @@ p {
 .firstPart .portfolio .squad-image {
     height: 300px;
   }
+
+  .secondPart {
+    height: calc(100vh - 113px);
+  }
+
+  .secondPart .product-cards .little-cards {
+    width: 100%;
+  }
+  .secondPart .product-cards .little-cards .card {
+    height: 100px;
+    width: 120px !important;
+  }
+  .secondPart .product-cards .little-cards .card img {
+    height: 40px;
+    width: 40px;
+  }
 }
 @media only screen and (max-width: 1199px) {
   .homeSlider {
@@ -828,6 +896,10 @@ p {
 
   .read-more-button {
     padding: 0.5rem 2rem;
+  }
+
+  .blue-title {
+    font-size: 1.25rem;
   }
 
   .homeBrands .brandList {
@@ -889,6 +961,10 @@ p {
     height: 240px;
   }
 
+  .secondPart .product-cards {
+    padding: 1rem 1rem 0 3rem;
+  }
+
   p {
     font-size: 1rem;
   }
@@ -899,6 +975,25 @@ p {
   }
   .section .fp-tableCell {
     height: max-content !important;
+  }
+
+  .firstPart {
+    height: auto;
+    padding: 2rem;
+  }
+  .firstPart .industries,
+.firstPart .capabilities,
+.firstPart .portfolio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondPart {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .secondPart .product-cards {
+    padding: 2rem 2rem 3rem 2rem;
   }
 
   .homeSlider {
@@ -988,6 +1083,15 @@ p {
     padding: 1rem;
   }
 
+  .firstPart {
+    padding: 1rem;
+  }
+  .firstPart .industries,
+.firstPart .capabilities,
+.firstPart .portfolio {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .homeSlider {
     padding: 0 1rem;
     height: 400px;
@@ -1039,6 +1143,17 @@ p {
   }
   .catList > div {
     border: none;
+  }
+
+  .secondPart .product-cards {
+    padding: 1rem 1rem 3rem 1rem;
+  }
+  .secondPart .product-cards .little-cards .card {
+    height: 120px;
+    width: 100px !important;
+  }
+  .secondPart .product-cards .little-cards .card span {
+    font-size: 14px;
   }
 }
 .alignleft {

@@ -20,7 +20,7 @@ const FirstPart = ({ clas, data }) => {
                 className="continue-text"
                 dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
               />
-              <Link href={"/[pages]/[detail]"} as={`/${clas}/${slug}`}>
+              <Link href={"/[pages]/[detail]"} as={`/${clas}/${slug}#section2`}>
                 <div className="read-more-detail">{__("Read more")}</div>
               </Link>
               <Link href={"/[pages]/[detail]"} as={`/${clas}/${slug}`}>

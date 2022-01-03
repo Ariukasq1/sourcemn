@@ -3,8 +3,9 @@ import Layout from "../../../components/layouts/Layout";
 import config, { fetcher } from "../../../config";
 import WPAPI from "wpapi";
 import FirstPart from "../../../components/indCap/firstPart";
+import SecondPart from "../../../components/indCap/secondPart";
 
-const Detail = ({ mainMenu, topMenu, data, slug }) => {
+const Detail = ({ mainMenu, topMenu, data, slug, post }) => {
   const renderData = () => {
     switch (slug) {
       case "brands":
@@ -23,6 +24,7 @@ const Detail = ({ mainMenu, topMenu, data, slug }) => {
         return (
           <>
             <FirstPart clas={slug} data={data} />
+            <SecondPart post={post} />
           </>
         );
     }
@@ -41,6 +43,12 @@ Detail.getInitialProps = async (context) => {
 
   const detail = context.query.detail;
 
+  const post = await wp
+    .posts()
+    .slug(`${detail}`)
+    .embed()
+    .then((data) => data[0]);
+
   const catId = await wp
     .categories()
     .slug(`${slug}`)
@@ -58,7 +66,7 @@ Detail.getInitialProps = async (context) => {
     `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
   );
 
-  return { mainMenu, topMenu, data, slug };
+  return { mainMenu, topMenu, data, slug, post };
 };
 
 export default Detail;
