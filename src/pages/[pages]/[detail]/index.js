@@ -7,6 +7,8 @@ import SecondPart from "../../../components/indCap/secondPart";
 import FactSection from "../../../components/indCap/thirdPart";
 import Additional from "../../../components/indCap/Additional";
 import Relations from "../../../components/indCap/relations";
+import Product from "../../../components/portfolio/product";
+import Projects from "../../../components/portfolio/projects";
 
 const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
   const renderData = () => {
@@ -21,6 +23,10 @@ const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
         return (
           <>
             <FirstPart clas={slug} data={data} />
+            <div id="section2">
+              <Product post={post} />
+            </div>
+            <Projects />
           </>
         );
       default:

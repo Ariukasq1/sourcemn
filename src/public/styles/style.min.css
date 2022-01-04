@@ -687,6 +687,16 @@ p {
   object-position: center;
 }
 
+.simple-half-text {
+  padding: 1rem 1rem 0 5rem;
+}
+
+.simple-text-image {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: calc(100vh - 132px);
+}
+
 .half-back-image-with-text {
   height: 100%;
   background-position: center;
@@ -928,6 +938,10 @@ p {
   .Additional {
     margin-top: 113px;
   }
+
+  .simple-text-image {
+    min-height: calc(100vh - 113px);
+  }
 }
 @media only screen and (max-width: 1199px) {
   .homeSlider {
@@ -1044,6 +1058,10 @@ p {
   .Additional > div > div > h4 {
     font-size: 1.25rem;
   }
+
+  .simple-half-text {
+    padding: 1rem 1rem 0 3rem;
+  }
 }
 @media only screen and (max-width: 991px) {
   .section {
@@ -1051,6 +1069,10 @@ p {
   }
   .section .fp-tableCell {
     height: max-content !important;
+  }
+
+  .simple-text-image {
+    min-height: calc(100vh - 88px);
   }
 
   #section2 {
@@ -1121,6 +1143,14 @@ p {
     padding: 0 2rem;
   }
 
+  .simple-text-image {
+    display: block;
+  }
+
+  .simple-half-text {
+    padding: 2rem;
+  }
+
   .relations {
     margin-top: 88px;
     padding: 0 2rem;
@@ -1169,6 +1199,10 @@ p {
   }
 }
 @media only screen and (max-width: 575px) {
+  .simple-half-text {
+    padding: 1rem;
+  }
+
   footer {
     padding: 1rem;
   }

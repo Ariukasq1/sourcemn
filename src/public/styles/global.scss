@@ -41,6 +41,16 @@ p {
   }
 }
 
+.simple-half-text {
+  padding: 1rem 1rem 0 5rem;
+}
+
+.simple-text-image {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: calc(100vh - 132px);
+}
+
 .half-back-image-with-text {
   height: 100%;
   background-position: center;

@@ -15,12 +15,6 @@ const Page = ({ mainMenu, topMenu, data, slug, childCats }) => {
             <HomeBrands brandCats={childCats} brands={data} page={slug} />
           </>
         );
-      case "about":
-        return (
-          <>
-            <Footer contact={data[0]} />
-          </>
-        );
       case "contact":
         return (
           <>
