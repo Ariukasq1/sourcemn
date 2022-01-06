@@ -837,7 +837,134 @@ p {
   font-weight: 700;
 }
 
+.two-row-slider {
+  width: 100%;
+}
+.two-row-slider .slider-image-back {
+  height: 230px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #e2e8f0;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+}
+.two-row-slider .slider-image-back > p {
+  line-height: normal;
+  margin: 15px;
+}
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 132px);
+  padding: 0 5rem;
+}
+
+.career-culture {
+  height: calc(100vh - 132px);
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.career-culture .gold-title,
+.career-culture .sub-title {
+  margin-bottom: 1rem;
+}
+.career-culture .big-cards-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+.career-culture .big-cards-list .big-card {
+  border-radius: 10px;
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.career-culture .big-cards-list .big-card .big-card-image {
+  height: 350px;
+  background-color: #edf2f7;
+  padding: 0 30px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.career-culture .big-cards-list .big-card .big-card-image > img {
+  object-fit: contain;
+}
+.career-culture .big-cards-list .big-card .big-card-text {
+  padding: 0 30px;
+}
+.career-culture .big-cards-list .big-card .big-card-text li {
+  list-style: inside;
+}
+
+.about-us {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 5rem;
+}
+.about-us .about-image > img {
+  object-fit: contain;
+}
+
+.about-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
+}
+.about-service .serviceList .products {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-gap: 1rem;
+}
+.about-service .serviceList .products > div {
+  display: flex;
+  flex-direction: column;
+}
+.about-service .serviceList .products > div:last-child {
+  display: none;
+}
+.about-service .serviceList .products > div .product-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.about-service .serviceList .products > div .product-title > h5 {
+  font-size: 16px;
+  line-height: normal;
+  margin-top: 15px;
+}
+.about-service .serviceList .products > div .product-title .serviceIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #00498e;
+}
+.about-service .serviceList .products > div .product-title .serviceIcon > img {
+  max-width: 45px;
+  height: 45px;
+}
+.about-service .serviceList .products > div .product-desc {
+  padding-left: 1.5rem;
+}
+.about-service .serviceList .products > div .product-desc ul li {
+  list-style: disc;
+}
+
 @media only screen and (max-width: 1599px) {
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .main-header {
     height: 95px;
   }
@@ -942,8 +1069,30 @@ p {
   .simple-text-image {
     min-height: calc(100vh - 113px);
   }
+
+  .career-culture {
+    height: calc(100vh - 113px);
+  }
+  .career-culture .big-cards-list {
+    gap: 2rem;
+  }
+  .career-culture .big-cards-list .big-card .big-card-image {
+    padding: 0 10px;
+    height: 230px;
+  }
+  .career-culture .big-cards-list .big-card .big-card-text {
+    padding: 0 10px;
+  }
 }
 @media only screen and (max-width: 1199px) {
+  .about-us {
+    padding: 3rem;
+  }
+
+  .about-service {
+    padding: 0 3rem;
+  }
+
   .homeSlider {
     padding: 0 3rem;
   }
@@ -1062,6 +1211,20 @@ p {
   .simple-half-text {
     padding: 1rem 1rem 0 3rem;
   }
+
+  .career-culture {
+    padding: 0 3rem;
+  }
+  .career-culture .big-cards-list {
+    gap: 1rem;
+  }
+  .career-culture .big-cards-list .big-card .big-card-image {
+    padding: 0 10px;
+    height: 180px;
+  }
+  .career-culture .big-cards-list .big-card .big-card-text {
+    padding: 0 10px;
+  }
 }
 @media only screen and (max-width: 991px) {
   .section {
@@ -1069,6 +1232,18 @@ p {
   }
   .section .fp-tableCell {
     height: max-content !important;
+  }
+
+  .about-service {
+    padding: 0 2rem;
+  }
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-us {
+    display: block;
+    padding: 2rem;
   }
 
   .simple-text-image {
@@ -1197,8 +1372,32 @@ p {
   footer .footer .contacts > h2:last-child {
     margin-top: 2rem;
   }
+
+  .career-culture {
+    height: auto;
+    padding: 2rem;
+  }
+  .career-culture .big-cards-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .career-culture .big-cards-list .big-card .big-card-image {
+    padding: 0 30px;
+    height: 200px;
+  }
+  .career-culture .big-cards-list .big-card .big-card-text {
+    padding: 0 30px;
+  }
 }
 @media only screen and (max-width: 575px) {
+  .about-service {
+    padding: 0 1rem;
+  }
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .simple-half-text {
     padding: 1rem;
   }
@@ -1288,6 +1487,26 @@ p {
   }
 
   .Additional > div {
+    padding: 1rem;
+  }
+
+  .career-culture {
+    padding: 1rem;
+  }
+  .career-culture .big-cards-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .career-culture .big-cards-list .big-card .big-card-image {
+    padding: 0 20px;
+    height: 180px;
+  }
+  .career-culture .big-cards-list .big-card .big-card-text {
+    padding: 0 20px;
+  }
+
+  .about-us {
     padding: 1rem;
   }
 }

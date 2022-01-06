@@ -1,4 +1,12 @@
 @media only screen and (max-width: 1599px) {
+  .about-service {
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  }
+
   .main-header {
     height: 95px;
   }
@@ -108,9 +116,33 @@
   .simple-text-image {
     min-height: calc(100vh - 113px);
   }
+
+  .career-culture {
+    height: calc(100vh - 113px);
+    .big-cards-list {
+      gap: 2rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 10px;
+          height: 230px;
+        }
+        .big-card-text {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1199px) {
+  .about-us {
+    padding: 3rem;
+  }
+
+  .about-service {
+    padding: 0 3rem;
+  }
+
   .homeSlider {
     padding: 0 3rem;
     .sliderText {
@@ -250,6 +282,22 @@
   .simple-half-text {
     padding: 1rem 1rem 0 3rem;
   }
+
+  .career-culture {
+    padding: 0 3rem;
+    .big-cards-list {
+      gap: 1rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 10px;
+          height: 180px;
+        }
+        .big-card-text {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -258,6 +306,20 @@
     .fp-tableCell {
       height: max-content !important;
     }
+  }
+
+  .about-service {
+    padding: 0 2rem;
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .about-us {
+    display: block;
+    padding: 2rem;
   }
 
   .simple-text-image {
@@ -388,12 +450,40 @@
       }
     }
   }
+
+  .career-culture {
+    height: auto;
+    padding: 2rem;
+    .big-cards-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 30px;
+          height: 200px;
+        }
+        .big-card-text {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
 }
 
 @media only screen and (max-width: 575px) {
+  .about-service {
+    padding: 0 1rem;
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+
   .simple-half-text {
     padding: 1rem;
   }
@@ -495,5 +585,26 @@
     > div {
       padding: 1rem;
     }
+  }
+
+  .career-culture {
+    padding: 1rem;
+    .big-cards-list {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 20px;
+          height: 180px;
+        }
+        .big-card-text {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+  .about-us {
+    padding: 1rem;
   }
 }

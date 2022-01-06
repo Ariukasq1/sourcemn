@@ -5,10 +5,26 @@ import WPAPI from "wpapi";
 import FirstPart from "../../components/indCap/firstPart";
 import Footer from "../../components/layouts/footer";
 import HomeBrands from "../../components/home/brands";
+import NewsList from "../../components/news/newsList";
+import Culture from "../../components/career/culture";
+import AboutUs from "../../components/about/aboutUs";
+import Service from "../../components/about/aboutService";
+import TimeLine from "../../components/about/timeline";
 
-const Page = ({ mainMenu, topMenu, data, slug, childCats }) => {
+const Page = ({
+  mainMenu,
+  topMenu,
+  data,
+  slug,
+  childCats,
+  contact,
+  serviceCats,
+  service,
+}) => {
   const renderData = () => {
     switch (slug) {
+      case "facility":
+        return <>Coming soon</>;
       case "brands":
         return (
           <>
@@ -21,10 +37,27 @@ const Page = ({ mainMenu, topMenu, data, slug, childCats }) => {
             <Footer contact={data[0]} />
           </>
         );
-      case "career":
-        return <>career</>;
+      case "about":
+        return (
+          <>
+            <AboutUs data={data[0]} />
+            <Service serviceCats={serviceCats} services={service} />
+            <TimeLine />
+            <Footer contact={contact} />
+          </>
+        );
+      case "careers":
+        return (
+          <>
+            <Culture data={data} />
+          </>
+        );
       case "news":
-        return <>news</>;
+        return (
+          <>
+            <NewsList data={data} cats={childCats} />
+          </>
+        );
       case "portfolio":
         return (
           <>
@@ -52,6 +85,24 @@ Page.getInitialProps = async (context) => {
   const slug =
     context.query.pages === "newsroom" ? "news" : context.query.pages;
 
+  const mainMenu = await fetcher(
+    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
+  );
+  const topMenu = await fetcher(
+    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
+  );
+
+  const contact = await wp
+    .posts()
+    .categories()
+    .slug("contact")
+    .embed()
+    .then((data) => data[0]);
+
+  if (slug === "facility") {
+    return { slug, mainMenu, topMenu };
+  }
+
   const catId = await wp
     .categories()
     .slug(`${slug}`)
@@ -62,12 +113,17 @@ Page.getInitialProps = async (context) => {
 
   const childCats = await wp.categories().parent(catId.id).embed();
 
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
+  let serviceCats;
+  let service;
+
+  if (slug === "about") {
+    serviceCats = await wp.categories().parent(childCats[0].id).embed();
+
+    service = await wp
+      .posts()
+      .categories(serviceCats.map((service) => service.id))
+      .embed();
+  }
 
   return {
     mainMenu,
@@ -76,6 +132,9 @@ Page.getInitialProps = async (context) => {
     slug,
     catId,
     childCats,
+    contact,
+    serviceCats,
+    service,
   };
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import { getData } from "../../utils";
 
 const Product = ({ post }) => {
-  console.log(post, "-------------");
   return (
     <div className="simple-text-image">
       <div className="simple-half-text">

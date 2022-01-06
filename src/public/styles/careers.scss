@@ -1,0 +1,36 @@
+.career-culture {
+  height: calc(100vh - 132px);
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .gold-title,
+  .sub-title {
+    margin-bottom: 1rem;
+  }
+  .big-cards-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    .big-card {
+      border-radius: 10px;
+      box-shadow: 0 5px 12px 0 rgba(0 0 0 / 10%);
+      .big-card-image {
+        height: 350px;
+        background-color: #edf2f7;
+        padding: 0 30px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        > img {
+          object-fit: contain;
+        }
+      }
+      .big-card-text {
+        padding: 0 30px;
+        li {
+          list-style: inside;
+        }
+      }
+    }
+  }
+}

@@ -190,3 +190,21 @@ p {
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+.two-row-slider {
+  width: 100%;
+  .slider-image-back {
+    height: 230px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #e2e8f0;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    > p {
+      line-height: normal;
+      margin: 15px;
+    }
+  }
+}

@@ -15,7 +15,7 @@ const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
     switch (slug) {
       case "brands":
         return <>brandsDetail</>;
-      case "career":
+      case "careers":
         return <>careerDetail</>;
       case "news":
         return <>newsDetail</>;
