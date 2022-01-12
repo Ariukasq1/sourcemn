@@ -7,7 +7,9 @@ const SecondPart = ({ post }) => {
 
   const { supports } = acf || {};
 
-  const datas = (supports || {}).desc.split("<li>");
+  const { desc } = supports || {};
+
+  const datas = (desc || {}).split("<li>");
 
   const showCards = datas.length > 8 ? 3 : 2;
 
