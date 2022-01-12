@@ -22,6 +22,7 @@ const Detail = ({
   child_data,
   detail,
 }) => {
+  const { bg_image, additional } = (post || {}).acf || {};
   const renderData = () => {
     switch (slug) {
       case "brands":
@@ -52,8 +53,8 @@ const Detail = ({
             <div id="section2">
               <SecondPart post={post} />
             </div>
-            {(post || {}).acf.bg_image && <FactSection post={post} />}
-            {(post || {}).acf.additional && <Additional post={post} />}
+            {bg_image && <FactSection post={post} />}
+            {additional && <Additional post={post} />}
             <Relations brands={brands} post={post} type={slug} />
           </>
         );
