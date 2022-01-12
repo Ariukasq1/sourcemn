@@ -109,19 +109,24 @@ Page.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const id = (catId || {}).id;
 
-  const childCats = await wp.categories().parent(catId.id).embed();
+  const data = await wp.posts().categories(id).embed();
+
+  const childCats = await wp.categories().parent(id).embed();
 
   let serviceCats;
   let service;
 
   if (slug === "about") {
-    serviceCats = await wp.categories().parent(childCats[0].id).embed();
+    serviceCats = await wp
+      .categories()
+      .parent((childCats[0] || {}).id)
+      .embed();
 
     service = await wp
       .posts()
-      .categories(serviceCats.map((service) => service.id))
+      .categories((serviceCats || []).map((service) => service.id))
       .embed();
   }
 

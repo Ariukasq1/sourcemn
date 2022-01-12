@@ -86,9 +86,11 @@ Detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const id = (catId || {}).id;
 
-  const childCats = await wp.categories().parent(catId.id).embed();
+  const data = await wp.posts().categories(id).embed();
+
+  const childCats = await wp.categories().parent(id).embed();
 
   const brandsID = await wp
     .categories()
@@ -96,7 +98,11 @@ Detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const brands = await wp.posts().categories(brandsID.id).perPage(100).embed();
+  const brands = await wp
+    .posts()
+    .categories((brandsID || {}).id)
+    .perPage(100)
+    .embed();
 
   const mainMenu = await fetcher(
     `${config(context).apiUrl}/menus/v1/menus/nav-menu`
@@ -118,7 +124,7 @@ Detail.getInitialProps = async (context) => {
 
     child_data = await wp
       .posts()
-      .categories(child_id[0].id)
+      .categories((child_id[0] || {}).id)
       .perPage(20)
       .embed();
   }
