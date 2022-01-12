@@ -52,8 +52,8 @@ const Detail = ({
             <div id="section2">
               <SecondPart post={post} />
             </div>
-            {post.acf.bg_image && <FactSection post={post} />}
-            {post.acf.additional && <Additional post={post} />}
+            {(post || {}).acf.bg_image && <FactSection post={post} />}
+            {(post || {}).acf.additional && <Additional post={post} />}
             <Relations brands={brands} post={post} type={slug} />
           </>
         );
