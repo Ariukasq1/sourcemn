@@ -1,8 +1,14 @@
-.newsList {
+.newsList,
+.newsRelated {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 132px);
   padding: 0 5rem;
+}
+
+.newsRelated {
+  margin-top: 132px;
+  background-color: hsla(0, 0%, 94.1%, 0.6);
 }

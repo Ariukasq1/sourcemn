@@ -9,8 +9,19 @@ import Additional from "../../../components/indCap/Additional";
 import Relations from "../../../components/indCap/relations";
 import Product from "../../../components/portfolio/product";
 import Projects from "../../../components/portfolio/projects";
+import NewsDetail from "../../../components/news/newsDetail";
+import RelatedNews from "../../../components/news/newsRelated";
 
-const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
+const Detail = ({
+  mainMenu,
+  topMenu,
+  data,
+  slug,
+  post,
+  brands,
+  child_data,
+  detail,
+}) => {
   const renderData = () => {
     switch (slug) {
       case "brands":
@@ -18,7 +29,12 @@ const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
       case "careers":
         return <>careerDetail</>;
       case "news":
-        return <>newsDetail</>;
+        return (
+          <>
+            <NewsDetail post={post} />
+            <RelatedNews data={data} />
+          </>
+        );
       case "portfolio":
         return (
           <>
@@ -26,7 +42,7 @@ const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
             <div id="section2">
               <Product post={post} />
             </div>
-            <Projects />
+            <Projects projects={child_data} detail={detail} />
           </>
         );
       default:
@@ -53,7 +69,8 @@ const Detail = ({ mainMenu, topMenu, data, slug, post, brands }) => {
 Detail.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
-  const slug = context.query.pages;
+  const slug =
+    context.query.pages === "newsroom" ? "news" : context.query.pages;
 
   const detail = context.query.detail;
 
@@ -89,7 +106,33 @@ Detail.getInitialProps = async (context) => {
     `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
   );
 
-  return { mainMenu, topMenu, data, slug, post, brands };
+  let child_id;
+  let child_data;
+
+  if (slug === "portfolio") {
+    child_id = childCats.filter((el) =>
+      el.slug.includes(
+        detail === "construction-projects-2" ? "construction-projects" : detail
+      )
+    );
+
+    child_data = await wp
+      .posts()
+      .categories(child_id[0].id)
+      .perPage(20)
+      .embed();
+  }
+
+  return {
+    mainMenu,
+    topMenu,
+    data,
+    slug,
+    post,
+    brands,
+    child_data,
+    detail,
+  };
 };
 
 export default Detail;

@@ -132,6 +132,10 @@
       }
     }
   }
+  .newsList,
+  .newsRelated {
+    height: calc(100vh - 113px);
+  }
 }
 
 @media only screen and (max-width: 1199px) {
