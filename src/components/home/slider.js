@@ -31,7 +31,13 @@ const HomeSlider = ({ sliders }) => {
                 style={{ textAlign: `${position_of_text}` }}
               >
                 <h1>{body.text}</h1>
-                <h2>{body.description}</h2>
+                <h2
+                  style={{
+                    paddingLeft: position_of_text === "right" ? "40%" : "0",
+                  }}
+                >
+                  {body.description}
+                </h2>
               </div>
             </div>
           </div>

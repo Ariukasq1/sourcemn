@@ -99,6 +99,10 @@ Page.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
+  if (slug === "facility") {
+    return { slug, mainMenu, topMenu };
+  }
+
   const catId = await wp
     .categories()
     .slug(`${slug}`)
@@ -109,23 +113,29 @@ Page.getInitialProps = async (context) => {
 
   const childCats = await wp.categories().parent(catId.id).embed();
 
-  switch (slug) {
-    case "facility":
-      return { slug, mainMenu, topMenu };
+  let serviceCats;
+  let service;
 
-    case "about":
-      const serviceCats = await wp.categories().parent(childCats[0].id).embed();
+  if (slug === "about") {
+    serviceCats = await wp.categories().parent(childCats[0].id).embed();
 
-      const service = await wp
-        .posts()
-        .categories(serviceCats.map((service) => service.id))
-        .embed();
-
-      return { slug, mainMenu, topMenu, service, serviceCats, contact, data };
-
-    default:
-      return { mainMenu, topMenu, data, slug, catId, contact, childCats };
+    service = await wp
+      .posts()
+      .categories(serviceCats.map((service) => service.id))
+      .embed();
   }
+
+  return {
+    mainMenu,
+    topMenu,
+    data,
+    slug,
+    catId,
+    childCats,
+    contact,
+    serviceCats,
+    service,
+  };
 };
 
 export default Page;
