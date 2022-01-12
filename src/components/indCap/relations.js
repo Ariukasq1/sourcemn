@@ -4,7 +4,9 @@ import Slider from "react-slick";
 import Link from "next/link";
 
 const Relations = ({ brands, post }) => {
-  const relbrands = brands.filter((el) => post.acf.brands.includes(el.id));
+  const { acf } = post || {};
+
+  const relbrands = brands.filter((el) => (acf || {}).brands.includes(el.id));
   const showBrands = relbrands.length > 3 ? 3 : relbrands.length;
   const break992 = relbrands.length > 3 ? 2 : relbrands.length;
 

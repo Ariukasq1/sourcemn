@@ -3,9 +3,12 @@ import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Slider from "react-slick";
 
 const SecondPart = ({ post }) => {
-  const { title, content, acf, _embedded } = post;
-  const { supports } = acf;
+  const { title, content, acf, _embedded } = post || {};
+
+  const { supports } = acf || {};
+
   const datas = supports.desc.split("<li>");
+
   const showCards = datas.length > 8 ? 3 : 2;
 
   const settings = {

@@ -23,6 +23,7 @@ const Detail = ({
   detail,
 }) => {
   const { bg_image, additional } = (post || {}).acf || {};
+
   const renderData = () => {
     switch (slug) {
       case "brands":
