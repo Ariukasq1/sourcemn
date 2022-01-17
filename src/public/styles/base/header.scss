@@ -1,7 +1,6 @@
 .main-header {
   border-bottom: 2px solid #e2e8f0;
-  height: 114px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -11,13 +10,10 @@
   background-color: #fff;
   justify-content: space-between;
   .logo {
-    height: 100%;
-    width: max-content;
-    img {
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
+    width: 6rem;
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
   }
   .menus {
     display: flex;
@@ -32,6 +28,7 @@
         margin-left: auto;
         a {
           border-right: 1px solid #00498e;
+          font-weight: 500;
           &:last-child {
             border: none;
           }
@@ -41,7 +38,7 @@
         padding: 0 1rem;
         font-weight: 800;
         color: #00498e;
-        font-size: 1rem;
+        font-size: 1.125rem;
         &:hover {
           color: #5d7db8;
         }
@@ -51,7 +48,6 @@
       }
     }
     .burger {
-      width: 30px;
       margin-left: 1rem;
       display: flex;
       flex-direction: column;
@@ -59,14 +55,12 @@
       cursor: pointer;
       border: none;
       box-sizing: border-box;
-      .burger-line {
-        width: 100%;
-        height: 2px;
-        background: #00498e;
-      }
+      color: #00498e;
+      font-size: 2rem;
     }
   }
 }
+
 .side-drawer {
   position: fixed;
   right: 0;
@@ -84,6 +78,7 @@
     color: #fff;
     font-weight: 300;
     padding: 0 1rem;
+    font-size: 1.125rem;
   }
   .topMenuList {
     margin-top: 10px;
@@ -118,6 +113,7 @@
     }
   }
 }
+
 .backdrop {
   position: fixed;
   top: 0;

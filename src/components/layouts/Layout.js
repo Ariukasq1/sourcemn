@@ -11,6 +11,11 @@ class Layout extends React.Component {
         <Header title={title} image={image} />
         <main className="relative">
           <Menu mainMenu={mainMenu} topMenu={topMenu} />
+          <div className="lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
           {children}
         </main>
       </>

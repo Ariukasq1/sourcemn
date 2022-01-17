@@ -1,13 +1,16 @@
 .homeSlider {
-  height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 5rem;
+  position: relative;
   .sliderText {
+    width: 100%;
     > h1 {
       font-size: 80px;
       line-height: normal;
+      margin-bottom: 20px;
     }
     > h2 {
       font-weight: 500;
@@ -19,7 +22,7 @@
 .homeCapability {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
   .capability-home-text {
     display: flex;
     align-items: center;
@@ -34,28 +37,20 @@
 
 // home industry
 .homeIndustries {
-  height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   .industry-button {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    padding: 5rem 0 0 5rem;
-    > div {
-      margin-bottom: 2rem;
-    }
+    padding: 5rem 0 0 10rem;
     .big-buttons {
       font-size: 5rem;
-      color: rgba(0, 0, 0, 0.7);
       font-weight: 700;
       width: max-content;
       line-height: normal;
-      &:hover {
-        color: #00488d;
-        cursor: pointer;
-      }
+      cursor: pointer;
+      margin-bottom: 2rem;
     }
+
     .read-more-button {
       margin-top: 4rem !important;
     }
@@ -63,25 +58,25 @@
 }
 // home brands
 .homeBrands {
-  height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   .brandList {
     width: 100%;
-    padding: 0 5rem;
+    padding: 0 5rem 0 10rem;
     .brand-logo {
-      width: 180px;
-      height: 50px;
+      width: 16rem;
+      height: 4rem;
       > img {
         object-fit: contain;
         object-position: left;
       }
     }
     .brand-image {
-      height: 230px;
-      max-width: 400px;
+      height: 14rem;
+      max-width: 420px;
     }
   }
 }

@@ -3,10 +3,12 @@ import Slider from "react-slick";
 
 const HomeSlider = ({ sliders }) => {
   const settings = {
-    dots: false,
+    dots: true,
     arrows: false,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -29,15 +31,18 @@ const HomeSlider = ({ sliders }) => {
               <div
                 className="sliderText"
                 style={{ textAlign: `${position_of_text}` }}
+                data-aos="fade-down"
+                data-aos-easing="ease"
+                data-aos-delay="0"
               >
                 <h1>{body.text}</h1>
-                <h2
+                <p
                   style={{
                     paddingLeft: position_of_text === "right" ? "40%" : "0",
                   }}
                 >
                   {body.description}
-                </h2>
+                </p>
               </div>
             </div>
           </div>

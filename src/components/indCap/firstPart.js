@@ -1,6 +1,7 @@
 import React from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const FirstPart = ({ clas, data }) => {
   return (
@@ -21,7 +22,9 @@ const FirstPart = ({ clas, data }) => {
                 dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
               />
               <Link href={"/[pages]/[detail]"} as={`/${clas}/${slug}#section2`}>
-                <div className="read-more-detail">{__("Read more")}</div>
+                <div className="read-more-detail">
+                  {__("Read more")} <ArrowRightOutlined />
+                </div>
               </Link>
               <Link href={"/[pages]/[detail]"} as={`/${clas}/${slug}`}>
                 <div className="squad-image">

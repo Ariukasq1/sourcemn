@@ -2,14 +2,16 @@
   color: #fda50f;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   line-height: normal;
+  margin-bottom: 20px;
 }
 .sub-title {
-  font-size: 1.875rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: normal;
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 .section {
   .fp-tableCell {
@@ -18,7 +20,7 @@
 }
 
 p {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
 h1,
@@ -113,7 +115,7 @@ p {
   background-size: 200% auto;
   text-transform: capitalize;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   border-radius: 9999px;
   transition: all 0.3s ease;
@@ -131,9 +133,10 @@ p {
   transition: all 3s ease;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1rem;
+  font-size: 1.125rem;
   margin: 0.75rem 0;
   width: max-content;
+  color: #004a8f;
 }
 
 .catList {
@@ -141,17 +144,24 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 5rem;
-  margin: 1.5rem 0;
+  margin-bottom: 20px;
   > div {
-    border-right: 1px solid rgba(0, 73, 142, var(--text-opacity));
+    border-right: 1px solid rgba(0, 0, 0, 0.7);
     padding: 0 0.5rem;
     --text-opacity: 1;
-    font-size: 1.125rem;
-    color: rgba(0, 73, 142, var(--text-opacity));
+    font-size: 1.5rem;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: normal;
+    margin-bottom: 20px;
     &:last-child {
       border: none;
     }
+  }
+  .active {
+    font-weight: 800;
+    --text-opacity: 1;
+    color: rgba(0, 73, 142, var(--text-opacity));
   }
 }
 
@@ -168,6 +178,31 @@ p {
   right: 15rem;
 }
 
+.slick-dots {
+  position: absolute;
+  bottom: 5rem;
+  left: 3rem;
+  > li {
+    > button {
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: none;
+      color: #000;
+      text-indent: 999px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+  .slick-active {
+    > button {
+      background-color: #fff;
+    }
+  }
+}
+
 .continue-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -182,6 +217,7 @@ p {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1.5rem;
 }
 
 .blue-title {
@@ -224,5 +260,39 @@ p {
       margin: 15px;
       z-index: 3;
     }
+  }
+}
+
+.over-text {
+  position: absolute;
+  color: #fff;
+  z-index: 3;
+  margin: 0 5rem;
+}
+
+.over-image {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+
+#fp-nav {
+  left: 37px !important;
+  ul li a span {
+    background: #004a8f !important;
   }
 }

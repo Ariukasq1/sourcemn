@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Link from "next/link";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const HomeBrands = ({ brandCats, brands, page }) => {
   const parent = brandCats[0].parent;
+
   const [brandsId, setCatID] = useState(parent);
+
+  const [index, setIndex] = useState(100);
 
   const filteredBrands = brands.filter((el) =>
     el.categories.includes(brandsId)
@@ -17,9 +21,11 @@ const HomeBrands = ({ brandCats, brands, page }) => {
   const settings_slider = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: showBrands,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -59,7 +65,9 @@ const HomeBrands = ({ brandCats, brands, page }) => {
                 href={"/[categories]/[detail]"}
                 as={`/${page}/${brand.slug}`}
               >
-                <div className="read-more-detail">{__("Read more")}</div>
+                <div className="read-more-detail">
+                  {__("Read more")} <ArrowRightOutlined />
+                </div>
               </Link>
               <Link
                 href={"/[categories]/[detail]"}
@@ -76,16 +84,30 @@ const HomeBrands = ({ brandCats, brands, page }) => {
     );
   };
 
+  const renderCat = (id, ind) => {
+    setCatID(id);
+    setIndex(ind);
+  };
+
   return (
-    <div className="homeBrands">
-      <div className="gold-title">Brands</div>
-      <div className="sub-title">Our products</div>
+    <div className="homeBrands" data-aos="zoom-in" data-aos-duration="300">
+      <div className="gold-title">{__("Brands")}</div>
+      <div className="sub-title">{__("Our products")}</div>
       <div className="catList">
-        <div onClick={() => setCatID(parent)}>All Brands</div>
+        <div
+          className={100 === index ? "active" : "inactive"}
+          onClick={() => renderCat(parent, 100)}
+        >
+          {__("All Brands")}
+        </div>
         {brandCats.map((cat, ind) => {
           const { name, id } = cat;
           return (
-            <div key={ind} onClick={() => setCatID(id)}>
+            <div
+              key={ind}
+              onClick={() => renderCat(id, ind)}
+              className={ind === index ? "active" : "inactive"}
+            >
               {name}
             </div>
           );

@@ -53,9 +53,7 @@ class MenuComponent extends React.Component {
     return (
       <div className="main-header">
         <Link href={"/"}>
-          <div className="logo">
-            <img src="/images/mms-logo.png" />
-          </div>
+          <img className="logo" src="/images/mms-logo.png" />
         </Link>
         <div className="menus">
           <TopMenu topMenu={topMenu} />

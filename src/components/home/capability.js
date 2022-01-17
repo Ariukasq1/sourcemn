@@ -10,7 +10,12 @@ const HomeCapabilty = ({ capability }) => {
       <div className="simple-half-image">
         <img src={getData(_embedded, "image")} />
       </div>
-      <div className="capability-home-text">
+      <div
+        className="capability-home-text"
+        data-aos="fade-up"
+        data-aos-easing="ease"
+        data-aos-delay="0"
+      >
         <div>
           <div className="gold-title">{__("Capabilities")}</div>
           <div dangerouslySetInnerHTML={{ __html: content.rendered }} />

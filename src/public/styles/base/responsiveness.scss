@@ -1,5 +1,41 @@
 @media only screen and (max-width: 1599px) {
-  .about-service {
+  .main-header {
+    height: 95px;
+  }
+
+  .page {
+    margin-top: 113px;
+  }
+
+  .homeSlider {
+    height: calc(100vh - 113px);
+    .sliderText {
+      > h1 {
+        font-size: 4rem;
+      }
+      > h2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .homeCapability {
+    height: calc(100vh - 113px);
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 113px);
+    .industry-button {
+      padding: 0.5rem 0 0 5rem;
+      .big-buttons,
+      .active-big-buttons {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  /*  .about-service {
     .serviceList {
       .products {
         grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -10,12 +46,9 @@
   .main-header {
     height: 95px;
   }
-  .homeSlider {
-    height: calc(100vh - 113px);
-  }
-  .homeCapability {
-    height: calc(100vh - 113px);
-  }
+
+
+
 
   #section2 {
     padding-top: 113px;
@@ -71,6 +104,7 @@
       }
     }
   }
+
   .page {
     margin-top: 113px;
   }
@@ -132,10 +166,11 @@
       }
     }
   }
+
   .newsList,
   .newsRelated {
     height: calc(100vh - 113px);
-  }
+  } */
 }
 
 @media only screen and (max-width: 1199px) {

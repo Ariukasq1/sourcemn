@@ -10,6 +10,7 @@ import {
   TwitterOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
+import { __ } from "../../utils";
 
 function Footer({ contact }) {
   const { address, email, fax, tel, social } = contact.acf;
@@ -18,17 +19,17 @@ function Footer({ contact }) {
     <footer>
       <div className="footer">
         <div className="contacts">
-          <h2>Contacts</h2>
-          <h2>
+          <p>{__("Contacts")}</p>
+          <p>
             <PhoneOutlined /> Tel: {tel}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <PrinterOutlined /> Fax: {fax}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <MailOutlined /> Email: {email}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <a href={social.facebook}>
               <FacebookOutlined />
             </a>
@@ -44,36 +45,46 @@ function Footer({ contact }) {
             <a href={social.twitter}>
               <TwitterOutlined />
             </a>
-          </h2>
+          </p>
         </div>
         <div className="headOffice">
-          <h2>{office.name}</h2>
-          <h2>
+          <p>{office.name}</p>
+          <p>
             <HomeOutlined /> {office.address}
-          </h2>
+          </p>
         </div>
         <div className="contactUs">
-          <h2>Please contact us</h2>
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Enter full name"
-            required
-          />
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Enter email"
-            required
-          />
-          <textarea
-            id="Message"
-            name="message"
-            placeholder="Enter text"
-            required
-          />
+          <p>Please contact us</p>
+          <div>
+            <label>{__("Full name")}</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Enter full name"
+              required
+            />
+          </div>
+          <div>
+            <label>{__("Contact Email")}</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div>
+            <label>{__("Message")}</label>
+            <textarea
+              id="Message"
+              name="message"
+              placeholder="Enter text"
+              required
+            />
+          </div>
+
           <input type="submit" value="Send" />
         </div>
       </div>
