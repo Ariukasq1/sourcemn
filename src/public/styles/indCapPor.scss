@@ -1,6 +1,6 @@
 .firstPart {
   height: calc(100vh - 114px);
-  padding: 0 5rem;
+  padding: 0 8rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,7 +20,7 @@
   .industries,
   .capabilities,
   .portfolio {
-    gap: 2rem;
+    gap: 2.5rem;
     .squad-image {
       height: 450px;
     }

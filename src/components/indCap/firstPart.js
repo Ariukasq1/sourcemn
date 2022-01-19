@@ -12,7 +12,14 @@ const FirstPart = ({ clas, data }) => {
           const { title, excerpt, slug, _embedded } = post;
 
           return (
-            <div key={ind}>
+            <div
+              key={ind}
+              data-aos="fade-down"
+              data-aos-easing="ease"
+              data-aos-delay={ind * 300}
+              data-aos-duration="2000"
+              data-aos-offset="300"
+            >
               <h2
                 className="continue-title"
                 dangerouslySetInnerHTML={{ __html: title.rendered }}

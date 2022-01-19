@@ -1,0 +1,28 @@
+.brand {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  gap: 5rem;
+  padding-right: 5rem;
+  .brand-detail-image {
+    position: sticky;
+    height: calc(100vh - 114px);
+    width: 100%;
+    top: 114px;
+    > img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .brand-detail-and-about {
+    padding-top: 1rem;
+    > div {
+      margin-bottom: 1rem;
+    }
+  }
+  .brand-detail-text {
+    font-size: 1.5rem;
+  }
+}

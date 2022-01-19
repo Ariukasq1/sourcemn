@@ -11,6 +11,11 @@ const HomeBrands = ({ brandCats, brands, page }) => {
 
   const [index, setIndex] = useState(100);
 
+  const renderCat = (id, ind) => {
+    setCatID(id);
+    setIndex(ind);
+  };
+
   const filteredBrands = brands.filter((el) =>
     el.categories.includes(brandsId)
   );
@@ -48,13 +53,12 @@ const HomeBrands = ({ brandCats, brands, page }) => {
     ],
   };
 
-  if (!page) {
-    page = "brands";
-  }
-
   const brandsList = () => {
     return (
-      <Slider {...settings_slider} className="brandList">
+      <Slider
+        {...settings_slider}
+        className={page ? "brandsList" : "brandList"}
+      >
         {filteredBrands.map((brand, ind) => {
           return (
             <div key={ind}>
@@ -63,7 +67,7 @@ const HomeBrands = ({ brandCats, brands, page }) => {
               </div>
               <Link
                 href={"/[categories]/[detail]"}
-                as={`/${page}/${brand.slug}`}
+                as={`/brands/${brand.slug}`}
               >
                 <div className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
@@ -71,7 +75,7 @@ const HomeBrands = ({ brandCats, brands, page }) => {
               </Link>
               <Link
                 href={"/[categories]/[detail]"}
-                as={`/${page}/${brand.slug}`}
+                as={`/brands/${brand.slug}`}
               >
                 <div className="brand-image">
                   <img src={getData(brand._embedded, "image")} />
@@ -82,11 +86,6 @@ const HomeBrands = ({ brandCats, brands, page }) => {
         })}
       </Slider>
     );
-  };
-
-  const renderCat = (id, ind) => {
-    setCatID(id);
-    setIndex(ind);
   };
 
   return (

@@ -24,7 +24,7 @@ const Page = ({
   const renderData = () => {
     switch (slug) {
       case "facility":
-        return <>Coming soon</>;
+        return <></>;
       case "brands":
         return (
           <>

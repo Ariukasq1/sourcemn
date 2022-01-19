@@ -8,6 +8,13 @@ const NewsList = ({ data, cats }) => {
 
   const [newsId, setCatID] = useState(innerNews);
 
+  const [index, setIndex] = useState(0);
+
+  const renderCat = (id, ind) => {
+    setCatID(id);
+    setIndex(ind);
+  };
+
   const filteredNews = data.filter((el) => el.categories.includes(newsId));
 
   const settings = {
@@ -45,7 +52,11 @@ const NewsList = ({ data, cats }) => {
       <div className="catList">
         {cats.map((cat, ind) => {
           return (
-            <div key={ind} onClick={() => setCatID(cat.id)}>
+            <div
+              key={ind}
+              onClick={() => renderCat(cat.id, ind)}
+              className={ind === index ? "active" : "inactive"}
+            >
               {cat.name}
             </div>
           );

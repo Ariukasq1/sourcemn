@@ -11,6 +11,7 @@ import Product from "../../../components/portfolio/product";
 import Projects from "../../../components/portfolio/projects";
 import NewsDetail from "../../../components/news/newsDetail";
 import RelatedNews from "../../../components/news/newsRelated";
+import Brand from "../../../components/brands/brandsDetail";
 
 const Detail = ({
   mainMenu,
@@ -27,7 +28,11 @@ const Detail = ({
   const renderData = () => {
     switch (slug) {
       case "brands":
-        return <>brandsDetail</>;
+        return (
+          <>
+            <Brand post={post} />
+          </>
+        );
       case "careers":
         return <>careerDetail</>;
       case "news":

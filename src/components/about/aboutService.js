@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { __ } from "../../utils";
 
 const Service = ({ serviceCats, services }) => {
-  const [id, setId] = useState(serviceCats[0].id);
+  const [id, setCatID] = useState(serviceCats[0].id);
+
+  const [index, setIndex] = useState(0);
+
+  const renderCat = (id, ind) => {
+    setCatID(id);
+    setIndex(ind);
+  };
 
   const serviceList = (catId) => {
     return (
@@ -45,7 +52,11 @@ const Service = ({ serviceCats, services }) => {
       <div className="catList">
         {serviceCats.map((cat, ind) => {
           return (
-            <div key={ind} onClick={() => setId(cat.id)}>
+            <div
+              key={ind}
+              onClick={() => renderCat(cat.id, ind)}
+              className={ind === index ? "active" : "inactive"}
+            >
               {cat.name}
             </div>
           );

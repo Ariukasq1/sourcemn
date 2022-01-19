@@ -50,7 +50,7 @@ p {
 .simple-text-image {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  min-height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
 }
 
 .half-back-image-with-text {
@@ -230,7 +230,7 @@ p {
 .two-row-slider {
   width: 100%;
   .slider-image-back {
-    height: 230px;
+    height: 14rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -295,4 +295,27 @@ p {
   ul li a span {
     background: #004a8f !important;
   }
+}
+
+.long-half-image {
+  height: calc(100vh - 114px);
+  top: 114px;
+  position: sticky;
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.long-half-text {
+  padding: 1rem 5rem 1rem 5rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.long-text-with-image {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }

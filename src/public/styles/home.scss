@@ -63,9 +63,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .brandList {
+  .brandList,
+  .brandsList {
     width: 100%;
-    padding: 0 5rem 0 10rem;
+
+    .slick-slide {
+      max-width: 440px !important;
+    }
     .brand-logo {
       width: 16rem;
       height: 4rem;
@@ -78,5 +82,11 @@
       height: 14rem;
       max-width: 420px;
     }
+  }
+  .brandList {
+    padding: 0 5rem 0 10rem;
+  }
+  .brandsList {
+    padding: 0 8rem;
   }
 }

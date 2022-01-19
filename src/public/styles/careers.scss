@@ -1,35 +1,48 @@
 .career-culture {
   height: calc(100vh - 132px);
-  padding: 0 5rem;
+  padding: 0 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .gold-title,
-  .sub-title {
+  .gold-title {
     margin-bottom: 1rem;
+  }
+  .sub-title {
+    margin-bottom: 2rem;
   }
   .big-cards-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     .big-card {
       border-radius: 10px;
       box-shadow: 0 5px 12px 0 rgba(0 0 0 / 10%);
+      background-color: #ffffff;
       .big-card-image {
-        height: 350px;
         background-color: #edf2f7;
-        padding: 0 30px;
+        padding: 30px 60px;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
         > img {
           object-fit: contain;
+          object-position: center;
+          height: 250px;
         }
       }
       .big-card-text {
-        padding: 0 30px;
-        li {
-          list-style: inside;
+        padding: 20px 30px;
+        ul {
+          margin-bottom: 0.5rem;
+          li {
+            list-style: inside;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+          }
         }
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 5px 12px 0 rgba(0 0 0 / 20%);
       }
     }
   }
