@@ -1434,6 +1434,17 @@ ul li {
 .timeline {
   height: calc(100vh - 114px);
   padding: 0 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timeline .slider-time {
+  width: 100%;
+}
+.timeline .slider-time .time {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
 }
 
 .brand {
