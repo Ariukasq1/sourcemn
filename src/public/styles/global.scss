@@ -54,11 +54,12 @@ p {
 }
 
 .half-back-image-with-text {
-  height: 100%;
+  height: calc(100vh - 114px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: sticky;
+  top: 114px;
   &:hover {
     &:after {
       height: 100%;
@@ -106,6 +107,9 @@ p {
     height: 1px;
     background-color: #fff;
     bottom: 0;
+  }
+  > h2 {
+    font-size: 1.5rem;
   }
 }
 
@@ -229,6 +233,7 @@ p {
 
 .two-row-slider {
   width: 100%;
+  z-index: 2;
   .slider-image-back {
     height: 14rem;
     background-position: center;
@@ -310,12 +315,44 @@ p {
 }
 
 .long-half-text {
-  padding: 1rem 5rem 1rem 5rem;
+  padding: 2rem 5rem 1rem 5rem;
   text-align: justify;
   text-justify: inter-word;
+  .blue-title {
+    margin-bottom: 2rem;
+  }
 }
 
 .long-text-with-image {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  .icon-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Nunito, sans-serif;
+    color: #2d343e;
+    padding: 1rem;
+    background-color: #fff;
+    > img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+ul {
+  li {
+    font-size: 1.125rem;
+  }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { getData, __ } from "../../utils";
 
 const Brand = ({ post }) => {
-  console.log(post, "--------------");
   const { _embedded, title, acf } = post;
 
   return (

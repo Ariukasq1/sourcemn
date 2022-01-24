@@ -1,5 +1,5 @@
 .career-culture {
-  height: calc(100vh - 132px);
+  height: calc(100vh - 114px);
   padding: 0 8rem;
   display: flex;
   flex-direction: column;
@@ -46,4 +46,97 @@
       }
     }
   }
+}
+
+.why-mms {
+  .culture {
+    height: calc(100vh - 114px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.benefits,
+.tourOffice {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 114px;
+}
+
+.tourOffice {
+  margin-bottom: 114px;
+}
+
+.open-vacancy {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin-bottom: 114px;
+  .long-half-text {
+    .vacancy-posts {
+      height: 300px;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 2rem;
+      position: relative;
+      .vacancy-text {
+        position: absolute;
+        color: #ffffff;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 40px;
+        opacity: 0.9;
+        background: linear-gradient(transparent, #222);
+      }
+    }
+  }
+}
+
+.selection-process {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 114px;
+  .long-half-text {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+      .process-part {
+        &:last-child {
+          display: none;
+        }
+        > h1 {
+          background: linear-gradient(90deg, #8da0cd 1%, #004280 82%);
+          font-weight: 600;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 4rem;
+          font-family: Nunito, sans-serif;
+          line-height: 1.5;
+        }
+        > h2 {
+          font-weight: 600;
+          font-size: 1.25rem;
+        }
+        > p {
+          line-height: 1.75;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.faqs {
+  padding: 0 8rem;
+  height: calc(100vh - 114px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

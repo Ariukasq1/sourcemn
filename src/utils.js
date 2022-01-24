@@ -105,3 +105,5 @@ export const regex = (content) => {
 
   return content.replace(/&amp;#8221;|&#8221;|&amp;#8220;|&#8220;/gi, '"');
 };
+
+export const DisplayArr = ["none"];

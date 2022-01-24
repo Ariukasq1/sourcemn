@@ -15,7 +15,11 @@ const SideMenuWithChilds = ({ menu, close }) => {
             {item.child_items &&
               item.child_items.map((child, ind) => {
                 return (
-                  <Link key={ind} href={`/${item.slug}/${child.title}`}>
+                  <Link
+                    key={ind}
+                    href={"/[pages]/[detail]"}
+                    as={`/${item.slug}/${child.slug}#section2`}
+                  >
                     <a>{child.title}</a>
                   </Link>
                 );

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
+import {
+  getData,
+  SampleNextArrow,
+  SamplePrevArrow,
+  DisplayArr,
+} from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
+import ProjectsDetail from "./projectDetail";
 
-const Projects = ({ projects, detail }) => {
+const Projects = ({ projects, detail, background, materials }) => {
   const rows = projects.length > 4 ? 2 : 1;
   const slideShow = rows > 1 ? 4 : projects.length;
 
   const [post, setPost] = useState();
-  console.log(post, "--------");
+
   const settings = {
     dots: false,
     infinite: true,
@@ -46,13 +52,26 @@ const Projects = ({ projects, detail }) => {
     ],
   };
 
+  const setState = (item, dis) => {
+    setPost(item);
+    DisplayArr[0] = dis;
+  };
+
   return (
     <>
-      <div className="portfolio-projects">
+      <div
+        className="portfolio-projects"
+        style={{
+          backgroundImage: `url(${getData(background._embedded, "image")})`,
+        }}
+      >
         <Slider {...settings} className="two-row-slider">
           {projects.map((item, ind) => {
             return (
-              <Link key={ind} href={`/portfolio/${detail}#section3`}>
+              <Link
+                key={ind}
+                href={`/portfolio/${detail}#section3#${item.slug}`}
+              >
                 <div
                   className="slider-image-back"
                   style={{
@@ -61,6 +80,7 @@ const Projects = ({ projects, detail }) => {
                       "image"
                     )}})`,
                   }}
+                  onClick={() => setState(item, "block")}
                 >
                   <p
                     dangerouslySetInnerHTML={{ __html: item.title.rendered }}
@@ -71,19 +91,13 @@ const Projects = ({ projects, detail }) => {
           })}
         </Slider>
       </div>
+
       {post && (
-        <div className="simple-text-image" id="section3">
-          <div className="simple-half-text">
-            <div
-              className="blue-title"
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-            />
-            <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-          </div>
-          <div className="simple-half-image">
-            <img src={getData(post._embedded, "image")} />
-          </div>
-        </div>
+        <ProjectsDetail
+          post={post}
+          materials={materials}
+          display={DisplayArr[0]}
+        />
       )}
     </>
   );

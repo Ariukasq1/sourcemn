@@ -20,9 +20,33 @@ const Additional = ({ post }) => {
 
   return (
     <div className="Additional">
-      <div className="odd">{additional && renderPost(additional.group, 1)}</div>
-      <div className="">{additional && renderPost(additional.group_1, 2)}</div>
-      <div className="odd ">
+      <div
+        className="odd"
+        data-aos="fade-down"
+        data-aos-easing="ease"
+        data-aos-duration="2000"
+        data-aos-offset="300"
+        data-aos-delay={300}
+      >
+        {additional && renderPost(additional.group, 1)}
+      </div>
+      <div
+        data-aos="fade-down"
+        data-aos-easing="ease"
+        data-aos-duration="2000"
+        data-aos-delay={500}
+        data-aos-offset="300"
+      >
+        {additional && renderPost(additional.group_1, 2)}
+      </div>
+      <div
+        className="odd"
+        data-aos="fade-down"
+        data-aos-easing="ease"
+        data-aos-delay={700}
+        data-aos-duration="2000"
+        data-aos-offset="300"
+      >
         {additional && renderPost(additional.group_2, 3)}
       </div>
     </div>

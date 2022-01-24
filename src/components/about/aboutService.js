@@ -24,7 +24,14 @@ const Service = ({ serviceCats, services }) => {
             <div key={ind} className="products">
               {products.map((group, ind) => {
                 return (
-                  <div key={ind}>
+                  <div
+                    key={ind}
+                    data-aos="fade-down"
+                    data-aos-delay={ind * 150}
+                    data-aos-easing="ease"
+                    data-aos-duration="2000"
+                    data-aos-offset="300"
+                  >
                     <div className="product-title">
                       <div className="serviceIcon">
                         <img src={group.icon} />

@@ -294,14 +294,14 @@ hr {
       animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
     }
     &:nth-child(1) {
-      margin-left: -33%;
+      margin-left: -25%;
       &::after {
         animation-delay: 2s;
       }
     }
 
     &:nth-child(3) {
-      margin-left: 33%;
+      margin-left: 25%;
       &::after {
         animation-delay: 2.5s;
       }
