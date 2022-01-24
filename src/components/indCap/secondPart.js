@@ -9,8 +9,6 @@ const SecondPart = ({ post }) => {
 
   const { desc } = supports || {};
 
-  console.log(desc, "--------");
-
   const datas = (desc || "").split("<li>");
 
   return (
@@ -18,7 +16,7 @@ const SecondPart = ({ post }) => {
       <div className="product-cards">
         <div
           className="blue-title"
-          dangerouslySetInnerHTML={{ __html: acf.supports.title }}
+          dangerouslySetInnerHTML={{ __html: (supports || {}).title }}
         />
         <div className="little-cards">
           {datas.map((data, ind) => {
