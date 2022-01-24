@@ -9,7 +9,7 @@ const SecondPart = ({ post }) => {
 
   const { desc } = supports || {};
 
-  const datas = (desc || {}).split("<li>");
+  const datas = desc.split("<li>");
 
   return (
     <div className="secondPart">

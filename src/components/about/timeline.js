@@ -2,7 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 
 const TimeLine = ({ timeline }) => {
-  return <div className="timeline">hello</div>;
+  console.log(timeline, "-----------");
+
+  return <div className="timeline"></div>;
 };
 
 export default TimeLine;
