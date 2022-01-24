@@ -5,7 +5,9 @@ import Slider from "react-slick";
 const SecondPart = ({ post }) => {
   const { title, content, acf, _embedded } = post || {};
 
-  const datas = (acf || {}).supports.desc.split("<li>");
+  const { supports } = acf || {};
+
+  const datas = (supports || {}).desc.split("<li>");
 
   return (
     <div className="secondPart">
@@ -40,12 +42,12 @@ const SecondPart = ({ post }) => {
         <div className="overlayText">
           <h2
             dangerouslySetInnerHTML={{
-              __html: title.rendered,
+              __html: (title || {}).rendered,
             }}
           />
           <div
             dangerouslySetInnerHTML={{
-              __html: content.rendered,
+              __html: (content || {}).rendered,
             }}
           />
         </div>

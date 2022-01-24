@@ -4,6 +4,8 @@ import { getData, __ } from "../../utils";
 const Brand = ({ post }) => {
   const { _embedded, title, acf } = post || {};
 
+  const { about, certificate, advantage } = acf || {};
+
   return (
     <div className="brand">
       <div className="brand-detail-image">
@@ -16,7 +18,7 @@ const Brand = ({ post }) => {
         </div>
         <div
           className="brand-detail-text"
-          dangerouslySetInnerHTML={{ __html: acf.about }}
+          dangerouslySetInnerHTML={{ __html: about }}
         />
 
         <div className="blue-title">
@@ -25,14 +27,14 @@ const Brand = ({ post }) => {
         </div>
         <div
           className="brand-detail-text"
-          dangerouslySetInnerHTML={{ __html: acf.advantage }}
+          dangerouslySetInnerHTML={{ __html: advantage }}
         />
-        {acf.certificate && (
+        {certificate && (
           <div className="certificate">
             <div className="blue-title">
               {__("Certification & Accreditations:")}
             </div>
-            <img src={acf.certificate} />
+            <img src={certificate} />
           </div>
         )}
       </div>
