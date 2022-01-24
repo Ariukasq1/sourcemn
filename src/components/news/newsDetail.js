@@ -8,9 +8,9 @@ const NewsDetail = ({ post }) => {
       <div className="long-half-text">
         <div
           className="blue-title"
-          dangerouslySetInnerHTML={{ __html: title.rendered }}
+          dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
         />
-        <div dangerouslySetInnerHTML={{ __html: content.rendered }} />
+        <div dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
       </div>
       <div className="long-half-image">
         <img src={getData(_embedded, "image")} />

@@ -52,9 +52,15 @@ Portfolio_detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const data = await wp
+    .posts()
+    .categories((catId || {}).id)
+    .embed();
 
-  const childCats = await wp.categories().parent(catId.id).embed();
+  const childCats = await wp
+    .categories()
+    .parent((catId || {}).id)
+    .embed();
 
   const post = await wp
     .posts()
@@ -70,7 +76,7 @@ Portfolio_detail.getInitialProps = async (context) => {
 
   const child_data = await wp
     .posts()
-    .categories(child_id[0].id)
+    .categories((child_id[0] || {}).id)
     .perPage(20)
     .embed();
 
@@ -82,7 +88,7 @@ Portfolio_detail.getInitialProps = async (context) => {
 
   const materials = await wp
     .posts()
-    .categories(materialsID.id)
+    .categories((materialsID || {}).id)
     .perPage(100)
     .embed();
 

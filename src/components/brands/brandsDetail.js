@@ -12,7 +12,7 @@ const Brand = ({ post }) => {
       <div className="brand-detail-and-about">
         <div className="blue-title">
           {__("About")}{" "}
-          <span dangerouslySetInnerHTML={{ __html: title.rendered }} />
+          <span dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />
         </div>
         <div
           className="brand-detail-text"
@@ -20,7 +20,7 @@ const Brand = ({ post }) => {
         />
 
         <div className="blue-title">
-          <span dangerouslySetInnerHTML={{ __html: title.rendered }} />{" "}
+          <span dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />{" "}
           {__("Detail")}
         </div>
         <div

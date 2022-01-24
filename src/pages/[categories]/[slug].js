@@ -18,6 +18,7 @@ const IndCap_detail = ({
   relationsPosts,
   relations,
 }) => {
+  const { acf } = post || {};
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="page">
@@ -25,8 +26,8 @@ const IndCap_detail = ({
         <div id="section2">
           <SecondPart post={post} />
         </div>
-        {post.acf.bg_image && <FactSection post={post} />}
-        {post.acf.additional && <Additional post={post} />}
+        {(acf || {}).bg_image && <FactSection post={post} />}
+        {(acf || {}).additional && <Additional post={post} />}
         <Relations
           brands={brands}
           post={post}

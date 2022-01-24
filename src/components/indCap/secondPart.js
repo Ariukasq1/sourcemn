@@ -5,7 +5,7 @@ import Slider from "react-slick";
 const SecondPart = ({ post }) => {
   const { title, content, acf, _embedded } = post || {};
 
-  const datas = acf.supports.desc.split("<li>");
+  const datas = (acf || {}).supports.desc.split("<li>");
 
   return (
     <div className="secondPart">

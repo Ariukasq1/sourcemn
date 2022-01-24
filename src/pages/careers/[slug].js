@@ -81,7 +81,7 @@ Career_detail.getInitialProps = async (context) => {
 
   const detail_posts = await wp
     .posts()
-    .categories(detail_posts_category.id)
+    .categories((detail_posts_category || {}).id)
     .embed();
 
   return { mainMenu, topMenu, data, detail_posts, contact, detail };
