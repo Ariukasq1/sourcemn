@@ -6,10 +6,11 @@ import Link from "next/link";
 const Relations = ({ brands, post, relPosts, relations }) => {
   const { acf } = post || {};
 
-  const indCap =
-    relations === "capabilities" ? acf.capabilities : acf.industries;
+  const { capabilities, industries, brands } = acf || {};
 
-  const relbrands = brands.filter((el) => acf.brands.includes(el.id));
+  const indCap = relations === "capabilities" ? capabilities : industries;
+
+  const relbrands = brands.filter((el) => (acf || {}).brands.includes(el.id));
 
   const relIndCap = relPosts.filter((el) => indCap.includes(el.id));
 
