@@ -6,7 +6,7 @@ import Link from "next/link";
 const Relations = ({ brands, post, relPosts, relations }) => {
   const { acf } = post || {};
 
-  const { capabilities, industries, brands } = acf || {};
+  const { capabilities, industries } = acf || {};
 
   const indCap = relations === "capabilities" ? capabilities : industries;
 
