@@ -7,13 +7,21 @@ import Service from "../components/about/aboutService";
 import TimeLine from "../components/about/timeline";
 import Footer from "../components/layouts/footer";
 
-const About = ({ mainMenu, topMenu, data, serviceCats, service, contact }) => {
+const About = ({
+  mainMenu,
+  topMenu,
+  data,
+  serviceCats,
+  service,
+  contact,
+  timeline,
+}) => {
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="page">
         <AboutUs data={data[0]} />
         <Service serviceCats={serviceCats} services={service} />
-        <TimeLine />
+        <TimeLine timeline={timeline} />
         <Footer contact={contact} />
       </div>
     </Layout>
@@ -55,7 +63,18 @@ About.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  return { mainMenu, topMenu, service, serviceCats, data, contact };
+  const history = await wp
+    .categories()
+    .slug(`timeline`)
+    .embed()
+    .then((data) => data[0]);
+
+  const timeline = await wp
+    .posts()
+    .categories((history || {}).id)
+    .embed();
+
+  return { mainMenu, topMenu, service, serviceCats, data, contact, timeline };
 };
 
 export default About;

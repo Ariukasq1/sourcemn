@@ -62,7 +62,10 @@ const Projects = ({ projects, detail, background, materials }) => {
       <div
         className="portfolio-projects"
         style={{
-          backgroundImage: `url(${getData(background._embedded, "image")})`,
+          backgroundImage: `url(${getData(
+            (background || {})._embedded,
+            "image"
+          )})`,
         }}
       >
         <Slider {...settings} className="two-row-slider">

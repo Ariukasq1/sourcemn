@@ -75,3 +75,19 @@
     }
   }
 }
+
+.timeline {
+  height: calc(100vh - 114px);
+  padding: 0 8rem;
+
+  .slider-time {
+    width: 100%;
+    .slick-slide {
+      max-width: 358px !important;
+    }
+    .time {
+      border: 1px solid red;
+      height: 400px;
+    }
+  }
+}

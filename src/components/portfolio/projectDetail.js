@@ -7,6 +7,8 @@ const ProjectsDetail = ({ post, materials, display }) => {
     post.acf.products.includes(el.id)
   );
 
+  const { title, content, _embedded } = post || {};
+
   return (
     <>
       <div
@@ -18,12 +20,14 @@ const ProjectsDetail = ({ post, materials, display }) => {
           <div className="long-half-text">
             <div
               className="blue-title"
-              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+              dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
             />
-            <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: (content || {}).rendered }}
+            />
           </div>
           <div className="long-half-image">
-            <img src={getData(post._embedded, "image")} />
+            <img src={getData(_embedded, "image")} />
           </div>
         </div>
       </div>
