@@ -3,7 +3,7 @@ import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
 
-const RelatedNews = ({ data, page }) => {
+const RelatedNews = ({ data }) => {
   const settings = {
     dots: false,
     infinite: true,

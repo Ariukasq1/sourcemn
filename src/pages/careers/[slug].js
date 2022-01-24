@@ -68,7 +68,10 @@ Career_detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const data = await wp
+    .posts()
+    .categories((catId || {}).id)
+    .embed();
 
   const detail_posts_category = await wp
     .categories()

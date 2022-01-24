@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import Link from "next/link";
 
 const Relations = ({ brands, post, relPosts, relations }) => {
-  const { acf } = post;
+  const { acf } = post || {};
 
   const indCap =
     relations === "capabilities" ? acf.capabilities : acf.industries;

@@ -3,7 +3,7 @@ import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Slider from "react-slick";
 
 const SecondPart = ({ post }) => {
-  const { title, content, acf, _embedded } = post;
+  const { title, content, acf, _embedded } = post || {};
 
   const datas = acf.supports.desc.split("<li>");
 

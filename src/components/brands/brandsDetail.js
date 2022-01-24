@@ -2,7 +2,7 @@ import React from "react";
 import { getData, __ } from "../../utils";
 
 const Brand = ({ post }) => {
-  const { _embedded, title, acf } = post;
+  const { _embedded, title, acf } = post || {};
 
   return (
     <div className="brand">

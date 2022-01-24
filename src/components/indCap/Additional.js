@@ -3,7 +3,7 @@ import { getData } from "../../utils";
 import Link from "next/link";
 
 const Additional = ({ post }) => {
-  const { additional } = post.acf;
+  const { additional } = post.acf || {};
 
   const renderPost = (group, index) => {
     return (

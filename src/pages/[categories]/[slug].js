@@ -59,7 +59,10 @@ IndCap_detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const data = await wp
+    .posts()
+    .categories((catId || {}).id)
+    .embed();
 
   const post = await wp
     .posts()
@@ -81,7 +84,10 @@ IndCap_detail.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const relationsPosts = await wp.posts().categories(relID.id).embed();
+  const relationsPosts = await wp
+    .posts()
+    .categories((relID || {}).id)
+    .embed();
 
   return {
     mainMenu,

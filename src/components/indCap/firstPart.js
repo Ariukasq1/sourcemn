@@ -12,7 +12,7 @@ const FirstPart = ({ clas, data }) => {
           .slice(0)
           .reverse()
           .map((post, ind) => {
-            const { title, excerpt, slug, _embedded } = post;
+            const { title, excerpt, slug, _embedded } = post || {};
 
             return (
               <div
