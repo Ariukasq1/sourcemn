@@ -1433,18 +1433,51 @@ ul li {
 
 .timeline {
   height: calc(100vh - 114px);
+  margin-bottom: 114px;
   padding: 0 8rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(240, 240, 240, 0.6);
+}
+.timeline .sub-title {
+  margin-bottom: 2rem;
 }
 .timeline .slider-time {
   width: 100%;
 }
-.timeline .slider-time .time {
+.timeline .slider-time .slick-slide:nth-child(even) > div .time {
+  display: flex !important;
+  flex-direction: column-reverse;
+}
+.timeline .slider-time .slick-slide:nth-child(even) > div .time .arrow-timeline {
+  transform: rotate(180deg);
+}
+.timeline .slider-time .slick-slide:nth-child(even) > div .time .content {
+  border-top: 1px solid #bbb;
+}
+.timeline .slider-time .slick-slide:nth-child(odd) > div .time .content {
+  border-bottom: 1px solid #bbb;
+}
+.timeline .slider-time .slick-slide .time {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  justify-content: center;
+  text-align: center;
+  width: 320px;
+}
+.timeline .slider-time .slick-slide .time .arrow-timeline {
+  display: flex;
+  justify-content: center;
+  height: 168px;
+  margin: 50px 0;
+}
+.timeline .slider-time .slick-slide .time .arrow-timeline > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .brand {

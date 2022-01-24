@@ -78,16 +78,62 @@
 
 .timeline {
   height: calc(100vh - 114px);
+  margin-bottom: 114px;
   padding: 0 8rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: hsla(0, 0%, 94.1%, 0.6);
+  .sub-title {
+    margin-bottom: 2rem;
+  }
   .slider-time {
     width: 100%;
-    .time {
-      display: flex;
-      flex-direction: column;
-      height: 400px;
+    .slick-slide {
+      &:nth-child(even) {
+        > div {
+          .time {
+            display: flex !important;
+            flex-direction: column-reverse;
+            .arrow-timeline {
+              transform: rotate(180deg);
+            }
+            .content {
+              border-top: 1px solid #bbb;
+            }
+          }
+        }
+      }
+      &:nth-child(odd) {
+        > div {
+          .time {
+            .content {
+              border-bottom: 1px solid #bbb;
+            }
+          }
+        }
+      }
+      .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 320px;
+
+        .arrow-timeline {
+          display: flex;
+          justify-content: center;
+          height: 168px;
+          margin: 50px 0;
+          > img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+      }
     }
   }
 }
