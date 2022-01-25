@@ -1,3 +1,8 @@
+/* @mixin table {
+  @media (min-width: 991px) {
+    @content;
+  }
+} */
 body,
 h1,
 h2,
@@ -1361,7 +1366,6 @@ ul li {
   font-size: 1.25rem;
 }
 .faqs .collapse .collapse-head {
-  position: relative;
   padding: 16px;
   color: rgba(0, 0, 0, 0.85);
   line-height: normal;
@@ -1379,6 +1383,7 @@ ul li {
 }
 .faqs .collapse .collapse-hidden {
   padding: 15px;
+  border: 1px solid #d9d9d9;
 }
 
 .about-us {
@@ -1515,12 +1520,68 @@ ul li {
   height: calc(100vh - 114px);
   width: 100%;
   top: 114px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.brand .brand-detail-image > img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
+.brand .brand-detail-image .about-brand {
+  background: rgba(250, 250, 250, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin: 2.5rem;
+}
+.brand .brand-detail-image .about-brand .logo-brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.brand .brand-detail-image .about-brand .logo-brand > img {
+  max-height: 6rem;
+  max-width: 14rem;
+}
+.brand .brand-detail-image .about-brand .slogan {
+  display: flex;
+  justify-content: center;
+}
+.brand .brand-detail-image .about-brand .slogan .blockquote {
+  display: inline-block;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  background: #fda50f;
+  color: #fff;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.brand .brand-detail-image .about-brand .slogan .blockquote > p {
+  text-transform: uppercase;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  width: 280px;
+}
+.brand .brand-detail-image .about-brand .slogan .blockquote .location {
+  display: flex;
+}
+.brand .brand-detail-image .about-brand .slogan .blockquote .location span {
+  background: linear-gradient(90deg, #8da0cd 2%, #004280 82%);
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  padding: 15px;
+  line-height: 1.75rem;
+  font-style: italic;
+}
+.brand .brand-detail-image .about-brand .slogan .blockquote .location span:first-child {
+  border-right: 2px solid #ffffff;
 }
 .brand .brand-detail-and-about {
   padding-top: 1rem;
@@ -1530,6 +1591,63 @@ ul li {
 }
 .brand .brand-detail-text {
   font-size: 1.5rem;
+}
+
+.brand-first-child,
+.brand-second-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8rem;
+  margin-top: 114px;
+  min-height: calc(100vh - 114px);
+}
+.brand-first-child .child-grid,
+.brand-second-child .child-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+.brand-first-child .child-grid .brand-child-list,
+.brand-second-child .child-grid .brand-child-list {
+  margin-bottom: 2rem;
+}
+.brand-first-child .child-grid .brand-child-list > p,
+.brand-second-child .child-grid .brand-child-list > p {
+  display: flex;
+  justify-content: space-between;
+}
+.brand-first-child .child-grid .brand-child-list .image-wrapper,
+.brand-second-child .child-grid .brand-child-list .image-wrapper {
+  height: 14rem;
+  border: 1px solid #bdcae4;
+  background-color: #e8ecf5;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brand-first-child .child-grid .brand-child-list .image-wrapper > img,
+.brand-second-child .child-grid .brand-child-list .image-wrapper > img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.brand-first-child .child-grid .brand-child-list .image-wrapper .blue-circle,
+.brand-second-child .child-grid .brand-child-list .image-wrapper .blue-circle {
+  background: #4f74b2;
+  padding: 30px;
+  border-radius: 50%;
+}
+.brand-first-child .child-grid .brand-child-list .image-wrapper .blue-circle .anticon,
+.brand-second-child .child-grid .brand-child-list .image-wrapper .blue-circle .anticon {
+  color: #ffffff;
+  font-size: 40px;
+}
+.brand-first-child .child-grid .brand-child-list .image-wrapper .blue-circle:hover .anticon,
+.brand-second-child .child-grid .brand-child-list .image-wrapper .blue-circle:hover .anticon {
+  font-size: 50px;
 }
 
 .alignleft {

@@ -4,12 +4,34 @@ import { getData, __ } from "../../utils";
 const Brand = ({ post }) => {
   const { _embedded, title, acf } = post || {};
 
-  const { about, certificate, advantage } = acf || {};
-
+  const { about, certificate, advantage, logo, slogan, country, founded_year } =
+    acf || {};
+  console.log(post, "---------");
   return (
     <div className="brand">
-      <div className="brand-detail-image">
-        <img src={getData(_embedded, "image")} />
+      <div
+        className="brand-detail-image"
+        style={{ backgroundImage: `url(${getData(_embedded, "image")})` }}
+      >
+        <div className="about-brand" data-aos="flip-down">
+          <div className="gold-title">{__("Brands")}</div>
+          <div className="logo-brand">
+            <img src={logo} />
+          </div>
+          <div className="slogan">
+            <div className="blockquote">
+              <p dangerouslySetInnerHTML={{ __html: slogan }} />
+              <div className="location">
+                <span>
+                  {__("Country:")} {country}
+                </span>
+                <span>
+                  {__("Founded Year:")} {founded_year}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="brand-detail-and-about">
         <div className="blue-title">

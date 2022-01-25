@@ -31,7 +31,7 @@ Brands.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const data = await wp.posts().categories(catId.id).perPage(100).embed();
 
   const childCats = await wp.categories().parent(catId.id).embed();
 

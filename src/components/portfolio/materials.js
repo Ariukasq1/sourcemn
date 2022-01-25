@@ -2,7 +2,6 @@ import React from "react";
 import { getData, __ } from "../../utils";
 
 const Materials = ({ materials }) => {
-  console.log(materials, "----------");
   return (
     <div className="materials">
       <div className="gold-title">{__("Products")}</div>
