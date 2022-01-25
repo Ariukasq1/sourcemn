@@ -73,7 +73,8 @@ const Projects = ({ projects, detail, background, materials }) => {
             return (
               <Link
                 key={ind}
-                href={`/portfolio/${detail}#section3#${item.slug}`}
+                href={`/[categories]/[detail]`}
+                as={`/portfolio/${detail}#section3#${item.slug}`}
               >
                 <div
                   className="slider-image-back"

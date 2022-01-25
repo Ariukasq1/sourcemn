@@ -15,7 +15,7 @@ const Culture = ({ data }) => {
             return (
               <Link
                 key={ind}
-                href={"/careers/[slug]"}
+                href={"/[categories]/[detail]"}
                 as={`/careers/${card.slug}#section2`}
               >
                 <div

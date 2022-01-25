@@ -3,7 +3,7 @@ import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
 
-const RelatedNews = ({ data }) => {
+const RelatedNews = ({ data, slug }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -46,7 +46,11 @@ const RelatedNews = ({ data }) => {
       <Slider {...settings} className="two-row-slider">
         {data.map((news, ind) => {
           return (
-            <Link key={ind} href={`/newsroom/${news.slug}`}>
+            <Link
+              key={ind}
+              href={`/[categories]/[detail]`}
+              as={`/newsroom/${news.slug}`}
+            >
               <div
                 className="slider-image-back"
                 data-aos="flip-up"

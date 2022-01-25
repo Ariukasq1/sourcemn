@@ -6,9 +6,11 @@ import Link from "next/link";
 const Relations = ({ brandData, post, relPosts, relations }) => {
   const { acf } = post || {};
 
+  const subTitle = relations === "capabilities" ? "industries" : "capabilities";
+
   const { capabilities, industries, brands } = acf || {};
 
-  const indCap = relations === "capabilities" ? capabilities : industries;
+  const indCap = relations === "capabilities" ? industries : capabilities;
 
   const relbrands = brandData.filter((el) => (brands || []).includes(el.id));
 
@@ -63,7 +65,8 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
               <div key={ind}>
                 <p dangerouslySetInnerHTML={{ __html: brnd.title.rendered }} />
                 <Link
-                  href={
+                  href={`/[categories]/[detail]`}
+                  as={
                     slug === "brands"
                       ? `/${slug}/${brnd.slug}`
                       : `/${slug}/${brnd.slug}#section2`
@@ -85,7 +88,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
     <div className="relations">
       <div className="blue-title">{__("Relations")}</div>
       {renderBrands(relbrands, "brands", showBrands, break992brands)}
-      {renderBrands(relIndCap, relations, showInd, break992Ind)}
+      {renderBrands(relIndCap, subTitle, showInd, break992Ind)}
     </div>
   );
 };

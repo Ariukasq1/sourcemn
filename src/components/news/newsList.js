@@ -67,7 +67,7 @@ const NewsList = ({ data, cats }) => {
           return (
             <Link
               key={ind}
-              href={"newsroom/[slug]"}
+              href={"/[categories]/[detail]"}
               as={`/newsroom/${news.slug}`}
             >
               <div

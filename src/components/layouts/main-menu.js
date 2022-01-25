@@ -8,7 +8,7 @@ const MainMenu = ({ menu, handler }) => {
       <div className="botMenuList">
         {menu.items.map((item, ind) => {
           return (
-            <Link key={ind} href={`/${item.slug}`}>
+            <Link key={ind} href={`/[categories]`} as={`/${item.slug}`}>
               <a>{item.title}</a>
             </Link>
           );

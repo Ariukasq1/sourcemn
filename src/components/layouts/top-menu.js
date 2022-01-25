@@ -15,7 +15,7 @@ class TopMenu extends React.Component {
         <div className="topMenuList">
           {topMenu.items.map((item, ind) => {
             return (
-              <Link key={ind} href={`/${item.slug}`}>
+              <Link key={ind} href={`/[categories]`} as={`/${item.slug}`}>
                 <a>{item.title}</a>
               </Link>
             );

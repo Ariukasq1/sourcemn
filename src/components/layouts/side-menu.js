@@ -7,7 +7,7 @@ const SideMenuWithChilds = ({ menu, close }) => {
       {menu.items.map((item, ind) => {
         return (
           <div className="SideMenuList">
-            <Link key={ind} href={`/${item.slug}`}>
+            <Link key={ind} href={`/[categories]`} as={`/${item.slug}`}>
               <a className="titleMenu">
                 <b>{item.title}</b>
               </a>
@@ -17,7 +17,7 @@ const SideMenuWithChilds = ({ menu, close }) => {
                 return (
                   <Link
                     key={ind}
-                    href={"/[pages]/[detail]"}
+                    href={"/[categories]/[detail]"}
                     as={`/${item.slug}/${child.slug}#section2`}
                   >
                     <a>{child.title}</a>

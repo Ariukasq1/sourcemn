@@ -32,9 +32,7 @@ const FirstPart = ({ clas, data }) => {
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
                 <Link
-                  href={`/${
-                    clas === "portfolio" ? "portfolio" : "[categories]"
-                  }/[slug]`}
+                  href={`/[categories]/[detail]`}
                   as={`/${clas}/${slug}#section2`}
                 >
                   <div
@@ -45,9 +43,7 @@ const FirstPart = ({ clas, data }) => {
                   </div>
                 </Link>
                 <Link
-                  href={`/${
-                    clas === "portfolio" ? "portfolio" : "[categories]"
-                  }/[slug]`}
+                  href={`/[categories]/[detail]`}
                   as={`/${clas}/${slug}#section2`}
                 >
                   <div

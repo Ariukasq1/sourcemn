@@ -35,7 +35,9 @@ const ProjectsDetail = ({ post, materials, display }) => {
           </div>
         </div>
       </div>
-      <Materials materials={filteredMaterials} />
+      <div id="section4" style={{ display: `${display}` }}>
+        <Materials materials={filteredMaterials} />
+      </div>
     </>
   );
 };
