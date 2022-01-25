@@ -10,9 +10,9 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
 
   const indCap = relations === "capabilities" ? capabilities : industries;
 
-  const relbrands = brandData.filter((el) => (brands || {}).includes(el.id));
+  const relbrands = brandData.filter((el) => (brands || []).includes(el.id));
 
-  const relIndCap = relPosts.filter((el) => (indCap || {}).includes(el.id));
+  const relIndCap = relPosts.filter((el) => (indCap || []).includes(el.id));
 
   const showBrands = relbrands.length > 4 ? 4 : relbrands.length;
 
