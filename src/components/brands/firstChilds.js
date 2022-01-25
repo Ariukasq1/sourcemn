@@ -56,7 +56,15 @@ const FirstChilds = ({ cats, post, childCats, childCats_child }) => {
           {cats.map((item, ind) => {
             const { bg_image, pdf_file, logo } = item.acf || {};
             return (
-              <div key={ind} className="brand-child-list">
+              <div
+                key={ind}
+                className="brand-child-list"
+                data-aos="fade-down"
+                data-aos-delay={200}
+                data-aos-easing="ease"
+                data-aos-duration="2000"
+                data-aos-offset="300"
+              >
                 <p>
                   {item.name}
                   {pdf_file && (
@@ -97,7 +105,15 @@ const FirstChilds = ({ cats, post, childCats, childCats_child }) => {
                   {items.map((item, ind) => {
                     const { bg_image, pdf_file, logo } = item.acf || {};
                     return (
-                      <div key={ind} className="brand-child-list">
+                      <div
+                        key={ind}
+                        className="brand-child-list"
+                        data-aos="fade-down"
+                        data-aos-delay={200}
+                        data-aos-easing="ease"
+                        data-aos-duration="2000"
+                        data-aos-offset="300"
+                      >
                         <p>
                           {item.name}
                           {pdf_file && (
@@ -146,7 +162,15 @@ const FirstChilds = ({ cats, post, childCats, childCats_child }) => {
               {child.map((item, ind) => {
                 const { bg_image, pdf_file, logo } = item.acf || {};
                 return (
-                  <div key={ind} className="brand-child-list">
+                  <div
+                    key={ind}
+                    className="brand-child-list"
+                    data-aos="fade-down"
+                    data-aos-delay={200}
+                    data-aos-easing="ease"
+                    data-aos-duration="2000"
+                    data-aos-offset="300"
+                  >
                     <p>
                       {item.name}
                       {pdf_file && (

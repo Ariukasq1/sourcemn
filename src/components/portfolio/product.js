@@ -6,7 +6,11 @@ const Product = ({ post }) => {
 
   return (
     <div className="long-text-with-image">
-      <div className="long-half-text">
+      <div
+        className="long-half-text"
+        data-aos="fade-down"
+        data-aos-easing="ease"
+      >
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}

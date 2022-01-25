@@ -31,6 +31,11 @@ const SecondPart = ({ post }) => {
               <div
                 key={ind}
                 className="card"
+                data-aos="fade-down"
+                data-aos-delay={ind * 100}
+                data-aos-easing="ease"
+                data-aos-duration="2000"
+                data-aos-offset="300"
                 dangerouslySetInnerHTML={{ __html: data }}
               />
             );

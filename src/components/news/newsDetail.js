@@ -5,7 +5,7 @@ const NewsDetail = ({ post }) => {
   const { title, content, _embedded } = post || {};
   return (
     <div className="long-text-with-image">
-      <div className="long-half-text">
+      <div className="long-half-text" data-aos="fade-down">
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}

@@ -72,6 +72,7 @@ const NewsList = ({ data, cats }) => {
             >
               <div
                 className="slider-image-back"
+                data-aos="flip-up"
                 style={{
                   backgroundImage: `url(${getData(news._embedded, "image")}})`,
                 }}

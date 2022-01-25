@@ -29,7 +29,7 @@ const IndCap_detail = ({
         {(acf || {}).bg_image && <FactSection post={post} />}
         {(acf || {}).additional && <Additional post={post} />}
         <Relations
-          brands={brands}
+          brandData={brands}
           post={post}
           relPosts={relationsPosts}
           relations={relations}

@@ -49,6 +49,7 @@ const RelatedNews = ({ data }) => {
             <Link key={ind} href={`/newsroom/${news.slug}`}>
               <div
                 className="slider-image-back"
+                data-aos="flip-up"
                 style={{
                   backgroundImage: `url(${getData(news._embedded, "image")}})`,
                 }}

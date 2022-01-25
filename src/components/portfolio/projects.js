@@ -77,6 +77,7 @@ const Projects = ({ projects, detail, background, materials }) => {
               >
                 <div
                   className="slider-image-back"
+                  data-aos="flip-up"
                   style={{
                     backgroundImage: `url(${getData(
                       item._embedded,

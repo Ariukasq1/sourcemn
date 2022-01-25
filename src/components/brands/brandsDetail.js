@@ -6,7 +6,7 @@ const Brand = ({ post }) => {
 
   const { about, certificate, advantage, logo, slogan, country, founded_year } =
     acf || {};
-  console.log(post, "---------");
+
   return (
     <div className="brand">
       <div
@@ -33,7 +33,14 @@ const Brand = ({ post }) => {
           </div>
         </div>
       </div>
-      <div className="brand-detail-and-about">
+      <div
+        className="brand-detail-and-about"
+        data-aos="fade-down"
+        data-aos-delay={200}
+        data-aos-easing="ease"
+        data-aos-duration="2000"
+        data-aos-offset="300"
+      >
         <div className="blue-title">
           {__("About")}{" "}
           <span dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />
