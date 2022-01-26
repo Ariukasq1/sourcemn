@@ -105,7 +105,10 @@ Category.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  const data = await wp.posts().categories(catId.id).embed();
+  const data = await wp
+    .posts()
+    .categories((catId || {}).id)
+    .embed();
 
   let childCats;
   let contact;
@@ -118,7 +121,10 @@ Category.getInitialProps = async (context) => {
       return { data, topMenu, mainMenu, slug };
 
     case "brands":
-      childCats = await wp.categories().parent(catId.id).embed();
+      childCats = await wp
+        .categories()
+        .parent((catId || {}).id)
+        .embed();
 
       return { data, topMenu, mainMenu, slug, childCats };
 
@@ -126,9 +132,15 @@ Category.getInitialProps = async (context) => {
       return { mainMenu, topMenu, data, slug };
 
     case "about":
-      childCats = await wp.categories().parent(catId.id).embed();
+      childCats = await wp
+        .categories()
+        .parent((catId || {}).id)
+        .embed();
 
-      const serviceCats = await wp.categories().parent(childCats[0].id).embed();
+      const serviceCats = await wp
+        .categories()
+        .parent((childCats[0] || {}).id)
+        .embed();
 
       const service = await wp
         .posts()
@@ -165,7 +177,10 @@ Category.getInitialProps = async (context) => {
       };
 
     case "news":
-      childCats = await wp.categories().parent(catId.id).embed();
+      childCats = await wp
+        .categories()
+        .parent((catId || {}).id)
+        .embed();
 
       return { mainMenu, topMenu, data, childCats, slug };
 

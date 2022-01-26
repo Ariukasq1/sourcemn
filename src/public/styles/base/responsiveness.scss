@@ -1,646 +1,646 @@
-// @media only screen and (max-width: 1599px) {
-//   .main-header {
-//     height: 95px;
-//   }
-
-//   .page {
-//     margin-top: 113px;
-//   }
-
-//   .homeSlider {
-//     height: calc(100vh - 113px);
-//     .sliderText {
-//       > h1 {
-//         font-size: 4rem;
-//       }
-//       > h2 {
-//         font-size: 1rem;
-//       }
-//     }
-//   }
-
-//   .homeCapability {
-//     height: calc(100vh - 113px);
-//   }
-
-//   .homeIndustries {
-//     height: calc(100vh - 113px);
-//     .industry-button {
-//       padding: 0.5rem 0 0 5rem;
-//       .big-buttons,
-//       .active-big-buttons {
-//         font-size: 3rem;
-//         margin-bottom: 1rem;
-//       }
-//     }
-//   }
-
-//   /*  .about-service {
-//     .serviceList {
-//       .products {
-//         grid-template-columns: repeat(5, minmax(0, 1fr));
-//       }
-//     }
-//   }
-
-//   .main-header {
-//     height: 95px;
-//   }
-
-//   #section2 {
-//     padding-top: 113px;
-//   }
-
-//   .homeIndustries {
-//     height: calc(100vh - 113px);
-//     .industry-button {
-//       padding: 0.5rem 0 0 5rem;
-//       > div {
-//         margin-bottom: 1.5rem;
-//       }
-//       .big-buttons {
-//         font-size: 3.5rem;
-//       }
-//       .read-more-button {
-//         margin-top: 2rem !important;
-//       }
-//     }
-//   }
-
-//   .homeBrands {
-//     height: calc(100vh - 113px);
-//     .brandList {
-//       .brand-image {
-//         height: 150px;
-//       }
-//     }
-//   }
-
-//   .relations {
-//     margin-top: 113px;
-//     .relations-image {
-//       height: 150px;
-//     }
-//   }
-
-//   .catList {
-//     margin: 1rem 0;
-//     > div {
-//       font-size: 1rem;
-//     }
-//   }
-
-//   footer {
-//     height: calc(100vh - 113px);
-//   }
-
-//   .half-back-image-with-text {
-//     &:hover {
-//       .overlayText {
-//         transform: translateY(-25%);
-//       }
-//     }
-//   }
-
-//   .page {
-//     margin-top: 113px;
-//   }
-
-//   .firstPart {
-//     height: calc(100vh - 113px);
-
-//     .sub-title {
-//       margin-bottom: 1rem;
-//     }
-
-//     .industries,
-//     .capabilities,
-//     .portfolio {
-//       gap: 1rem;
-//       .squad-image {
-//         height: 300px;
-//       }
-//     }
-//   }
-
-//   .secondPart {
-//     height: calc(100vh - 113px);
-//     .product-cards {
-//       .little-cards {
-//         width: 100%;
-//         .card {
-//           height: 100px;
-//           width: 120px !important;
-//           img {
-//             height: 40px;
-//             width: 40px;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .Additional {
-//     margin-top: 113px;
-//   }
-
-//   .simple-text-image {
-//     min-height: calc(100vh - 113px);
-//   }
-
-//   .career-culture {
-//     height: calc(100vh - 113px);
-//     .big-cards-list {
-//       gap: 2rem;
-//       .big-card {
-//         .big-card-image {
-//           padding: 0 10px;
-//           height: 230px;
-//         }
-//         .big-card-text {
-//           padding: 0 10px;
-//         }
-//       }
-//     }
-//   }
-
-//   .newsList,
-//   .newsRelated {
-//     height: calc(100vh - 113px);
-//   } */
-// }
-
-// @media only screen and (max-width: 1199px) {
-//   .about-us {
-//     padding: 3rem;
-//   }
-
-//   .about-service {
-//     padding: 0 3rem;
-//   }
-
-//   .homeSlider {
-//     padding: 0 3rem;
-//     .sliderText {
-//       > h1 {
-//         font-size: 3rem;
-//       }
-//     }
-//   }
-
-//   .homeCapability {
-//     .capability-home-text {
-//       padding: 0 3rem;
-//     }
-//   }
-
-//   .homeIndustries {
-//     .industry-button {
-//       padding: 0.5rem 0 0 3rem;
-//       > div {
-//         margin-bottom: 1rem;
-//       }
-//       .big-buttons {
-//         font-size: 3rem;
-//       }
-//       .read-more-button {
-//         margin-top: 1.75rem !important;
-//       }
-//     }
-//   }
-
-//   .half-back-image-with-text {
-//     &:hover {
-//       .overlayText {
-//         transform: translateY(-5%);
-//       }
-//     }
-//   }
-
-//   .read-more-button {
-//     padding: 0.5rem 2rem;
-//   }
-
-//   .blue-title {
-//     font-size: 1.25rem;
-//   }
-
-//   .homeBrands {
-//     .brandList {
-//       padding: 0 3rem;
-//       .brand-logo {
-//         height: 40px;
-//       }
-//       .brand-image {
-//         max-width: 300px;
-//         height: 140px;
-//       }
-//     }
-//   }
-
-//   .relations {
-//     padding: 0 3rem;
-//     .relations-image {
-//       max-width: 300px;
-//       height: 140px;
-//     }
-//   }
-
-//   .catList {
-//     padding: 0 3rem;
-//     margin: 0.5rem 0;
-//   }
-
-//   .read-more-detail {
-//     margin: 0.5rem 0;
-//   }
-
-//   h2 {
-//     font-size: 1rem;
-//   }
-
-//   .gold-title {
-//     font-size: 1.25rem;
-//   }
-
-//   footer {
-//     padding: 0 3rem;
-//     .footer {
-//       gap: 1rem;
-//       .contactUs {
-//         input {
-//           height: 50px;
-//         }
-//         textArea {
-//           height: 8rem;
-//         }
-//       }
-//     }
-//   }
-
-//   .firstPart {
-//     padding: 0 3rem;
-
-//     .sub-title {
-//       margin-bottom: 0.75rem;
-//       font-size: 1.5rem;
-//     }
-
-//     .industries,
-//     .capabilities,
-//     .portfolio {
-//       gap: 0.75rem;
-//       .squad-image {
-//         height: 240px;
-//       }
-//     }
-//   }
-
-//   .secondPart {
-//     .product-cards {
-//       padding: 1rem 1rem 0 3rem;
-//     }
-//   }
-
-//   p {
-//     font-size: 1rem;
-//   }
-
-//   .Additional {
-//     > div {
-//       > div {
-//         > h4 {
-//           font-size: 1.25rem;
-//         }
-//       }
-//     }
-//   }
-//   .simple-half-text {
-//     padding: 1rem 1rem 0 3rem;
-//   }
-
-//   .career-culture {
-//     padding: 0 3rem;
-//     .big-cards-list {
-//       gap: 1rem;
-//       .big-card {
-//         .big-card-image {
-//           padding: 0 10px;
-//           height: 180px;
-//         }
-//         .big-card-text {
-//           padding: 0 10px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media only screen and (max-width: 991px) {
-//   .section {
-//     height: max-content !important;
-//     .fp-tableCell {
-//       height: max-content !important;
-//     }
-//   }
-
-//   .about-service {
-//     padding: 0 2rem;
-//     .serviceList {
-//       .products {
-//         grid-template-columns: repeat(3, minmax(0, 1fr));
-//       }
-//     }
-//   }
-
-//   .about-us {
-//     display: block;
-//     padding: 2rem;
-//   }
-
-//   .simple-text-image {
-//     min-height: calc(100vh - 88px);
-//   }
-
-//   #section2 {
-//     padding-top: 88px;
-//   }
-
-//   .firstPart {
-//     height: auto;
-//     padding: 2rem;
-//     .industries,
-//     .capabilities,
-//     .portfolio {
-//       grid-template-columns: repeat(2, minmax(0, 1fr));
-//     }
-//   }
-
-//   .secondPart {
-//     height: auto;
-//     display: flex;
-//     flex-direction: column;
-//     .product-cards {
-//       padding: 2rem 2rem 3rem 2rem;
-//     }
-//   }
-
-//   .Additional {
-//     margin-top: 88px;
-//     display: block;
-//   }
-
-//   .homeSlider {
-//     height: calc(100vh - 88px);
-//   }
-
-//   .homeCapability {
-//     grid-template-columns: repeat(1, minmax(0, 1fr));
-//     height: auto;
-//     display: flex;
-//     flex-direction: column-reverse;
-//     .capability-home-text {
-//       padding: 2rem;
-//     }
-//   }
-
-//   .homeIndustries {
-//     height: auto;
-//     display: flex;
-//     flex-direction: column;
-//     .industry-button {
-//       padding: 2rem;
-//       > div {
-//         margin-bottom: 1rem;
-//       }
-//       .big-buttons {
-//         font-size: 3rem;
-//       }
-//       .read-more-button {
-//         margin-top: 1rem !important;
-//       }
-//     }
-//   }
-
-//   .homeBrands {
-//     height: auto;
-//     margin: 88px 0;
-//     .brandList {
-//       padding: 0 2rem;
-//     }
-//   }
-
-//   .simple-text-image {
-//     display: block;
-//   }
-
-//   .simple-half-text {
-//     padding: 2rem;
-//   }
-
-//   .relations {
-//     margin-top: 88px;
-//     padding: 0 2rem;
-//   }
-
-//   .catList {
-//     padding: 0 2rem;
-//   }
-
-//   .half-back-image-with-text {
-//     height: 500px;
-//   }
-
-//   .main-header {
-//     height: 70px;
-//     .menus {
-//       display: flex;
-//       justify-content: center;
-//       .topMenuList,
-//       .botMenuList {
-//         display: none;
-//       }
-//       .burger {
-//         height: 40px;
-//         width: 40px;
-//         .burger-line {
-//           height: 4px;
-//         }
-//       }
-//     }
-//   }
-
-//   .page {
-//     margin-top: 88px;
-//   }
-
-//   footer {
-//     height: auto;
-//     padding: 2rem;
-//     .footer {
-//       grid-template-columns: repeat(1, minmax(0, 1fr));
-//       .contacts {
-//         > h2:last-child {
-//           margin-top: 2rem;
-//         }
-//       }
-//     }
-//   }
-
-//   .career-culture {
-//     height: auto;
-//     padding: 2rem;
-//     .big-cards-list {
-//       display: grid;
-//       grid-template-columns: repeat(2, minmax(0, 1fr));
-//       gap: 2rem;
-//       .big-card {
-//         .big-card-image {
-//           padding: 0 30px;
-//           height: 200px;
-//         }
-//         .big-card-text {
-//           padding: 0 30px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media only screen and (max-width: 767px) {
-// }
-
-// @media only screen and (max-width: 575px) {
-//   .about-service {
-//     padding: 0 1rem;
-//     .serviceList {
-//       .products {
-//         grid-template-columns: repeat(2, minmax(0, 1fr));
-//       }
-//     }
-//   }
-
-//   .simple-half-text {
-//     padding: 1rem;
-//   }
-
-//   footer {
-//     padding: 1rem;
-//   }
-
-//   .firstPart {
-//     padding: 1rem;
-//     .industries,
-//     .capabilities,
-//     .portfolio {
-//       grid-template-columns: repeat(1, minmax(0, 1fr));
-//     }
-//   }
-
-//   .homeSlider {
-//     padding: 0 1rem;
-//     height: 400px;
-//     .sliderText {
-//       > h1 {
-//         font-size: 2.25rem;
-//       }
-//     }
-//   }
-//   .homeCapability {
-//     .capability-home-text {
-//       padding: 1rem;
-//     }
-//   }
-
-//   .homeIndustries {
-//     height: auto;
-//     display: flex;
-//     flex-direction: column;
-//     .industry-button {
-//       padding: 1rem;
-//       > div {
-//         margin-bottom: 1rem;
-//       }
-//       .big-buttons {
-//         font-size: 2.25rem;
-//       }
-//       .read-more-button {
-//         margin-top: 1rem !important;
-//       }
-//     }
-//   }
-
-//   .half-back-image-with-text {
-//     height: 550px;
-//   }
-
-//   .overlayText {
-//     margin: 0 1rem;
-//   }
-
-//   .homeBrands {
-//     .brandList {
-//       padding: 0 1rem;
-//       .brand-image {
-//         max-width: 100%;
-//       }
-//     }
-//   }
-
-//   .relations {
-//     padding: 0 1rem;
-//     .relations-image {
-//       max-width: 100%;
-//     }
-//   }
-
-//   .catList {
-//     padding: 0 1rem;
-//     justify-content: flex-start;
-//     > div {
-//       border: none;
-//     }
-//   }
-
-//   .secondPart {
-//     .product-cards {
-//       padding: 1rem 1rem 3rem 1rem;
-//       .little-cards {
-//         .card {
-//           height: 120px;
-//           width: 100px !important;
-//           span {
-//             font-size: 14px;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .Additional {
-//     > div {
-//       padding: 1rem;
-//     }
-//   }
-
-//   .career-culture {
-//     padding: 1rem;
-//     .big-cards-list {
-//       display: grid;
-//       grid-template-columns: repeat(1, minmax(0, 1fr));
-//       gap: 1rem;
-//       .big-card {
-//         .big-card-image {
-//           padding: 0 20px;
-//           height: 180px;
-//         }
-//         .big-card-text {
-//           padding: 0 20px;
-//         }
-//       }
-//     }
-//   }
-//   .about-us {
-//     padding: 1rem;
-//   }
-// }
+@media only screen and (max-width: 1599px) {
+  .main-header {
+    height: 95px;
+  }
+
+  .page {
+    margin-top: 113px;
+  }
+
+  .homeSlider {
+    height: calc(100vh - 113px);
+    .sliderText {
+      > h1 {
+        font-size: 4rem;
+      }
+      > h2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .homeCapability {
+    height: calc(100vh - 113px);
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 113px);
+    .industry-button {
+      padding: 0.5rem 0 0 5rem;
+      .big-buttons,
+      .active-big-buttons {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  /*  .about-service {
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .main-header {
+    height: 95px;
+  }
+
+  #section2 {
+    padding-top: 113px;
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 113px);
+    .industry-button {
+      padding: 0.5rem 0 0 5rem;
+      > div {
+        margin-bottom: 1.5rem;
+      }
+      .big-buttons {
+        font-size: 3.5rem;
+      }
+      .read-more-button {
+        margin-top: 2rem !important;
+      }
+    }
+  }
+
+  .homeBrands {
+    height: calc(100vh - 113px);
+    .brandList {
+      .brand-image {
+        height: 150px;
+      }
+    }
+  }
+
+  .relations {
+    margin-top: 113px;
+    .relations-image {
+      height: 150px;
+    }
+  }
+
+  .catList {
+    margin: 1rem 0;
+    > div {
+      font-size: 1rem;
+    }
+  }
+
+  footer {
+    height: calc(100vh - 113px);
+  }
+
+  .half-back-image-with-text {
+    &:hover {
+      .overlayText {
+        transform: translateY(-25%);
+      }
+    }
+  }
+
+  .page {
+    margin-top: 113px;
+  }
+
+  .firstPart {
+    height: calc(100vh - 113px);
+
+    .sub-title {
+      margin-bottom: 1rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 1rem;
+      .squad-image {
+        height: 300px;
+      }
+    }
+  }
+
+  .secondPart {
+    height: calc(100vh - 113px);
+    .product-cards {
+      .little-cards {
+        width: 100%;
+        .card {
+          height: 100px;
+          width: 120px !important;
+          img {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .Additional {
+    margin-top: 113px;
+  }
+
+  .simple-text-image {
+    min-height: calc(100vh - 113px);
+  }
+
+  .career-culture {
+    height: calc(100vh - 113px);
+    .big-cards-list {
+      gap: 2rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 10px;
+          height: 230px;
+        }
+        .big-card-text {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  .newsList,
+  .newsRelated {
+    height: calc(100vh - 113px);
+  } */
+}
+
+@media only screen and (max-width: 1199px) {
+  .about-us {
+    padding: 3rem;
+  }
+
+  .about-service {
+    padding: 0 3rem;
+  }
+
+  .homeSlider {
+    padding: 0 3rem;
+    .sliderText {
+      > h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .homeCapability {
+    .capability-home-text {
+      padding: 0 3rem;
+    }
+  }
+
+  .homeIndustries {
+    .industry-button {
+      padding: 0.5rem 0 0 3rem;
+      > div {
+        margin-bottom: 1rem;
+      }
+      .big-buttons {
+        font-size: 3rem;
+      }
+      .read-more-button {
+        margin-top: 1.75rem !important;
+      }
+    }
+  }
+
+  .half-back-image-with-text {
+    &:hover {
+      .overlayText {
+        transform: translateY(-5%);
+      }
+    }
+  }
+
+  .read-more-button {
+    padding: 0.5rem 2rem;
+  }
+
+  .blue-title {
+    font-size: 1.25rem;
+  }
+
+  .homeBrands {
+    .brandList {
+      padding: 0 3rem;
+      .brand-logo {
+        height: 40px;
+      }
+      .brand-image {
+        max-width: 300px;
+        height: 140px;
+      }
+    }
+  }
+
+  .relations {
+    padding: 0 3rem;
+    .relations-image {
+      max-width: 300px;
+      height: 140px;
+    }
+  }
+
+  .catList {
+    padding: 0 3rem;
+    margin: 0.5rem 0;
+  }
+
+  .read-more-detail {
+    margin: 0.5rem 0;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .gold-title {
+    font-size: 1.25rem;
+  }
+
+  footer {
+    padding: 0 3rem;
+    .footer {
+      gap: 1rem;
+      .contactUs {
+        input {
+          height: 50px;
+        }
+        textArea {
+          height: 8rem;
+        }
+      }
+    }
+  }
+
+  .firstPart {
+    padding: 0 3rem;
+
+    .sub-title {
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 0.75rem;
+      .squad-image {
+        height: 240px;
+      }
+    }
+  }
+
+  .secondPart {
+    .product-cards {
+      padding: 1rem 1rem 0 3rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .Additional {
+    > div {
+      > div {
+        > h4 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+  .simple-half-text {
+    padding: 1rem 1rem 0 3rem;
+  }
+
+  .career-culture {
+    padding: 0 3rem;
+    .big-cards-list {
+      gap: 1rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 10px;
+          height: 180px;
+        }
+        .big-card-text {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .section {
+    height: max-content !important;
+    .fp-tableCell {
+      height: max-content !important;
+    }
+  }
+
+  .about-service {
+    padding: 0 2rem;
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .about-us {
+    display: block;
+    padding: 2rem;
+  }
+
+  .simple-text-image {
+    min-height: calc(100vh - 88px);
+  }
+
+  #section2 {
+    padding-top: 88px;
+  }
+
+  .firstPart {
+    height: auto;
+    padding: 2rem;
+    .industries,
+    .capabilities,
+    .portfolio {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .secondPart {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .product-cards {
+      padding: 2rem 2rem 3rem 2rem;
+    }
+  }
+
+  .Additional {
+    margin-top: 88px;
+    display: block;
+  }
+
+  .homeSlider {
+    height: calc(100vh - 88px);
+  }
+
+  .homeCapability {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    .capability-home-text {
+      padding: 2rem;
+    }
+  }
+
+  .homeIndustries {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .industry-button {
+      padding: 2rem;
+      > div {
+        margin-bottom: 1rem;
+      }
+      .big-buttons {
+        font-size: 3rem;
+      }
+      .read-more-button {
+        margin-top: 1rem !important;
+      }
+    }
+  }
+
+  .homeBrands {
+    height: auto;
+    margin: 88px 0;
+    .brandList {
+      padding: 0 2rem;
+    }
+  }
+
+  .simple-text-image {
+    display: block;
+  }
+
+  .simple-half-text {
+    padding: 2rem;
+  }
+
+  .relations {
+    margin-top: 88px;
+    padding: 0 2rem;
+  }
+
+  .catList {
+    padding: 0 2rem;
+  }
+
+  .half-back-image-with-text {
+    height: 500px;
+  }
+
+  .main-header {
+    height: 70px;
+    .menus {
+      display: flex;
+      justify-content: center;
+      .topMenuList,
+      .botMenuList {
+        display: none;
+      }
+      .burger {
+        height: 40px;
+        width: 40px;
+        .burger-line {
+          height: 4px;
+        }
+      }
+    }
+  }
+
+  .page {
+    margin-top: 88px;
+  }
+
+  footer {
+    height: auto;
+    padding: 2rem;
+    .footer {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      .contacts {
+        > h2:last-child {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+
+  .career-culture {
+    height: auto;
+    padding: 2rem;
+    .big-cards-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 30px;
+          height: 200px;
+        }
+        .big-card-text {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 575px) {
+  .about-service {
+    padding: 0 1rem;
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .simple-half-text {
+    padding: 1rem;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+
+  .firstPart {
+    padding: 1rem;
+    .industries,
+    .capabilities,
+    .portfolio {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+
+  .homeSlider {
+    padding: 0 1rem;
+    height: 400px;
+    .sliderText {
+      > h1 {
+        font-size: 2.25rem;
+      }
+    }
+  }
+  .homeCapability {
+    .capability-home-text {
+      padding: 1rem;
+    }
+  }
+
+  .homeIndustries {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .industry-button {
+      padding: 1rem;
+      > div {
+        margin-bottom: 1rem;
+      }
+      .big-buttons {
+        font-size: 2.25rem;
+      }
+      .read-more-button {
+        margin-top: 1rem !important;
+      }
+    }
+  }
+
+  .half-back-image-with-text {
+    height: 550px;
+  }
+
+  .overlayText {
+    margin: 0 1rem;
+  }
+
+  .homeBrands {
+    .brandList {
+      padding: 0 1rem;
+      .brand-image {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .relations {
+    padding: 0 1rem;
+    .relations-image {
+      max-width: 100%;
+    }
+  }
+
+  .catList {
+    padding: 0 1rem;
+    justify-content: flex-start;
+    > div {
+      border: none;
+    }
+  }
+
+  .secondPart {
+    .product-cards {
+      padding: 1rem 1rem 3rem 1rem;
+      .little-cards {
+        .card {
+          height: 120px;
+          width: 100px !important;
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .Additional {
+    > div {
+      padding: 1rem;
+    }
+  }
+
+  .career-culture {
+    padding: 1rem;
+    .big-cards-list {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+      .big-card {
+        .big-card-image {
+          padding: 0 20px;
+          height: 180px;
+        }
+        .big-card-text {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+  .about-us {
+    padding: 1rem;
+  }
+}
