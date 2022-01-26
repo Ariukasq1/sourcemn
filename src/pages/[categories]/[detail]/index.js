@@ -40,8 +40,6 @@ const Detail = ({
 }) => {
   const { acf } = post || {};
 
-  console.log(childCats_child, "-----------");
-
   const renderDetail = (detail) => {
     switch (detail) {
       case "why-mms":

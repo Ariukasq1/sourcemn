@@ -13,7 +13,7 @@ import {
 import { __ } from "../../utils";
 
 function Footer({ contact }) {
-  const { address, email, fax, tel, social } = contact.acf;
+  const { address, email, fax, tel, social } = contact.acf || {};
   const { office } = address;
   return (
     <footer>

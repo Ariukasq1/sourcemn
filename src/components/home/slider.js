@@ -15,7 +15,8 @@ const HomeSlider = ({ sliders }) => {
   return (
     <Slider {...settings}>
       {sliders.map((item, ind) => {
-        const { image, body, position_of_text, background_color } = item.acf;
+        const { image, body, position_of_text, background_color } =
+          item.acf || {};
         return (
           <div key={ind}>
             <div
