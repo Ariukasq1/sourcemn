@@ -50,7 +50,7 @@ function Footer({ contact }) {
           </p>
         </div>
         <div className="headOffice">
-          <p>{office.name}</p>
+          <p>{(office || {}).name}</p>
           <p>
             <HomeOutlined /> {(office || {}).address}
           </p>
