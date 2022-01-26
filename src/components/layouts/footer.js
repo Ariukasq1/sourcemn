@@ -15,7 +15,7 @@ import { __ } from "../../utils";
 function Footer({ contact }) {
   const { acf } = contact || {};
   const { address, email, fax, tel, social } = acf || {};
-  const { office } = address;
+  const { office } = address || {};
   return (
     <footer>
       <div className="footer">
