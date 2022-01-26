@@ -37,13 +37,13 @@ const HomeSlider = ({ sliders }) => {
                 data-aos-delay="0"
               >
                 <h1>{body.text}</h1>
-                <p
+                <h2
                   style={{
                     paddingLeft: position_of_text === "right" ? "40%" : "0",
                   }}
                 >
                   {body.description}
-                </p>
+                </h2>
               </div>
             </div>
           </div>

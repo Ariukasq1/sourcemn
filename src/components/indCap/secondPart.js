@@ -18,7 +18,13 @@ const SecondPart = ({ post }) => {
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (supports || {}).title }}
         />
-        <div className="little-cards">
+        <div
+          className="little-cards"
+          data-aos="fade-down"
+          data-aos-easing="ease"
+          data-aos-duration="2000"
+          data-aos-offset="300"
+        >
           {datas.map((data, ind) => {
             if (
               data.includes("<ul") ||
@@ -31,11 +37,6 @@ const SecondPart = ({ post }) => {
               <div
                 key={ind}
                 className="card"
-                data-aos="fade-down"
-                data-aos-delay={ind * 100}
-                data-aos-easing="ease"
-                data-aos-duration="2000"
-                data-aos-offset="300"
                 dangerouslySetInnerHTML={{ __html: data }}
               />
             );

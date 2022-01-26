@@ -21,7 +21,7 @@ function Footer({ contact }) {
     <footer>
       <div className="footer">
         <div className="contacts">
-          <p>{__("Contacts")}</p>
+          <h2>{__("Contacts")}</h2>
           <p>
             <PhoneOutlined /> Tel: {tel}
           </p>
@@ -50,13 +50,13 @@ function Footer({ contact }) {
           </p>
         </div>
         <div className="headOffice">
-          <p>{(office || {}).name}</p>
+          <h2>{(office || {}).name}</h2>
           <p>
             <HomeOutlined /> {(office || {}).address}
           </p>
         </div>
         <div className="contactUs">
-          <p>Please contact us</p>
+          <h2>{__("Please contact us")}</h2>
           <div>
             <label>{__("Full name")}</label>
             <input

@@ -11,15 +11,14 @@ const FactSection = ({ post }) => {
         }
 
         return (
-          <div
-            key={key}
-            className="facts"
-            data-aos="zoom-in"
-            data-aos-easing="ease"
-            data-aos-duration="2000"
-            data-aos-offset="300"
-          >
-            <img src={value.icon} />
+          <div key={key} className="facts">
+            <img
+              src={value.icon}
+              data-aos="zoom-in"
+              data-aos-easing="ease"
+              data-aos-duration="2000"
+              data-aos-offset="300"
+            />
             <h2 dangerouslySetInnerHTML={{ __html: value.upper_text }} />
             <div className="numbers">
               <h1 dangerouslySetInnerHTML={{ __html: value.number }} />

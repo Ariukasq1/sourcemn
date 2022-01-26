@@ -4,56 +4,128 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @include big-laptops {
+    padding: 0 5rem;
+  }
+
+  @include med-laptops {
+    padding: 0 3rem;
+  }
+
+  @include tablets {
+    padding: 3rem;
+    height: auto;
+  }
+
+  @include phone {
+    padding: 1.5rem;
+  }
+
   .sub-title {
     margin-bottom: 2rem;
+    @include med-laptops {
+      margin-bottom: 10px;
+    }
   }
 
   .industries,
   .capabilities {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    @include tablets {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include max-phone {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
   .portfolio {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    @include tablets {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include max-phone {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
   .industries,
   .capabilities,
   .portfolio {
     gap: 2.5rem;
+    @include big-laptops {
+      gap: 1.5rem;
+    }
     .squad-image {
       height: 450px;
+      @include big-laptops {
+        height: 350px;
+      }
+
+      @include med-laptops {
+        height: 270px;
+      }
     }
   }
 }
 
 #section2 {
   padding-top: 114px;
+  @include tablets {
+    padding-top: 0;
+  }
 }
 
 .secondPart {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include med-laptops {
+    display: block;
+  }
   .product-cards {
-    padding: 2rem 5rem;
+    padding: 2rem 3rem 0 5rem;
+    @include med-laptops {
+      padding: 1rem 2rem 0 3rem;
+    }
+    @include med-laptops {
+      padding: 3rem;
+    }
+
+    @include phone {
+      padding: 1.5rem;
+    }
+
     .little-cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      @include med-laptops {
+        gap: 2rem;
+      }
+      @include max-phone {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      @include phone {
+        gap: 1rem;
+      }
+
       .card {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 140px;
-        width: 180px;
         text-align: center;
         line-height: normal;
-        margin: 1rem;
         padding: 1rem;
         box-shadow: 0 0 5px rgba(127, 122, 122, 0.1);
         transition: all 0.3s ease;
         border-radius: 0.375rem;
         font-size: 1rem;
         background-color: #fff;
+        @include med-laptops {
+          font-size: 0.875rem;
+        }
         &:hover {
           background-color: #004894;
           color: #fff;
@@ -78,14 +150,12 @@
     }
 
     .blue-title {
-      margin-bottom: 2rem;
-      margin-left: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }
 
 .thirdPart {
-  height: calc(100vh - 114px);
   margin-top: 114px;
   margin-bottom: 114px;
   background-position: center;
@@ -94,7 +164,19 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding: 0 10rem;
+  padding: 5rem 8rem;
+  @include big-laptops {
+    padding: 3rem 5rem;
+  }
+  @include tablets {
+    margin-top: 82px;
+    margin-bottom: 0;
+    padding: 2rem 0;
+  }
+  @include phone {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -114,7 +196,13 @@
     color: #ffffff;
     align-items: center;
     text-align: center;
-    padding: 0 5rem;
+    padding: 1rem 3rem;
+    @include big-laptops {
+      padding: 1rem;
+    }
+    @include tablets {
+      padding: 10px;
+    }
     > img {
       width: 5rem;
       height: 5rem;
@@ -127,6 +215,18 @@
         margin-right: 10px;
         font-size: 3rem;
         font-weight: 800;
+        @include med-laptops {
+          font-size: 2rem;
+        }
+        @include mini-tablets {
+          font-size: 1.375rem;
+        }
+        @include max-phone {
+          font-size: 1.2rem;
+        }
+        @include max-phone {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -134,10 +234,17 @@
     p {
       font-size: 1.125rem;
       line-height: 1.5rem;
+      @include med-laptops {
+        font-size: 1rem;
+      }
     }
 
     p {
       font-weight: 600;
+    }
+
+    @include phone {
+      border-bottom: 1px solid #ffffff;
     }
 
     &:first-child {
@@ -156,6 +263,9 @@
 .Additional {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  @include tablets {
+    display: block;
+  }
   > div {
     display: flex;
     flex-direction: column;
@@ -171,6 +281,9 @@
         color: rgba(0, 73, 142, var(--text-opacity));
         font-size: 1.5rem;
         font-weight: 700;
+        @include med-laptops {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -180,11 +293,21 @@
 }
 
 .relations {
-  margin-top: 132px;
+  margin-top: 114px;
   padding: 0 5rem;
+  @include med-laptops {
+    margin: 0;
+    padding: 3rem 3rem 0rem 3rem;
+  }
+  @include phone {
+    padding: 1.5rem;
+  }
   .relBrands {
     width: 100%;
     margin-bottom: 3rem;
+    @include med-laptops {
+      margin-bottom: 1.5rem;
+    }
     .slick-slide {
       max-width: 440px !important;
     }
@@ -192,6 +315,12 @@
   .relations-image {
     max-width: 400px;
     height: 230px;
+    @include med-laptops {
+      height: 150px;
+    }
+    @include max-phone {
+      max-width: 576px;
+    }
   }
 }
 

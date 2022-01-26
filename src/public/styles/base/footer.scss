@@ -9,14 +9,14 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 5rem;
+    h2 {
+      margin-bottom: 2rem;
+      @include med-laptops {
+        margin-bottom: 1.5rem;
+      }
+    }
     p {
       margin-bottom: 1rem;
-    }
-    > div {
-      > p:first-child {
-        font-weight: 800;
-        margin-bottom: 2rem;
-      }
     }
 
     .contacts {
@@ -31,6 +31,7 @@ footer {
           line-height: 0;
           border-radius: 50%;
           color: #fff;
+
           &:hover {
             background-color: #fff;
             color: #262626;
@@ -43,6 +44,9 @@ footer {
       > div {
         position: relative;
         margin: 0 0 2rem 0;
+        @include med-laptops {
+          margin: 0 0 1.5rem 0;
+        }
       }
       input,
       textArea {
@@ -57,12 +61,18 @@ footer {
       }
       input {
         height: 4rem;
+        @include med-laptops {
+          height: 3.5rem;
+        }
         &:last-child {
           cursor: pointer;
         }
       }
       textArea {
         height: 12rem;
+        @include med-laptops {
+          height: 8rem;
+        }
       }
       label {
         position: absolute;

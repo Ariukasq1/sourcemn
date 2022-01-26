@@ -11,8 +11,39 @@
   -ms-transform: $transforms;
   transform: $transforms;
 }
-/* @mixin table {
-  @media (min-width: 991px) {
+
+@mixin big-laptops {
+  @media (max-width: 1536px) {
     @content;
   }
-} */
+}
+
+@mixin med-laptops {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mini-tablets {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin max-phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

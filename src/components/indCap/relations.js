@@ -29,20 +29,30 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
       dots: false,
       arrows: false,
       infinite: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
       speed: 500,
       slidesToShow: show,
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 992,
+          breakpoint: 768,
           settings: {
-            slidesToShow: showRes,
+            slidesToShow: showRes > 2 ? 2 : showRes,
             slidesToScroll: 1,
             infinite: true,
           },
         },
         {
-          breakpoint: 575,
+          breakpoint: 576,
+          settings: {
+            slidesToShow: showRes > 2 ? 2 : showRes,
+            slidesToScroll: 1,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 480,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,

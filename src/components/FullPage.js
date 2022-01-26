@@ -33,7 +33,7 @@ const Fullpage = (props) => {
       anchors={anchors}
       scrollingSpeed={1000}
       render={() => children}
-      responsiveWidth={992}
+      responsiveWidth={1025}
       navigation
       navigationPosition="left"
       onLeave={onLeave.bind(this)}
