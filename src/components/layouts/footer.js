@@ -13,9 +13,9 @@ import {
 import { __ } from "../../utils";
 
 function Footer({ contact }) {
-  const { acf } = contact || {};
-  const { address, email, fax, tel, social } = acf || {};
+  const { address, email, fax, tel, social } = contact.acf || {};
   const { office } = address || {};
+
   return (
     <footer>
       <div className="footer">
@@ -31,19 +31,19 @@ function Footer({ contact }) {
             <MailOutlined /> Email: {email}
           </p>
           <p>
-            <a href={social.facebook}>
+            <a href={(social || {}).facebook}>
               <FacebookOutlined />
             </a>
-            <a href={social.instagram}>
+            <a href={(social || {}).instagram}>
               <InstagramOutlined />
             </a>
-            <a href={social.linkedin}>
+            <a href={(social || {}).linkedin}>
               <LinkedinOutlined />
             </a>
-            <a href={social.youtube}>
+            <a href={(social || {}).youtube}>
               <YoutubeOutlined />
             </a>
-            <a href={social.twitter}>
+            <a href={(social || {}).twitter}>
               <TwitterOutlined />
             </a>
           </p>
@@ -51,7 +51,7 @@ function Footer({ contact }) {
         <div className="headOffice">
           <p>{office.name}</p>
           <p>
-            <HomeOutlined /> {office.address}
+            <HomeOutlined /> {(office || {}).address}
           </p>
         </div>
         <div className="contactUs">
