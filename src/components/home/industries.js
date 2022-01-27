@@ -7,9 +7,7 @@ const HomeIndustries = ({ data }) => {
   const lastContent = data[data.length - 1];
 
   const [img, setImg] = useState(lastContent._embedded);
-
   const [index, setIndex] = useState(0);
-
   const [content, setContent] = useState(lastContent.content.rendered);
 
   const renderIndustry = (img, content, ind) => {
@@ -61,7 +59,7 @@ const HomeIndustries = ({ data }) => {
         style={{ backgroundImage: `url(${getData(img, "image")})` }}
       >
         <div
-          className="over-text"
+          className="over-text text-md"
           data-aos="fade-up"
           data-aos-easing="ease"
           data-aos-delay="0"

@@ -18,7 +18,10 @@ const HomeCapabilty = ({ capability }) => {
       >
         <div>
           <div className="gold-title">{__("Capabilities")}</div>
-          <div dangerouslySetInnerHTML={{ __html: content.rendered }} />
+          <div
+            className="text-md"
+            dangerouslySetInnerHTML={{ __html: content.rendered }}
+          />
           <Link href="/capabilities">
             <div className="read-more-button">{__("Read more")}</div>
           </Link>

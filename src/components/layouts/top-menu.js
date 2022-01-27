@@ -3,12 +3,6 @@ import Link from "next/link";
 import { getLangParam } from "../../utils";
 
 class TopMenu extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
   renderLang() {
     const currentLang = getLangParam();
 
@@ -37,6 +31,7 @@ class TopMenu extends React.Component {
 
   render() {
     const { topMenu } = this.props;
+
     return (
       <div className="topMenu">
         <div className="topMenuList">

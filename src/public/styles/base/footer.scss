@@ -5,16 +5,17 @@ footer {
   padding: 0 12rem;
   display: flex;
   align-items: center;
+
   .footer {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 5rem;
+
     h2 {
       margin-bottom: 2rem;
-      @include med-laptops {
-        margin-bottom: 1.5rem;
-      }
+      font-size: 1.125rem;
     }
+
     p {
       margin-bottom: 1rem;
     }
@@ -48,6 +49,7 @@ footer {
           margin: 0 0 1.5rem 0;
         }
       }
+
       input,
       textArea {
         width: 100%;
@@ -59,6 +61,7 @@ footer {
         color: #e4e4e4;
         font-size: 1rem;
       }
+
       input {
         height: 4rem;
         @include med-laptops {
@@ -68,12 +71,14 @@ footer {
           cursor: pointer;
         }
       }
+
       textArea {
         height: 12rem;
         @include med-laptops {
           height: 8rem;
         }
       }
+
       label {
         position: absolute;
         left: 26px;
