@@ -1,11 +1,38 @@
 import React from "react";
 import Link from "next/link";
+import { getLangParam } from "../../utils";
 
 class TopMenu extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {};
+  }
+
+  renderLang() {
+    const currentLang = getLangParam();
+
+    return (
+      <div className="topMenuLanguage">
+        <a
+          className={`mr-1 ${
+            currentLang === "en" ? "font-bold text-menuTextColor" : ""
+          }`}
+          href="?lang="
+        >
+          EN
+        </a>
+        <span>/</span>
+        <a
+          className={`ml-1 ${
+            currentLang === "mn" ? "font-bold text-menuTextColor" : ""
+          }`}
+          href="?lang=mn"
+        >
+          MN
+        </a>
+      </div>
+    );
   }
 
   render() {
@@ -21,6 +48,7 @@ class TopMenu extends React.Component {
             );
           })}
         </div>
+        {this.renderLang()}
       </div>
     );
   }

@@ -68,9 +68,9 @@ export const __ = (key, options) => {
 };
 
 export const getLangParam = () =>
-  typeof window !== "undefined" && window.location.href.indexOf("=en") > -1
-    ? "en"
-    : "mn";
+  typeof window !== "undefined" && window.location.href.indexOf("=mn") > -1
+    ? "mn"
+    : "en";
 
 export const setParams = (router, query) => {
   if (typeof window !== "undefined") {

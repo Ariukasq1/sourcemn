@@ -9,36 +9,66 @@
   z-index: 999;
   background-color: #fff;
   justify-content: space-between;
+
   .logo {
     width: 6rem;
     object-fit: contain;
     object-position: center;
     cursor: pointer;
   }
+
   .menus {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    .topMenu {
+      .topMenuList {
+        margin-left: auto;
+      }
+
+      a {
+        border-right: 1px solid #00498e;
+        font-weight: 400;
+        font-size: .875rem;
+
+        &:last-child {
+          border: none;
+        }
+      }
+
+      .topMenuLanguage {
+        margin-left: 20px;
+
+        a {
+          border: 0;
+          padding: 0;
+          color: #444;
+        }
+        
+        > span {
+          margin: 0 10px;
+        }
+
+        .text-menuTextColor {
+          color:rgb(0, 72, 141);
+        }
+      }
+    }
+
     > div {
       display: flex;
+
       .botMenuList {
         border-right: 1px solid #00498e;
       }
-      .topMenuList {
-        margin-left: auto;
-        a {
-          border-right: 1px solid #00498e;
-          font-weight: 300;
-          &:last-child {
-            border: none;
-          }
-        }
-      }
+
       a {
         padding: 0 1rem;
         font-weight: 600;
         color: #00498e;
-        font-size: 1.125rem;
+        font-size: 1rem;
+
         &:hover {
           color: #5d7db8;
         }
@@ -47,6 +77,7 @@
         }
       }
     }
+
     .burger {
       margin-left: 1rem;
       display: flex;
@@ -80,6 +111,7 @@
     padding: 0 1rem;
     font-size: 1.125rem;
   }
+
   .topMenuList {
     margin-top: 10px;
     a {
@@ -90,6 +122,7 @@
       }
     }
   }
+
   .SideMenu {
     .SideMenuList {
       display: flex;
@@ -101,6 +134,7 @@
         margin-top: 10px;
       }
     }
+
     .closeButton {
       position: absolute;
       top: 24px;
