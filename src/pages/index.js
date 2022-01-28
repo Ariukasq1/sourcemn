@@ -23,7 +23,7 @@ const Index = ({
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <Fullpage
         children={
-          <div className="page home">
+          <div className="home">
             <div className="section Slider">
               <HomeSlider sliders={sliders} />
             </div>

@@ -22,32 +22,11 @@ const Category = ({
   contact,
   timeline,
 }) => {
-  const renderPage = () => {
-    switch (slug) {
-      case "industries":
-        return (
-          <>
-            <FirstPart clas={slug} data={data} />
-          </>
-        );
-      case "capabilities":
-        return (
-          <>
-            <FirstPart clas={slug} data={data} />
-          </>
-        );
+  const renderPage = (page) => {
+    switch (page) {
       case "brands":
-        return (
-          <>
-            <HomeBrands brandCats={childCats} brands={data} page={slug} />
-          </>
-        );
-      case "portfolio":
-        return (
-          <>
-            <FirstPart clas={slug} data={data} />
-          </>
-        );
+        return <HomeBrands brandCats={childCats} brands={data} page={page} />;
+
       case "about":
         return (
           <>
@@ -57,30 +36,24 @@ const Category = ({
             <Footer contact={contact} />
           </>
         );
+
       case "news":
-        return (
-          <>
-            <NewsList data={data} cats={childCats} />
-          </>
-        );
+        return <NewsList data={data} cats={childCats} />;
+
       case "careers":
-        return (
-          <>
-            <Culture data={data} />
-          </>
-        );
+        return <Culture data={data} />;
+
+      case "contact":
+        return <Footer contact={contact} />;
+
       default:
-        return (
-          <>
-            <Footer contact={contact} />
-          </>
-        );
+        return <FirstPart clas={page} data={data} />;
     }
   };
 
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">{renderPage()}</div>
+      <div className="page">{renderPage(slug)}</div>
     </Layout>
   );
 };

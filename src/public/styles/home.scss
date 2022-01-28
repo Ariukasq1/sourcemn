@@ -6,97 +6,29 @@
   padding: 0 5rem;
   position: relative;
 
-  @include big-laptops {
-  }
-
-  @include med-laptops {
-  }
-
-  @include tablets {
-    height: 462px;
-  }
-
-  @include mini-tablets {
-  }
-
-  @include max-phone {
-    padding: 0 3rem;
-  }
-
   .sliderText {
     width: 100%;
     > h1 {
       font-size: 80px;
       line-height: normal;
       margin-bottom: 20px;
-      @include big-laptops {
-        font-size: 4rem;
-      }
-
-      @include med-laptops {
-        font-size: 3rem;
-      }
-
-      @include tablets {
-      }
-
-      @include mini-tablets {
-      }
-
-      @include max-phone {
-        font-size: 2rem;
-      }
+      font-weight: 600;
     }
     > h2 {
       font-weight: 500;
       font-size: 1.5rem;
-
-      @include med-laptops {
-        font-size: 1.25rem;
-      }
-
-      @include max-phone {
-        font-size: 1rem;
-      }
     }
   }
 }
 
 // home capabilitiy
 .homeCapability {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   height: calc(100vh - 114px);
-
-  @include tablets {
-    height: auto;
-    display: flex;
-    flex-direction: column-reverse;
-  }
 
   .capability-home-text {
     display: flex;
     align-items: center;
     padding: 0 8rem;
-
-    @include big-laptops {
-      padding: 0 5rem;
-    }
-
-    @include med-laptops {
-      padding: 0 3rem;
-    }
-
-    @include tablets {
-      padding: 3rem;
-    }
-
-    @include max-phone {
-    }
-
-    @include phone {
-      padding: 1.5rem;
-    }
 
     > div {
       > div {
@@ -109,33 +41,10 @@
 // home industry
 .homeIndustries {
   height: calc(100vh - 114px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  @include tablets {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
 
   .industry-button {
-    padding: 5rem 0 0 8rem;
-
-    @include big-laptops {
-      padding: 3rem 0 0 6rem;
-    }
-
-    @include med-laptops {
-      padding: 1rem 0 0 6rem;
-    }
-
-    @include tablets {
-      padding: 3rem;
-    }
-
-    @include phone {
-      padding: 1.5rem;
-    }
+    padding: 2rem 0 0 8rem;
+    position: relative;
 
     .big-buttons {
       font-size: 5rem;
@@ -148,33 +57,10 @@
       span {
         margin-left: 20px;
       }
-
-      @include big-laptops {
-        font-size: 4rem;
-        margin-bottom: 1.5rem;
-      }
-
-      @include med-laptops {
-        font-size: 3rem;
-        margin-bottom: 1.25rem;
-      }
-
-      @include phone {
-        font-size: 2.25rem;
-        margin-bottom: 1.25rem;
-      }
     }
 
     .read-more-button {
-      margin-top: 4rem !important;
-
-      @include med-laptops {
-        margin-top: 3rem !important;
-      }
-
-      @include tablets {
-        margin-top: 2rem !important;
-      }
+      margin-top: 3rem;
     }
   }
 }
@@ -186,20 +72,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
-  @include big-laptops {
-    .gold-title {
-      margin-bottom: 10px;
-    }
-    .sub-title {
-      margin-bottom: 10px;
-    }
+  .gold-title {
+    margin-bottom: 5px;
   }
-
-  @include tablets {
-    height: auto;
-    padding-top: 3rem;
-    margin-bottom: 5rem;
+  .sub-title {
+    margin-bottom: 30px;
   }
 
   .brandList,
@@ -209,6 +86,7 @@
     .slick-slide {
       max-width: 440px !important;
     }
+
     .brand-logo {
       width: 16rem;
       height: 4rem;
@@ -216,68 +94,17 @@
         object-fit: contain;
         object-position: left;
       }
-      @include big-laptops {
-        height: 3rem;
-        width: 10rem;
-      }
-
-      @include med-laptops {
-        width: 8rem;
-        height: 2.5rem;
-      }
     }
+
     .brand-image {
       height: 14rem;
       max-width: 420px;
-
-      @include big-laptops {
-        height: 10rem;
-      }
-
-      @include med-laptops {
-        height: 8rem;
-      }
-
-      @include tablets {
-        height: 10rem;
-      }
-
-      @include max-phone {
-      }
     }
   }
   .brandList {
     padding: 0 5rem 0 10rem;
-    @include big-laptops {
-      padding: 0 5rem 0 6rem;
-    }
-
-    @include med-laptops {
-    }
-
-    @include tablets {
-      padding: 0 3rem;
-    }
-
-    @include mini-tablets {
-    }
-
-    @include phone {
-      padding: 0 1.5rem;
-    }
   }
   .brandsList {
     padding: 0 8rem;
-    @include big-laptops {
-      padding: 0 5rem;
-    }
-
-    @include tablets {
-      padding: 0 3rem;
-    }
-
-    @include phone {
-      padding: 0 1.5rem;
-    }
   }
 }

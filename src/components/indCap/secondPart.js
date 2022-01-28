@@ -1,6 +1,7 @@
 import React from "react";
 import { getData, SampleNextArrow, SamplePrevArrow } from "../../utils";
 import Slider from "react-slick";
+import { Col, Row } from "antd";
 
 const SecondPart = ({ post }) => {
   const { title, content, acf, _embedded } = post || {};
@@ -12,8 +13,8 @@ const SecondPart = ({ post }) => {
   const datas = (desc || "").split("<li>");
 
   return (
-    <div className="secondPart">
-      <div className="product-cards">
+    <Row className="secondPart">
+      <Col span={12} className="product-cards">
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (supports || {}).title }}
@@ -42,8 +43,9 @@ const SecondPart = ({ post }) => {
             );
           })}
         </div>
-      </div>
-      <div
+      </Col>
+      <Col
+        span={12}
         className="half-back-image-with-text"
         style={{ backgroundImage: `url(${getData(_embedded, "image")})` }}
       >
@@ -59,8 +61,8 @@ const SecondPart = ({ post }) => {
             }}
           />
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

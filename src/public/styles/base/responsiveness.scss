@@ -1,3 +1,481 @@
+@media only screen and (max-width: 1599px) {
+  .main-header {
+    .logo {
+      width: 5rem;
+    }
+  }
+
+  .home {
+    margin-top: 98px;
+  }
+
+  .page {
+    padding-top: 98px;
+  }
+
+  .gold-title {
+    font-size: 1.3rem;
+  }
+
+  .read-more-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .read-more-detail {
+    margin: 0.5rem 0;
+  }
+
+  .catList {
+    margin-bottom: 15px;
+    > div {
+      font-size: 1rem;
+    }
+  }
+
+  .next-arrow {
+    font-size: 30px;
+    bottom: -40px;
+  }
+  .prev-arrow {
+    font-size: 30px;
+    bottom: -40px;
+  }
+
+  // home ---------------------------------------------------------------------
+
+  .homeSlider {
+    height: calc(100vh - 98px);
+    .sliderText {
+      > h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .homeCapability {
+    height: calc(100vh - 98px);
+    .capability-home-text {
+      padding: 0 4rem;
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 98px);
+    .industry-button {
+      padding: 1rem 0 0 6rem;
+      .big-buttons {
+        font-size: 3rem;
+      }
+      .read-more-button {
+        position: absolute;
+        bottom: 1rem;
+        margin-top: 5px;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .over-image {
+      .over-text {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .homeBrands {
+    height: calc(100vh - 98px);
+
+    .sub-title {
+      margin-bottom: 20px;
+    }
+
+    .brandList {
+      padding: 0 4rem 0 6rem;
+    }
+
+    .brandsList {
+      padding: 0 6rem;
+    }
+
+    .brandList,
+    .brandsList {
+      .slick-slide {
+        max-width: 300px !important;
+      }
+
+      .brand-logo {
+        width: 9rem;
+        height: 2.5rem;
+      }
+
+      .brand-image {
+        height: 9.5rem;
+      }
+    }
+  }
+
+  // industries capabilities ------------------------------------------------
+
+  .firstPart {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+
+    .sub-title {
+      margin-bottom: 1rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 1.5rem;
+
+      .continue-title {
+        margin-bottom: 0.5rem;
+        line-height: normal;
+      }
+
+      .squad-image {
+        height: 280px;
+      }
+    }
+  }
+
+  // industries capabilities detail------------------------------------------------
+
+  .secondPart {
+    height: calc(100vh - 98px);
+    .product-cards {
+      padding: 1rem 1rem 0 4rem;
+      .little-cards {
+        .card {
+          padding: 0.4rem;
+          font-size: 0.875rem;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .thirdPart {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+    .facts {
+      padding: 1rem 2rem;
+      > img {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      > h2,
+      p {
+        font-size: 1rem;
+        line-height: normal;
+      }
+
+      .numbers {
+        > h1 {
+          font-size: 2rem;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  .odd {
+    max-width: 1000px;
+    height: calc(100vh - 98px);
+    .texts {
+      > div {
+        > h4 {
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1rem;
+        }
+        ul {
+          li {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // footer -----------------------------------------------------------------
+
+  footer {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+    .footer {
+      h2 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .contacts {
+        > p:last-child {
+          > a {
+            padding: 10px;
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .contactUs {
+        padding: 0 2rem;
+        > div {
+          margin-bottom: 1.3rem;
+        }
+        textArea {
+          height: 8rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .main-header {
+    .logo {
+      width: 4.5rem;
+    }
+  }
+
+  .home {
+    margin-top: 90px;
+  }
+
+  .page {
+    padding-top: 90px;
+  }
+
+  .gold-title {
+    font-size: 1.125rem;
+  }
+
+  .catList {
+    margin: 0 4rem 10px 4rem;
+    .active,
+    .inactive {
+      margin-bottom: 5px;
+    }
+  }
+
+  .read-more-detail {
+    margin: 0.3rem 0;
+    font-size: 0.875rem;
+  }
+
+  .next-arrow,
+  .prev-arrow {
+    font-size: 20px;
+    bottom: -25px;
+  }
+
+  .read-more-button {
+    padding: 0.3rem 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  // home --------------------------------------------------------------------
+
+  .homeSlider {
+    height: calc(100vh - 90px);
+    .sliderText {
+      > h1 {
+        font-size: 3rem;
+      }
+      > h2 {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  .homeCapability {
+    height: calc(100vh - 90px);
+    .capability-home-text {
+      padding: 0 3rem;
+    }
+  }
+
+  .homeIndustries {
+    height: calc(100vh - 90px);
+    .industry-button {
+      padding: 0.5rem 0 0 4rem;
+
+      .gold-title {
+        margin-bottom: 10px;
+      }
+
+      .big-buttons {
+        font-size: 2.7rem;
+        margin-bottom: 20px;
+      }
+
+      .read-more-button {
+        padding: 0.5rem 1.3rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    .over-image {
+      .over-text {
+        margin: 0 3rem;
+        line-height: 1.5;
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .homeBrands {
+    .gold-title {
+      margin-bottom: 5px;
+    }
+
+    .sub-title {
+      margin-bottom: 10px;
+    }
+
+    .brandList {
+      padding: 0 4rem 0 5rem;
+    }
+
+    .brandsList {
+      padding: 0 4rem;
+    }
+
+    .brandList,
+    .brandsList {
+      .brand-logo {
+        width: 7rem;
+        height: 2rem;
+      }
+
+      .brand-image {
+        height: 7.5rem;
+      }
+    }
+  }
+
+  // industries capabilities -------------------------------------------------
+
+  .firstPart {
+    height: calc(100vh - 90px);
+    padding: 0 4rem;
+
+    .sub-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .industries,
+    .capabilities,
+    .portfolio {
+      gap: 1rem;
+
+      .continue-title {
+        margin-bottom: 0.5rem;
+        line-height: normal;
+        font-size: 1.125rem;
+      }
+
+      .continue-text {
+        line-height: 1.5;
+      }
+
+      .squad-image {
+        height: 200px;
+      }
+    }
+  }
+
+  // industries capabilities detail ------------------------------------------------------
+
+  .secondPart {
+    height: calc(100vh - 90px);
+    .product-cards {
+      padding-right: 10px;
+      .little-cards {
+        gap: 10px;
+        .card {
+          padding: 5px;
+          font-size: 0.725rem;
+          img {
+            width: 35px;
+            height: 35px;
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .thirdPart {
+    height: calc(100vh - 90px);
+    padding: 0 4rem;
+    .facts {
+      padding: 0.5rem 1rem;
+      > img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      > h2,
+      p {
+        font-size: 1rem;
+        line-height: normal;
+      }
+
+      .numbers {
+        > h1 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  // footer -----------------------------------------------------------------------
+
+  footer {
+    height: calc(100vh - 90px);
+    padding: 0 4rem;
+    .footer {
+      h2 {
+        margin-bottom: 1rem;
+      }
+      .contactUs {
+        padding: 0;
+        > div {
+          margin-bottom: 0.8rem;
+          textArea {
+            height: 6rem;
+          }
+          label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 991px) {
   .main-header {
     .logo {
@@ -20,43 +498,21 @@
     }
   }
 
-  .page {
+  .home {
     margin-top: 82px;
   }
-}
 
-@media only screen and (max-width: 1536px) {
-  footer {
-    padding: 0 6rem;
-    .footer {
-      gap: 3rem;
-    }
+  .page {
+    padding-top: 82px;
   }
 }
 
-@media only screen and (max-width: 1280px) {
-  footer {
-    padding: 0 5rem;
-    .footer {
-      gap: 2rem;
-    }
-  }
+@media only screen and (max-width: 767px) {
 }
 
-@media only screen and (max-width: 1024px) {
-  footer {
-    height: auto;
-    padding: 3rem;
-    .footer {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      .contacts {
-        > p:last-child {
-          margin-top: 2rem;
-        }
-      }
-    }
-  }
+@media only screen and (max-width: 575px) {
 }
+
 @media only screen and (max-width: 480px) {
   footer {
     padding: 1.5rem;

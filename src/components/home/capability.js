@@ -1,16 +1,18 @@
 import React from "react";
 import { getData, __ } from "../../utils";
 import Link from "next/link";
+import { Col, Row } from "antd";
 
 const HomeCapabilty = ({ capability }) => {
   const { content, _embedded } = capability;
 
   return (
-    <div className="homeCapability">
-      <div className="simple-half-image">
+    <Row className="homeCapability">
+      <Col span={12} className="simple-half-image">
         <img src={getData(_embedded, "image")} />
-      </div>
-      <div
+      </Col>
+      <Col
+        span={12}
         className="capability-home-text"
         data-aos="fade-up"
         data-aos-easing="ease"
@@ -26,8 +28,8 @@ const HomeCapabilty = ({ capability }) => {
             <div className="read-more-button">{__("Read more")}</div>
           </Link>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

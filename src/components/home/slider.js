@@ -26,19 +26,21 @@ const HomeSlider = ({ sliders }) => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                color: `${body.font_color}`,
               }}
             >
               <div
                 className="sliderText"
-                style={{ textAlign: `${position_of_text}` }}
+                style={{
+                  textAlign: `${position_of_text}`,
+                }}
                 data-aos="fade-down"
                 data-aos-easing="ease"
                 data-aos-delay="0"
               >
-                <h1>{body.text}</h1>
+                <h1 style={{ color: `${body.font_color}` }}>{body.text}</h1>
                 <h2
                   style={{
+                    color: `${body.font_color}`,
                     paddingLeft: position_of_text === "right" ? "40%" : "0",
                   }}
                 >

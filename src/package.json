@@ -13,6 +13,7 @@
     "@ant-design/icons": "^4.7.0",
     "@fullpage/react-fullpage": "^0.1.19",
     "@zeit/next-css": "^1.0.1",
+    "antd": "^4.18.5",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "express": "^4.17.1",

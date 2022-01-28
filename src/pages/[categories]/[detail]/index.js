@@ -19,6 +19,7 @@ import Faqs from "../../../components/career/faqs";
 import Footer from "../../../components/layouts/footer";
 import NewsDetail from "../../../components/news/newsDetail";
 import RelatedNews from "../../../components/news/newsRelated";
+import Fullpage from "../../../components/FullPage";
 
 const Detail = ({
   mainMenu,
@@ -53,44 +54,8 @@ const Detail = ({
     }
   };
 
-  const renderPage = () => {
-    switch (slug) {
-      case "industries":
-        return (
-          <>
-            <FirstPart data={data} clas={slug} />
-            <div id="section2">
-              <SecondPart post={post} />
-            </div>
-            {(acf || {}).bg_image && <FactSection post={post} />}
-            {(acf || {}).additional && <Additional post={post} />}
-            <Relations
-              brandData={brands}
-              post={post}
-              relPosts={relationsPosts}
-              relations={relations}
-            />
-          </>
-        );
-
-      case "capabilities":
-        return (
-          <>
-            <FirstPart data={data} clas={slug} />
-            <div id="section2">
-              <SecondPart post={post} />
-            </div>
-            {(acf || {}).bg_image && <FactSection post={post} />}
-            {(acf || {}).additional && <Additional post={post} />}
-            <Relations
-              brandData={brands}
-              post={post}
-              relPosts={relationsPosts}
-              relations={relations}
-            />
-          </>
-        );
-
+  const renderPage = (page) => {
+    switch (page) {
       case "brands":
         return (
           <>
@@ -107,7 +72,7 @@ const Detail = ({
       case "portfolio":
         return (
           <>
-            <FirstPart data={data} clas={slug} />
+            <FirstPart data={data} clas={page} />
             <div id="section2">
               <Product post={post} />
             </div>
@@ -128,19 +93,51 @@ const Detail = ({
             <Footer contact={contact} />
           </>
         );
-      default:
+
+      case "news":
         return (
           <>
             <NewsDetail post={post} />
-            <RelatedNews data={data} slug={slug} />
+            <RelatedNews data={data} slug={page} />
           </>
+        );
+      default:
+        return (
+          <Fullpage
+            children={
+              <div id="fullpage">
+                <div className="section">
+                  <FirstPart data={data} clas={page} />
+                </div>
+
+                <div className="section">
+                  <SecondPart post={post} />
+                </div>
+
+                <div className="section">
+                  {(acf || {}).bg_image && <FactSection post={post} />}
+                </div>
+
+                {(acf || {}).additional && <Additional post={post} />}
+
+                <div className="section">
+                  <Relations
+                    brandData={brands}
+                    post={post}
+                    relPosts={relationsPosts}
+                    relations={relations}
+                  />
+                </div>
+              </div>
+            }
+          />
         );
     }
   };
 
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">{renderPage()}</div>
+      <div className="page">{renderPage(slug)}</div>
     </Layout>
   );
 };

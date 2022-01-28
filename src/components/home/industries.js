@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { Row, Col } from "antd";
 
 const HomeIndustries = ({ data }) => {
   const lastContent = data[data.length - 1];
@@ -17,8 +18,8 @@ const HomeIndustries = ({ data }) => {
   };
 
   return (
-    <div className="homeIndustries">
-      <div className="industry-button">
+    <Row className="homeIndustries">
+      <Col span={12} className="industry-button">
         <div className="gold-title">{__("Industries")}</div>
         {data
           .slice(0)
@@ -53,20 +54,21 @@ const HomeIndustries = ({ data }) => {
         <Link href={`/[categories]`} as={"/industries"}>
           <div className="read-more-button">{__("Read more")}</div>
         </Link>
-      </div>
-      <div
+      </Col>
+      <Col
+        span={12}
         className="over-image"
         style={{ backgroundImage: `url(${getData(img, "image")})` }}
       >
         <div
-          className="over-text text-md"
+          className="over-text"
           data-aos="fade-up"
           data-aos-easing="ease"
           data-aos-delay="0"
           dangerouslySetInnerHTML={{ __html: content }}
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

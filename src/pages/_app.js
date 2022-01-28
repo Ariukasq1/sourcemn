@@ -5,7 +5,7 @@ import NProgress from "nprogress";
 import { getLang } from "../config";
 import { setLocale } from "../utils";
 import AOS from "aos";
-
+import "antd/dist/antd.css";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "../public/styles/style.min.css";

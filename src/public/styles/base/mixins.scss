@@ -13,13 +13,13 @@
 }
 
 @mixin big-laptops {
-  @media (max-width: 1536px) {
+  @media (max-width: 1599px) {
     @content;
   }
 }
 
 @mixin med-laptops {
-  @media (max-width: 1280px) {
+  @media (max-width: 1200px) {
     @content;
   }
 }

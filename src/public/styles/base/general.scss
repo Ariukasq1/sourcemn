@@ -254,6 +254,11 @@ hr {
 }
 
 .page {
+  padding-top: 114px;
+  position: relative;
+}
+
+.home {
   margin-top: 114px;
   position: relative;
 }
@@ -311,10 +316,6 @@ hr {
 
 .font-bold {
   font-weight: bold !important;
-}
-
-.text-md {
-  font-size: 1.125px !important;
 }
 
 @keyframes drop {

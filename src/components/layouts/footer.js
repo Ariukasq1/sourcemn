@@ -12,6 +12,7 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons";
 import { __ } from "../../utils";
+import { Row, Col } from "antd";
 
 function Footer({ contact }) {
   const { acf } = contact || {};
@@ -20,8 +21,8 @@ function Footer({ contact }) {
 
   return (
     <footer>
-      <div className="footer">
-        <div className="contacts">
+      <Row className="footer">
+        <Col xxl={7} xl={6} lg={7} className="contacts">
           <h2>{__("Contacts")}</h2>
           <p>
             <PhoneOutlined /> Tel: {tel}
@@ -49,14 +50,14 @@ function Footer({ contact }) {
               <TwitterOutlined />
             </a>
           </p>
-        </div>
-        <div className="headOffice">
+        </Col>
+        <Col xxl={7} xl={6} lg={6} className="headOffice">
           <h2>{(office || {}).name}</h2>
           <p>
             <HomeOutlined /> {(office || {}).address}
           </p>
-        </div>
-        <div className="contactUs">
+        </Col>
+        <Col xxl={9} xl={10} lg={10} className="contactUs">
           <h2>{__("Please contact us")}</h2>
           <div>
             <label>{__("Full name")}</label>
@@ -89,8 +90,8 @@ function Footer({ contact }) {
           </div>
 
           <input type="submit" value="Send" />
-        </div>
-      </div>
+        </Col>
+      </Row>
     </footer>
   );
 }
