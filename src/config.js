@@ -30,13 +30,7 @@ const config = (context) => {
 };
 
 export const generateLink = (url) => {
-  return `${url}?lang=${getLang()}&type=${
-    (getParam("type")
-      ? getParam("type")
-      : getLang() === "en"
-      ? "investor"
-      : "") || ""
-  }`;
+  return `${url}?lang=${getLang()}`;
 };
 
 export default config;
