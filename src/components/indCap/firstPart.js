@@ -12,7 +12,7 @@ const FirstPart = ({ clas, data }) => {
           .slice(0)
           .reverse()
           .map((post, ind) => {
-            const { title, excerpt, slug, _embedded } = post || {};
+            const { title, excerpt, slug, _embedded, id } = post || {};
 
             return (
               <div
@@ -32,24 +32,18 @@ const FirstPart = ({ clas, data }) => {
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
                 <Link
-                  href={`/[categories]/[detail]`}
-                  as={`/${clas}/${slug}#section2`}
+                  href={`/categories/${clas}/[slug]`}
+                  as={`/categories/${clas}/${slug}`}
                 >
-                  <div
-                    className="read-more-detail"
-                    onClick={() => (DisplayArr[0] = "none")}
-                  >
+                  <div className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </div>
                 </Link>
                 <Link
-                  href={`/[categories]/[detail]`}
-                  as={`/${clas}/${slug}#section2`}
+                  href={`/categories/${clas}/[slug]`}
+                  as={`/categories/${clas}/${slug}`}
                 >
-                  <div
-                    className="squad-image"
-                    onClick={() => (DisplayArr[0] = "none")}
-                  >
+                  <div className="squad-image">
                     <img src={getData(_embedded, "image")} />
                   </div>
                 </Link>

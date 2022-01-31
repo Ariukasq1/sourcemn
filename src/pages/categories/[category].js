@@ -8,22 +8,25 @@ import AboutUs from "../../components/about/aboutUs";
 import Service from "../../components/about/aboutService";
 import TimeLine from "../../components/about/timeline";
 import Footer from "../../components/layouts/footer";
-import NewsList from "../../components/news/newsList";
 import Culture from "../../components/career/culture";
+import NewsList from "../../components/news/newsList";
 
 const Category = ({
   mainMenu,
   topMenu,
-  slug,
   data,
+  slug,
   childCats,
-  serviceCats,
-  service,
   contact,
+  service,
+  serviceCats,
   timeline,
 }) => {
   const renderPage = (page) => {
     switch (page) {
+      case "facility":
+        return <></>;
+
       case "brands":
         return <HomeBrands brandCats={childCats} brands={data} page={page} />;
 
@@ -37,14 +40,14 @@ const Category = ({
           </>
         );
 
-      case "news":
-        return <NewsList data={data} cats={childCats} />;
-
       case "careers":
         return <Culture data={data} />;
 
       case "contact":
         return <Footer contact={contact} />;
+
+      case "news":
+        return <NewsList data={data} cats={childCats} />;
 
       default:
         return <FirstPart clas={page} data={data} />;
@@ -61,8 +64,7 @@ const Category = ({
 Category.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
-  const slug =
-    context.query.categories === "newsroom" ? "news" : context.query.categories;
+  const slug = context.query.category;
 
   const mainMenu = await fetcher(
     `${config(context).apiUrl}/menus/v1/menus/nav-menu`
@@ -81,17 +83,20 @@ Category.getInitialProps = async (context) => {
   const data = await wp
     .posts()
     .categories((catId || {}).id)
+    .perPage(100)
     .embed();
 
   let childCats;
   let contact;
 
   switch (slug) {
-    case "industries":
-      return { data, topMenu, mainMenu, slug };
+    case "news":
+      childCats = await wp
+        .categories()
+        .parent((catId || {}).id)
+        .embed();
 
-    case "capabilities":
-      return { data, topMenu, mainMenu, slug };
+      return { mainMenu, topMenu, data, childCats, slug };
 
     case "brands":
       childCats = await wp
@@ -99,16 +104,30 @@ Category.getInitialProps = async (context) => {
         .parent((catId || {}).id)
         .embed();
 
-      return { data, topMenu, mainMenu, slug, childCats };
+      return { mainMenu, topMenu, data, childCats, slug };
 
-    case "portfolio":
-      return { mainMenu, topMenu, data, slug };
+    case "contact":
+      contact = await wp
+        .posts()
+        .categories()
+        .slug(`${slug}`)
+        .embed()
+        .then((data) => data[0]);
+
+      return { mainMenu, topMenu, contact, slug };
 
     case "about":
       childCats = await wp
         .categories()
         .parent((catId || {}).id)
         .embed();
+
+      contact = await wp
+        .posts()
+        .categories()
+        .slug("contact")
+        .embed()
+        .then((data) => data[0]);
 
       const serviceCats = await wp
         .categories()
@@ -119,13 +138,6 @@ Category.getInitialProps = async (context) => {
         .posts()
         .categories(serviceCats.map((service) => service.id))
         .embed();
-
-      contact = await wp
-        .posts()
-        .categories()
-        .slug("contact")
-        .embed()
-        .then((data) => data[0]);
 
       const history = await wp
         .categories()
@@ -149,26 +161,11 @@ Category.getInitialProps = async (context) => {
         slug,
       };
 
-    case "news":
-      childCats = await wp
-        .categories()
-        .parent((catId || {}).id)
-        .embed();
-
-      return { mainMenu, topMenu, data, childCats, slug };
-
-    case "careers":
-      return { mainMenu, topMenu, data, slug };
+    case "facility":
+      return { topMenu, mainMenu };
 
     default:
-      contact = await wp
-        .posts()
-        .categories()
-        .slug(`${slug}`)
-        .embed()
-        .then((data) => data[0]);
-
-      return { mainMenu, topMenu, contact, slug };
+      return { data, topMenu, mainMenu, slug };
   }
 };
 

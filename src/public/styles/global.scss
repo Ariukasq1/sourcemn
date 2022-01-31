@@ -59,7 +59,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-
+  position: relative;
   &:hover {
     &:after {
       height: 100%;
@@ -109,15 +109,22 @@ p {
   padding-bottom: 30px;
   font-weight: 500;
 
+  > h2 {
+    font-weight: 700;
+  }
+
   @include big-laptops {
     line-height: 1.5;
+    > h2 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
   }
 
   @include med-laptops {
     bottom: 10px;
-    p {
-      font-size: 1rem;
-    }
   }
 
   &::after {
@@ -277,8 +284,9 @@ p {
 .two-row-slider {
   width: 100%;
   z-index: 2;
+
   .slider-image-back {
-    height: 14rem;
+    height: 13rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -287,12 +295,21 @@ p {
     display: flex;
     align-items: flex-end;
     position: relative;
-    &:hover {
-      cursor: pointer;
-      &:before {
-        content: none;
+
+    @include big-laptops {
+      height: 10rem;
+      > h2 {
+        font-size: 1.125rem;
       }
     }
+
+    @include med-laptops {
+      height: 9rem;
+      > h2 {
+        font-size: 1.125rem;
+      }
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -301,12 +318,47 @@ p {
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.4);
+      transition: 0.4s;
       z-index: 1;
     }
-    > p {
+
+    > h2 {
       line-height: normal;
-      margin: 15px;
       z-index: 3;
+      color: #fff;
+      font-weight: 600;
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+
+    .read-more-projects {
+      z-index: 3;
+      position: absolute;
+      left: 10px;
+      bottom: 30px;
+      font-size: 1rem;
+
+      > h2 {
+        display: none;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.4s ease;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      .read-more-projects {
+        > h2 {
+          display: inline-block;
+        }
+      }
+      &:before {
+        content: "";
+        background: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
@@ -398,5 +450,77 @@ p {
 ul {
   li {
     font-size: 1.125rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include big-laptops {
+    max-width: 1100px;
+  }
+  @include med-laptops {
+    max-width: 900px;
+  }
+}
+
+.one-brochure {
+  height: 200px;
+  margin-top: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  box-shadow: 3px 13px 18px 0 rgb(0 0 0/26%);
+  background-color: #fff;
+  position: relative;
+  padding: 0 80px 20px 0;
+  transition: 0.4s ease;
+
+  .broch-overlay {
+    background-color: #00338d;
+    height: 100%;
+    width: 100%;
+    transition: 0.4s ease;
+    border-bottom-left-radius: 30% 10%;
+    border-bottom-right-radius: 90% 100%;
+    border-top-left-radius: 6px;
+  }
+
+  .download {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  > p {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    left: 0;
+    transition: 0.4s;
+    line-height: normal;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #00338d;
+
+    .broch-overlay {
+      background-color: white;
+    }
+
+    > p,
+    .download {
+      color: #00338d;
+    }
   }
 }

@@ -1,26 +1,28 @@
 import React from "react";
 import { getData } from "../../utils";
+import { Row, Col } from "antd";
 
 const Product = ({ post }) => {
   const { title, content, _embedded } = post || {};
 
   return (
-    <div className="long-text-with-image">
-      <div
-        className="long-half-text"
+    <Row className="portfolio-product">
+      <Col
+        span={12}
         data-aos="fade-down"
         data-aos-easing="ease"
+        className="half-text"
       >
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
         />
-        <div dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
-      </div>
-      <div className="long-half-image">
+        <p dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
+      </Col>
+      <Col span={12} className="half-image">
         <img src={getData(_embedded, "image")} />
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

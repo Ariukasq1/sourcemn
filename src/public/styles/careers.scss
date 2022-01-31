@@ -1,11 +1,13 @@
 .career-culture {
   height: calc(100vh - 114px);
-  padding: 0 8rem;
+  padding: 0 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   .gold-title {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
+    line-height: normal;
+    font-size: 1.5rem;
   }
   .sub-title {
     margin-bottom: 2rem;
@@ -18,28 +20,41 @@
       border-radius: 10px;
       box-shadow: 0 5px 12px 0 rgba(0 0 0 / 10%);
       background-color: #ffffff;
+      position: relative;
+      max-width: 350px;
       .big-card-image {
         background-color: #edf2f7;
-        padding: 30px 60px;
-        border-top-right-radius: 10px;
+        display: flex;
         border-top-left-radius: 10px;
-        > img {
-          object-fit: contain;
-          object-position: center;
-          height: 250px;
-        }
-      }
-      .big-card-text {
-        padding: 20px 30px;
-        ul {
-          margin-bottom: 0.5rem;
-          li {
-            list-style: inside;
-            font-size: 1.5rem;
-            margin-bottom: 0;
+        border-top-right-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        > div {
+          width: 200px;
+          height: 200px;
+          margin: 40px 0;
+          > img {
+            object-fit: contain;
           }
         }
       }
+      .big-card-text {
+        padding: 20px;
+        .blue-title {
+          font-size: 1.125rem;
+        }
+        p {
+          ul {
+            list-style: inside;
+            li {
+              margin-bottom: 0;
+              font-size: 1rem;
+              line-height: 1.25rem;
+            }
+          }
+        }
+      }
+
       &:hover {
         cursor: pointer;
         box-shadow: 0 5px 12px 0 rgba(0 0 0 / 20%);
@@ -48,33 +63,26 @@
   }
 }
 
-.why-mms {
-  .culture {
-    height: calc(100vh - 114px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    text-align: center;
-  }
+.culture {
+  height: calc(100vh - 114px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
 }
 
 .benefits,
 .tourOffice {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 114px;
-}
-
-.tourOffice {
-  margin-bottom: 114px;
 }
 
 .open-vacancy {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  margin-bottom: 114px;
+  height: calc(100vh - 114px);
   .long-half-text {
     .vacancy-posts {
       height: 300px;
@@ -101,7 +109,7 @@
 .selection-process {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-bottom: 114px;
+  height: calc(100vh - 114px);
   .long-half-text {
     .process {
       display: grid;
@@ -139,29 +147,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .gold-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
   .collapse {
-    p {
-      font-size: 1.25rem;
-    }
-    .collapse-head {
-      padding: 16px;
-      color: rgba(0, 0, 0, 0.85);
-      line-height: normal;
-      cursor: pointer;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      background-color: rgb(243, 243, 243);
-      border: 1px solid #d9d9d9;
-      display: flex;
-      align-items: center;
-      > span {
-        font-size: 0.8rem;
-        margin-right: 20px;
+    .ant-collapse-content {
+      p {
+        color: gray;
       }
     }
-    .collapse-hidden {
-      padding: 15px;
-      border: 1px solid #d9d9d9;
+    p {
+      font-size: 1rem;
     }
   }
 }

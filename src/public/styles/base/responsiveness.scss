@@ -138,6 +138,7 @@
       .continue-title {
         margin-bottom: 0.5rem;
         line-height: normal;
+        font-size: 1.125rem;
       }
 
       .squad-image {
@@ -192,9 +193,10 @@
     }
   }
 
-  .odd {
-    max-width: 1000px;
+  .odd,
+  .even {
     height: calc(100vh - 98px);
+
     .texts {
       > div {
         > h4 {
@@ -206,6 +208,50 @@
         ul {
           li {
             font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio-product {
+    height: calc(100vh - 98px);
+
+    .half-text {
+      padding: 0 1rem 0 6rem;
+    }
+  }
+
+  .portfolio-projects {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+  }
+
+  .newsList,
+  .newsRelated {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+  }
+
+  .career-culture {
+    height: calc(100vh - 98px);
+    padding: 0 6rem;
+    .sub-title {
+      margin-bottom: 1rem;
+    }
+    .big-cards-list {
+      gap: 1.5rem;
+      .big-card {
+        .big-card-image {
+          > div {
+            width: 150px;
+            height: 150px;
+            margin: 40px 0;
+          }
+        }
+        .big-card-text {
+          .blue-title {
+            margin-bottom: 5px;
           }
         }
       }
@@ -243,6 +289,45 @@
         textArea {
           height: 8rem;
         }
+      }
+    }
+  }
+
+  .relations {
+    padding: 0 6rem;
+    .relations-list {
+      .list-of-relations {
+        .one-brochure {
+          height: 150px;
+          padding: 0 40px 10px 0;
+          > p {
+            font-size: 1rem;
+            right: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .brand {
+    .brand-banner {
+      height: 400px;
+      .banner-content-wrapper {
+        max-width: 1100px;
+        > h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .brand-details {
+    padding: 0 4rem 60px 4rem;
+    .brochures {
+      gap: 1rem;
+      .one-brochure {
+        padding: 0 40px 20px 0;
+        height: 180px;
       }
     }
   }
@@ -392,11 +477,14 @@
       .continue-title {
         margin-bottom: 0.5rem;
         line-height: normal;
-        font-size: 1.125rem;
+        font-size: 1rem;
       }
 
       .continue-text {
         line-height: 1.5;
+        p {
+          font-size: 0.9rem;
+        }
       }
 
       .squad-image {
@@ -451,6 +539,130 @@
     }
   }
 
+  .odd,
+  .even {
+    height: calc(100vh - 90px);
+    padding: 0 2rem 0 4rem;
+    .texts {
+      > div {
+        > h4 {
+          margin-bottom: 10px;
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        ul {
+          li {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .relations {
+    padding: 0 4rem;
+    .relations-list {
+      margin-top: 10px;
+      .list-of-relations {
+        gap: 1rem;
+        .one-brochure {
+          height: 120px;
+          > p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio-product {
+    height: calc(100vh - 90px);
+
+    .half-text {
+      padding: 0 0.5rem 0 4rem;
+
+      .blue-title {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.725rem;
+      }
+
+      ul {
+        li {
+          font-size: 0.725rem;
+        }
+      }
+    }
+
+    .half-image {
+      height: 100%;
+    }
+  }
+
+  .portfolio-projects {
+    height: calc(100vh - 90px);
+  }
+
+  .newsList,
+  .newsRelated {
+    height: calc(100vh - 90px);
+    padding: 0 4rem 30px 4rem;
+
+    .sub-title {
+      font-size: 1.5rem;
+    }
+    .two-row-slider {
+      .slider-image-back {
+        height: 8rem;
+        > h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .career-culture {
+    height: calc(100vh - 90px);
+    padding: 0 4rem;
+    .gold-title {
+      font-size: 1.125rem;
+      margin-bottom: 5px;
+    }
+    .sub-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .big-cards-list {
+      gap: 1.5rem;
+      .big-card {
+        .big-card-image {
+          > div {
+            width: 130px;
+            height: 130px;
+            margin: 20px;
+          }
+        }
+        .big-card-text {
+          padding: 10px;
+          .blue-title {
+            font-size: 1rem;
+          }
+          p {
+            ul {
+              li {
+                font-size: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   // footer -----------------------------------------------------------------------
 
   footer {
@@ -470,6 +682,75 @@
           label {
             display: none;
           }
+        }
+      }
+    }
+  }
+  .brand {
+    .brand-banner {
+      .banner-content-wrapper {
+        max-width: 900px;
+        > h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .second-level-wrapper {
+      .container {
+        ul {
+          li {
+            span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .about-brand {
+      padding: 60px 0 40px 0;
+      .container {
+        .intro-content {
+          h1 {
+            font-size: 30px;
+          }
+          p {
+            font-size: 1.2rem;
+            span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .detail-brand {
+      padding: 40px 0;
+      .container {
+        .details {
+          .detail-text-title {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .brand-details {
+    padding: 0 2rem 60px 2rem;
+    .brochures {
+      gap: 1rem;
+      .one-brochure {
+        height: 150px;
+
+        > p {
+          font-size: 1rem;
+          right: 40px;
+        }
+        .download {
+          top: 90px;
+          font-size: 0.875rem;
         }
       }
     }

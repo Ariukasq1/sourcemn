@@ -1,5 +1,6 @@
 import React from "react";
 import { getData, __ } from "../../utils";
+import { Row, Col } from "antd";
 
 const Brand = ({ post }) => {
   const { _embedded, title, acf } = post || {};
@@ -10,30 +11,75 @@ const Brand = ({ post }) => {
   return (
     <div className="brand">
       <div
-        className="brand-detail-image"
+        className="brand-banner"
         style={{ backgroundImage: `url(${getData(_embedded, "image")})` }}
       >
-        <div className="about-brand" data-aos="flip-down">
-          <div className="gold-title">{__("Brands")}</div>
-          <div className="logo-brand">
-            <img src={logo} />
-          </div>
-          <div className="slogan">
-            <div className="blockquote">
-              <p dangerouslySetInnerHTML={{ __html: slogan }} />
-              <div className="location">
-                <span>
-                  {__("Country:")} {country}
-                </span>
-                <span>
-                  {__("Founded Year:")} {founded_year}
-                </span>
-              </div>
-            </div>
-          </div>
+        <div className="banner-content-wrapper">
+          <h1 dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />
         </div>
       </div>
-      <div
+      <div className="second-level-wrapper">
+        <div className="container">
+          <ul>
+            <li>
+              <span>
+                {__("Country:")} {country}
+              </span>
+            </li>
+            <li>
+              <span>
+                {__("Founded Year:")} {founded_year}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="about-brand">
+        <div className="container">
+          <Row className="intro-content">
+            <Col span={17}>
+              <h1 dangerouslySetInnerHTML={{ __html: slogan }} />
+              <p dangerouslySetInnerHTML={{ __html: about }} />
+            </Col>
+          </Row>
+        </div>
+      </div>
+
+      <div className="detail-brand">
+        <div className="container">
+          <Row className="details">
+            <Col span={17}>
+              <div className="detail-text-title">
+                <span
+                  dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
+                />{" "}
+                {__("Detail")}
+              </div>
+              <div
+                className="detail-text-ul"
+                dangerouslySetInnerHTML={{ __html: advantage }}
+              />
+            </Col>
+          </Row>
+        </div>
+      </div>
+
+      {certificate && (
+        <div className="cert-brand">
+          <div className="container">
+            <Row className="cert">
+              <Col span={17}>
+                <div className="blue-title">
+                  {__("Certification & Accreditations:")}
+                </div>
+                <img src={certificate} />
+              </Col>
+            </Row>
+          </div>
+        </div>
+      )}
+      {/* <div
         className="brand-detail-and-about"
         data-aos="fade-down"
         data-aos-delay={200}
@@ -50,23 +96,9 @@ const Brand = ({ post }) => {
           dangerouslySetInnerHTML={{ __html: about }}
         />
 
-        <div className="blue-title">
-          <span dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />{" "}
-          {__("Detail")}
-        </div>
-        <div
-          className="brand-detail-text"
-          dangerouslySetInnerHTML={{ __html: advantage }}
-        />
-        {certificate && (
-          <div className="certificate">
-            <div className="blue-title">
-              {__("Certification & Accreditations:")}
-            </div>
-            <img src={certificate} />
-          </div>
-        )}
-      </div>
+        
+        
+      </div> */}
     </div>
   );
 };

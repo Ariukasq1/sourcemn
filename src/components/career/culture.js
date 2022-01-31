@@ -15,8 +15,8 @@ const Culture = ({ data }) => {
             return (
               <Link
                 key={ind}
-                href={"/[categories]/[detail]"}
-                as={`/careers/${card.slug}#section2`}
+                href={"/categories/careers/[careers]"}
+                as={`/categories/careers/${card.slug}`}
               >
                 <div
                   className="big-card"
@@ -27,14 +27,16 @@ const Culture = ({ data }) => {
                   data-aos-offset="300"
                 >
                   <div className="big-card-image">
-                    <img src={getData(card._embedded, "image")} />
+                    <div>
+                      <img src={getData(card._embedded, "image")} />
+                    </div>
                   </div>
                   <div className="big-card-text">
                     <div
                       className="blue-title"
                       dangerouslySetInnerHTML={{ __html: card.title.rendered }}
                     />
-                    <div
+                    <p
                       dangerouslySetInnerHTML={{
                         __html: card.content.rendered,
                       }}

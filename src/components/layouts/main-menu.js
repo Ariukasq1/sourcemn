@@ -11,8 +11,8 @@ const MainMenu = ({ menu, handler }) => {
           return (
             <Link
               key={ind}
-              href={`/[categories]`}
-              as={generateLink(`/${item.slug}`)}
+              href={`/categories/[category]`}
+              as={generateLink(`/categories/${item.slug}`)}
             >
               <a>{item.title}</a>
             </Link>

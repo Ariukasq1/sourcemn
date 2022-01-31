@@ -6,99 +6,65 @@ import Link from "next/link";
 const Relations = ({ brandData, post, relPosts, relations }) => {
   const { acf } = post || {};
 
-  const subTitle = relations === "capabilities" ? "industries" : "capabilities";
-
   const { capabilities, industries, brands } = acf || {};
 
-  const indCap = relations === "capabilities" ? industries : capabilities;
+  const indCap = relations === "capabilities" ? capabilities : industries;
 
   const relbrands = brandData.filter((el) => (brands || []).includes(el.id));
 
   const relIndCap = relPosts.filter((el) => (indCap || []).includes(el.id));
 
-  const showBrands = relbrands.length > 4 ? 4 : relbrands.length;
-
-  const showInd = relIndCap.length > 4 ? 4 : relIndCap.length;
-
-  const break992brands = relbrands.length > 3 ? 2 : relbrands.length;
-
-  const break992Ind = relIndCap.length > 3 ? 2 : relIndCap.length;
-
-  const renderBrands = (items, slug, show, showRes) => {
-    const settings = {
-      dots: false,
-      arrows: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      speed: 500,
-      slidesToShow: show,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: showRes > 2 ? 2 : showRes,
-            slidesToScroll: 1,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: showRes > 2 ? 2 : showRes,
-            slidesToScroll: 1,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-          },
-        },
-      ],
-    };
-
-    if (show === 0) {
-      return null;
-    }
-
-    return (
-      <>
-        <div className="gold-title">{__(`${slug}`)}</div>
-        <Slider {...settings} className="relBrands">
-          {items.map((brnd, ind) => {
-            return (
-              <div key={ind}>
-                <p dangerouslySetInnerHTML={{ __html: brnd.title.rendered }} />
-                <Link
-                  href={`/[categories]/[detail]`}
-                  as={
-                    slug === "brands"
-                      ? `/${slug}/${brnd.slug}`
-                      : `/${slug}/${brnd.slug}#section2`
-                  }
-                >
-                  <div className="relations-image">
-                    <img src={getData(brnd._embedded, "image")} />
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
-        </Slider>
-      </>
-    );
-  };
-
   return (
     <div className="relations">
       <div className="blue-title">{__("Relations")}</div>
-      {renderBrands(relbrands, "brands", showBrands, break992brands)}
-      {renderBrands(relIndCap, subTitle, showInd, break992Ind)}
+      <div className="relations-list">
+        <div className="gold-title">{__("Brands")}</div>
+        <div className="list-of-relations">
+          {relbrands.map((item, ind) => {
+            return (
+              <div
+                key={ind}
+                className="one-brochure"
+                style={{
+                  backgroundImage: `url(${getData(item._embedded, "image")})`,
+                }}
+              >
+                <div
+                  className="broch-overlay"
+                  style={{
+                    opacity: "0.6",
+                  }}
+                />
+                <p dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="relations-list">
+        <div className="gold-title">{relations}</div>
+        <div className="list-of-relations">
+          {relIndCap.map((item, ind) => {
+            return (
+              <div
+                key={ind}
+                className="one-brochure"
+                style={{
+                  backgroundImage: `url(${getData(item._embedded, "image")})`,
+                }}
+              >
+                <div
+                  className="broch-overlay"
+                  style={{
+                    opacity: "0.6",
+                  }}
+                />
+                <p dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

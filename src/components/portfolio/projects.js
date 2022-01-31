@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import {
-  getData,
-  SampleNextArrow,
-  SamplePrevArrow,
-  DisplayArr,
-} from "../../utils";
+import React from "react";
+import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
-import ProjectsDetail from "./projectDetail";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
-const Projects = ({ projects, detail, background, materials }) => {
+const Projects = ({ projects, detail, post }) => {
+  const { _embedded, title } = post || {};
   const rows = projects.length > 4 ? 2 : 1;
   const slideShow = rows > 1 ? 4 : projects.length;
-
-  const [post, setPost] = useState();
 
   const settings = {
     dots: false,
@@ -26,7 +20,7 @@ const Projects = ({ projects, detail, background, materials }) => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1600,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -34,7 +28,7 @@ const Projects = ({ projects, detail, background, materials }) => {
         },
       },
       {
-        breakpoint: 992,
+        breakpoint: 991,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -52,59 +46,40 @@ const Projects = ({ projects, detail, background, materials }) => {
     ],
   };
 
-  const setState = (item, dis) => {
-    setPost(item);
-    DisplayArr[0] = dis;
-  };
-
   return (
-    <>
-      <div
-        className="portfolio-projects"
-        style={{
-          backgroundImage: `url(${getData(
-            (background || {})._embedded,
-            "image"
-          )})`,
-        }}
-      >
-        <Slider {...settings} className="two-row-slider">
-          {projects.map((item, ind) => {
-            return (
-              <Link
-                key={ind}
-                href={`/[categories]/[detail]`}
-                as={`/portfolio/${detail}#section3#${item.slug}`}
+    <div
+      className="portfolio-projects"
+      style={{
+        backgroundImage: `url(${getData(_embedded, "image")})`,
+      }}
+    >
+      <div className="blue-title">{(title || {}).rendered}</div>
+      <Slider {...settings} className="two-row-slider">
+        {projects.map((item, ind) => {
+          return (
+            <Link
+              key={ind}
+              href={`/categories/portfolio/${detail}`}
+              as={`/categories/portfolio/${detail}`}
+            >
+              <div
+                className="slider-image-back"
+                data-aos="flip-up"
+                style={{
+                  backgroundImage: `url(${getData(item._embedded, "image")}})`,
+                }}
               >
-                <div
-                  className="slider-image-back"
-                  data-aos="flip-up"
-                  style={{
-                    backgroundImage: `url(${getData(
-                      item._embedded,
-                      "image"
-                    )}})`,
-                  }}
-                  onClick={() => setState(item, "block")}
-                >
-                  <p
-                    dangerouslySetInnerHTML={{ __html: item.title.rendered }}
-                  />
-                </div>
-              </Link>
-            );
-          })}
-        </Slider>
-      </div>
+                <h2 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
 
-      {post && (
-        <ProjectsDetail
-          post={post}
-          materials={materials}
-          display={DisplayArr[0]}
-        />
-      )}
-    </>
+                <div className="read-more-projects">
+                  <h2>{__("Read more")}</h2> <ArrowRightOutlined />
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </Slider>
+    </div>
   );
 };
 

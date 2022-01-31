@@ -74,14 +74,17 @@ const HomeBrands = ({ brandCats, brands, page }) => {
                 <img src={brand.acf.logo} />
               </div>
               <Link
-                href={"/[categories]/[detail]"}
-                as={`/brands/${brand.slug}`}
+                href={"/categories/brands/[brands]"}
+                as={`/categories/brands/${brand.slug}`}
               >
                 <div className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
                 </div>
               </Link>
-              <Link href={"/[categories/[detail]"} as={`/brands/${brand.slug}`}>
+              <Link
+                href={"/categories/brands/[brands]"}
+                as={`/categories/brands/${brand.slug}`}
+              >
                 <div className="brand-image">
                   <img src={getData(brand._embedded, "image")} />
                 </div>

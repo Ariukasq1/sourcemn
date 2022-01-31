@@ -1,19 +1,20 @@
 import React from "react";
-import { getData } from "../../utils";
+import { getData, __ } from "../../utils";
 
 const NewsDetail = ({ post }) => {
   const { title, content, _embedded } = post || {};
   return (
-    <div className="long-text-with-image">
-      <div className="long-half-text" data-aos="fade-down">
+    <div className="news-detail">
+      <div className="container">
+        <div className="news-tag">{__("#News")}</div>
+        <div className="news-image">
+          <img src={getData(_embedded, "image")} />
+        </div>
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
         />
         <div dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
-      </div>
-      <div className="long-half-image">
-        <img src={getData(_embedded, "image")} />
       </div>
     </div>
   );
