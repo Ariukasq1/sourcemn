@@ -6,14 +6,6 @@ import { Collapse } from "antd";
 const { Panel } = Collapse;
 
 const Faqs = ({ posts }) => {
-  const [display, setDisplay] = useState(false);
-  const [index, setIndex] = useState();
-
-  const renderState = (dis, ind) => {
-    setDisplay(dis);
-    setIndex(ind);
-  };
-
   return (
     <div className="section">
       <div className="faqs">
