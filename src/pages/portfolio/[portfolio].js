@@ -1,13 +1,20 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import FirstPart from "../../../components/indCap/firstPart";
-import Fullpage from "../../../components/FullPage";
-import Product from "../../../components/portfolio/product";
-import Projects from "../../../components/portfolio/projects";
+import config, { fetcher } from "../../config";
+import Fullpage from "../../components/FullPage";
+import Product from "../../components/portfolio/product";
+import Projects from "../../components/portfolio/projects";
+import PortfolioFirst from "../../components/portfolio/portfolioFirst";
 
-const Portfolio = ({ mainMenu, topMenu, data, post, child_data, detail }) => {
+const Portfolio = ({
+  mainMenu,
+  topMenu,
+  data,
+  post,
+  child_data,
+  materials,
+}) => {
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="page">
@@ -15,16 +22,18 @@ const Portfolio = ({ mainMenu, topMenu, data, post, child_data, detail }) => {
           children={
             <div id="fullpage">
               <div className="section">
-                <FirstPart data={data} clas="portfolio" />
+                <PortfolioFirst data={data} clas="portfolio" />
               </div>
 
               <div className="section">
                 <Product post={post} />
               </div>
 
-              <div className="section">
-                <Projects projects={child_data} detail={detail} post={post} />
-              </div>
+              <Projects
+                projects={child_data}
+                post={post}
+                materials={materials}
+              />
             </div>
           }
         />
@@ -77,7 +86,19 @@ Portfolio.getInitialProps = async (context) => {
     .perPage(20)
     .embed();
 
-  return { mainMenu, topMenu, data, post, child_data, detail };
+  const materialsID = await wp
+    .categories()
+    .slug(`materials`)
+    .embed()
+    .then((data) => data[0]);
+
+  const materials = await wp
+    .posts()
+    .categories((materialsID || {}).id)
+    .perPage(100)
+    .embed();
+
+  return { mainMenu, topMenu, data, post, child_data, materials };
 };
 
 export default Portfolio;

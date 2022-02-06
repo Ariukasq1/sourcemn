@@ -9,11 +9,7 @@ const MainMenu = ({ menu, handler }) => {
       <div className="botMenuList">
         {menu.items.map((item, ind) => {
           return (
-            <Link
-              key={ind}
-              href={`/categories/[category]`}
-              as={generateLink(`/categories/${item.slug}`)}
-            >
+            <Link key={ind} href={generateLink(`/${item.slug}`)}>
               <a>{item.title}</a>
             </Link>
           );

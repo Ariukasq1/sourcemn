@@ -39,6 +39,7 @@ const Fullpage = (props) => {
       onLeave={onLeave.bind(this)}
       afterLoad={afterLoad.bind(this)}
       parallax={true}
+      scrollOverflow={true}
     />
   );
 };

@@ -2,9 +2,8 @@ import React from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { generateLink } from "../../config";
 
-const FirstPart = ({ clas, data }) => {
+const PortfolioFirst = ({ clas, data }) => {
   return (
     <div className="firstPart">
       <div className="sub-title">{__(`${clas}`)}</div>
@@ -32,12 +31,12 @@ const FirstPart = ({ clas, data }) => {
                   className="continue-text"
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
-                <Link href={`/[detail]/[slug]`} as={`/${clas}/${slug}`}>
+                <Link href={`/portfolio/[portfolio]`} as={`/portfolio/${slug}`}>
                   <div className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </div>
                 </Link>
-                <Link href={`/[detail]/[slug]`} as={`/${clas}/${slug}`}>
+                <Link href={`/portfolio/[portfolio]`} as={`/portfolio/${slug}`}>
                   <div className="squad-image">
                     <img src={getData(_embedded, "image")} />
                   </div>
@@ -50,4 +49,4 @@ const FirstPart = ({ clas, data }) => {
   );
 };
 
-export default FirstPart;
+export default PortfolioFirst;

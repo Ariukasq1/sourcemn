@@ -4,6 +4,8 @@ import MainMenu from "./main-menu";
 import SideDrawer from "./sideDrawer/sideDrawer";
 import Backdrop from "./sideDrawer/backDrop";
 import { getLangParam } from "../../utils";
+import Link from "next/link";
+
 class MenuComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -52,9 +54,12 @@ class MenuComponent extends React.Component {
 
     return (
       <div className="main-header">
-        <a href={currentLanguage === "mn" ? "/?lang=mn" : "/?lang="}>
-          <img className="logo" src="/images/mms-logo.png" alt="logo" />
-        </a>
+        <Link href={currentLanguage === "mn" ? "/?lang=mn" : "/?lang="}>
+          <a>
+            <img className="logo" src="/images/mms-logo.png" alt="logo" />
+          </a>
+        </Link>
+
         <div className="menus">
           <TopMenu topMenu={topMenu} />
           <MainMenu menu={mainMenu} handler={this.drawerToggleClickOn} />

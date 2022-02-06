@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import Brand from "../../../components/brands/brandsDetail";
-import FirstChilds from "../../../components/brands/firstChilds";
+import config, { fetcher } from "../../config";
+import Brand from "../../components/brands/brandsDetail";
+import FirstChilds from "../../components/brands/firstChilds";
 
 const Brands = ({
   mainMenu,

@@ -899,12 +899,10 @@ footer .footer .contactUs label {
 
 .project-detail {
   height: calc(100vh - 114px);
-  padding-top: 114px;
 }
 
 .materials {
   height: calc(100vh - 114px);
-  margin-top: 114px;
   display: flex;
   flex-direction: column;
   justify-content: center;

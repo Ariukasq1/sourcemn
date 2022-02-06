@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import Footer from "../../../components/layouts/footer";
-import WhyMMs from "../../../components/career/why-mms";
-import OpenVacany from "../../../components/career/open-vacancy";
-import SelectionProcess from "../../../components/career/selection-process";
-import Faqs from "../../../components/career/faqs";
-import Culture from "../../../components/career/culture";
-import Fullpage from "../../../components/FullPage";
+import config, { fetcher } from "../../config";
+import Footer from "../../components/layouts/footer";
+import WhyMMs from "../../components/career/why-mms";
+import OpenVacany from "../../components/career/open-vacancy";
+import SelectionProcess from "../../components/career/selection-process";
+import Faqs from "../../components/career/faqs";
+import Culture from "../../components/career/culture";
+import Fullpage from "../../components/FullPage";
 
 const Careers = ({
   mainMenu,
@@ -18,8 +18,8 @@ const Careers = ({
   detail_posts,
   detail,
 }) => {
-  const renderDetail = (slug) => {
-    switch (slug) {
+  const renderDetail = () => {
+    switch (detail) {
       case "why-mms":
         return <WhyMMs posts={detail_posts} />;
       case "open-vacancy":
@@ -41,7 +41,7 @@ const Careers = ({
                 <Culture data={data} />
               </div>
 
-              {renderDetail(detail)}
+              {renderDetail()}
 
               <div className="section">
                 <Footer contact={contact} />

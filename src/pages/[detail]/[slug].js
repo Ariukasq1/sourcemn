@@ -1,21 +1,23 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import FirstPart from "../../../components/indCap/firstPart";
-import SecondPart from "../../../components/indCap/secondPart";
-import FactSection from "../../../components/indCap/thirdPart";
-import Additional from "../../../components/indCap/Additional";
-import Relations from "../../../components/indCap/relations";
-import Fullpage from "../../../components/FullPage";
+import config, { fetcher } from "../../config";
+import FirstPart from "../../components/indCap/firstPart";
+import SecondPart from "../../components/indCap/secondPart";
+import FactSection from "../../components/indCap/thirdPart";
+import Additional from "../../components/indCap/Additional";
+import Relations from "../../components/indCap/relations";
+import Fullpage from "../../components/FullPage";
 
-const Industries = ({
+const Indcap = ({
   mainMenu,
   topMenu,
   data,
+  detail,
   post,
   brands,
   relationsPosts,
+  relations,
 }) => {
   const { acf } = post || {};
 
@@ -26,16 +28,18 @@ const Industries = ({
           children={
             <div id="fullpage">
               <div className="section">
-                <FirstPart data={data} clas="industries" />
+                <FirstPart data={data} clas={detail} />
               </div>
 
               <div className="section">
                 <SecondPart post={post} />
               </div>
 
-              <div className="section">
-                {(acf || {}).bg_image && <FactSection post={post} />}
-              </div>
+              {(acf || {}).bg_image && (
+                <div className="section">
+                  <FactSection post={post} />
+                </div>
+              )}
 
               {(acf || {}).additional && <Additional post={post} />}
 
@@ -44,7 +48,7 @@ const Industries = ({
                   brandData={brands}
                   post={post}
                   relPosts={relationsPosts}
-                  relations="capabilities"
+                  relations={relations}
                 />
               </div>
             </div>
@@ -55,10 +59,12 @@ const Industries = ({
   );
 };
 
-Industries.getInitialProps = async (context) => {
+Indcap.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
-  const detail = context.query.industries;
+  const detail = context.query.detail;
+  const slug = context.query.slug;
+  const relations = detail === "capabilities" ? "industries" : "capabilities";
 
   const mainMenu = await fetcher(
     `${config(context).apiUrl}/menus/v1/menus/nav-menu`
@@ -70,7 +76,7 @@ Industries.getInitialProps = async (context) => {
 
   const catId = await wp
     .categories()
-    .slug(`industries`)
+    .slug(`${detail}`)
     .embed()
     .then((data) => data[0]);
 
@@ -82,7 +88,7 @@ Industries.getInitialProps = async (context) => {
 
   const post = await wp
     .posts()
-    .slug(`${detail}`)
+    .slug(`${slug}`)
     .embed()
     .then((data) => data[0]);
 
@@ -100,7 +106,7 @@ Industries.getInitialProps = async (context) => {
 
   const relID = await wp
     .categories()
-    .slug(`capabilities`)
+    .slug(`${relations}`)
     .embed()
     .then((data) => data[0]);
 
@@ -109,7 +115,16 @@ Industries.getInitialProps = async (context) => {
     .categories((relID || {}).id)
     .embed();
 
-  return { mainMenu, topMenu, data, post, brands, relationsPosts };
+  return {
+    mainMenu,
+    topMenu,
+    data,
+    detail,
+    post,
+    brands,
+    relationsPosts,
+    relations,
+  };
 };
 
-export default Industries;
+export default Indcap;

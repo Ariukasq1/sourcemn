@@ -1,16 +1,14 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import NewsDetail from "../../../components/news/newsDetail";
-import RelatedNews from "../../../components/news/newsRelated";
+import config, { fetcher } from "../config";
+import NewsList from "../components/news/newsList";
 
-const News = ({ mainMenu, topMenu, post, data }) => {
+const News = ({ mainMenu, topMenu, data, childCats }) => {
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="page">
-        <NewsDetail post={post} />
-        <RelatedNews data={data} slug="news" />
+        <NewsList data={data} cats={childCats} />
       </div>
     </Layout>
   );
@@ -40,13 +38,12 @@ News.getInitialProps = async (context) => {
     .categories((catId || {}).id)
     .embed();
 
-  const post = await wp
-    .posts()
-    .slug(`${detail}`)
-    .embed()
-    .then((data) => data[0]);
+  const childCats = await wp
+    .categories()
+    .parent((catId || {}).id)
+    .embed();
 
-  return { mainMenu, topMenu, post, data };
+  return { mainMenu, topMenu, data, childCats };
 };
 
 export default News;

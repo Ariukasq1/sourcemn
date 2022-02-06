@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../../../components/layouts/Layout";
+import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../../config";
-import NewsDetail from "../../../components/news/newsDetail";
-import RelatedNews from "../../../components/news/newsRelated";
+import config, { fetcher } from "../../config";
+import NewsDetail from "../../components/news/newsDetail";
+import RelatedNews from "../../components/news/newsRelated";
 
 const News = ({ mainMenu, topMenu, post, data }) => {
   return (

@@ -47,11 +47,7 @@ const RelatedNews = ({ data, slug }) => {
       <Slider {...settings} className="two-row-slider">
         {data.map((news, ind) => {
           return (
-            <Link
-              key={ind}
-              href={"/categories/news/[news]"}
-              as={`/categories/news/${news.slug}`}
-            >
+            <Link key={ind} href={"/news/[news]"} as={`/news/${news.slug}`}>
               <div
                 className="slider-image-back"
                 data-aos="flip-up"
