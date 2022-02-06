@@ -1,15 +1,18 @@
 .about-us {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  height: calc(100vh - 114px);
   padding: 0 8rem;
   gap: 5rem;
+  margin: 136px 0 180px 0;
 
   .simple-half-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0;
+    .blue-title {
+      margin-bottom: 20px;
+    }
   }
   .about-image {
     display: flex;
@@ -25,13 +28,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5rem;
-  margin: 114px 0;
+  padding: 0 8rem;
+  .gold-title {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+  }
+  .sub-title {
+    margin-bottom: 30px;
+  }
   .serviceList {
     .products {
       display: grid;
-      grid-template-columns: repeat(9, minmax(0, 1fr));
-      grid-gap: 1rem;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-gap: 2rem;
       > div {
         display: flex;
         flex-direction: column;
@@ -64,10 +73,11 @@
           }
         }
         .product-desc {
-          padding-left: 1.5rem;
           ul {
             li {
               list-style: disc;
+              margin: 0;
+              line-height: 1.5;
             }
           }
         }
@@ -77,30 +87,52 @@
 }
 
 .timeline {
-  height: calc(100vh - 114px);
-  margin-bottom: 114px;
-  padding: 0 8rem;
+  padding: 4rem 8rem 8rem 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 100px 0;
   background-color: hsla(0, 0%, 94.1%, 0.6);
   .sub-title {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    font-weight: 400;
   }
   .slider-time {
+    position: relative;
+    &:before {
+      content: "-";
+      right: 0;
+      left: 0;
+      height: 1px;
+      top: 50%;
+      position: absolute;
+      background-color: #707070;
+    }
     width: 100%;
     .slick-slide {
       &:nth-child(even) {
         > div {
           .time {
-            display: flex !important;
             flex-direction: column-reverse;
-            .arrow-timeline {
-              transform: rotate(180deg);
-            }
             .content {
               border-top: 1px solid #bbb;
+
+              &::after {
+                content: "";
+                background-image: url("/images/timeline-arrow.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                height: 172.19px;
+                display: inline-block;
+                transform: rotate(180deg);
+                position: absolute;
+                bottom: calc(50% - 30px);
+                left: 0;
+                width: 100%;
+              }
             }
           }
         }
@@ -110,28 +142,45 @@
           .time {
             .content {
               border-bottom: 1px solid #bbb;
+              &::before {
+                content: "";
+                background-image: url("/images/timeline-arrow.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                height: 172.19px;
+                display: inline-block;
+                position: absolute;
+                top: calc(50% - 30px);
+                left: 0;
+                width: 100%;
+              }
             }
           }
         }
       }
       .time {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
-        justify-content: center;
         text-align: center;
+        justify-content: space-between;
         width: 320px;
-
-        .arrow-timeline {
+        position: relative;
+        height: 500px;
+        > h1,
+        .content {
+          width: 100%;
+          text-align: center;
+          line-height: 1.3;
+          p {
+            font-size: 1rem;
+          }
+        }
+        > h1 {
           display: flex;
           justify-content: center;
-          height: 168px;
-          margin: 50px 0;
-          > img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            object-position: center;
-          }
+          align-items: center;
+          height: 50%;
         }
       }
     }

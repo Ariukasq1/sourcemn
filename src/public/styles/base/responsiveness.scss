@@ -37,6 +37,7 @@
     font-size: 30px;
     bottom: -40px;
   }
+
   .prev-arrow {
     font-size: 30px;
     bottom: -40px;
@@ -258,6 +259,186 @@
     }
   }
 
+  .culture {
+    height: calc(100vh - 98px);
+  }
+
+  .benefits,
+  .tourOffice {
+    height: calc(100vh - 98px);
+    .long-half-text {
+      padding: 10px 3rem 0 3rem;
+      .gold-title {
+        margin-bottom: 5px;
+      }
+      .sub-title {
+        margin-bottom: 10px;
+      }
+      p {
+        line-height: 1.5;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .open-vacancy {
+    height: calc(100vh - 98px);
+    .long-half-text {
+      padding: 0.5rem 6rem 0 6rem;
+      .gold-title {
+        margin-bottom: 10px;
+      }
+      .vacancy-posts {
+        height: 200px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .selection-process {
+    height: calc(100vh - 98px);
+    .long-half-text {
+      padding: 1rem 4rem 0 4rem;
+      .gold-title {
+        font-size: 1.125rem;
+        margin-bottom: 5px;
+      }
+      .sub-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .process {
+        gap: 1rem;
+        .process-part {
+          h1 {
+            font-size: 2rem;
+            line-height: normal;
+          }
+          p {
+            line-height: 1.3;
+          }
+          h2 {
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .faqs {
+    padding: 0 6rem;
+    height: calc(100vh - 98px);
+    .gold-title {
+      font-size: 1.125rem;
+      margin-bottom: 5px;
+    }
+    .sub-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .collapse {
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .about-us {
+    padding: 0 6rem;
+    .simple-half-text {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .about-service {
+    padding: 0 6rem;
+    .gold-title {
+      margin-bottom: 5px;
+      font-size: 1.125rem;
+    }
+    .sub-title {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    .serviceList {
+      .products {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-gap: 1.5rem;
+        > div {
+          .product-title {
+            > h5 {
+              font-size: 14px;
+            }
+            .serviceIcon {
+              width: 60px;
+              height: 60px;
+              > img {
+                max-width: 40px;
+                height: 40px;
+              }
+            }
+          }
+          .product-desc {
+            ul {
+              li {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .timeline {
+    padding: 3rem 4rem 6rem 4rem;
+    margin: 100px 0;
+    background-color: hsla(0, 0%, 94.1%, 0.6);
+    .sub-title {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+    .slider-time {
+      .slick-slide {
+        .time {
+          height: 380px;
+          .content {
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+        &:nth-child(even) {
+          > div {
+            .time {
+              .content {
+                &::after {
+                  height: 140px;
+                  bottom: calc(50% - 25px);
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(odd) {
+          > div {
+            .time {
+              .content {
+                &::before {
+                  height: 140px;
+                  top: calc(50% - 25px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   // footer -----------------------------------------------------------------
 
   footer {
@@ -299,10 +480,9 @@
       .list-of-relations {
         .one-brochure {
           height: 150px;
-          padding: 0 40px 10px 0;
+          padding: 0 40px 40px 0;
           > p {
             font-size: 1rem;
-            right: 40px;
           }
         }
       }
@@ -328,6 +508,9 @@
       .one-brochure {
         padding: 0 40px 20px 0;
         height: 180px;
+        > p {
+          right: 40px;
+        }
       }
     }
   }
@@ -655,6 +838,190 @@
             ul {
               li {
                 font-size: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .benefits,
+  .tourOffice {
+    height: calc(100vh - 90px);
+    .long-half-text {
+      padding: 10px 2rem 0 2rem;
+      .gold-title {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+      .sub-title {
+        margin-bottom: 5px;
+        font-size: 1.25rem;
+      }
+      p {
+        line-height: 1.3;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .open-vacancy {
+    height: calc(100vh - 90px);
+    .long-half-text {
+      padding: 0.5rem 4rem 0 4rem;
+      .gold-title {
+        margin-bottom: 5px;
+      }
+      .vacancy-posts {
+        height: 155px;
+        margin-bottom: 10px;
+        .vacancy-text {
+          padding: 20px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .selection-process {
+    height: calc(100vh - 90px);
+    .long-half-text {
+      padding: 10px 1rem 0 4rem;
+      .gold-title {
+        font-size: 1rem;
+        margin-bottom: 0px;
+      }
+      .sub-title {
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+      }
+      .process {
+        gap: 10px;
+        .process-part {
+          h1 {
+            font-size: 1.5rem;
+            line-height: normal;
+          }
+          p {
+            font-size: 0.725rem;
+            line-height: 1.3;
+          }
+          h2 {
+            line-height: normal;
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
+
+  .faqs {
+    padding: 0 4rem;
+    height: calc(100vh - 90px);
+    .gold-title {
+      font-size: 1rem;
+      margin-bottom: 0px;
+    }
+    .sub-title {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    .collapse {
+      .ant-collapse-item > .ant-collapse-header {
+        padding: 10px;
+      }
+      .ant-collapse-content > .ant-collapse-content-box {
+        padding: 10px;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .about-us {
+    padding: 0 4rem;
+    gap: 4rem;
+    margin: 50px 0 100px 0;
+  }
+
+  .about-service {
+    padding: 0 4rem;
+    .gold-title {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    .sub-title {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    .serviceList {
+      .products {
+        grid-gap: 1rem;
+        > div {
+          .product-title {
+            > h5 {
+              font-size: 14px;
+            }
+            .serviceIcon {
+              width: 55px;
+              height: 55px;
+              > img {
+                max-width: 35px;
+                height: 35px;
+              }
+            }
+          }
+          .product-desc {
+            ul {
+              li {
+                font-size: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .timeline {
+    padding: 3rem 4rem 4rem 4rem;
+    margin: 70px 0;
+    .sub-title {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+    .slider-time {
+      .slick-slide {
+        .time {
+          height: 300px;
+          .content {
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+        &:nth-child(even) {
+          > div {
+            .time {
+              .content {
+                &::after {
+                  height: 120px;
+                  bottom: calc(50% - 20px);
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(odd) {
+          > div {
+            .time {
+              .content {
+                &::before {
+                  height: 120px;
+                  top: calc(50% - 20px);
+                }
               }
             }
           }

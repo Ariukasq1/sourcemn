@@ -399,9 +399,7 @@ p {
 }
 
 .long-half-image {
-  height: calc(100vh - 114px);
-  top: 114px;
-  position: sticky;
+  height: 100%;
   > img {
     height: 100%;
     width: 100%;
@@ -411,7 +409,7 @@ p {
 }
 
 .long-half-text {
-  padding: 2rem 5rem 1rem 5rem;
+  padding: 2rem 5rem 0rem 5rem;
   text-align: justify;
   text-justify: inter-word;
   .blue-title {
@@ -428,21 +426,44 @@ p {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
+  margin-top: 10px;
+  @include med-laptops {
+    gap: 5px;
+  }
   .icon-img {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     font-family: Nunito, sans-serif;
     color: #2d343e;
-    padding: 1rem;
     background-color: #fff;
+    padding: 10px;
+
     > img {
       width: 64px;
       height: 64px;
       margin-bottom: 1rem;
+    }
+    @include big-laptops {
+      font-size: 0.725rem;
+      line-height: normal;
+      padding: 5px;
+
+      > img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+    }
+    @include med-laptops {
+      > img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+      }
     }
   }
 }
