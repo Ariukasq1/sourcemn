@@ -11,7 +11,7 @@ const Faqs = ({ posts }) => {
       <div className="faqs">
         <div className="gold-title">{__("Human Resource")}</div>
         <div className="sub-title">{__("FAQs")}</div>
-        <Collapse defaultActiveKey={["0"]} className="collapse">
+        <Collapse defaultActiveKey={["0"]} className="collapse" accordion>
           {posts
             .slice(0, -1)
             .reverse()

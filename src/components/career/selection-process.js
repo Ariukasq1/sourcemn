@@ -4,7 +4,6 @@ import { getData } from "../../utils";
 const SelectionProcess = ({ posts }) => {
   return (
     <div className="section">
-      {" "}
       <div className="selection-process">
         <div className="long-half-text">
           <div

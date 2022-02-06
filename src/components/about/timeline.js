@@ -11,6 +11,22 @@ const TimeLine = ({ timeline }) => {
     speed: 1000,
     autoplaySpeed: 2000,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1599,
+        settings: {
+          slidesToShow: 4,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 3,
+          autoplay: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -21,9 +37,6 @@ const TimeLine = ({ timeline }) => {
           return (
             <div key={ind} className="time">
               <h1>{item.acf.year}</h1>
-              <div className="arrow-timeline">
-                <img src="/images/timeline-arrow.png" />
-              </div>
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: item.content.rendered }}
