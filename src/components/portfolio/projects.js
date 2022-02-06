@@ -16,6 +16,11 @@ const Projects = ({ projects, post, materials }) => {
     item.acf.products.includes(el.id)
   );
 
+  const clickFunc = (el) => {
+    setItem(el);
+    window.fullpage_api.moveTo(4, 0);
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -66,7 +71,7 @@ const Projects = ({ projects, post, materials }) => {
           <Slider {...settings} className="two-row-slider">
             {projects.map((item, ind) => {
               return (
-                <div key={ind} onClick={() => setItem(item)}>
+                <div key={ind} onClick={() => clickFunc(item)}>
                   <div
                     className="slider-image-back"
                     data-aos="flip-up"

@@ -32,12 +32,18 @@ const FirstPart = ({ clas, data }) => {
                   className="continue-text"
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
-                <Link href={`/[detail]/[slug]`} as={`/${clas}/${slug}`}>
+                <Link
+                  href={`/[detail]/[slug]`}
+                  as={generateLink(`/${clas}/${slug}`)}
+                >
                   <div className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </div>
                 </Link>
-                <Link href={`/[detail]/[slug]`} as={`/${clas}/${slug}`}>
+                <Link
+                  href={`/[detail]/[slug]`}
+                  as={generateLink(`/${clas}/${slug}`)}
+                >
                   <div className="squad-image">
                     <img src={getData(_embedded, "image")} />
                   </div>

@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { getData, __ } from "../../utils";
 import { DownloadOutlined } from "@ant-design/icons";
 
+function handleScroll() {
+  window.scroll({
+    top: document.documentElement.scrollHeight,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
 const FirstChilds = ({
   post,
   cat,
@@ -107,6 +115,7 @@ const FirstChilds = ({
                     onClick={() => {
                       setSecondID(id);
                       setSecondName(name);
+                      handleScroll();
                     }}
                   >
                     <div
@@ -166,6 +175,7 @@ const FirstChilds = ({
                     setFirstID(id);
                     setFirstName(name);
                     setSecondID(0);
+                    handleScroll();
                   }}
                 >
                   <div
