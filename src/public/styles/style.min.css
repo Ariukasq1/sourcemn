@@ -420,9 +420,13 @@ hr {
 .side-drawer .topMenuList a {
   border-right: 1px solid #fff;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 .side-drawer .topMenuList a:last-child {
   border: none;
+}
+.side-drawer .sideDrawerLanguage a {
+  font-size: 0.8rem;
 }
 .side-drawer .sideDrawerLanguage span {
   color: #fff;
@@ -436,9 +440,18 @@ hr {
 }
 .side-drawer .SideMenu .SideMenuList a {
   width: max-content;
+  font-size: 0.8rem;
+  font-weight: 100;
+  opacity: 0.5;
+  line-height: 1.5;
+}
+.side-drawer .SideMenu .SideMenuList a:hover {
+  opacity: 1;
 }
 .side-drawer .SideMenu .SideMenuList .titleMenu {
   margin-top: 10px;
+  font-weight: 700;
+  opacity: 1;
 }
 .side-drawer .SideMenu .closeButton {
   position: absolute;
@@ -3862,8 +3875,8 @@ ul li {
   height: 50px;
   box-sizing: border-box;
   border: solid 5px transparent;
-  border-top-color: #007cba;
-  border-left-color: #007cba;
+  border-top-color: #00498e;
+  border-left-color: #00498e;
   border-radius: 50%;
   -webkit-animation: nprogress-spinner 400ms linear infinite;
   animation: nprogress-spinner 400ms linear infinite;

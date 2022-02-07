@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { generateLink } from "../../config";
+import { CloseOutlined } from "@ant-design/icons";
 
 const SideMenuWithChilds = ({ menu, close }) => {
   return (
@@ -27,9 +28,8 @@ const SideMenuWithChilds = ({ menu, close }) => {
           </div>
         );
       })}
-      <button className="closeButton" onClick={close}>
-        X
-      </button>
+
+      <CloseOutlined className="closeButton" onClick={close} />
     </div>
   );
 };
