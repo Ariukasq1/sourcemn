@@ -60,7 +60,7 @@ const HomeIndustries = ({ data }) => {
             );
           })}
 
-        <Link href={`/[categories]`} as={generateLink("/industries")}>
+        <Link href={generateLink("/industries")}>
           <div className="read-more-button">{__("Read more")}</div>
         </Link>
       </Col>

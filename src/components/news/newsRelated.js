@@ -2,6 +2,7 @@ import React from "react";
 import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
+import { generateLink } from "../../config";
 
 const RelatedNews = ({ data, slug }) => {
   const settings = {
@@ -47,7 +48,11 @@ const RelatedNews = ({ data, slug }) => {
       <Slider {...settings} className="two-row-slider">
         {data.map((news, ind) => {
           return (
-            <Link key={ind} href={"/news/[news]"} as={`/news/${news.slug}`}>
+            <Link
+              key={ind}
+              href={"/news/[news]"}
+              as={generateLink(`/news/${news.slug}`)}
+            >
               <div
                 className="slider-image-back"
                 data-aos="flip-up"

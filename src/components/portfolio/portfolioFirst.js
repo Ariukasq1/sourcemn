@@ -2,6 +2,7 @@ import React from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { generateLink } from "../../config";
 
 const PortfolioFirst = ({ clas, data }) => {
   return (
@@ -31,12 +32,18 @@ const PortfolioFirst = ({ clas, data }) => {
                   className="continue-text"
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
-                <Link href={`/portfolio/[portfolio]`} as={`/portfolio/${slug}`}>
+                <Link
+                  href={`/portfolio/[portfolio]`}
+                  as={generateLink(`/portfolio/${slug}`)}
+                >
                   <div className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </div>
                 </Link>
-                <Link href={`/portfolio/[portfolio]`} as={`/portfolio/${slug}`}>
+                <Link
+                  href={`/portfolio/[portfolio]`}
+                  as={generateLink(`/portfolio/${slug}`)}
+                >
                   <div className="squad-image">
                     <img src={getData(_embedded, "image")} />
                   </div>
