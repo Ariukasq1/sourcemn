@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body,
 h1,
 h2,
@@ -1609,6 +1610,77 @@ ul li {
   height: calc(100vh - 114px);
 }
 
+.tourOffice .long-half-image {
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages {
+  position: relative;
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .bigSlide {
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .bigSlide div {
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-list {
+  height: 10rem;
+}
+@media (max-width: 1199px) {
+  .tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-list {
+    height: 5rem;
+  }
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-list div {
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-list div img {
+  height: 100%;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-next {
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-next:before {
+  content: "►";
+  font-size: 20px;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-prev {
+  left: 0 !important;
+  z-index: 9999 !important;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-prev:before {
+  content: "◄";
+  font-size: 20px;
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-next,
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-prev {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3) !important;
+  width: 60px;
+  font-size: 0;
+  border: none;
+}
+@media (max-width: 1199px) {
+  .tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-next,
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-prev {
+    width: 40px;
+  }
+}
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-next:hover,
+.tourOffice .long-half-image .itemDetailsImages .thumbnailSlide .slick-prev:hover {
+  cursor: pointer;
+}
+
 .open-vacancy {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -2946,6 +3018,53 @@ ul li {
   }
 }
 @media only screen and (max-width: 991px) {
+  .open-vacancy {
+    display: block;
+    height: auto;
+    margin-bottom: 3rem;
+  }
+  .open-vacancy .long-half-text {
+    padding: 3rem;
+  }
+  .open-vacancy .long-half-text .gold-title {
+    margin-bottom: 20px;
+  }
+  .open-vacancy .long-half-text .vacancy-posts {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .open-vacancy .half-back-image-with-text {
+    height: 400px;
+  }
+
+  .culture {
+    height: 400px;
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .benefits .long-half-text {
+    padding: 3rem;
+  }
+  .benefits .long-half-image {
+    height: 400px;
+  }
+
+  .tourOffice {
+    display: block;
+    height: auto;
+    margin-bottom: 3rem;
+  }
+  .tourOffice .long-half-text {
+    padding: 3rem;
+  }
+  .tourOffice .long-half-image {
+    height: 400px;
+  }
+
   .about-us {
     display: block;
     padding: 0 3rem;
@@ -3287,6 +3406,24 @@ ul li {
   }
 }
 @media only screen and (max-width: 575px) {
+  .culture {
+    height: 400px;
+  }
+
+  .benefits .long-half-text {
+    padding: 2rem;
+  }
+  .benefits .long-half-text .icons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tourOffice {
+    margin-bottom: 2rem;
+  }
+  .tourOffice .long-half-text {
+    padding: 2rem;
+  }
+
   .about-service {
     padding: 0 3rem;
   }
@@ -3336,6 +3473,31 @@ ul li {
   }
 }
 @media only screen and (max-width: 480px) {
+  .open-vacancy {
+    margin-bottom: 2rem;
+  }
+  .open-vacancy .long-half-text {
+    padding: 1rem;
+  }
+
+  .culture {
+    height: 400px;
+  }
+  .culture .over-text {
+    margin: 0 1rem;
+  }
+
+  .benefits .long-half-text {
+    padding: 1rem;
+  }
+
+  .tourOffice {
+    margin-bottom: 2rem;
+  }
+  .tourOffice .long-half-text {
+    padding: 1rem;
+  }
+
   .about-us {
     padding: 0 1rem;
   }

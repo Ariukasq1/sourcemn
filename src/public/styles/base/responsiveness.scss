@@ -1125,6 +1125,53 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .open-vacancy {
+    display: block;
+    height: auto;
+    margin-bottom: 3rem;
+    .long-half-text {
+      padding: 3rem;
+      .gold-title {
+        margin-bottom: 20px;
+      }
+      .vacancy-posts {
+        height: 200px;
+        margin-bottom: 20px;
+      }
+    }
+    .half-back-image-with-text {
+      height: 400px;
+    }
+  }
+
+  .culture {
+    height: 400px;
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    .long-half-text {
+      padding: 3rem;
+    }
+    .long-half-image {
+      height: 400px;
+    }
+  }
+
+  .tourOffice {
+    display: block;
+    height: auto;
+    margin-bottom: 3rem;
+    .long-half-text {
+      padding: 3rem;
+    }
+    .long-half-image {
+      height: 400px;
+    }
+  }
+
   .about-us {
     display: block;
     padding: 0 3rem;
@@ -1497,6 +1544,26 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .culture {
+    height: 400px;
+  }
+
+  .benefits {
+    .long-half-text {
+      padding: 2rem;
+      .icons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+
+  .tourOffice {
+    margin-bottom: 2rem;
+    .long-half-text {
+      padding: 2rem;
+    }
+  }
+
   .about-service {
     padding: 0 3rem;
     .serviceList {
@@ -1551,6 +1618,32 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .open-vacancy {
+    margin-bottom: 2rem;
+    .long-half-text {
+      padding: 1rem;
+    }
+  }
+  .culture {
+    height: 400px;
+    .over-text {
+      margin: 0 1rem;
+    }
+  }
+
+  .benefits {
+    .long-half-text {
+      padding: 1rem;
+    }
+  }
+
+  .tourOffice {
+    margin-bottom: 2rem;
+    .long-half-text {
+      padding: 1rem;
+    }
+  }
+
   .about-us {
     padding: 0 1rem;
   }

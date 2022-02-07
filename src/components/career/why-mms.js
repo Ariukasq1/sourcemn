@@ -1,12 +1,13 @@
 import React from "react";
 import { getData } from "../../utils";
+import ItemDetailsWithGallery from "../ItemDetailsWithGallery";
 
 const WhyMMs = ({ posts }) => {
   const whymms = posts[posts.length - 1];
   const culture = posts[2];
   const benefits = posts[1];
   const tourOffice = posts[0];
-
+  console.log(tourOffice, "123123123");
   return (
     <>
       <div className="section">
@@ -72,7 +73,21 @@ const WhyMMs = ({ posts }) => {
             />
           </div>
           <div className="long-half-image">
-            <img src={getData(tourOffice._embedded, "image")} />
+            {!tourOffice.acf.image_1 ? (
+              <img src={getData(tourOffice._embedded, "image")} />
+            ) : (
+              <ItemDetailsWithGallery
+                images={Object.entries(tourOffice.acf || {}).map(
+                  ([key, value]) => {
+                    if (key.includes("group")) {
+                      return null;
+                    }
+
+                    return value;
+                  }
+                )}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -81,6 +81,76 @@
   height: calc(100vh - 114px);
 }
 
+.tourOffice {
+  .long-half-image {
+    height: 100%;
+    .itemDetailsImages {
+      position: relative;
+      height: 100%;
+      .bigSlide {
+        height: 100%;
+        div {
+          height: 100%;
+        }
+      }
+      .thumbnailSlide {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        .slick-list {
+          height: 10rem;
+          @include med-laptops {
+            height: 5rem;
+          }
+          div {
+            height: 100%;
+            img {
+              height: 100%;
+            }
+          }
+        }
+
+        .slick-next {
+          right: 0 !important;
+          z-index: 9999 !important;
+          &:before {
+            content: "\25BA";
+            font-size: 20px;
+          }
+        }
+        .slick-prev {
+          left: 0 !important;
+          z-index: 9999 !important;
+
+          &:before {
+            content: "\25C4";
+            font-size: 20px;
+          }
+        }
+
+        .slick-next,
+        .slick-prev {
+          position: absolute;
+          bottom: 0;
+          height: 100%;
+          color: #ffffff;
+          background: rgba(0, 0, 0, 0.3) !important;
+          width: 60px;
+          font-size: 0;
+          border: none;
+          @include med-laptops {
+            width: 40px;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
 .open-vacancy {
   display: grid;
   grid-template-columns: 3fr 2fr;
