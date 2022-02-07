@@ -990,7 +990,6 @@ footer .footer .contactUs label {
 .gold-title {
   color: #fda50f;
   font-weight: 700;
-  text-transform: capitalize;
   font-size: 1.875rem;
   line-height: normal;
   margin-bottom: 20px;
@@ -1000,7 +999,6 @@ footer .footer .contactUs label {
   font-size: 1.875rem;
   font-weight: 700;
   line-height: normal;
-  text-transform: capitalize;
   margin-bottom: 20px;
 }
 
@@ -1969,6 +1967,41 @@ ul li {
   align-items: center;
   height: 50%;
 }
+.timeline .slider-time .slick-next {
+  right: -15px !important;
+  z-index: 9999 !important;
+}
+.timeline .slider-time .slick-next:before {
+  content: "►";
+  font-size: 20px;
+}
+.timeline .slider-time .slick-prev {
+  left: -15px !important;
+  z-index: 9999 !important;
+}
+.timeline .slider-time .slick-prev:before {
+  content: "◄";
+  font-size: 20px;
+}
+.timeline .slider-time .slick-next,
+.timeline .slider-time .slick-prev {
+  position: absolute;
+  top: calc(50% - 18px);
+  color: #707070;
+  font-size: 0;
+  border: none;
+  background: none;
+}
+@media (max-width: 1199px) {
+  .timeline .slider-time .slick-next,
+.timeline .slider-time .slick-prev {
+    width: 40px;
+  }
+}
+.timeline .slider-time .slick-next:hover,
+.timeline .slider-time .slick-prev:hover {
+  cursor: pointer;
+}
 
 .brand {
   height: auto;
@@ -2463,6 +2496,9 @@ ul li {
   .about-service .sub-title {
     margin-bottom: 20px;
     font-size: 1.5rem;
+  }
+  .about-service .catList {
+    margin: 0 0 15px 0;
   }
   .about-service .serviceList .products {
     display: grid;

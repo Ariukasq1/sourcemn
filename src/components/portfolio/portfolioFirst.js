@@ -7,7 +7,7 @@ import { generateLink } from "../../config";
 const PortfolioFirst = ({ clas, data }) => {
   return (
     <div className="firstPart">
-      <div className="sub-title">{__(`${clas}`)}</div>
+      <div className="sub-title">{__(`Portfolio`)}</div>
       <div className={clas}>
         {data
           .slice(0)

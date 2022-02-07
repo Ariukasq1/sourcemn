@@ -54,8 +54,8 @@ const Service = ({ serviceCats, services }) => {
 
   return (
     <div className="about-service">
-      <div className="gold-title">{__("What we do ?")}</div>
-      <div className="sub-title">{__("Our Products")}</div>
+      <div className="gold-title">{__("What we do")}?</div>
+      <div className="sub-title">{__("Our products")}</div>
       <div className="catList">
         {serviceCats.map((cat, ind) => {
           return (

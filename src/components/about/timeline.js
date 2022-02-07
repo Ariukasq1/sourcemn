@@ -7,37 +7,33 @@ const TimeLine = ({ timeline }) => {
     dots: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+
     speed: 1000,
     autoplaySpeed: 2000,
-    arrows: false,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1599,
         settings: {
           slidesToShow: 4,
-          autoplay: true,
         },
       },
       {
         breakpoint: 1199,
         settings: {
           slidesToShow: 3,
-          autoplay: true,
         },
       },
       {
         breakpoint: 991,
         settings: {
           slidesToShow: 2,
-          autoplay: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          autoplay: true,
         },
       },
     ],
@@ -45,7 +41,7 @@ const TimeLine = ({ timeline }) => {
 
   return (
     <div className="timeline">
-      <div className="sub-title">{__("Our History")}</div>
+      <div className="sub-title">{__("Our history")}</div>
       <Slider {...settings} className="slider-time">
         {timeline.map((item, ind) => {
           return (

@@ -23,12 +23,12 @@ const Brand = ({ post }) => {
           <ul>
             <li>
               <span>
-                {__("Country:")} {country}
+                {__("Country")}: {country}
               </span>
             </li>
             <li>
               <span>
-                {__("Founded Year:")} {founded_year}
+                {__("Founded year")}: {founded_year}
               </span>
             </li>
           </ul>
@@ -71,7 +71,7 @@ const Brand = ({ post }) => {
             <Row className="cert">
               <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={23}>
                 <div className="blue-title">
-                  {__("Certification & Accreditations:")}
+                  {__("Certification & Accreditations")}:
                 </div>
                 <img src={certificate} />
               </Col>
@@ -79,26 +79,6 @@ const Brand = ({ post }) => {
           </div>
         </div>
       )}
-      {/* <div
-        className="brand-detail-and-about"
-        data-aos="fade-down"
-        data-aos-delay={200}
-        data-aos-easing="ease"
-        data-aos-duration="2000"
-        data-aos-offset="300"
-      >
-        <div className="blue-title">
-          {__("About")}{" "}
-          <span dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />
-        </div>
-        <div
-          className="brand-detail-text"
-          dangerouslySetInnerHTML={{ __html: about }}
-        />
-
-        
-        
-      </div> */}
     </div>
   );
 };

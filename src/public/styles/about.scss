@@ -185,5 +185,40 @@
         }
       }
     }
+
+    .slick-next {
+      right: -15px !important;
+      z-index: 9999 !important;
+      &:before {
+        content: "\25BA";
+        font-size: 20px;
+      }
+    }
+
+    .slick-prev {
+      left: -15px !important;
+      z-index: 9999 !important;
+
+      &:before {
+        content: "\25C4";
+        font-size: 20px;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      top: calc(50% - 18px);
+      color: #707070;
+      font-size: 0;
+      border: none;
+      background: none;
+      @include med-laptops {
+        width: 40px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

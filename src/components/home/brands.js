@@ -106,7 +106,7 @@ const HomeBrands = ({ brandCats, brands, page }) => {
           className={100 === index ? "active" : "inactive"}
           onClick={() => renderCat(parent, 100)}
         >
-          {__("All Brands")}
+          {__("All brands")}
         </div>
         {brandCats.map((cat, ind) => {
           const { name, id } = cat;
