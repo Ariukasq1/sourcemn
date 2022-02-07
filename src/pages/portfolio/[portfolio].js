@@ -42,7 +42,7 @@ const Portfolio = ({
   );
 };
 
-Portfolio.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.portfolio;
@@ -98,7 +98,7 @@ Portfolio.getInitialProps = async (context) => {
     .perPage(100)
     .embed();
 
-  return { mainMenu, topMenu, data, post, child_data, materials };
-};
+  return { props: { mainMenu, topMenu, data, post, child_data, materials } };
+}
 
 export default Portfolio;

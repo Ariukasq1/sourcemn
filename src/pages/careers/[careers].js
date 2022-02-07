@@ -54,7 +54,7 @@ const Careers = ({
   );
 };
 
-Careers.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.careers;
@@ -96,7 +96,7 @@ Careers.getInitialProps = async (context) => {
     .categories((detail_posts_category || {}).id)
     .embed();
 
-  return { mainMenu, topMenu, contact, data, detail_posts, detail };
-};
+  return { props: { mainMenu, topMenu, contact, data, detail_posts, detail } };
+}
 
 export default Careers;

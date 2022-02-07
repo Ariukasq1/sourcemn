@@ -28,7 +28,7 @@ const About = ({
   );
 };
 
-About.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -85,14 +85,16 @@ About.getInitialProps = async (context) => {
     .embed();
 
   return {
-    mainMenu,
-    topMenu,
-    service,
-    serviceCats,
-    data,
-    contact,
-    timeline,
+    props: {
+      mainMenu,
+      topMenu,
+      service,
+      serviceCats,
+      data,
+      contact,
+      timeline,
+    },
   };
-};
+}
 
 export default About;

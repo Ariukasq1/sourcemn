@@ -14,7 +14,7 @@ const Brands = ({ mainMenu, topMenu, childCats, data }) => {
   );
 };
 
-Brands.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -42,7 +42,7 @@ Brands.getInitialProps = async (context) => {
     .parent((catId || {}).id)
     .embed();
 
-  return { mainMenu, topMenu, data, childCats };
-};
+  return { props: { mainMenu, topMenu, data, childCats } };
+}
 
 export default Brands;

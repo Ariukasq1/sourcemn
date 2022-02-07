@@ -16,7 +16,7 @@ const News = ({ mainMenu, topMenu, post, data }) => {
   );
 };
 
-News.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.news;
@@ -46,7 +46,7 @@ News.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  return { mainMenu, topMenu, post, data };
-};
+  return { props: { mainMenu, topMenu, post, data } };
+}
 
 export default News;

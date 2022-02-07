@@ -11,7 +11,7 @@ const Facility = ({ mainMenu, topMenu, data }) => {
   );
 };
 
-Facility.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -22,7 +22,7 @@ Facility.getInitialProps = async (context) => {
     `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
   );
 
-  return { mainMenu, topMenu };
-};
+  return { props: { mainMenu, topMenu } };
+}
 
 export default Facility;

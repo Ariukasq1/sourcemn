@@ -30,7 +30,7 @@ const Brands = ({
   );
 };
 
-Brands.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.brands;
@@ -77,14 +77,16 @@ Brands.getInitialProps = async (context) => {
   );
 
   return {
-    mainMenu,
-    topMenu,
-    post,
-    cat,
-    childCats,
-    childCats_child,
-    childCats_child_childs,
+    props: {
+      mainMenu,
+      topMenu,
+      post,
+      cat,
+      childCats,
+      childCats_child,
+      childCats_child_childs,
+    },
   };
-};
+}
 
 export default Brands;

@@ -14,7 +14,7 @@ const Careers = ({ mainMenu, topMenu, data }) => {
   );
 };
 
-Careers.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -37,7 +37,7 @@ Careers.getInitialProps = async (context) => {
     .perPage(100)
     .embed();
 
-  return { mainMenu, topMenu, data };
-};
+  return { props: { mainMenu, topMenu, data } };
+}
 
 export default Careers;

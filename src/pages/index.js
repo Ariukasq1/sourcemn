@@ -46,7 +46,7 @@ const Index = ({
   );
 };
 
-Index.getInitialProps = async (context) => {
+export async function getServerSideProps(context) {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -101,15 +101,17 @@ Index.getInitialProps = async (context) => {
   const brandsCat = await wp.categories().parent(brandsID.id).embed();
 
   return {
-    mainMenu,
-    topMenu,
-    contact,
-    sliders,
-    capability,
-    industries,
-    brandsCat,
-    brands,
+    props: {
+      mainMenu,
+      topMenu,
+      contact,
+      sliders,
+      capability,
+      industries,
+      brandsCat,
+      brands,
+    },
   };
-};
+}
 
 export default Index;
