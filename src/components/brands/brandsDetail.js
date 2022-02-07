@@ -38,7 +38,7 @@ const Brand = ({ post }) => {
       <div className="about-brand">
         <div className="container">
           <Row className="intro-content">
-            <Col span={17}>
+            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={20}>
               <h1 dangerouslySetInnerHTML={{ __html: slogan }} />
               <p dangerouslySetInnerHTML={{ __html: about }} />
             </Col>
@@ -49,7 +49,7 @@ const Brand = ({ post }) => {
       <div className="detail-brand">
         <div className="container">
           <Row className="details">
-            <Col span={17}>
+            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={20}>
               <div className="detail-text-title">
                 <span
                   dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
@@ -69,7 +69,7 @@ const Brand = ({ post }) => {
         <div className="cert-brand">
           <div className="container">
             <Row className="cert">
-              <Col span={17}>
+              <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={23}>
                 <div className="blue-title">
                   {__("Certification & Accreditations:")}
                 </div>

@@ -33,6 +33,7 @@
       > h1 {
         color: #fff;
         font-size: 4rem;
+        margin-left: 10px;
       }
     }
   }
@@ -49,7 +50,7 @@
         li {
           float: left;
           position: relative;
-          padding: 9px 16px 9px 0;
+          padding: 9px 16px 9px 10px;
           span {
             line-height: normal;
             letter-spacing: 0.64px;
@@ -108,7 +109,7 @@
           ul {
             li {
               margin-bottom: 0;
-              list-style: inside;
+              list-style: disc;
             }
           }
         }
@@ -161,5 +162,11 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
+    @include tablets {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include max-phone {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 }

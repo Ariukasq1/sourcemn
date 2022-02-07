@@ -1343,6 +1343,10 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .brand-details {
+    padding: 0 1rem 30px 1rem;
+  }
+
   .secondPart {
     height: auto;
     .product-cards {

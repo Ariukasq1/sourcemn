@@ -1890,6 +1890,7 @@ ul li {
 .brand .brand-banner .banner-content-wrapper > h1 {
   color: #fff;
   font-size: 4rem;
+  margin-left: 10px;
 }
 .brand .second-level-wrapper {
   width: 100%;
@@ -1904,7 +1905,7 @@ ul li {
 .brand .second-level-wrapper .container ul li {
   float: left;
   position: relative;
-  padding: 9px 16px 9px 0;
+  padding: 9px 16px 9px 10px;
 }
 .brand .second-level-wrapper .container ul li span {
   line-height: normal;
@@ -1954,7 +1955,7 @@ ul li {
 }
 .brand .detail-brand .container .details .detail-text-ul ul li {
   margin-bottom: 0;
-  list-style: inside;
+  list-style: disc;
 }
 .brand .cert-brand {
   padding: 0 0 60px 0;
@@ -1996,6 +1997,16 @@ ul li {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
+}
+@media (max-width: 991px) {
+  .brand-details .brochures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 576px) {
+  .brand-details .brochures {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @media only screen and (max-width: 1599px) {
@@ -3131,6 +3142,10 @@ ul li {
   }
 }
 @media only screen and (max-width: 575px) {
+  .brand-details {
+    padding: 0 1rem 30px 1rem;
+  }
+
   .secondPart {
     height: auto;
   }
