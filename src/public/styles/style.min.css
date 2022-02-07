@@ -465,6 +465,7 @@ footer {
 footer .footer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 footer .footer h2 {
   margin-bottom: 2rem;
@@ -2950,10 +2951,161 @@ ul li {
   .page {
     padding-top: 82px;
   }
+
+  .section {
+    height: max-content !important;
+  }
+  .section .fp-tableCell {
+    height: max-content !important;
+  }
+
+  .homeSlider {
+    height: 400px;
+    padding: 0 3rem;
+  }
+  .homeSlider .sliderText > h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .homeSlider .sliderText > h2 {
+    font-size: 1rem;
+  }
+
+  .homeCapability {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  .homeCapability .capability-home-text {
+    padding: 3rem 3rem 2rem 3rem;
+  }
+  .homeCapability .simple-half-image {
+    height: 400px;
+  }
+  .homeCapability .simple-half-image > img {
+    height: 400px;
+  }
+
+  .homeIndustries {
+    height: auto;
+  }
+  .homeIndustries .over-image {
+    height: 400px;
+  }
+  .homeIndustries .industry-button {
+    padding: 3rem 3rem 4rem 3rem;
+  }
+
+  .homeBrands {
+    height: auto;
+    margin: 3rem 0;
+  }
+  .homeBrands .catList {
+    margin-bottom: 20px;
+  }
+  .homeBrands .brandList,
+.homeBrands .brandsList {
+    padding: 0 3rem;
+  }
+
+  footer {
+    height: auto;
+    padding: 3rem;
+  }
+  footer .footer .contacts > p:last-child {
+    margin-top: 1rem;
+  }
+  footer .footer .contacts > p:last-child > a {
+    margin-right: 20px;
+  }
+  footer .footer .headOffice {
+    margin: 1rem 0;
+  }
+  footer .footer .contactUs > div {
+    margin-bottom: 2rem;
+  }
+  footer .footer .contactUs > div textArea {
+    height: 10rem;
+  }
+  footer .footer .contactUs > div label {
+    display: block;
+  }
+
+  .slick-dots {
+    bottom: 1rem;
+    left: 1rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   footer {
-    padding: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  footer .footer .contacts > p:last-child {
+    margin-top: 1rem;
+  }
+  footer .footer .contacts > p:last-child > a {
+    margin-right: 5px;
+  }
+
+  .homeSlider {
+    padding: 0 1rem;
+  }
+  .homeSlider .sliderText > h1 {
+    font-size: 30px;
+  }
+  .homeSlider .sliderText > h2 {
+    font-size: 1rem;
+    padding-left: 0 !important;
+  }
+
+  .homeCapability .capability-home-text {
+    padding: 1rem;
+  }
+  .homeCapability .simple-half-image {
+    height: auto;
+  }
+  .homeCapability .simple-half-image > img {
+    height: auto;
+  }
+
+  .homeIndustries .over-image {
+    height: 400px;
+  }
+  .homeIndustries .over-image .over-text {
+    margin: 0 1rem;
+    line-height: 1.3;
+  }
+  .homeIndustries .over-image .over-text p {
+    font-size: 0.875rem;
+  }
+  .homeIndustries .industry-button {
+    padding: 1rem 1rem 4rem 1rem;
+  }
+  .homeIndustries .industry-button .big-buttons {
+    font-size: 1.8rem;
+  }
+
+  .homeBrands {
+    height: auto;
+    margin: 2rem 0 3rem 0;
+  }
+  .homeBrands .sub-title {
+    text-align: center;
+  }
+  .homeBrands .catList {
+    margin: 0 1rem 20px 1rem;
+  }
+  .homeBrands .catList .active,
+.homeBrands .catList .inactive {
+    text-align: center;
+    border: none;
+  }
+  .homeBrands .brandList,
+.homeBrands .brandsList {
+    padding: 0 1rem;
+  }
+
+  .main-header .menus .topMenu {
+    display: none;
   }
 }
 .alignleft {

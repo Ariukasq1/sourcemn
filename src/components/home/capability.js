@@ -8,11 +8,25 @@ const HomeCapabilty = ({ capability }) => {
 
   return (
     <Row className="homeCapability">
-      <Col span={12} className="simple-half-image">
+      <Col
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
+        className="simple-half-image"
+      >
         <img src={getData(_embedded, "image")} />
       </Col>
       <Col
-        span={12}
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        md={24}
+        sm={24}
+        xs={24}
         className="capability-home-text"
         data-aos="fade-up"
         data-aos-easing="ease"

@@ -19,7 +19,15 @@ const HomeIndustries = ({ data }) => {
 
   return (
     <Row className="homeIndustries">
-      <Col span={12} className="industry-button">
+      <Col
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
+        className="industry-button"
+      >
         <div className="gold-title">{__("Industries")}</div>
         {data
           .slice(0)
@@ -56,7 +64,12 @@ const HomeIndustries = ({ data }) => {
         </Link>
       </Col>
       <Col
-        span={12}
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
         className="over-image"
         style={{ backgroundImage: `url(${getData(img, "image")})` }}
       >

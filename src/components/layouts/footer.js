@@ -22,7 +22,7 @@ function Footer({ contact }) {
   return (
     <footer>
       <Row className="footer">
-        <Col xxl={7} xl={6} lg={7} className="contacts">
+        <Col xxl={7} xl={6} lg={7} md={24} sm={24} xs={24} className="contacts">
           <h2>{__("Contacts")}</h2>
           <p>
             <PhoneOutlined /> Tel: {tel}
@@ -51,13 +51,29 @@ function Footer({ contact }) {
             </a>
           </p>
         </Col>
-        <Col xxl={7} xl={6} lg={6} className="headOffice">
+        <Col
+          xxl={7}
+          xl={6}
+          lg={6}
+          md={24}
+          sm={24}
+          xs={24}
+          className="headOffice"
+        >
           <h2>{(office || {}).name}</h2>
           <p>
             <HomeOutlined /> {(office || {}).address}
           </p>
         </Col>
-        <Col xxl={9} xl={10} lg={10} className="contactUs">
+        <Col
+          xxl={9}
+          xl={10}
+          lg={10}
+          md={24}
+          sm={24}
+          xs={24}
+          className="contactUs"
+        >
           <h2>{__("Please contact us")}</h2>
           <div>
             <label>{__("Full name")}</label>
