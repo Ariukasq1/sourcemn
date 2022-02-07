@@ -907,6 +907,29 @@ footer .footer .contactUs label {
 
 .project-detail {
   height: calc(100vh - 114px);
+  width: 100%;
+}
+.project-detail .long-half-image {
+  height: 100%;
+}
+.project-detail .long-half-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 0 8rem;
+  justify-content: center;
+}
+.project-detail .long-half-text .blue-title {
+  margin-bottom: 10px;
+}
+.project-detail .long-half-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.project-detail .long-half-text ul li {
+  margin-bottom: 0;
+  list-style: inside;
+  font-size: 1rem;
 }
 
 .materials {
@@ -2286,6 +2309,16 @@ ul li {
     padding: 0 1rem 0 6rem;
   }
 
+  .project-detail .long-half-text {
+    padding: 0 1rem 0 6rem;
+  }
+  .project-detail .long-half-text p {
+    font-size: 0.9rem;
+  }
+  .project-detail .long-half-text ul li {
+    font-size: 0.9rem;
+  }
+
   .portfolio-projects {
     height: calc(100vh - 98px);
     padding: 0 6rem;
@@ -2522,6 +2555,20 @@ ul li {
   }
 }
 @media only screen and (max-width: 1199px) {
+  .project-detail .long-half-text {
+    padding: 0 0.5rem 0 4rem;
+  }
+  .project-detail .long-half-text .blue-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .project-detail .long-half-text p {
+    font-size: 0.725rem;
+  }
+  .project-detail .long-half-text ul li {
+    font-size: 0.725rem;
+  }
+
   .materials {
     padding: 0 4rem;
   }

@@ -298,6 +298,33 @@
 
 .project-detail {
   height: calc(100vh - 114px);
+  width: 100%;
+
+  .long-half-image {
+    height: 100%;
+  }
+
+  .long-half-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 8rem;
+    justify-content: center;
+    .blue-title {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    ul {
+      li {
+        margin-bottom: 0;
+        list-style: inside;
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 .materials {

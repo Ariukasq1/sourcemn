@@ -232,6 +232,20 @@
     }
   }
 
+  .project-detail {
+    .long-half-text {
+      padding: 0 1rem 0 6rem;
+      p {
+        font-size: 0.9rem;
+      }
+      ul {
+        li {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
   .portfolio-projects {
     height: calc(100vh - 98px);
     padding: 0 6rem;
@@ -526,6 +540,24 @@
 }
 
 @media only screen and (max-width: 1199px) {
+  .project-detail {
+    .long-half-text {
+      .blue-title {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+      padding: 0 0.5rem 0 4rem;
+      p {
+        font-size: 0.725rem;
+      }
+      ul {
+        li {
+          font-size: 0.725rem;
+        }
+      }
+    }
+  }
+
   .materials {
     padding: 0 4rem;
     .mater {
