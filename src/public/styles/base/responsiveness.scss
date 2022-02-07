@@ -1332,9 +1332,74 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+
+  .portfolio-product {
+    height: auto;
+    .half-text {
+      padding: 3rem;
+    }
+    .half-image {
+      height: 400px;
+      padding: 0 3rem 3rem 3rem;
+    }
+  }
+
+  .portfolio-projects {
+    height: auto;
+    padding: 3rem;
+  }
+
+  .project-detail {
+    height: auto;
+    .long-half-text {
+      padding: 3rem;
+    }
+    .long-half-image {
+      height: 400px;
+      padding: 0 3rem 3rem 3rem;
+    }
+  }
+
+  .materials {
+    height: auto;
+    padding: 3rem;
+    .mater {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
+  .portfolio-product {
+    .half-text {
+      padding: 2rem;
+    }
+    .half-image {
+      padding: 0 2rem 2rem 2rem;
+    }
+  }
+
+  .portfolio-projects {
+    padding: 2rem 2rem 4rem 2rem;
+  }
+
+  .project-detail {
+    .long-half-text {
+      padding: 2rem;
+    }
+    .long-half-image {
+      padding: 0 2rem 2rem 2rem;
+    }
+  }
+
+  .materials {
+    padding: 2rem;
+    .mater {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
+
   .career-culture {
     .big-cards-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1398,6 +1463,14 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .materials {
+    padding: 2rem;
+    .mater {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
+
   .career-culture {
     padding: 2rem;
   }
@@ -1434,6 +1507,32 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .portfolio-product {
+    .half-text {
+      padding: 1rem;
+    }
+    .half-image {
+      padding: 0 1rem 1rem 1rem;
+    }
+  }
+
+  .portfolio-projects {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .project-detail {
+    .long-half-text {
+      padding: 1rem;
+    }
+    .long-half-image {
+      padding: 0 1rem 1rem 1rem;
+    }
+  }
+
+  .materials {
+    padding: 1rem;
+  }
+
   .career-culture {
     padding: 1rem;
     .big-cards-list {

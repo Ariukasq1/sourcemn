@@ -8,7 +8,12 @@ const ProjectsDetail = ({ post }) => {
   return (
     <Row className="project-detail">
       <Col
-        span={12}
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
         className="long-half-text"
         data-aos="fade-down"
         data-aos-easing="ease"
@@ -19,7 +24,15 @@ const ProjectsDetail = ({ post }) => {
         />
         <div dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
       </Col>
-      <Col span={12} className="long-half-image">
+      <Col
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
+        className="long-half-image"
+      >
         <img src={getData(_embedded, "image")} />
       </Col>
     </Row>
