@@ -2021,7 +2021,7 @@ ul li {
   top: 0;
   left: 0;
   z-index: 9;
-  background-image: linear-gradient(to bottom, rgba(0, 51, 141, 0), #00338d);
+  background-image: linear-gradient(to bottom, rgba(0, 51, 141, 0), #00498e);
 }
 .brand .brand-banner .banner-content-wrapper {
   margin: 0 auto;
@@ -2039,7 +2039,7 @@ ul li {
 }
 .brand .second-level-wrapper {
   width: 100%;
-  background-color: #00338d;
+  background-color: #00498e;
   float: left;
 }
 .brand .second-level-wrapper .container ul {
@@ -2061,7 +2061,7 @@ ul li {
 }
 .brand .about-brand {
   padding: 60px 0 60px 0;
-  background: #00338d;
+  background: #00498e;
   border-bottom-left-radius: 50% 8%;
   border-bottom-right-radius: 50% 8%;
 }
@@ -2122,7 +2122,7 @@ ul li {
 }
 .brand-details .blue-title .download {
   position: relative;
-  color: #00338d;
+  color: #00498e;
 }
 .brand-details .blue-title .download .tooltip {
   visibility: hidden;
@@ -2130,7 +2130,7 @@ ul li {
   right: 120%;
   font-size: 0.875rem;
   width: max-content;
-  background: #00338d;
+  background: #00498e;
   color: #fff;
   padding: 3px;
   border-radius: 3px;
