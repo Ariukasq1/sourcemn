@@ -1752,6 +1752,7 @@ ul li {
   font-size: 16px;
   line-height: normal;
   margin-top: 15px;
+  height: 32px;
 }
 .about-service .serviceList .products > div .product-title .serviceIcon {
   display: flex;
@@ -2945,6 +2946,26 @@ ul li {
   }
 }
 @media only screen and (max-width: 991px) {
+  .about-us {
+    display: block;
+    padding: 0 3rem;
+  }
+
+  .about-service {
+    padding: 0 3rem;
+  }
+  .about-service .catList {
+    margin: 0 0 20px 0;
+  }
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .timeline {
+    padding: 3rem;
+  }
+
   .news-detail .news-tag {
     margin: 20px 1rem;
   }
@@ -3172,6 +3193,18 @@ ul li {
   }
 }
 @media only screen and (max-width: 767px) {
+  .about-us {
+    padding: 0 2rem;
+  }
+
+  .about-service {
+    padding: 0 2rem;
+  }
+
+  .timeline {
+    padding: 2rem;
+  }
+
   .portfolio-product .half-text {
     padding: 2rem;
   }
@@ -3254,6 +3287,14 @@ ul li {
   }
 }
 @media only screen and (max-width: 575px) {
+  .about-service {
+    padding: 0 3rem;
+  }
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
   .materials {
     padding: 2rem;
   }
@@ -3295,6 +3336,33 @@ ul li {
   }
 }
 @media only screen and (max-width: 480px) {
+  .about-us {
+    padding: 0 1rem;
+  }
+
+  .about-service {
+    padding: 0 1rem;
+  }
+  .about-service .sub-title {
+    text-align: center;
+  }
+  .about-service .catList .active,
+.about-service .catList .inactive {
+    text-align: center;
+    border: none;
+  }
+  .about-service .serviceList {
+    padding: 0 2rem;
+  }
+  .about-service .serviceList .products {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .timeline {
+    padding: 1rem;
+  }
+
   .portfolio-product .half-text {
     padding: 1rem;
   }

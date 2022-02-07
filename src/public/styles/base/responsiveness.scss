@@ -1125,6 +1125,28 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .about-us {
+    display: block;
+    padding: 0 3rem;
+  }
+
+  .about-service {
+    padding: 0 3rem;
+    .catList {
+      margin: 0 0 20px 0;
+    }
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+      }
+    }
+  }
+
+  .timeline {
+    padding: 3rem;
+  }
+
   .news-detail {
     .news-tag {
       margin: 20px 1rem;
@@ -1370,6 +1392,18 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .about-us {
+    padding: 0 2rem;
+  }
+
+  .about-service {
+    padding: 0 2rem;
+  }
+
+  .timeline {
+    padding: 2rem;
+  }
+
   .portfolio-product {
     .half-text {
       padding: 2rem;
@@ -1463,6 +1497,16 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .about-service {
+    padding: 0 3rem;
+    .serviceList {
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+      }
+    }
+  }
+
   .materials {
     padding: 2rem;
     .mater {
@@ -1507,6 +1551,35 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .about-us {
+    padding: 0 1rem;
+  }
+
+  .about-service {
+    padding: 0 1rem;
+    .sub-title {
+      text-align: center;
+    }
+    .catList {
+      .active,
+      .inactive {
+        text-align: center;
+        border: none;
+      }
+    }
+    .serviceList {
+      padding: 0 2rem;
+      .products {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 1rem;
+      }
+    }
+  }
+
+  .timeline {
+    padding: 1rem;
+  }
+
   .portfolio-product {
     .half-text {
       padding: 1rem;

@@ -26,6 +26,20 @@ const TimeLine = ({ timeline }) => {
           autoplay: true,
         },
       },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+        },
+      },
     ],
   };
 
