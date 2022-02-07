@@ -2,6 +2,7 @@ import React from "react";
 import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { Col, Row } from "antd";
+import { generateLink } from "../../config";
 
 const HomeCapabilty = ({ capability }) => {
   const { content, _embedded } = capability;
@@ -38,7 +39,7 @@ const HomeCapabilty = ({ capability }) => {
             className="text-md"
             dangerouslySetInnerHTML={{ __html: content.rendered }}
           />
-          <Link href="/capabilities">
+          <Link href={generateLink("/capabilities")}>
             <div className="read-more-button">{__("Read more")}</div>
           </Link>
         </div>

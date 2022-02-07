@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { generateLink } from "../../config";
 
 const HomeBrands = ({ brandCats, brands, page }) => {
   const parent = brandCats[0].parent;
@@ -73,12 +74,18 @@ const HomeBrands = ({ brandCats, brands, page }) => {
               <div className="brand-logo">
                 <img src={brand.acf.logo} />
               </div>
-              <Link href={"/brands/[brands]"} as={`/brands/${brand.slug}`}>
+              <Link
+                href={"/brands/[brands]"}
+                as={generateLink(`/brands/${brand.slug}`)}
+              >
                 <div className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
                 </div>
               </Link>
-              <Link href={"/brands/[brands]"} as={`/brands/${brand.slug}`}>
+              <Link
+                href={"/brands/[brands]"}
+                as={generateLink(`/brands/${brand.slug}`)}
+              >
                 <div className="brand-image">
                   <img src={getData(brand._embedded, "image")} />
                 </div>

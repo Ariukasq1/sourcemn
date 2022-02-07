@@ -3,6 +3,7 @@ import { __, getData } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Row, Col } from "antd";
+import { generateLink } from "../../config";
 
 const HomeIndustries = ({ data }) => {
   const lastContent = data[data.length - 1];
@@ -59,7 +60,7 @@ const HomeIndustries = ({ data }) => {
             );
           })}
 
-        <Link href={`/[categories]`} as={"/industries"}>
+        <Link href={`/[categories]`} as={generateLink("/industries")}>
           <div className="read-more-button">{__("Read more")}</div>
         </Link>
       </Col>

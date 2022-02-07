@@ -1,6 +1,7 @@
 import React from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
+import { generateLink } from "../../config";
 
 const Culture = ({ data }) => {
   return (
@@ -16,7 +17,7 @@ const Culture = ({ data }) => {
               <Link
                 key={ind}
                 href={"/careers/[careers]"}
-                as={`/careers/${card.slug}`}
+                as={generateLink(`/careers/${card.slug}`)}
               >
                 <div
                   className="big-card"

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { generateLink } from "../../config";
 
 const SideMenuWithChilds = ({ menu, close }) => {
   return (
@@ -7,7 +8,7 @@ const SideMenuWithChilds = ({ menu, close }) => {
       {menu.items.map((item, ind) => {
         return (
           <div className="SideMenuList">
-            <Link key={ind} href={`/[categories]`} as={`/${item.slug}`}>
+            <Link key={ind} href={generateLink(`/${item.slug}`)}>
               <a className="titleMenu">
                 <b>{item.title}</b>
               </a>
@@ -17,8 +18,7 @@ const SideMenuWithChilds = ({ menu, close }) => {
                 return (
                   <Link
                     key={ind}
-                    href={"/[categories]/[detail]"}
-                    as={`/${item.slug}/${child.slug}#section2`}
+                    href={generateLink(`/${item.slug}/${child.slug}`)}
                   >
                     <a>{child.title}</a>
                   </Link>

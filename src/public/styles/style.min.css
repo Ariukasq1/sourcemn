@@ -2128,6 +2128,15 @@ ul li {
     bottom: -40px;
   }
 
+  .project-detail,
+.materials {
+    height: calc(100vh - 98px);
+  }
+
+  .materials {
+    padding: 0 6rem;
+  }
+
   .homeSlider {
     height: calc(100vh - 98px);
   }
@@ -2513,6 +2522,21 @@ ul li {
   }
 }
 @media only screen and (max-width: 1199px) {
+  .materials {
+    padding: 0 4rem;
+  }
+  .materials .mater {
+    gap: 1rem;
+  }
+  .materials .mater > div img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .materials .mater > div p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
   .main-header .logo {
     width: 4.5rem;
   }
@@ -2551,6 +2575,11 @@ ul li {
   .read-more-button {
     padding: 0.3rem 1.2rem;
     font-size: 0.875rem;
+  }
+
+  .project-detail,
+.materials {
+    height: calc(100vh - 90px);
   }
 
   .homeSlider {
