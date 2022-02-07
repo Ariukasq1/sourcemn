@@ -81,7 +81,7 @@ function Footer({ contact }) {
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Enter full name"
+              placeholder={__("Enter full name")}
               required
             />
           </div>
@@ -91,7 +91,7 @@ function Footer({ contact }) {
               type="text"
               id="email"
               name="email"
-              placeholder="Enter email"
+              placeholder={__("Enter email")}
               required
             />
           </div>
@@ -100,12 +100,12 @@ function Footer({ contact }) {
             <textarea
               id="Message"
               name="message"
-              placeholder="Enter text"
+              placeholder={__("Enter text")}
               required
             />
           </div>
 
-          <input type="submit" value="Send" />
+          <input type="submit" value={__("Send")} />
         </Col>
       </Row>
     </footer>

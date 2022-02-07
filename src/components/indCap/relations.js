@@ -1,7 +1,5 @@
 import React from "react";
 import { __, getData } from "../../utils";
-import Slider from "react-slick";
-import Link from "next/link";
 
 const Relations = ({ brandData, post, relPosts, relations }) => {
   const { acf } = post || {};
@@ -42,7 +40,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
         </div>
       </div>
       <div className="relations-list">
-        <div className="gold-title">{relations}</div>
+        <div className="gold-title">{__(`${relations}`)}</div>
         <div className="list-of-relations">
           {relIndCap.map((item, ind) => {
             return (
