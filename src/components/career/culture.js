@@ -17,7 +17,7 @@ const Culture = ({ data }) => {
               <Link
                 key={ind}
                 href={"/careers/[careers]"}
-                as={generateLink(`/careers/${card.slug}`)}
+                as={`${generateLink(`/careers/${card.slug}`)}#section2`}
               >
                 <div
                   className="big-card"

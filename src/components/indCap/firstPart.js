@@ -34,7 +34,7 @@ const FirstPart = ({ clas, data }) => {
                 />
                 <Link
                   href={`/[detail]/[slug]`}
-                  as={generateLink(`/${clas}/${slug}`)}
+                  as={`${generateLink(`/${clas}/${slug}`)}#section2`}
                 >
                   <div className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
@@ -42,7 +42,7 @@ const FirstPart = ({ clas, data }) => {
                 </Link>
                 <Link
                   href={`/[detail]/[slug]`}
-                  as={generateLink(`/${clas}/${slug}`)}
+                  as={`${generateLink(`/${clas}/${slug}`)}#section2`}
                 >
                   <div className="squad-image">
                     <img src={getData(_embedded, "image")} />
