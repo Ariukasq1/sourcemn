@@ -1516,12 +1516,14 @@ ul li {
 .news-detail .container {
   margin-bottom: 20px;
 }
+.news-detail .container .blue-title {
+  margin: 20px 0;
+}
 .news-detail .container .news-image {
   width: 100%;
   height: 400px;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 .news-detail .container .news-image > img {
   background-color: #e2e8f0;
@@ -2942,6 +2944,36 @@ ul li {
   }
 }
 @media only screen and (max-width: 991px) {
+  .news-detail .news-tag {
+    margin: 20px 1rem;
+  }
+  .news-detail .container {
+    margin-bottom: 20px;
+  }
+  .news-detail .container .blue-title {
+    margin: 20px 1rem;
+  }
+  .news-detail .container .news-content {
+    margin: 1rem;
+  }
+  .news-detail .container .news-image {
+    padding: 0 1rem;
+  }
+
+  .newsList,
+.newsRelated {
+    height: auto;
+    padding: 3rem;
+  }
+  .newsList .two-row-slider .slider-image-back,
+.newsRelated .two-row-slider .slider-image-back {
+    height: 10rem;
+  }
+
+  .main-header .menus .topMenu {
+    display: none;
+  }
+
   .firstPart {
     padding: 1rem 3rem;
     height: auto;
@@ -3096,6 +3128,11 @@ ul li {
   }
 }
 @media only screen and (max-width: 767px) {
+  .newsList,
+.newsRelated {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
   .firstPart {
     padding: 1rem 2rem;
   }
@@ -3294,10 +3331,6 @@ ul li {
   .homeBrands .brandList,
 .homeBrands .brandsList {
     padding: 0 1rem;
-  }
-
-  .main-header .menus .topMenu {
-    display: none;
   }
 }
 .alignleft {

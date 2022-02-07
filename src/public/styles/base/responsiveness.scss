@@ -1125,6 +1125,42 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .news-detail {
+    .news-tag {
+      margin: 20px 1rem;
+    }
+    .container {
+      margin-bottom: 20px;
+      .blue-title {
+        margin: 20px 1rem;
+      }
+      .news-content {
+        margin: 1rem;
+      }
+      .news-image {
+        padding: 0 1rem;
+      }
+    }
+  }
+  .newsList,
+  .newsRelated {
+    height: auto;
+    padding: 3rem;
+    .two-row-slider {
+      .slider-image-back {
+        height: 10rem;
+      }
+    }
+  }
+
+  .main-header {
+    .menus {
+      .topMenu {
+        display: none;
+      }
+    }
+  }
+
   .firstPart {
     padding: 1rem 3rem;
     height: auto;
@@ -1292,6 +1328,11 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .newsList,
+  .newsRelated {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
   .firstPart {
     padding: 1rem 2rem;
     .industries,
@@ -1510,14 +1551,6 @@
     .brandList,
     .brandsList {
       padding: 0 1rem;
-    }
-  }
-
-  .main-header {
-    .menus {
-      .topMenu {
-        display: none;
-      }
     }
   }
 }

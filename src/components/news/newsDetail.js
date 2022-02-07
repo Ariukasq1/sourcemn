@@ -14,7 +14,10 @@ const NewsDetail = ({ post }) => {
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
         />
-        <div dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
+        <div
+          className="news-content"
+          dangerouslySetInnerHTML={{ __html: (content || {}).rendered }}
+        />
       </div>
     </div>
   );
