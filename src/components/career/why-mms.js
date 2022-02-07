@@ -7,7 +7,7 @@ const WhyMMs = ({ posts }) => {
   const culture = posts[2];
   const benefits = posts[1];
   const tourOffice = posts[0];
-  console.log(tourOffice, "123123123");
+
   return (
     <>
       <div className="section">
