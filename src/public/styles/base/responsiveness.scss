@@ -1325,9 +1325,23 @@
     bottom: 1rem;
     left: 1rem;
   }
+  .career-culture {
+    height: auto;
+    padding: 3rem;
+    .big-cards-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
+  .career-culture {
+    .big-cards-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+  }
+
   .newsList,
   .newsRelated {
     padding: 2rem 1rem 4rem 1rem;
@@ -1384,6 +1398,10 @@
 }
 
 @media only screen and (max-width: 575px) {
+  .career-culture {
+    padding: 2rem;
+  }
+
   .brand-details {
     padding: 0 1rem 30px 1rem;
   }
@@ -1416,6 +1434,17 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .career-culture {
+    padding: 1rem;
+    .big-cards-list {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+      .big-card {
+        max-width: 100%;
+      }
+    }
+  }
+
   .firstPart {
     padding: 1rem;
     .industries,
