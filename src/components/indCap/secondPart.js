@@ -14,7 +14,15 @@ const SecondPart = ({ post }) => {
 
   return (
     <Row className="secondPart">
-      <Col span={12} className="product-cards">
+      <Col
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
+        className="product-cards"
+      >
         <div
           className="blue-title"
           dangerouslySetInnerHTML={{ __html: (supports || {}).title }}
@@ -44,7 +52,12 @@ const SecondPart = ({ post }) => {
         </div>
       </Col>
       <Col
-        span={12}
+        xxl={12}
+        xl={12}
+        lg={12}
+        md={24}
+        sm={24}
+        xs={24}
         className="half-back-image-with-text"
         style={{ backgroundImage: `url(${getData(_embedded, "image")})` }}
       >

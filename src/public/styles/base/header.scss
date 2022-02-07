@@ -30,7 +30,7 @@
       a {
         border-right: 1px solid #00498e;
         font-weight: 400;
-        font-size: .875rem;
+        font-size: 0.875rem;
 
         &:last-child {
           border: none;
@@ -45,13 +45,13 @@
           padding: 0;
           color: #444;
         }
-        
+
         > span {
           margin: 0 10px;
         }
 
         .text-menuTextColor {
-          color:rgb(0, 72, 141);
+          color: rgb(0, 72, 141);
         }
       }
     }
@@ -104,12 +104,12 @@
   flex-direction: column;
   justify-content: space-around;
   width: 90%;
-  max-width: 400px;
+  max-width: 480px;
   a {
     color: #fff;
     font-weight: 300;
     padding: 0 1rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .topMenuList {
@@ -121,6 +121,16 @@
         border: none;
       }
     }
+  }
+
+  .sideDrawerLanguage {
+    span {
+      color: #fff;
+    }
+  }
+
+  .topMenuLanguage {
+    display: none;
   }
 
   .SideMenu {

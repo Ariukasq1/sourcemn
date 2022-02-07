@@ -405,13 +405,13 @@ hr {
   flex-direction: column;
   justify-content: space-around;
   width: 90%;
-  max-width: 400px;
+  max-width: 480px;
 }
 .side-drawer a {
   color: #fff;
   font-weight: 300;
   padding: 0 1rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 .side-drawer .topMenuList {
   margin-top: 10px;
@@ -422,6 +422,12 @@ hr {
 }
 .side-drawer .topMenuList a:last-child {
   border: none;
+}
+.side-drawer .sideDrawerLanguage span {
+  color: #fff;
+}
+.side-drawer .topMenuLanguage {
+  display: none;
 }
 .side-drawer .SideMenu .SideMenuList {
   display: flex;
@@ -2925,6 +2931,49 @@ ul li {
   }
 }
 @media only screen and (max-width: 991px) {
+  .firstPart {
+    padding: 1rem 3rem;
+    height: auto;
+  }
+  .firstPart .industries,
+.firstPart .capabilities,
+.firstPart .portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .secondPart {
+    height: auto;
+  }
+  .secondPart .product-cards {
+    padding: 3rem;
+  }
+  .secondPart .half-back-image-with-text {
+    height: 400px;
+  }
+
+  .thirdPart {
+    height: auto;
+    margin: 3rem 0 0 0;
+    padding: 3rem;
+  }
+
+  .odd,
+.even {
+    height: auto;
+    margin-top: 3rem;
+    padding: 0 3rem;
+  }
+
+  .relations {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+  .relations .relations-list .list-of-relations {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .main-header .logo {
     width: 4rem;
   }
@@ -3035,7 +3084,135 @@ ul li {
     left: 1rem;
   }
 }
+@media only screen and (max-width: 767px) {
+  .firstPart {
+    padding: 1rem 2rem;
+  }
+  .firstPart .industries,
+.firstPart .capabilities,
+.firstPart .portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .secondPart {
+    height: auto;
+  }
+  .secondPart .product-cards {
+    padding: 2rem;
+  }
+  .secondPart .half-back-image-with-text {
+    height: 400px;
+  }
+
+  .thirdPart {
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+  }
+  .thirdPart .facts .numbers h1 {
+    font-size: 1.3rem;
+  }
+
+  .odd,
+.even {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+
+  .relations {
+    padding: 2rem;
+  }
+  .relations .relations-list {
+    margin-bottom: 30px;
+  }
+  .relations .relations-list .list-of-relations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 575px) {
+  .secondPart {
+    height: auto;
+  }
+  .secondPart .product-cards {
+    padding: 2rem;
+  }
+  .secondPart .half-back-image-with-text {
+    height: 400px;
+  }
+
+  .thirdPart {
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+  }
+  .thirdPart .facts {
+    padding: 0.5rem;
+  }
+  .thirdPart .facts p {
+    font-size: 0.875rem;
+  }
+  .thirdPart .facts .numbers h1 {
+    font-size: 1.125rem;
+  }
+}
 @media only screen and (max-width: 480px) {
+  .firstPart {
+    padding: 1rem;
+  }
+  .firstPart .industries,
+.firstPart .capabilities,
+.firstPart .portfolio {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .secondPart {
+    height: auto;
+  }
+  .secondPart .product-cards {
+    padding: 1rem;
+  }
+  .secondPart .product-cards .little-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .thirdPart {
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .thirdPart .facts {
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid #fff;
+  }
+  .thirdPart .facts .numbers h1 {
+    font-size: 1.5rem;
+  }
+
+  .odd,
+.even {
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .relations {
+    padding: 1rem;
+  }
+  .relations .relations-list {
+    margin-bottom: 30px;
+  }
+  .relations .relations-list .list-of-relations {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .relations .relations-list .list-of-relations .one-brochure {
+    height: 200px;
+    padding: 0 60px 60px 0;
+  }
+  .relations .relations-list .list-of-relations .one-brochure p {
+    font-size: 1.3rem;
+  }
+
   footer {
     padding: 2rem 1rem;
   }
