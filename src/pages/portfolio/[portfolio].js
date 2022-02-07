@@ -7,7 +7,7 @@ import Product from "../../components/portfolio/product";
 import Projects from "../../components/portfolio/projects";
 import PortfolioFirst from "../../components/portfolio/portfolioFirst";
 
-const Portfolio = ({
+const PortfolioD = ({
   mainMenu,
   topMenu,
   data,
@@ -42,7 +42,7 @@ const Portfolio = ({
   );
 };
 
-export async function getServerSideProps(context) {
+PortfolioD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.portfolio;
@@ -98,7 +98,7 @@ export async function getServerSideProps(context) {
     .perPage(100)
     .embed();
 
-  return { props: { mainMenu, topMenu, data, post, child_data, materials } };
-}
+  return { mainMenu, topMenu, data, post, child_data, materials };
+};
 
-export default Portfolio;
+export default PortfolioD;

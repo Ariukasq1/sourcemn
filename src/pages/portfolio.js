@@ -14,7 +14,7 @@ const Portfolio = ({ mainMenu, topMenu, data }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+Portfolio.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -37,7 +37,7 @@ export async function getServerSideProps(context) {
     .perPage(100)
     .embed();
 
-  return { props: { mainMenu, topMenu, data } };
-}
+  return { mainMenu, topMenu, data };
+};
 
 export default Portfolio;

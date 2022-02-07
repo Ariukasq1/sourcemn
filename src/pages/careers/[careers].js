@@ -10,7 +10,7 @@ import Faqs from "../../components/career/faqs";
 import Culture from "../../components/career/culture";
 import Fullpage from "../../components/FullPage";
 
-const Careers = ({
+const CareersD = ({
   mainMenu,
   topMenu,
   contact,
@@ -54,7 +54,7 @@ const Careers = ({
   );
 };
 
-export async function getServerSideProps(context) {
+CareersD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.careers;
@@ -96,7 +96,7 @@ export async function getServerSideProps(context) {
     .categories((detail_posts_category || {}).id)
     .embed();
 
-  return { props: { mainMenu, topMenu, contact, data, detail_posts, detail } };
-}
+  return { mainMenu, topMenu, contact, data, detail_posts, detail };
+};
 
-export default Careers;
+export default CareersD;

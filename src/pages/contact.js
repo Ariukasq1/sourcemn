@@ -14,7 +14,7 @@ const Contact = ({ mainMenu, topMenu, contact }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+Contact.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const mainMenu = await fetcher(
@@ -32,7 +32,7 @@ export async function getServerSideProps(context) {
     .embed()
     .then((data) => data[0]);
 
-  return { props: { mainMenu, topMenu, contact } };
-}
+  return { mainMenu, topMenu, contact };
+};
 
 export default Contact;

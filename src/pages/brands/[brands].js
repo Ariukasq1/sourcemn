@@ -5,7 +5,7 @@ import config, { fetcher } from "../../config";
 import Brand from "../../components/brands/brandsDetail";
 import FirstChilds from "../../components/brands/firstChilds";
 
-const Brands = ({
+const BrandsD = ({
   mainMenu,
   topMenu,
   post,
@@ -30,7 +30,7 @@ const Brands = ({
   );
 };
 
-export async function getServerSideProps(context) {
+BrandsD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.brands;
@@ -77,16 +77,14 @@ export async function getServerSideProps(context) {
   );
 
   return {
-    props: {
-      mainMenu,
-      topMenu,
-      post,
-      cat,
-      childCats,
-      childCats_child,
-      childCats_child_childs,
-    },
+    mainMenu,
+    topMenu,
+    post,
+    cat,
+    childCats,
+    childCats_child,
+    childCats_child_childs,
   };
-}
+};
 
-export default Brands;
+export default BrandsD;

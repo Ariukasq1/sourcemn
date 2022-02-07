@@ -5,7 +5,7 @@ import config, { fetcher } from "../../config";
 import NewsDetail from "../../components/news/newsDetail";
 import RelatedNews from "../../components/news/newsRelated";
 
-const News = ({ mainMenu, topMenu, post, data }) => {
+const NewsD = ({ mainMenu, topMenu, post, data }) => {
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="page">
@@ -16,7 +16,7 @@ const News = ({ mainMenu, topMenu, post, data }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+NewsD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.news;
@@ -46,7 +46,7 @@ export async function getServerSideProps(context) {
     .embed()
     .then((data) => data[0]);
 
-  return { props: { mainMenu, topMenu, post, data } };
-}
+  return { mainMenu, topMenu, post, data };
+};
 
-export default News;
+export default NewsD;

@@ -59,7 +59,7 @@ const Indcap = ({
   );
 };
 
-export async function getServerSideProps(context) {
+Indcap.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.detail;
@@ -116,17 +116,15 @@ export async function getServerSideProps(context) {
     .embed();
 
   return {
-    props: {
-      mainMenu,
-      topMenu,
-      data,
-      detail,
-      post,
-      brands,
-      relationsPosts,
-      relations,
-    },
+    mainMenu,
+    topMenu,
+    data,
+    detail,
+    post,
+    brands,
+    relationsPosts,
+    relations,
   };
-}
+};
 
 export default Indcap;
