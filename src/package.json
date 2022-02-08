@@ -1,5 +1,5 @@
 {
-  "name": "gerege-wordpress-template",
+  "name": "mms",
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "google-map-react": "^1.1.7",
     "i18n-react": "^0.7.0",
     "moment": "^2.24.0",
-    "next": "^9.4.2",
+    "next": "^12.0.10",
     "next-routes": "^1.4.2",
     "nprogress": "^0.2.0",
     "query-string": "^7.0.1",
