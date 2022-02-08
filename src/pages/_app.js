@@ -12,12 +12,6 @@ import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
 
 function MyApp({ Component, pageProps, lang }) {
-  React.useEffect(() => {
-    AOS.init({ duration: 800 });
-    AOS.init({ disable: "mobile" });
-    AOS.refresh();
-  }, []);
-
   const [loading, setLoading] = React.useState(false);
   const [isLangSetted, setLangState] = React.useState(false);
 
