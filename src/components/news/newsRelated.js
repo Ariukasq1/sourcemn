@@ -3,6 +3,8 @@ import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
 import { generateLink } from "../../config";
+import Image from "next/image";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 const RelatedNews = ({ data, slug }) => {
   const settings = {
@@ -44,28 +46,42 @@ const RelatedNews = ({ data, slug }) => {
 
   return (
     <div className="newsRelated">
-      <div className="blue-title">{__("News Related")}</div>
-      <Slider {...settings} className="two-row-slider">
-        {data.map((news, ind) => {
-          return (
-            <Link
-              key={ind}
-              href={"/news/[news]"}
-              as={generateLink(`/news/${news.slug}`)}
-            >
-              <div
-                className="slider-image-back"
-                data-aos="flip-up"
-                style={{
-                  backgroundImage: `url(${getData(news._embedded, "image")}})`,
-                }}
+      <div className="container">
+        <div className="blue-title">{__("News Related")}</div>
+        <Slider {...settings} className="two-row-slider">
+          {data.map((news, ind) => {
+            const image = getData(news._embedded, "image");
+
+            return (
+              <Link
+                key={ind}
+                href={"/news/[news]"}
+                as={generateLink(`/news/${news.slug}`)}
               >
-                <h2 dangerouslySetInnerHTML={{ __html: news.title.rendered }} />
-              </div>
-            </Link>
-          );
-        })}
-      </Slider>
+                <div className="slider-image-back">
+                  {image && (
+                    <Image
+                      loader={() => image}
+                      src={image}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  )}
+
+                  <div
+                    className="news-title"
+                    dangerouslySetInnerHTML={{ __html: news.title.rendered }}
+                  />
+                  <div className="read-more-project">
+                    {__("Read-more")} <ArrowRightOutlined />
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </Slider>
+      </div>
     </div>
   );
 };

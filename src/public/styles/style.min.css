@@ -1019,104 +1019,83 @@ footer .footer .contactUs label {
 }
 
 /* @import "./global.scss"; */
-.newsList,
-.newsRelated {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 114px);
-  padding: 0 8rem;
-}
-.newsList .sub-title,
-.newsRelated .sub-title {
-  margin-bottom: 10px;
+.newsList .sub-title {
+  text-align: center;
+  margin: 30px 0 10px 0;
 }
 
 .newsRelated {
-  align-items: flex-start;
+  padding: 30px 0 80px 0;
   background-color: rgba(240, 240, 240, 0.6);
 }
-.newsRelated .blue-title {
-  margin-bottom: 10px;
+.newsRelated .container .blue-title {
+  margin-bottom: 20px;
 }
 
-.news-detail .news-tag {
+.news-detail .container .news-tag {
   margin: 20px 0;
 }
-.news-detail .container {
-  margin-bottom: 20px;
+.news-detail .container .news-image {
+  position: relative;
+  width: 100%;
+  height: 500px;
 }
 .news-detail .container .blue-title {
   margin: 20px 0;
 }
-.news-detail .container .news-image {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-}
-.news-detail .container .news-image > img {
-  background-color: #e2e8f0;
+.news-detail .container .news-content p {
+  font-size: 1rem;
 }
 
 .career-culture {
   height: calc(100vh - 114px);
-  padding: 0 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .career-culture .gold-title {
   margin-bottom: 10px;
-  line-height: normal;
-  font-size: 1.5rem;
+  margin-left: 20px;
 }
 .career-culture .sub-title {
   margin-bottom: 2rem;
+  margin-left: 20px;
 }
 .career-culture .big-cards-list {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2.5rem;
+  width: 100%;
 }
 .career-culture .big-cards-list .big-card {
   border-radius: 10px;
   box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   position: relative;
-  max-width: 350px;
+  margin: 0 20px;
 }
 .career-culture .big-cards-list .big-card .big-card-image {
+  position: relative;
   background-color: #edf2f7;
-  display: flex;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px 0;
 }
-.career-culture .big-cards-list .big-card .big-card-image > div {
-  width: 200px;
-  height: 200px;
-  margin: 40px 0;
-}
-.career-culture .big-cards-list .big-card .big-card-image > div > img {
-  object-fit: contain;
-}
-.career-culture .big-cards-list .big-card .big-card-text {
+.career-culture .big-cards-list .big-card .big-card-content {
   padding: 20px;
 }
-.career-culture .big-cards-list .big-card .big-card-text .blue-title {
+.career-culture .big-cards-list .big-card .big-card-content .blue-title {
   font-size: 1.125rem;
 }
-.career-culture .big-cards-list .big-card .big-card-text p ul {
-  list-style: disc;
+.career-culture .big-cards-list .big-card .big-card-content .card-content {
+  height: 100px;
   padding-left: 20px;
 }
-.career-culture .big-cards-list .big-card .big-card-text p ul li {
-  margin-bottom: 0;
+.career-culture .big-cards-list .big-card .big-card-content .card-content ul li {
+  list-style: disc;
+  margin: 0;
   font-size: 1rem;
-  line-height: 1.25rem;
+  line-height: 1.5;
 }
 .career-culture .big-cards-list .big-card:hover {
   cursor: pointer;
@@ -1943,6 +1922,17 @@ footer .footer .contactUs label {
   top: 10px;
   right: 10px;
   font-weight: 600;
+}
+.two-row-slider .slider-image-back .news-title {
+  position: absolute;
+  font-size: 1.125rem;
+  color: #fff;
+  z-index: 3;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 .two-row-slider .slider-image-back .read-more-project {
   position: absolute;

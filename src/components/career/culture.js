@@ -2,52 +2,51 @@ import React from "react";
 import { __, getData } from "../../utils";
 import Link from "next/link";
 import { generateLink } from "../../config";
+import { Row, Col } from "antd";
+import Image from "next/image";
 
 const Culture = ({ data }) => {
   return (
     <div className="career-culture">
       <div className="gold-title">{__("Human Resource")}</div>
       <div className="sub-title">{__("We put company culture first")}</div>
-      <div className="big-cards-list">
+      <Row className="big-cards-list">
         {data
           .slice(0)
           .reverse()
           .map((card, ind) => {
+            const image = getData(card._embedded, "image");
+            console.log(card, "-------------");
+
             return (
-              <Link
-                key={ind}
-                href={"/careers/[careers]"}
-                as={`${generateLink(`/careers/${card.slug}`)}#section2`}
-              >
-                <div
-                  className="big-card"
-                  data-aos="fade-down"
-                  data-aos-easing="ease"
-                  data-aos-delay={ind * 300}
-                  data-aos-duration="2000"
-                  data-aos-offset="300"
-                >
+              <Col span={6} key={ind}>
+                <div className="big-card">
                   <div className="big-card-image">
-                    <div>
-                      <img src={getData(card._embedded, "image")} />
-                    </div>
+                    <Image
+                      loader={() => image}
+                      src={image}
+                      alt="card"
+                      width="200px"
+                      height="150px"
+                    />
                   </div>
-                  <div className="big-card-text">
+                  <div className="big-card-content">
                     <div
                       className="blue-title"
                       dangerouslySetInnerHTML={{ __html: card.title.rendered }}
                     />
-                    <p
+                    <div
+                      className="card-content"
                       dangerouslySetInnerHTML={{
                         __html: card.content.rendered,
                       }}
                     />
                   </div>
                 </div>
-              </Link>
+              </Col>
             );
           })}
-      </div>
+      </Row>
     </div>
   );
 };

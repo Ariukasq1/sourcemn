@@ -313,6 +313,18 @@
       font-weight: 600;
     }
 
+    .news-title {
+      position: absolute;
+      font-size: 1.125rem;
+      color: #fff;
+      z-index: 3;
+      left: 10px;
+      top: 10px;
+      right: 10px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
     .read-more-project {
       position: absolute;
       z-index: 3;

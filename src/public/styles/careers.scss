@@ -1,56 +1,55 @@
 .career-culture {
   height: calc(100vh - 114px);
-  padding: 0 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   .gold-title {
     margin-bottom: 10px;
-    line-height: normal;
-    font-size: 1.5rem;
+    margin-left: 20px;
   }
+
   .sub-title {
     margin-bottom: 2rem;
+    margin-left: 20px;
   }
+
   .big-cards-list {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2.5rem;
+    width: 100%;
     .big-card {
       border-radius: 10px;
       box-shadow: 0 5px 12px 0 rgba(0 0 0 / 10%);
       background-color: #ffffff;
       position: relative;
-      max-width: 350px;
+      margin: 0 20px;
+
       .big-card-image {
+        position: relative;
         background-color: #edf2f7;
-        display: flex;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        display: flex;
         justify-content: center;
         align-items: center;
-        > div {
-          width: 200px;
-          height: 200px;
-          margin: 40px 0;
-          > img {
-            object-fit: contain;
-          }
-        }
+        padding: 50px 0;
       }
-      .big-card-text {
+
+      .big-card-content {
         padding: 20px;
+
         .blue-title {
           font-size: 1.125rem;
         }
-        p {
+
+        .card-content {
+          height: 100px;
+          padding-left: 20px;
           ul {
-            list-style: disc;
-            padding-left: 20px;
             li {
-              margin-bottom: 0;
+              list-style: disc;
+              margin: 0;
               font-size: 1rem;
-              line-height: 1.25rem;
+              line-height: 1.5;
             }
           }
         }

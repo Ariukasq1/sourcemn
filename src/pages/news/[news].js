@@ -6,7 +6,7 @@ import RelatedNews from "../../components/news/newsRelated";
 
 const NewsD = ({ post, data }) => {
   return (
-    <div className="page">
+    <div className="top">
       <NewsDetail post={post} />
       <RelatedNews data={data} slug="news" />
     </div>
