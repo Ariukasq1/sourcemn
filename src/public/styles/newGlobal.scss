@@ -1,0 +1,346 @@
+.fp-tableCell {
+  vertical-align: bottom !important;
+}
+
+.top {
+  height: 100vh;
+  padding-top: 114px;
+}
+
+.page {
+  height: 100vh;
+  padding-top: 114px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.gold-title {
+  color: #fda50f;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.blue-title {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.half-text-container {
+  max-width: 704px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.read-more-detail {
+  background: linear-gradient(90deg, #8da0cd 2%, #0053a0 35%);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 3s ease;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1rem;
+  width: max-content;
+  color: #004a8f;
+}
+
+.read-more-button {
+  padding: 0.75rem 2rem;
+  background-image: linear-gradient(90deg, #004a8f 0, #617fb9 51%, #004a8f);
+  background-size: 200% auto;
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  line-height: normal;
+  width: max-content;
+
+  &:hover {
+    background-position: 100%;
+    cursor: pointer;
+  }
+}
+
+.simple-half-image {
+  height: 100%;
+  position: relative;
+}
+
+.sub-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.catList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  > div {
+    border-right: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 0 0.5rem;
+    --text-opacity: 1;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: normal;
+    margin-bottom: 10px;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .active {
+    font-weight: 600;
+    --text-opacity: 1;
+    color: rgba(0, 73, 142, var(--text-opacity));
+    line-height: normal;
+  }
+}
+
+.next-arrow {
+  position: absolute;
+  font-size: 40px;
+  bottom: -50px;
+  right: 10rem;
+}
+
+.prev-arrow {
+  position: absolute;
+  font-size: 40px;
+  bottom: -50px;
+  right: 15rem;
+}
+
+.continue-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
+  p {
+    font-size: 1rem;
+  }
+}
+
+.continue-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  --text-opacity: 1;
+  color: #000;
+  font-weight: 100;
+  color: rgba(0, 0, 0, var(--text-opacity));
+  margin-bottom: 1rem;
+}
+
+.overlay-half-image {
+  height: 100%;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: 0.5s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  &:hover {
+    &:after {
+      height: 100%;
+    }
+    .overlay-half-text {
+      transform: translateY(-50%);
+
+      @include big-laptops {
+        transform: translateY(-20%);
+      }
+
+      @include med-laptops {
+        transform: translateY(-10%);
+      }
+    }
+  }
+}
+
+.overlay-half-text {
+  position: absolute;
+  margin: 0 30px;
+  bottom: 30px;
+  color: #fff;
+  z-index: 3;
+  transition: 0.5s;
+  padding-bottom: 30px;
+  font-weight: 500;
+
+  .overlay-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .overlay-content {
+    font-size: 1rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 1px;
+    background-color: #fff;
+    bottom: 0;
+  }
+}
+
+.one-brochure {
+  height: 200px;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 3px 13px 18px 0 rgb(0 0 0/26%);
+  background-color: #fff;
+  position: relative;
+  padding: 0 80px 20px 0;
+  transition: 0.4s ease;
+
+  img {
+    border-radius: 6px;
+  }
+
+  .broch-overlay {
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    background-color: #00338d;
+    transition: 0.4s ease;
+    border-bottom-left-radius: 30% 10%;
+    border-bottom-right-radius: 90% 100%;
+    border-top-left-radius: 6px;
+    opacity: 0.7;
+  }
+
+  .broch-title {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20%;
+    left: 0;
+    transition: 0.4s;
+    line-height: normal;
+  }
+
+  .download {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #00338d;
+
+    .broch-overlay {
+      background-color: white;
+    }
+
+    .broch-title,
+    .download {
+      color: #00338d;
+    }
+  }
+}
+
+.two-row-slider {
+  .slider-image-back {
+    height: 13rem;
+    background-color: #e2e8f0;
+    position: relative;
+
+    .project-title {
+      color: #fff;
+      position: absolute;
+      z-index: 3;
+      font-size: 1.3rem;
+      left: 10px;
+      top: 10px;
+      right: 10px;
+      font-weight: 600;
+    }
+
+    .read-more-project {
+      position: absolute;
+      z-index: 3;
+      left: 10px;
+      bottom: 50px;
+      font-weight: 600;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      transition: 0.4s;
+      z-index: 1;
+    }
+
+    &:hover {
+      cursor: pointer;
+      &:before {
+        content: "";
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

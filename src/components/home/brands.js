@@ -4,8 +4,9 @@ import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { generateLink } from "../../config";
+import Image from "next/image";
 
-const HomeBrands = ({ brandCats, brands, page }) => {
+const HomeBrands = ({ brandCats, brands }) => {
   const parent = brandCats[0].parent;
 
   const [brandsId, setCatID] = useState(parent);
@@ -64,32 +65,40 @@ const HomeBrands = ({ brandCats, brands, page }) => {
 
   const brandsList = () => {
     return (
-      <Slider
-        {...settings_slider}
-        className={page ? "brandsList" : "brandList"}
-      >
+      <Slider {...settings_slider} className="brandList">
         {filteredBrands.map((brand, ind) => {
+          const image = getData(brand._embedded, "image");
           return (
             <div key={ind}>
               <div className="brand-logo">
-                <img src={brand.acf.logo} />
+                <Image
+                  loader={() => brand.acf.logo}
+                  src={brand.acf.logo}
+                  alt="logo"
+                  objectFit="contain"
+                  objectPosition="left"
+                  layout="fill"
+                />
               </div>
+
               <Link
                 href={"/brands/[brands]"}
                 as={generateLink(`/brands/${brand.slug}`)}
               >
-                <div className="read-more-detail">
+                <a className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
-                </div>
+                </a>
               </Link>
-              <Link
-                href={"/brands/[brands]"}
-                as={generateLink(`/brands/${brand.slug}`)}
-              >
-                <div className="brand-image">
-                  <img src={getData(brand._embedded, "image")} />
-                </div>
-              </Link>
+
+              <div className="brand-image">
+                <Image
+                  loader={() => image}
+                  src={image}
+                  alt="brand"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
             </div>
           );
         })}
@@ -98,30 +107,32 @@ const HomeBrands = ({ brandCats, brands, page }) => {
   };
 
   return (
-    <div className="homeBrands" data-aos="zoom-in" data-aos-duration="300">
-      <div className="gold-title">{__("Brands")}</div>
-      <div className="sub-title">{__("Our products")}</div>
-      <div className="catList">
-        <div
-          className={100 === index ? "active" : "inactive"}
-          onClick={() => renderCat(parent, 100)}
-        >
-          {__("All brands")}
+    <div className="homeBrands top" data-aos="zoom-in" data-aos-duration="300">
+      <div className="container">
+        <div className="gold-title">{__("Brands")}</div>
+        <div className="sub-title">{__("Our products")}</div>
+        <div className="catList">
+          <div
+            className={100 === index ? "active" : "inactive"}
+            onClick={() => renderCat(parent, 100)}
+          >
+            {__("All brands")}
+          </div>
+          {brandCats.map((cat, ind) => {
+            const { name, id } = cat;
+            return (
+              <div
+                key={ind}
+                onClick={() => renderCat(id, ind)}
+                className={ind === index ? "active" : "inactive"}
+              >
+                {name}
+              </div>
+            );
+          })}
         </div>
-        {brandCats.map((cat, ind) => {
-          const { name, id } = cat;
-          return (
-            <div
-              key={ind}
-              onClick={() => renderCat(id, ind)}
-              className={ind === index ? "active" : "inactive"}
-            >
-              {name}
-            </div>
-          );
-        })}
+        {brandsList()}
       </div>
-      {brandsList()}
     </div>
   );
 };

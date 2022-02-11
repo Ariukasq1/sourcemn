@@ -1,38 +1,68 @@
-.homeSlider {
-  height: calc(100vh - 114px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5rem;
+.home-slider {
   position: relative;
 
-  .sliderText {
-    width: 100%;
-    > h1 {
-      font-size: 80px;
-      line-height: normal;
-      margin-bottom: 20px;
-      font-weight: 600;
+  div {
+    height: 100%;
+  }
+
+  .home-slide {
+    position: relative;
+
+    .slide-text-center,
+    .slide-text-right {
+      position: absolute;
+      top: 50%;
+      height: auto;
+      width: 1200px;
+      h1 {
+        font-size: 5rem;
+        line-height: normal;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin: 0;
+      }
     }
-    > h2 {
-      font-weight: 500;
-      font-size: 1.5rem;
+
+    .slide-text-right {
+      right: 8rem;
+      text-align: right;
+      transform: translateY(-50%);
+      > h2 {
+        margin-left: auto;
+        max-width: 600px;
+        text-align: right;
+      }
+    }
+
+    .slide-text-center {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
   }
 }
 
 // home capabilitiy
 .homeCapability {
-  height: calc(100vh - 114px);
-
-  .capability-home-text {
+  .simple-half-text {
+    height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 8rem;
 
-    > div {
-      > div {
+    .half-text-container {
+      .gold-title {
         margin-bottom: 20px;
+      }
+      .content {
+        margin-bottom: 40px;
+        p {
+          font-size: 1rem;
+          margin: 0;
+        }
       }
     }
   }
@@ -40,71 +70,90 @@
 
 // home industry
 .homeIndustries {
-  height: calc(100vh - 114px);
-
   .industry-button {
-    padding: 2rem 0 0 8rem;
     position: relative;
+    .half-text-container {
+      padding-top: 20px;
+      .gold-title {
+        margin-bottom: 20px;
+      }
+      .big-buttons {
+        font-size: 5rem;
+        font-weight: 700;
+        width: max-content;
+        line-height: normal;
+        cursor: pointer;
+        margin-bottom: 2rem;
 
-    .big-buttons {
-      font-size: 5rem;
-      font-weight: 700;
-      width: max-content;
-      line-height: normal;
-      cursor: pointer;
-      margin-bottom: 2rem;
+        span {
+          margin-left: 20px;
+        }
+      }
 
-      span {
-        margin-left: 20px;
+      .read-more-button {
+        margin-top: 3rem;
       }
     }
+  }
 
-    .read-more-button {
-      margin-top: 3rem;
+  .simple-half-image {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .text {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: #fff;
     }
   }
 }
 
 // home brands
 .homeBrands {
-  height: calc(100vh - 114px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  .gold-title {
-    margin-bottom: 5px;
-  }
-  .sub-title {
-    margin-bottom: 30px;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .sub-title {
+      margin-bottom: 30px;
+    }
   }
 
-  .brandList,
-  .brandsList {
+  .brandList {
     width: 100%;
 
     .slick-slide {
-      max-width: 440px !important;
+      max-width: 400px !important;
     }
 
     .brand-logo {
-      width: 16rem;
-      height: 4rem;
-      > img {
-        object-fit: contain;
-        object-position: left;
-      }
+      width: 200px;
+      height: 60px;
+      position: relative;
+      margin-bottom: 10px;
     }
 
     .brand-image {
       height: 14rem;
       max-width: 420px;
+      position: relative;
+      margin-top: 10px;
     }
-  }
-  .brandList {
-    padding: 0 5rem 0 10rem;
-  }
-  .brandsList {
-    padding: 0 8rem;
   }
 }

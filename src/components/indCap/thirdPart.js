@@ -1,33 +1,43 @@
 import React from "react";
+import Image from "next/image";
 
 const FactSection = ({ post }) => {
   const { bg_image } = post.acf || {};
 
   return (
-    <div className="thirdPart" style={{ backgroundImage: `url(${bg_image})` }}>
-      {Object.entries(post.acf).map(([key, value]) => {
-        if (!key.includes("group")) {
-          return null;
-        }
+    <div className="thirdPart">
+      <Image
+        loader={() => bg_image}
+        src={bg_image}
+        alt="back"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+      />
+      <div className="container">
+        {Object.entries(post.acf).map(([key, value]) => {
+          if (!key.includes("group")) {
+            return null;
+          }
 
-        return (
-          <div key={key} className="facts">
-            <img
-              src={value.icon}
-              data-aos="zoom-in"
-              data-aos-easing="ease"
-              data-aos-duration="2000"
-              data-aos-offset="300"
-            />
-            <h2 dangerouslySetInnerHTML={{ __html: value.upper_text }} />
-            <div className="numbers">
-              <h1 dangerouslySetInnerHTML={{ __html: value.number }} />
-              <h1 dangerouslySetInnerHTML={{ __html: value.number_format }} />
+          return (
+            <div key={key} className="facts">
+              <Image
+                loader={() => value.icon}
+                src={value.icon}
+                alt="back"
+                width="80"
+                height="80"
+              />
+              <p>{value.upper_text}</p>
+              <div className="numbers">
+                {value.number} {value.number_format}
+              </div>
+              <p>{value.bottom_text}</p>
             </div>
-            <p dangerouslySetInnerHTML={{ __html: value.bottom_text }} />
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

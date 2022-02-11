@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
 import config, { fetcher } from "../../config";
 import Fullpage from "../../components/FullPage";
@@ -7,38 +6,25 @@ import Product from "../../components/portfolio/product";
 import Projects from "../../components/portfolio/projects";
 import PortfolioFirst from "../../components/portfolio/portfolioFirst";
 
-const PortfolioD = ({
-  mainMenu,
-  topMenu,
-  data,
-  post,
-  child_data,
-  materials,
-}) => {
+const PortfolioD = ({ data, post, child_data, materials }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
-        <Fullpage
-          children={
-            <div id="fullpage">
-              <div className="section">
-                <PortfolioFirst data={data} clas="portfolio" />
-              </div>
-
-              <div className="section">
-                <Product post={post} />
-              </div>
-
-              <Projects
-                projects={child_data}
-                post={post}
-                materials={materials}
-              />
+    <Fullpage
+      children={
+        <div id="fullpage">
+          <div className="section">
+            <div className="page">
+              <PortfolioFirst data={data} clas="portfolio" />
             </div>
-          }
-        />
-      </div>
-    </Layout>
+          </div>
+
+          <div className="section">
+            <Product post={post} />
+          </div>
+
+          <Projects projects={child_data} post={post} materials={materials} />
+        </div>
+      }
+    />
   );
 };
 
@@ -46,14 +32,6 @@ PortfolioD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.portfolio;
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const catId = await wp
     .categories()
@@ -98,7 +76,7 @@ PortfolioD.getInitialProps = async (context) => {
     .perPage(100)
     .embed();
 
-  return { mainMenu, topMenu, data, post, child_data, materials };
+  return { data, post, child_data, materials };
 };
 
 export default PortfolioD;

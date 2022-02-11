@@ -1,7 +1,6 @@
 .gold-title {
   color: #fda50f;
   font-weight: 700;
-
   font-size: 1.875rem;
   line-height: normal;
   margin-bottom: 20px;
@@ -10,7 +9,6 @@
   font-size: 1.875rem;
   font-weight: 700;
   line-height: normal;
-
   margin-bottom: 20px;
 }
 .section {
@@ -162,59 +160,6 @@ p {
     background-position: 100%;
     cursor: pointer;
   }
-}
-.read-more-detail {
-  background: linear-gradient(90deg, #8da0cd 2%, #0053a0 35%);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 3s ease;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1rem;
-  margin: 1rem 0;
-  width: max-content;
-  color: #004a8f;
-}
-
-.catList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 5rem 30px 5rem;
-  > div {
-    border-right: 1px solid rgba(0, 0, 0, 0.7);
-    padding: 0 0.5rem;
-    --text-opacity: 1;
-    font-size: 1.125rem;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.7);
-    line-height: normal;
-    margin-bottom: 10px;
-
-    &:last-child {
-      border: none;
-    }
-  }
-
-  .active {
-    font-weight: 600;
-    --text-opacity: 1;
-    color: rgba(0, 73, 142, var(--text-opacity));
-    line-height: normal;
-  }
-}
-
-.next-arrow {
-  position: absolute;
-  font-size: 40px;
-  bottom: -50px;
-  right: 10rem;
-}
-.prev-arrow {
-  position: absolute;
-  font-size: 40px;
-  bottom: -50px;
-  right: 15rem;
 }
 
 .slick-dots {

@@ -41,20 +41,22 @@ const TimeLine = ({ timeline }) => {
 
   return (
     <div className="timeline">
-      <div className="sub-title">{__("Our history")}</div>
-      <Slider {...settings} className="slider-time">
-        {timeline.map((item, ind) => {
-          return (
-            <div key={ind} className="time">
-              <h1>{item.acf.year}</h1>
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: item.content.rendered }}
-              />
-            </div>
-          );
-        })}
-      </Slider>
+      <div className="container">
+        <div className="sub-title">{__("Our history")}</div>
+        <Slider {...settings} className="slider-time">
+          {timeline.map((item, ind) => {
+            return (
+              <div key={ind} className="time">
+                <h1>{item.acf.year}</h1>
+                <div
+                  className="content"
+                  dangerouslySetInnerHTML={{ __html: item.content.rendered }}
+                />
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import Layout from "../components/layouts/Layout";
-import config, { fetcher } from "../config";
+import config from "../config";
 import WPAPI from "wpapi";
 import Fullpage from "../components/FullPage";
 import Footer from "../components/layouts/footer";
@@ -10,8 +9,6 @@ import HomeIndustries from "../components/home/industries";
 import HomeBrands from "../components/home/brands";
 
 const Index = ({
-  mainMenu,
-  topMenu,
   contact,
   sliders,
   capability,
@@ -20,41 +17,32 @@ const Index = ({
   brandsCat,
 }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <Fullpage
-        children={
-          <div className="home">
-            <div className="section Slider">
-              <HomeSlider sliders={sliders} />
-            </div>
-            <div className="section Capabilities">
-              <HomeCapabilty capability={capability} />
-            </div>
-            <div className="section Industry">
-              <HomeIndustries data={industries} />
-            </div>
-            <div className="section Brands">
-              <HomeBrands brandCats={brandsCat} brands={brands} />
-            </div>
-            <div className="section Footer">
-              <Footer contact={contact} />
-            </div>
+    <Fullpage
+      children={
+        <div id="fullpage">
+          <div className="section">
+            <HomeSlider sliders={sliders} />
           </div>
-        }
-      />
-    </Layout>
+          <div className="section">
+            <HomeCapabilty capability={capability} />
+          </div>
+          <div className="section">
+            <HomeIndustries data={industries} />
+          </div>
+          <div className="section">
+            <HomeBrands brandCats={brandsCat} brands={brands} />
+          </div>
+          <div className="section">
+            <Footer contact={contact} />
+          </div>
+        </div>
+      }
+    />
   );
 };
 
 Index.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const contact = await wp
     .posts()
@@ -101,8 +89,6 @@ Index.getInitialProps = async (context) => {
   const brandsCat = await wp.categories().parent(brandsID.id).embed();
 
   return {
-    mainMenu,
-    topMenu,
     contact,
     sliders,
     capability,

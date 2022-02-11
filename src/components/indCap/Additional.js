@@ -1,46 +1,36 @@
-import React, { useState } from "react";
-import { getData } from "../../utils";
-import Link from "next/link";
+import React from "react";
 import { Row, Col } from "antd";
+import Image from "next/image";
 
 const Additional = ({ post }) => {
   const { additional } = post.acf || {};
 
-  const renderPost = (group, index) => {
+  const renderPost = (group) => {
     return (
-      <Row className="texts">
-        <Col span={4}>
-          <img src={`/images/industry${index}.png`} />
-        </Col>
-        <Col
-          span={19}
-          data-aos="fade-down"
-          data-aos-easing="ease"
-          data-aos-duration="2000"
-          data-aos-offset="300"
-          dangerouslySetInnerHTML={{
-            __html: group,
-          }}
-        />
-      </Row>
+      <div
+        className="add-text"
+        dangerouslySetInnerHTML={{
+          __html: group,
+        }}
+      />
     );
   };
 
   return (
     <>
       <div className="section">
-        <div className="odd">
-          {additional && renderPost(additional.group, 1)}
+        <div className="page odd" data-aos="fade-left">
+          {additional && renderPost(additional.group)}
         </div>
       </div>
       <div className="section">
-        <div className="even">
-          {additional && renderPost(additional.group_1, 2)}
+        <div className="page even" data-aos="fade-right">
+          {additional && renderPost(additional.group_1)}
         </div>
       </div>
       <div className="section">
-        <div className="odd">
-          {additional && renderPost(additional.group_2, 3)}
+        <div className="page odd" data-aos="fade-up">
+          {additional && renderPost(additional.group_2)}
         </div>
       </div>
     </>

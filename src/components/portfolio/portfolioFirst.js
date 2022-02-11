@@ -1,59 +1,64 @@
 import React from "react";
-import { __, getData } from "../../utils";
+import { Row, Col } from "antd";
+import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { generateLink } from "../../config";
+import Image from "next/image";
 
-const PortfolioFirst = ({ clas, data }) => {
+const FirstPart = ({ data }) => {
   return (
     <div className="firstPart">
-      <div className="sub-title">{__(`Portfolio`)}</div>
-      <div className={clas}>
+      <div className="page-title">{__(`portfolio`)}</div>
+      <Row className="industries">
         {data
           .slice(0)
           .reverse()
           .map((post, ind) => {
-            const { title, excerpt, slug, _embedded, id } = post || {};
-
+            const { title, excerpt, slug, _embedded } = post || {};
+            const image = getData(_embedded, "image");
             return (
-              <div
+              <Col
+                span={8}
                 key={ind}
                 data-aos="fade-down"
                 data-aos-easing="ease"
                 data-aos-delay={ind * 300}
                 data-aos-duration="2000"
                 data-aos-offset="300"
+                className="industries-part"
               >
-                <h2
+                <div
                   className="continue-title"
                   dangerouslySetInnerHTML={{ __html: title.rendered }}
                 />
+
                 <div
                   className="continue-text"
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
-                <Link
-                  href={`/portfolio/[portfolio]`}
-                  as={`${generateLink(`/portfolio/${slug}`)}#section2`}
-                >
-                  <div className="read-more-detail">
+
+                <Link href={`/portfolio/${slug}`}>
+                  <a className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
-                  </div>
+                  </a>
                 </Link>
-                <Link
-                  href={`/portfolio/[portfolio]`}
-                  as={`${generateLink(`/portfolio/${slug}`)}#section2`}
-                >
-                  <div className="squad-image">
-                    <img src={getData(_embedded, "image")} />
-                  </div>
-                </Link>
-              </div>
+
+                <div className="industries-image">
+                  <Image
+                    loader={() => image}
+                    src={image}
+                    alt="pet"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+              </Col>
             );
           })}
-      </div>
+      </Row>
     </div>
   );
 };
 
-export default PortfolioFirst;
+export default FirstPart;

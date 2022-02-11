@@ -3,12 +3,14 @@ import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { Col, Row } from "antd";
 import { generateLink } from "../../config";
+import Image from "next/image";
 
 const HomeCapabilty = ({ capability }) => {
   const { content, _embedded } = capability;
+  const image = getData(_embedded, "image");
 
   return (
-    <Row className="homeCapability">
+    <Row className="homeCapability top">
       <Col
         xxl={12}
         xl={12}
@@ -18,7 +20,14 @@ const HomeCapabilty = ({ capability }) => {
         xs={24}
         className="simple-half-image"
       >
-        <img src={getData(_embedded, "image")} />
+        <Image
+          loader={() => image}
+          src={image}
+          alt="image"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
       </Col>
       <Col
         xxl={12}
@@ -28,19 +37,19 @@ const HomeCapabilty = ({ capability }) => {
         md={24}
         sm={24}
         xs={24}
-        className="capability-home-text"
+        className="simple-half-text"
         data-aos="fade-up"
         data-aos-easing="ease"
         data-aos-delay="0"
       >
-        <div>
+        <div className="half-text-container">
           <div className="gold-title">{__("Capabilities")}</div>
           <div
-            className="text-md"
+            className="content"
             dangerouslySetInnerHTML={{ __html: content.rendered }}
           />
           <Link href={generateLink("/capabilities")}>
-            <div className="read-more-button">{__("Read more")}</div>
+            <a className="read-more-button">{__("Read more")}</a>
           </Link>
         </div>
       </Col>

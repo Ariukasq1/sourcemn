@@ -1,18 +1,15 @@
 import React from "react";
-import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../config";
+import config from "../../config";
 import NewsDetail from "../../components/news/newsDetail";
 import RelatedNews from "../../components/news/newsRelated";
 
-const NewsD = ({ mainMenu, topMenu, post, data }) => {
+const NewsD = ({ post, data }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
-        <NewsDetail post={post} />
-        <RelatedNews data={data} slug="news" />
-      </div>
-    </Layout>
+    <div className="page">
+      <NewsDetail post={post} />
+      <RelatedNews data={data} slug="news" />
+    </div>
   );
 };
 
@@ -20,14 +17,6 @@ NewsD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.news;
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const catId = await wp
     .categories()
@@ -46,7 +35,7 @@ NewsD.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  return { mainMenu, topMenu, post, data };
+  return { post, data };
 };
 
 export default NewsD;

@@ -1,31 +1,18 @@
 import React from "react";
-import Layout from "../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../config";
+import config from "../config";
 import NewsList from "../components/news/newsList";
 
-const News = ({ mainMenu, topMenu, data, childCats }) => {
+const News = ({ data, childCats }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
-        <NewsList data={data} cats={childCats} />
-      </div>
-    </Layout>
+    <div className="page">
+      <NewsList data={data} cats={childCats} />
+    </div>
   );
 };
 
 News.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
-
-  const detail = context.query.news;
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const catId = await wp
     .categories()
@@ -43,7 +30,7 @@ News.getInitialProps = async (context) => {
     .parent((catId || {}).id)
     .embed();
 
-  return { mainMenu, topMenu, data, childCats };
+  return { data, childCats };
 };
 
 export default News;

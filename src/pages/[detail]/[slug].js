@@ -1,7 +1,6 @@
 import React from "react";
-import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../config";
+import config from "../../config";
 import FirstPart from "../../components/indCap/firstPart";
 import SecondPart from "../../components/indCap/secondPart";
 import FactSection from "../../components/indCap/thirdPart";
@@ -9,53 +8,42 @@ import Additional from "../../components/indCap/Additional";
 import Relations from "../../components/indCap/relations";
 import Fullpage from "../../components/FullPage";
 
-const Indcap = ({
-  mainMenu,
-  topMenu,
-  data,
-  detail,
-  post,
-  brands,
-  relationsPosts,
-  relations,
-}) => {
+const Indcap = ({ data, detail, post, brands, relationsPosts, relations }) => {
   const { acf } = post || {};
 
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
-        <Fullpage
-          children={
-            <div id="fullpage">
-              <div className="section">
-                <FirstPart data={data} clas={detail} />
-              </div>
-
-              <div className="section">
-                <SecondPart post={post} />
-              </div>
-
-              {(acf || {}).bg_image && (
-                <div className="section">
-                  <FactSection post={post} />
-                </div>
-              )}
-
-              {(acf || {}).additional && <Additional post={post} />}
-
-              <div className="section">
-                <Relations
-                  brandData={brands}
-                  post={post}
-                  relPosts={relationsPosts}
-                  relations={relations}
-                />
-              </div>
+    <Fullpage
+      children={
+        <div id="fullpage">
+          <div className="section">
+            <div className="page">
+              <FirstPart data={data} clas={detail} />
             </div>
-          }
-        />
-      </div>
-    </Layout>
+          </div>
+
+          <div className="section">
+            <SecondPart post={post} />
+          </div>
+
+          {(acf || {}).bg_image && (
+            <div className="section">
+              <FactSection post={post} />
+            </div>
+          )}
+
+          {(acf || {}).additional && <Additional post={post} />}
+
+          <div className="section">
+            <Relations
+              brandData={brands}
+              post={post}
+              relPosts={relationsPosts}
+              relations={relations}
+            />
+          </div>
+        </div>
+      }
+    />
   );
 };
 
@@ -65,14 +53,6 @@ Indcap.getInitialProps = async (context) => {
   const detail = context.query.detail;
   const slug = context.query.slug;
   const relations = detail === "capabilities" ? "industries" : "capabilities";
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const catId = await wp
     .categories()
@@ -116,8 +96,6 @@ Indcap.getInitialProps = async (context) => {
     .embed();
 
   return {
-    mainMenu,
-    topMenu,
     data,
     detail,
     post,

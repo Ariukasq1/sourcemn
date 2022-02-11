@@ -2,7 +2,7 @@ import React from "react";
 import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import { getLang } from "../config";
+import config, { getLang, fetcher } from "../config";
 import { setLocale } from "../utils";
 import AOS from "aos";
 import "antd/dist/antd.css";
@@ -10,8 +10,9 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
+import Layout from "../components/layouts/Layout";
 
-function MyApp({ Component, pageProps, lang }) {
+function MyApp({ Component, pageProps, lang, mainMenu, topMenu }) {
   const [loading, setLoading] = React.useState(false);
   const [isLangSetted, setLangState] = React.useState(false);
 
@@ -47,9 +48,11 @@ function MyApp({ Component, pageProps, lang }) {
   }
 
   return (
-    <div className="next">
-      <Component {...pageProps} />
-    </div>
+    <Layout mainMenu={mainMenu} topMenu={topMenu}>
+      <div className="next">
+        <Component {...pageProps} />
+      </div>
+    </Layout>
   );
 }
 
@@ -57,7 +60,14 @@ MyApp.getInitialProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
 
-  return { ...appProps, lang: getLang(appContext.ctx) };
+  const mainMenu = await fetcher(
+    `${config(appContext.ctx).apiUrl}/menus/v1/menus/nav-menu`
+  );
+  const topMenu = await fetcher(
+    `${config(appContext.ctx).apiUrl}/menus/v1/menus/nav-menu-top`
+  );
+
+  return { ...appProps, mainMenu, topMenu, lang: getLang(appContext.ctx) };
 };
 
 export default MyApp;

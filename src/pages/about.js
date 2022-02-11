@@ -7,37 +7,21 @@ import Service from "../components/about/aboutService";
 import TimeLine from "../components/about/timeline";
 import Footer from "../components/layouts/footer";
 
-const About = ({
-  mainMenu,
-  topMenu,
-  service,
-  serviceCats,
-  data,
-  contact,
-  timeline,
-}) => {
+const About = ({ service, serviceCats, data, contact, timeline }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
+    <div className="about">
+      <div className="container">
         <AboutUs data={data[0]} />
         <Service serviceCats={serviceCats} services={service} />
-        <TimeLine timeline={timeline} />
-        <Footer contact={contact} />
       </div>
-    </Layout>
+      <TimeLine timeline={timeline} />
+      <Footer contact={contact} />
+    </div>
   );
 };
 
 About.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const contact = await wp
     .posts()
@@ -85,8 +69,6 @@ About.getInitialProps = async (context) => {
     .embed();
 
   return {
-    mainMenu,
-    topMenu,
     service,
     serviceCats,
     data,
