@@ -1,47 +1,24 @@
 import React from "react";
 import WPAPI from "wpapi";
 import config from "../../config";
-import Footer from "../../components/layouts/footer";
 import WhyMMs from "../../components/career/why-mms";
 import OpenVacany from "../../components/career/open-vacancy";
 import SelectionProcess from "../../components/career/selection-process";
 import Faqs from "../../components/career/faqs";
-import Culture from "../../components/career/culture";
-import Fullpage from "../../components/FullPage";
 
 const CareersD = ({ contact, data, detail_posts, detail }) => {
-  const renderDetail = () => {
-    switch (detail) {
-      case "why-mms":
-        return <WhyMMs posts={detail_posts} />;
-      case "open-vacancy":
-        return <OpenVacany posts={detail_posts} />;
-      case "selection-process":
-        return <SelectionProcess posts={detail_posts} />;
-      default:
-        return <Faqs posts={detail_posts} />;
-    }
-  };
-
-  return (
-    <Fullpage
-      children={
-        <div id="fullpage">
-          <div className="section">
-            <div className="page">
-              <Culture data={data} />
-            </div>
-          </div>
-
-          {renderDetail()}
-
-          <div className="section">
-            <Footer contact={contact} />
-          </div>
-        </div>
-      }
-    />
-  );
+  switch (detail) {
+    case "why-mms":
+      return <WhyMMs posts={detail_posts} data={data} contact={contact} />;
+    case "open-vacancy":
+      return <OpenVacany posts={detail_posts} data={data} contact={contact} />;
+    case "selection-process":
+      return (
+        <SelectionProcess posts={detail_posts} data={data} contact={contact} />
+      );
+    default:
+      return <Faqs posts={detail_posts} data={data} contact={contact} />;
+  }
 };
 
 CareersD.getInitialProps = async (context) => {

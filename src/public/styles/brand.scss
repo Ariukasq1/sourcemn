@@ -1,11 +1,8 @@
 .brand {
-  height: auto;
   .brand-banner {
     width: 100%;
     position: relative;
     height: 450px;
-    background-position: center;
-    background-size: cover;
 
     &::after {
       content: "";
@@ -22,9 +19,7 @@
       );
     }
 
-    .banner-content-wrapper {
-      margin: 0 auto;
-      max-width: 1200px;
+    .container {
       height: 100%;
       display: flex;
       align-items: center;
@@ -33,10 +28,10 @@
       > h1 {
         color: #fff;
         font-size: 4rem;
-        margin-left: 10px;
       }
     }
   }
+
   .second-level-wrapper {
     width: 100%;
     background-color: #00498e;
@@ -55,7 +50,7 @@
             line-height: normal;
             letter-spacing: 0.64px;
             color: #fff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
           }
         }
@@ -78,16 +73,16 @@
           margin-bottom: 23px;
           text-align: center;
           letter-spacing: 0.64px;
-          font-weight: 700;
+          font-weight: 600;
         }
 
         p {
           color: #fff;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           line-height: 1.5;
-          padding-bottom: 30px;
+          margin-bottom: 10px;
           span {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 500 !important;
           }
         }
@@ -106,8 +101,10 @@
           font-size: 37px;
         }
         .detail-text-ul {
+          padding-left: 20px;
           ul {
             li {
+              font-size: 1rem;
               margin-bottom: 0;
               list-style: disc;
             }
@@ -124,7 +121,10 @@
         width: 100%;
         justify-content: center;
         > div {
-          height: max-content;
+          .cert-image {
+            position: relative;
+            height: 100px;
+          }
         }
       }
     }
@@ -158,10 +158,17 @@
       }
     }
   }
+
   .brochures {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
+    .one-brochure {
+      .broch-overlay {
+        width: 80%;
+        height: 80%;
+      }
+    }
     @include tablets {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }

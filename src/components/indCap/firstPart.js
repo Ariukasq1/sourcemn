@@ -4,6 +4,7 @@ import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import { generateLink } from "../../config";
 
 const FirstPart = ({ data, clas }) => {
   return (
@@ -37,7 +38,10 @@ const FirstPart = ({ data, clas }) => {
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
 
-                <Link href={`/${clas}/${slug}`}>
+                <Link
+                  href={"/[detail]/[slug]"}
+                  as={generateLink(`/${clas}/${slug}`)}
+                >
                   <a className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </a>

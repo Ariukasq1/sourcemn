@@ -1,6 +1,7 @@
 import React from "react";
 import { getData, __ } from "../../utils";
 import { Row, Col } from "antd";
+import Image from "next/image";
 
 const Brand = ({ post }) => {
   const { _embedded, title, acf } = post || {};
@@ -8,16 +9,22 @@ const Brand = ({ post }) => {
   const { about, certificate, advantage, logo, slogan, country, founded_year } =
     acf || {};
 
+  const image = getData(_embedded, "image");
+
   return (
     <div className="brand">
-      <div
-        className="brand-banner"
-        style={{ backgroundImage: `url(${getData(_embedded, "image")})` }}
-      >
-        <div className="banner-content-wrapper">
+      <div className="brand-banner">
+        <Image
+          loader={() => image}
+          src={image}
+          layout="fill"
+          objectFit="cover"
+        />
+        <div className="container">
           <h1 dangerouslySetInnerHTML={{ __html: (title || {}).rendered }} />
         </div>
       </div>
+
       <div className="second-level-wrapper">
         <div className="container">
           <ul>
@@ -64,7 +71,6 @@ const Brand = ({ post }) => {
           </Row>
         </div>
       </div>
-
       {certificate && (
         <div className="cert-brand">
           <div className="container">
@@ -73,7 +79,13 @@ const Brand = ({ post }) => {
                 <div className="blue-title">
                   {__("Certification & Accreditations")}:
                 </div>
-                <img src={certificate} />
+                <div className="cert-image">
+                  <Image
+                    loader={() => certificate}
+                    src={certificate}
+                    layout="fill"
+                  />
+                </div>
               </Col>
             </Row>
           </div>

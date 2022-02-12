@@ -12,7 +12,7 @@ const BrandsD = ({
   childCats_child_childs,
 }) => {
   return (
-    <div className="page">
+    <div className="relative top">
       <Brand post={post} />
       <FirstChilds
         post={post}

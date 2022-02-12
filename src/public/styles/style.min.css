@@ -856,11 +856,13 @@ footer .footer .contactUs label {
 .odd .add-text p,
 .even .add-text p {
   line-height: 1.5;
+  margin-bottom: 0;
 }
 .odd .add-text ul,
 .even .add-text ul {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 .odd .add-text ul li,
 .even .add-text ul li {
@@ -1069,12 +1071,12 @@ footer .footer .contactUs label {
 }
 .career-culture .big-cards-list .big-card .big-card-content {
   padding: 20px;
+  min-height: 175px;
 }
 .career-culture .big-cards-list .big-card .big-card-content .blue-title {
   font-size: 1.125rem;
 }
 .career-culture .big-cards-list .big-card .big-card-content .card-content {
-  height: 100px;
   padding-left: 20px;
 }
 .career-culture .big-cards-list .big-card .big-card-content .card-content ul li {
@@ -1281,48 +1283,49 @@ footer .footer .contactUs label {
 }
 
 .open-vacancy {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
   height: calc(100vh - 114px);
 }
-.open-vacancy .long-half-text .vacancy-posts {
-  height: 250px;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 2rem;
-  position: relative;
+.open-vacancy .vacancy-content .half-text-container {
+  max-width: 870px;
 }
-.open-vacancy .long-half-text .vacancy-posts .vacancy-text {
+.open-vacancy .vacancy-content .half-text-container .gold-title {
+  margin: 20px 0;
+}
+.open-vacancy .vacancy-content .half-text-container .vacancy-posts {
+  height: 250px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.open-vacancy .vacancy-content .half-text-container .vacancy-posts p {
   position: absolute;
-  color: #ffffff;
   bottom: 0;
-  right: 0;
   left: 0;
-  padding: 40px;
+  right: 0;
+  background-color: red;
+  margin-bottom: 0;
+  padding: 40px 10px 10px 10px;
   opacity: 0.9;
   background: linear-gradient(transparent, #222);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .selection-process {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   height: calc(100vh - 114px);
 }
-.selection-process .long-half-text .gold-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.selection-process .half-text-container .gold-title {
+  margin: 20px 0;
 }
-.selection-process .long-half-text .process {
+.selection-process .half-text-container .process {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
 }
-.selection-process .long-half-text .process .process-part:last-child {
+.selection-process .half-text-container .process .process-part:last-child {
   display: none;
 }
-.selection-process .long-half-text .process .process-part > h1 {
+.selection-process .half-text-container .process .process-part > h1 {
   background: linear-gradient(90deg, #8da0cd 1%, #004280 82%);
   font-weight: 600;
   -webkit-background-clip: text;
@@ -1331,35 +1334,32 @@ footer .footer .contactUs label {
   font-family: Nunito, sans-serif;
   line-height: 1.5;
 }
-.selection-process .long-half-text .process .process-part > h2 {
+.selection-process .half-text-container .process .process-part > h2 {
   font-weight: 600;
   font-size: 1rem;
 }
-.selection-process .long-half-text .process .process-part > p {
+.selection-process .half-text-container .process .process-part > p {
   line-height: 1.5;
   font-size: 0.875rem;
 }
 
 .faqs {
-  padding: 0 8rem;
   height: calc(100vh - 114px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.faqs .gold-title {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
+  padding: 0 10rem;
 }
 .faqs .sub-title {
-  font-size: 3rem;
-  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .faqs .collapse .ant-collapse-content p {
   color: gray;
 }
 .faqs .collapse p {
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .about {
@@ -1562,15 +1562,10 @@ footer .footer .contactUs label {
   cursor: pointer;
 }
 
-.brand {
-  height: auto;
-}
 .brand .brand-banner {
   width: 100%;
   position: relative;
   height: 450px;
-  background-position: center;
-  background-size: cover;
 }
 .brand .brand-banner::after {
   content: "";
@@ -1582,19 +1577,16 @@ footer .footer .contactUs label {
   z-index: 9;
   background-image: linear-gradient(to bottom, rgba(0, 51, 141, 0), #00498e);
 }
-.brand .brand-banner .banner-content-wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
+.brand .brand-banner .container {
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 99;
 }
-.brand .brand-banner .banner-content-wrapper > h1 {
+.brand .brand-banner .container > h1 {
   color: #fff;
   font-size: 4rem;
-  margin-left: 10px;
 }
 .brand .second-level-wrapper {
   width: 100%;
@@ -1615,7 +1607,7 @@ footer .footer .contactUs label {
   line-height: normal;
   letter-spacing: 0.64px;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 .brand .about-brand {
@@ -1634,16 +1626,16 @@ footer .footer .contactUs label {
   margin-bottom: 23px;
   text-align: center;
   letter-spacing: 0.64px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .brand .about-brand .container .intro-content p {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.5;
-  padding-bottom: 30px;
+  margin-bottom: 10px;
 }
 .brand .about-brand .container .intro-content p span {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500 !important;
 }
 .brand .detail-brand {
@@ -1657,7 +1649,11 @@ footer .footer .contactUs label {
 .brand .detail-brand .container .details .detail-text-title {
   font-size: 37px;
 }
+.brand .detail-brand .container .details .detail-text-ul {
+  padding-left: 20px;
+}
 .brand .detail-brand .container .details .detail-text-ul ul li {
+  font-size: 1rem;
   margin-bottom: 0;
   list-style: disc;
 }
@@ -1668,8 +1664,9 @@ footer .footer .contactUs label {
   width: 100%;
   justify-content: center;
 }
-.brand .cert-brand .container .cert > div {
-  height: max-content;
+.brand .cert-brand .container .cert > div .cert-image {
+  position: relative;
+  height: 100px;
 }
 
 .brand-details {
@@ -1701,6 +1698,10 @@ footer .footer .contactUs label {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
+}
+.brand-details .brochures .one-brochure .broch-overlay {
+  width: 80%;
+  height: 80%;
 }
 @media (max-width: 991px) {
   .brand-details .brochures {

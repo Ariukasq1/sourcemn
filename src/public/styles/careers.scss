@@ -36,13 +36,12 @@
 
       .big-card-content {
         padding: 20px;
-
+        min-height: 175px;
         .blue-title {
           font-size: 1.125rem;
         }
 
         .card-content {
-          height: 100px;
           padding-left: 20px;
           ul {
             li {
@@ -276,41 +275,45 @@
 }
 
 .open-vacancy {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
   height: calc(100vh - 114px);
-  .long-half-text {
-    .vacancy-posts {
-      height: 250px;
-      width: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin-bottom: 2rem;
-      position: relative;
-      .vacancy-text {
-        position: absolute;
-        color: #ffffff;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        padding: 40px;
-        opacity: 0.9;
-        background: linear-gradient(transparent, #222);
+
+  .vacancy-content {
+    .half-text-container {
+      max-width: 870px;
+      .gold-title {
+        margin: 20px 0;
+      }
+
+      .vacancy-posts {
+        height: 250px;
+        position: relative;
+        margin-bottom: 20px;
+        p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: red;
+          margin-bottom: 0;
+          padding: 40px 10px 10px 10px;
+          opacity: 0.9;
+          background: linear-gradient(transparent, #222);
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 600;
+        }
       }
     }
   }
 }
 
 .selection-process {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   height: calc(100vh - 114px);
-  .long-half-text {
+  .half-text-container {
     .gold-title {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      margin: 20px 0;
     }
+
     .process {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -342,19 +345,17 @@
 }
 
 .faqs {
-  padding: 0 8rem;
   height: calc(100vh - 114px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .gold-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-  }
+  padding: 0 10rem;
+
   .sub-title {
-    font-size: 3rem;
-    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
+
   .collapse {
     .ant-collapse-content {
       p {
@@ -363,6 +364,7 @@
     }
     p {
       font-size: 1rem;
+      margin-bottom: 0;
     }
   }
 }

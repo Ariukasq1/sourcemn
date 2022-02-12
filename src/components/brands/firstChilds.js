@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getData, __ } from "../../utils";
 import { DownloadOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 function handleScroll() {
   window.scroll({
@@ -52,20 +53,19 @@ const FirstChilds = ({
                       const { bg_image, pdf_file } = acf || {};
 
                       return (
-                        <div
-                          key={ind}
-                          className="one-brochure"
-                          style={{
-                            backgroundImage: `url(${bg_image})`,
-                          }}
-                        >
-                          <div
-                            className="broch-overlay"
-                            style={{
-                              opacity: bg_image ? "0.6" : "1",
-                            }}
-                          />
-                          <p>{name}</p>
+                        <div key={ind} className="one-brochure">
+                          {bg_image && (
+                            <Image
+                              loader={() => bg_image}
+                              src={bg_image}
+                              layout="fill"
+                              alt="broch"
+                              objectFit="cover"
+                              objectPosition="center"
+                            />
+                          )}
+                          <div className="broch-overlay" />
+                          <p className="broch-title">{name}</p>
                           {pdf_file && (
                             <a
                               className="download"
@@ -109,22 +109,25 @@ const FirstChilds = ({
                   <div
                     key={ind}
                     className="one-brochure"
-                    style={{
-                      backgroundImage: `url(${bg_image})`,
-                    }}
                     onClick={() => {
                       setSecondID(id);
                       setSecondName(name);
                       handleScroll();
                     }}
                   >
-                    <div
-                      className="broch-overlay"
-                      style={{
-                        opacity: bg_image ? "0.6" : "1",
-                      }}
-                    />
-                    <p>{name}</p>
+                    {bg_image && (
+                      <Image
+                        loader={() => bg_image}
+                        src={bg_image}
+                        layout="fill"
+                        alt="broch"
+                        objectFit="cover"
+                        objectPosition="center"
+                      />
+                    )}
+
+                    <div className="broch-overlay" />
+                    <p className="broch-title">{name}</p>
                     {pdf_file && (
                       <a
                         className="download"
@@ -168,9 +171,6 @@ const FirstChilds = ({
                 <div
                   key={ind}
                   className="one-brochure"
-                  style={{
-                    backgroundImage: `url(${bg_image})`,
-                  }}
                   onClick={() => {
                     setFirstID(id);
                     setFirstName(name);
@@ -178,13 +178,18 @@ const FirstChilds = ({
                     handleScroll();
                   }}
                 >
-                  <div
-                    className="broch-overlay"
-                    style={{
-                      opacity: bg_image ? "0.6" : "1",
-                    }}
-                  />
-                  <p>{name}</p>
+                  {bg_image && (
+                    <Image
+                      loader={() => bg_image}
+                      src={bg_image}
+                      layout="fill"
+                      alt="broch"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  )}
+                  <div className="broch-overlay" />
+                  <p className="broch-title">{name}</p>
                   {pdf_file && (
                     <a
                       className="download"
