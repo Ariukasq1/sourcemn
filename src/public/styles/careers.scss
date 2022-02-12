@@ -66,22 +66,147 @@
 .culture {
   height: calc(100vh - 114px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  text-align: center;
+
+  .culture-text {
+    position: absolute;
+    color: #fff;
+    z-index: 3;
+    margin: 0 5rem;
+    text-align: center;
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
 }
 
-.benefits,
-.tourOffice {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.benefits {
   height: calc(100vh - 114px);
+
+  .benefits-content {
+    p {
+      font-size: 1rem;
+    }
+
+    .gold-title {
+      margin: 20px 0 10px 0;
+    }
+
+    .sub-title {
+      margin-bottom: 20px;
+    }
+
+    .half-text-container {
+      .benefits-icons {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+
+        .icon-img {
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 .tourOffice {
-  .long-half-image {
+  height: calc(100vh - 114px);
+
+  .tourOffice-content {
+    p {
+      font-size: 1rem;
+    }
+
+    .gold-title {
+      margin: 20px 0 10px 0;
+    }
+
+    .sub-title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .tourOffice-image {
+    height: 100%;
+    .itemDetailsImages {
+      position: relative;
+      height: 100%;
+      .bigSlide {
+        height: 100%;
+        div {
+          height: 100%;
+          position: relative;
+        }
+      }
+
+      .thumbnailSlide {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        div {
+          height: 100%;
+          position: relative;
+        }
+
+        .slick-next {
+          right: 0 !important;
+          z-index: 9999 !important;
+          &:before {
+            content: "\25BA";
+            font-size: 20px;
+          }
+        }
+
+        .slick-prev {
+          left: 0 !important;
+          z-index: 9999 !important;
+
+          &:before {
+            content: "\25C4";
+            font-size: 20px;
+          }
+        }
+
+        .slick-next,
+        .slick-prev {
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          color: #ffffff;
+          background: rgba(0, 0, 0, 0.3) !important;
+          width: 60px;
+          font-size: 0;
+          border: none;
+          @include med-laptops {
+            width: 40px;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  /* .long-half-image {
     height: 100%;
     .itemDetailsImages {
       position: relative;
@@ -147,7 +272,7 @@
         }
       }
     }
-  }
+  } */
 }
 
 .open-vacancy {

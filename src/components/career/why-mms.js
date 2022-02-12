@@ -1,23 +1,31 @@
 import React from "react";
 import { getData } from "../../utils";
 import ItemDetailsWithGallery from "../ItemDetailsWithGallery";
+import { Col, Row } from "antd";
+import Image from "next/image";
 
 const WhyMMs = ({ posts }) => {
   const whymms = posts[posts.length - 1];
   const culture = posts[2];
   const benefits = posts[1];
   const tourOffice = posts[0];
+  const culture_image = getData(culture._embedded, "image");
+  const ben_image = getData(benefits._embedded, "image");
+  const off_image = getData(tourOffice._embedded, "image");
 
   return (
     <>
       <div className="section">
-        <div
-          className="culture over-image"
-          style={{
-            backgroundImage: `url(${getData(culture._embedded, "image")})`,
-          }}
-        >
-          <div className="over-text">
+        <Col span={24} className="culture">
+          <Image
+            loader={() => culture_image}
+            src={culture_image}
+            alt="back"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+          <div className="culture-text">
             <div className="gold-title">{whymms.title.rendered}</div>
             <div
               className="sub-title"
@@ -25,56 +33,116 @@ const WhyMMs = ({ posts }) => {
             />
             <p dangerouslySetInnerHTML={{ __html: culture.content.rendered }} />
           </div>
-        </div>
+        </Col>
       </div>
 
       <div className="section">
-        <div className="benefits">
-          <div className="long-half-image">
-            <img src={getData(benefits._embedded, "image")} />
-          </div>
-          <div className="long-half-text">
-            <div className="gold-title">{whymms.title.rendered}</div>
-            <div
-              className="sub-title"
-              dangerouslySetInnerHTML={{ __html: benefits.title.rendered }}
+        <Row className="benefits">
+          <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
+            <Image
+              loader={() => ben_image}
+              src={ben_image}
+              alt="ben"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
             />
-            <div
-              dangerouslySetInnerHTML={{ __html: benefits.content.rendered }}
-            />
-            <div className="icons">
-              {Object.values(benefits.acf).map((data, index) => (
-                <div
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-easing="ease"
-                  data-aos-duration="2000"
-                  data-aos-offset="300"
-                  className="icon-img"
-                >
-                  <img src={data.icon} alt="icon" />
-                  {data.text}
-                </div>
-              ))}
+          </Col>
+          <Col
+            xxl={12}
+            xl={12}
+            lg={12}
+            md={24}
+            sm={24}
+            xs={24}
+            className="benefits-content"
+          >
+            <div className="half-text-container">
+              <div className="gold-title">{whymms.title.rendered}</div>
+
+              <div
+                className="sub-title"
+                dangerouslySetInnerHTML={{ __html: benefits.title.rendered }}
+              />
+
+              <p
+                dangerouslySetInnerHTML={{ __html: benefits.content.rendered }}
+              />
+
+              <div className="benefits-icons">
+                {Object.values(benefits.acf).map((data, index) => (
+                  <div
+                    key={index}
+                    data-aos="zoom-in"
+                    data-aos-easing="ease"
+                    data-aos-duration="2000"
+                    data-aos-offset="300"
+                    className="icon-img"
+                  >
+                    <Image
+                      loader={() => data.icon}
+                      src={data.icon}
+                      alt="icon"
+                      width="60px"
+                      height="60px"
+                      objectFit="contain"
+                    />
+                    {data.text}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
+          </Col>
+          {/* <div className="long-half-text">
+            
+            
+            
+            
+          </div> */}
+        </Row>
       </div>
+
       <div className="section">
-        <div className="tourOffice">
-          <div className="long-half-text">
-            <div className="gold-title">{whymms.title.rendered}</div>
-            <div
-              className="sub-title"
-              dangerouslySetInnerHTML={{ __html: tourOffice.title.rendered }}
-            />
-            <div
-              dangerouslySetInnerHTML={{ __html: tourOffice.content.rendered }}
-            />
-          </div>
-          <div className="long-half-image">
+        <Row className="tourOffice">
+          <Col
+            xxl={12}
+            xl={12}
+            lg={12}
+            md={24}
+            sm={24}
+            xs={24}
+            className="tourOffice-content"
+          >
+            <div className="half-text-container">
+              <div className="gold-title">{whymms.title.rendered}</div>
+              <div
+                className="sub-title"
+                dangerouslySetInnerHTML={{ __html: tourOffice.title.rendered }}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: tourOffice.content.rendered,
+                }}
+              />
+            </div>
+          </Col>
+          <Col
+            xxl={12}
+            xl={12}
+            lg={12}
+            md={24}
+            sm={24}
+            xs={24}
+            className="tourOffice-image"
+          >
             {!tourOffice.acf.image_1 ? (
-              <img src={getData(tourOffice._embedded, "image")} />
+              <Image
+                loader={() => off_image}
+                src={off_image}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
             ) : (
               <ItemDetailsWithGallery
                 images={Object.entries(tourOffice.acf || {}).map(
@@ -88,8 +156,8 @@ const WhyMMs = ({ posts }) => {
                 )}
               />
             )}
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     </>
   );

@@ -289,29 +289,18 @@
 }
 
 .project-detail {
-  display: flex;
-  align-items: center;
-  .detail {
-    background-color: #004894;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    justify-content: space-between;
+  height: calc(100vh - 114px);
 
-    .detail-content {
+  .detail-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .half-text-container {
       .blue-title {
-        background-color: #fff;
-        width: max-content;
-        padding: 10px;
-        border-radius: 6px;
         margin-bottom: 20px;
       }
 
       .content {
-        font-size: 1rem;
-        background-color: white;
-        padding: 10px;
-        border-radius: 6px;
         p {
           font-size: 1rem;
           line-height: 1.5;
@@ -326,10 +315,10 @@
         }
       }
     }
-    .detail-image {
-      position: relative;
-      height: 400px;
-    }
+  }
+
+  .detail-image {
+    height: 100%;
   }
 }
 

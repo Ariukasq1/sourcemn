@@ -1,13 +1,10 @@
 import React from "react";
-import Layout from "../../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../../config";
+import config from "../../config";
 import Brand from "../../components/brands/brandsDetail";
 import FirstChilds from "../../components/brands/firstChilds";
 
 const BrandsD = ({
-  mainMenu,
-  topMenu,
   post,
   childCats,
   cat,
@@ -15,18 +12,16 @@ const BrandsD = ({
   childCats_child_childs,
 }) => {
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      <div className="page">
-        <Brand post={post} />
-        <FirstChilds
-          post={post}
-          cat={cat}
-          childCats={childCats}
-          childCats_child={childCats_child}
-          childCats_child_childs={childCats_child_childs}
-        />
-      </div>
-    </Layout>
+    <div className="page">
+      <Brand post={post} />
+      <FirstChilds
+        post={post}
+        cat={cat}
+        childCats={childCats}
+        childCats_child={childCats_child}
+        childCats_child_childs={childCats_child_childs}
+      />
+    </div>
   );
 };
 
@@ -34,14 +29,6 @@ BrandsD.getInitialProps = async (context) => {
   const wp = new WPAPI({ endpoint: config(context).apiUrl });
 
   const detail = context.query.brands;
-
-  const mainMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu`
-  );
-
-  const topMenu = await fetcher(
-    `${config(context).apiUrl}/menus/v1/menus/nav-menu-top`
-  );
 
   const post = await wp
     .posts()
@@ -77,8 +64,6 @@ BrandsD.getInitialProps = async (context) => {
   );
 
   return {
-    mainMenu,
-    topMenu,
     post,
     cat,
     childCats,

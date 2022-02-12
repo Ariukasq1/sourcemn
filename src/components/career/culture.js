@@ -16,33 +16,39 @@ const Culture = ({ data }) => {
           .reverse()
           .map((card, ind) => {
             const image = getData(card._embedded, "image");
-            console.log(card, "-------------");
 
             return (
               <Col span={6} key={ind}>
-                <div className="big-card">
-                  <div className="big-card-image">
-                    <Image
-                      loader={() => image}
-                      src={image}
-                      alt="card"
-                      width="200px"
-                      height="150px"
-                    />
+                <Link
+                  href={"/careers/[careers]"}
+                  as={generateLink(`/careers/${card.slug}`)}
+                >
+                  <div className="big-card">
+                    <div className="big-card-image">
+                      <Image
+                        loader={() => image}
+                        src={image}
+                        alt="card"
+                        width="200px"
+                        height="150px"
+                      />
+                    </div>
+                    <div className="big-card-content">
+                      <div
+                        className="blue-title"
+                        dangerouslySetInnerHTML={{
+                          __html: card.title.rendered,
+                        }}
+                      />
+                      <div
+                        className="card-content"
+                        dangerouslySetInnerHTML={{
+                          __html: card.content.rendered,
+                        }}
+                      />
+                    </div>
                   </div>
-                  <div className="big-card-content">
-                    <div
-                      className="blue-title"
-                      dangerouslySetInnerHTML={{ __html: card.title.rendered }}
-                    />
-                    <div
-                      className="card-content"
-                      dangerouslySetInnerHTML={{
-                        __html: card.content.rendered,
-                      }}
-                    />
-                  </div>
-                </div>
+                </Link>
               </Col>
             );
           })}

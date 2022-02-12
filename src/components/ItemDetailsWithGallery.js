@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import Image from "next/image";
 
 const ItemDetailsWithGallery = ({ images }) => {
   const settingsMain = {
@@ -36,9 +37,15 @@ const ItemDetailsWithGallery = ({ images }) => {
     }
 
     return (
-      <div key={index} className="slick-slide sliderBigImg">
-        <img src={image} alt={index} />
-      </div>
+      <Image
+        key={index}
+        loader={() => image}
+        src={image}
+        alt={index}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+      />
     );
   });
 
@@ -48,9 +55,14 @@ const ItemDetailsWithGallery = ({ images }) => {
     }
 
     return (
-      <div key={index}>
-        <img className="slick-slide-image" src={image} alt={index} />
-      </div>
+      <Image
+        key={index}
+        loader={() => image}
+        src={image}
+        alt={index}
+        height="200px"
+        width="300px"
+      />
     );
   });
 
