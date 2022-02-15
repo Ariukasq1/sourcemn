@@ -2055,6 +2055,10 @@ footer .container .footer .contactUs label {
   background: rgba(0, 0, 0, 0.1);
 }
 
+#fp-nav ul li a span {
+  background: #004a8f !important;
+}
+
 /* @import "./base/responsiveness.scss"; */
 .alignleft {
   float: left;

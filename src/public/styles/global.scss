@@ -5,12 +5,14 @@
   line-height: normal;
   margin-bottom: 20px;
 }
+
 .sub-title {
   font-size: 1.875rem;
   font-weight: 700;
   line-height: normal;
   margin-bottom: 20px;
 }
+
 .section {
   .fp-tableCell {
     vertical-align: top;
@@ -333,13 +335,6 @@ p {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
-  }
-}
-
-#fp-nav {
-  left: 37px !important;
-  ul li a span {
-    background: #004a8f !important;
   }
 }
 
