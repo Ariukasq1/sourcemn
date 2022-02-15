@@ -475,47 +475,45 @@ footer {
   height: calc(100vh - 114px);
   background-color: #262626;
   color: #fff;
-  padding: 0 12rem;
-  display: flex;
-  align-items: center;
 }
-footer .footer {
-  display: flex;
-  justify-content: space-between;
+footer .container {
+  padding-top: 200px;
+}
+footer .container .footer {
   width: 100%;
 }
-footer .footer h2 {
+footer .container .footer h2 {
   margin-bottom: 2rem;
   font-size: 1.125rem;
   color: #fff;
   font-weight: 700;
 }
-footer .footer p {
+footer .container .footer p {
   margin-bottom: 1rem;
 }
-footer .footer .contacts > p:last-child {
+footer .container .footer .contacts > p:last-child {
   margin-top: 5rem;
   cursor: pointer;
 }
-footer .footer .contacts > p:last-child > a {
+footer .container .footer .contacts > p:last-child > a {
   display: inline-block;
   cursor: pointer;
   padding: 15px;
   line-height: 0;
   border-radius: 50%;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
-footer .footer .contacts > p:last-child > a:hover {
+footer .container .footer .contacts > p:last-child > a:hover {
   background-color: #fff;
   color: #262626;
 }
-footer .footer .contactUs > div {
+footer .container .footer .contactUs > div {
   position: relative;
   margin: 0 0 2rem 0;
 }
-footer .footer .contactUs input,
-footer .footer .contactUs textArea {
+footer .container .footer .contactUs input,
+footer .container .footer .contactUs textArea {
   width: 100%;
   padding: 12px 20px;
   background: 0 0;
@@ -525,13 +523,13 @@ footer .footer .contactUs textArea {
   color: #e4e4e4;
   font-size: 1rem;
 }
-footer .footer .contactUs input:last-child {
+footer .container .footer .contactUs input:last-child {
   cursor: pointer;
 }
-footer .footer .contactUs textArea {
+footer .container .footer .contactUs textArea {
   height: 10rem;
 }
-footer .footer .contactUs label {
+footer .container .footer .contactUs label {
   position: absolute;
   left: 26px;
   top: -15px;
@@ -555,7 +553,7 @@ footer .footer .contactUs label {
   position: absolute;
   top: 50%;
   height: auto;
-  width: 1200px;
+  width: 1400px;
 }
 .home-slider .home-slide .slide-text-center h1,
 .home-slider .home-slide .slide-text-right h1 {
@@ -574,6 +572,7 @@ footer .footer .contactUs label {
   right: 8rem;
   text-align: right;
   transform: translateY(-50%);
+  max-width: 1500px;
 }
 .home-slider .home-slide .slide-text-right > h2 {
   margin-left: auto;
@@ -747,6 +746,7 @@ footer .footer .contactUs label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1rem !important;
 }
 .secondPart .product-cards .half-text-container .little-cards .card img {
   height: 50px;
@@ -1858,6 +1858,8 @@ footer .footer .contactUs label {
 }
 .continue-text p {
   font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
 
 .continue-title {
@@ -1907,7 +1909,7 @@ footer .footer .contactUs label {
 }
 @media (max-width: 1599px) {
   .overlay-half-image:hover .overlay-half-text {
-    transform: translateY(-20%);
+    transform: translateY(-10%);
   }
 }
 @media (max-width: 1199px) {

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1599px) {
+/* @media only screen and (max-width: 1599px) {
   .main-header {
     .logo {
       width: 5rem;
@@ -540,9 +540,150 @@
       }
     }
   }
+} */
+
+@media only screen and (max-width: 1599px) {
+  .main-header {
+    .logo {
+      width: 5rem;
+    }
+  }
+
+  .page {
+    padding-top: 98px;
+    max-width: 1100px;
+  }
+
+  .top {
+    padding-top: 98px;
+  }
+
+  .half-text-container {
+    max-width: 550px;
+  }
+
+  .gold-title {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    max-width: 1100px;
+  }
+
+  .next-arrow,
+  .prev-arrow {
+    font-size: 30px;
+    bottom: -40px;
+  }
+
+  .continue-title,
+  .continue-text {
+    margin-bottom: 10px;
+  }
+
+  .home-slider {
+    .home-slide {
+      .slide-text-center,
+      .slide-text-right {
+        h1 {
+          font-size: 4rem;
+        }
+        h2 {
+          font-size: 1rem;
+        }
+      }
+
+      .slide-text-right {
+        max-width: 1000px;
+      }
+    }
+  }
+
+  .homeIndustries {
+    .industry-button {
+      .half-text-container {
+        .big-buttons {
+          font-size: 3.5rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .homeBrands {
+    .brandList {
+      margin-bottom: 40px;
+      .slick-slide {
+        max-width: 275px !important;
+      }
+
+      .brand-logo {
+        width: 200px;
+        height: 30px;
+      }
+
+      .brand-image {
+        height: 10rem;
+        max-width: 275px;
+      }
+    }
+  }
+
+  .firstPart {
+    .industries {
+      .industries-part {
+        padding: 0 10px;
+        .industries-image {
+          height: 280px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .page-title {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .blue-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .secondPart {
+    height: calc(100vh - 98px);
+
+    .product-cards {
+      .half-text-container {
+        .blue-title {
+          margin-bottom: 20px;
+        }
+        .little-cards {
+          gap: 10px;
+
+          .card {
+            padding: 10px;
+            font-size: 12px;
+
+            span {
+              font-size: 12px !important;
+            }
+
+            img {
+              height: 30px;
+              width: 30px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-@media only screen and (max-width: 1199px) {
+/* @media only screen and (max-width: 1199px) {
   .project-detail {
     .long-half-text {
       .blue-title {
@@ -1186,6 +1327,225 @@
           font-size: 0.875rem;
         }
       }
+    }
+  }
+} */
+
+@media only screen and (max-width: 1199px) {
+  .main-header {
+    .logo {
+      width: 4.5rem;
+    }
+  }
+
+  .top {
+    padding-top: 90px;
+  }
+
+  .half-text-container {
+    max-width: 430px;
+  }
+
+  .next-arrow,
+  .prev-arrow {
+    font-size: 25px;
+    bottom: -30px;
+  }
+
+  .page {
+    max-width: 902px;
+    padding-top: 90px;
+  }
+
+  .container {
+    max-width: 902px;
+  }
+
+  .read-more-button {
+    font-size: 14px;
+  }
+
+  .catList {
+    margin-bottom: 20px;
+    > div {
+      font-size: 14px;
+    }
+  }
+
+  .gold-title {
+    font-size: 18px;
+  }
+
+  .sub-title {
+    font-size: 26px;
+  }
+
+  .overlay-half-text {
+    margin: 0 30px;
+    bottom: 30px;
+    color: #fff;
+    z-index: 3;
+    transition: 0.5s;
+    padding-bottom: 30px;
+    font-weight: 500;
+
+    .overlay-title {
+      font-size: 1rem;
+    }
+
+    .overlay-content {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  .secondPart {
+    height: calc(100vh - 90px);
+
+    .product-cards {
+      .half-text-container {
+        .blue-title {
+          margin-bottom: 5px;
+          font-size: 1rem;
+        }
+
+        .little-cards {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          .card {
+            padding: 5px;
+            font-size: 12px;
+            span {
+              font-size: 12px;
+            }
+            img {
+              height: 20px;
+              width: 20px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .home-slider {
+    .home-slide {
+      .slide-text-center,
+      .slide-text-right {
+        max-width: 900px;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .slide-text-right {
+        right: 46px;
+      }
+    }
+  }
+
+  .homeCapability {
+    .simple-half-text {
+      .half-text-container {
+        .gold-title {
+          margin-bottom: 10px;
+        }
+        .content {
+          margin-bottom: 20px;
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .homeIndustries {
+    .industry-button {
+      .half-text-container {
+        padding-top: 10px;
+
+        .gold-title {
+          margin-bottom: 10px;
+        }
+
+        .big-buttons {
+          font-size: 3rem;
+        }
+
+        .read-more-button {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
+    .simple-half-image {
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .homeBrands {
+    .container {
+      .sub-title {
+        margin-bottom: 10px;
+      }
+
+      .catList {
+        margin-bottom: 10px;
+      }
+
+      .brandList {
+        margin-bottom: 30px;
+        .slick-slide {
+          max-width: 275px !important;
+        }
+
+        .brand-logo {
+          width: 150px;
+          height: 25px;
+        }
+
+        .brand-image {
+          height: 8rem;
+          max-width: 275px;
+        }
+      }
+    }
+  }
+
+  .read-more-detail {
+    font-size: 14px;
+  }
+
+  .continue-title {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+
+  .continue-text {
+    margin-bottom: 7px;
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .firstPart {
+    .industries {
+      .industries-part {
+        padding: 0 10px;
+        .industries-image {
+          height: 220px;
+          margin-top: 7px;
+        }
+      }
+    }
+
+    .page-title {
+      margin-left: 10px;
+      margin-bottom: 7px;
+      font-size: 1.3rem;
     }
   }
 }

@@ -13,7 +13,7 @@
       position: absolute;
       top: 50%;
       height: auto;
-      width: 1200px;
+      width: 1400px;
       h1 {
         font-size: 5rem;
         line-height: normal;
@@ -31,6 +31,7 @@
       right: 8rem;
       text-align: right;
       transform: translateY(-50%);
+      max-width: 1500px;
       > h2 {
         margin-left: auto;
         max-width: 600px;

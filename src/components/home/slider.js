@@ -27,6 +27,8 @@ const HomeSlider = ({ sliders }) => {
                   src={image}
                   alt="slider"
                   layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
                 />
                 <div
                   className={

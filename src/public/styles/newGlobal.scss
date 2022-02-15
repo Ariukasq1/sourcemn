@@ -144,6 +144,8 @@
   margin-bottom: 1rem;
   p {
     font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.5;
   }
 }
 
@@ -193,7 +195,7 @@
       transform: translateY(-50%);
 
       @include big-laptops {
-        transform: translateY(-20%);
+        transform: translateY(-10%);
       }
 
       @include med-laptops {

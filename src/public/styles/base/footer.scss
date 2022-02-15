@@ -2,82 +2,80 @@ footer {
   height: calc(100vh - 114px);
   background-color: #262626;
   color: #fff;
-  padding: 0 12rem;
-  display: flex;
-  align-items: center;
 
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .container {
+    padding-top: 200px;
+    .footer {
+      width: 100%;
 
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 1.125rem;
-      color: #fff;
-      font-weight: 700;
-    }
+      h2 {
+        margin-bottom: 2rem;
+        font-size: 1.125rem;
+        color: #fff;
+        font-weight: 700;
+      }
 
-    p {
-      margin-bottom: 1rem;
-    }
+      p {
+        margin-bottom: 1rem;
+      }
 
-    .contacts {
-      > p:last-child {
-        margin-top: 5rem;
-        cursor: pointer;
-        > a {
-          display: inline-block;
+      .contacts {
+        > p:last-child {
+          margin-top: 5rem;
           cursor: pointer;
-          padding: 15px;
-          line-height: 0;
-          border-radius: 50%;
-          color: #fff;
-          font-size: 1.8rem;
-          &:hover {
-            background-color: #fff;
-            color: #262626;
+          > a {
+            display: inline-block;
+            cursor: pointer;
+            padding: 15px;
+            line-height: 0;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.6rem;
+            &:hover {
+              background-color: #fff;
+              color: #262626;
+            }
           }
         }
       }
-    }
 
-    .contactUs {
-      > div {
-        position: relative;
-        margin: 0 0 2rem 0;
-      }
-
-      input,
-      textArea {
-        width: 100%;
-        padding: 12px 20px;
-        background: 0 0;
-        display: inline-block;
-        border: 1px solid #e4e4e4;
-        box-sizing: border-box;
-        color: #e4e4e4;
-        font-size: 1rem;
-      }
-
-      input {
-        &:last-child {
-          cursor: pointer;
+      .contactUs {
+        > div {
+          position: relative;
+          margin: 0 0 2rem 0;
         }
-      }
 
-      textArea {
-        height: 10rem;
-      }
+        input,
+        textArea {
+          width: 100%;
+          padding: 12px 20px;
+          background: 0 0;
+          display: inline-block;
+          border: 1px solid #e4e4e4;
+          box-sizing: border-box;
+          color: #e4e4e4;
+          font-size: 1rem;
+        }
 
-      label {
-        position: absolute;
-        left: 26px;
-        top: -15px;
-        background: #262626;
-        padding: 0 1rem;
-        font-size: 1rem;
-        font-weight: 500;
+        input {
+          &:last-child {
+            cursor: pointer;
+          }
+        }
+
+        textArea {
+          height: 10rem;
+        }
+
+        label {
+          position: absolute;
+          left: 26px;
+          top: -15px;
+          background: #262626;
+          padding: 0 1rem;
+          font-size: 1rem;
+          font-weight: 500;
+        }
       }
     }
   }
