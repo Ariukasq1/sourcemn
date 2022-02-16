@@ -14,12 +14,22 @@
       top: 50%;
       height: auto;
       width: 1400px;
+
+      @include big-laptops {
+        width: 1050px;
+      }
+
       h1 {
         font-size: 5rem;
         line-height: normal;
         margin-bottom: 20px;
         font-weight: 700;
+
+        @include big-laptops {
+          font-size: 4rem;
+        }
       }
+
       h2 {
         font-size: 1.5rem;
         line-height: 1.5;
@@ -31,7 +41,11 @@
       right: 8rem;
       text-align: right;
       transform: translateY(-50%);
-      max-width: 1500px;
+
+      @include big-laptops {
+        right: 5rem;
+      }
+
       > h2 {
         margin-left: auto;
         max-width: 600px;
@@ -73,11 +87,14 @@
 .homeIndustries {
   .industry-button {
     position: relative;
+
     .half-text-container {
       padding-top: 20px;
+
       .gold-title {
         margin-bottom: 20px;
       }
+
       .big-buttons {
         font-size: 5rem;
         font-weight: 700;
@@ -86,6 +103,11 @@
         cursor: pointer;
         margin-bottom: 2rem;
 
+        @include big-laptops {
+          font-size: 4rem;
+          margin-bottom: 1.5rem;
+        }
+
         span {
           margin-left: 20px;
         }
@@ -93,6 +115,10 @@
 
       .read-more-button {
         margin-top: 3rem;
+
+        @include big-laptops {
+          margin-top: 2rem;
+        }
       }
     }
   }
@@ -140,7 +166,11 @@
     width: 100%;
 
     .slick-slide {
-      max-width: 400px !important;
+      max-width: 365px !important;
+
+      @include big-laptops {
+        max-width: 280px !important;
+      }
     }
 
     .brand-logo {
@@ -148,13 +178,22 @@
       height: 60px;
       position: relative;
       margin-bottom: 10px;
+      @include big-laptops {
+        height: 50px;
+        width: 180px;
+      }
     }
 
     .brand-image {
       height: 14rem;
-      max-width: 420px;
+      max-width: 365px;
       position: relative;
       margin-top: 10px;
+
+      @include big-laptops {
+        height: 10rem;
+        max-width: 280px;
+      }
     }
   }
 }

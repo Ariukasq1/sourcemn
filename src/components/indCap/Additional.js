@@ -1,6 +1,4 @@
 import React from "react";
-import { Row, Col } from "antd";
-import Image from "next/image";
 
 const Additional = ({ post }) => {
   const { additional } = post.acf || {};

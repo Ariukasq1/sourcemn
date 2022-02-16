@@ -5,6 +5,11 @@ footer {
 
   .container {
     padding-top: 200px;
+
+    @include big-laptops {
+      padding-top: 20px;
+    }
+
     .footer {
       width: 100%;
 
@@ -40,6 +45,7 @@ footer {
       }
 
       .contactUs {
+        padding-left: 20px;
         > div {
           position: relative;
           margin: 0 0 2rem 0;

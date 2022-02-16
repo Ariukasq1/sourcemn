@@ -168,6 +168,15 @@
         width: 80%;
         height: 80%;
       }
+
+      .broch-title {
+        font-size: 1.125rem;
+
+        @include big-laptops {
+          font-size: 14px;
+          top: 5px;
+        }
+      }
     }
     @include tablets {
       grid-template-columns: repeat(2, minmax(0, 1fr));

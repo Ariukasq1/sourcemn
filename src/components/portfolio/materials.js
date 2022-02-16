@@ -15,11 +15,11 @@ const Materials = ({ materials }) => {
               return (
                 <div
                   key={ind}
-                  /* data-aos="zoom-in-down"
-                data-aos-delay={ind * 150}
-                data-aos-easing="ease"
-                data-aos-duration="1000"
-                data-aos-offset="300" */
+                  data-aos="zoom-in-down"
+                  data-aos-delay={ind * 150}
+                  data-aos-easing="ease"
+                  data-aos-duration="1000"
+                  data-aos-offset="300"
                 >
                   <Image
                     loader={() => image}

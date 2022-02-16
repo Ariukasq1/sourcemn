@@ -42,10 +42,7 @@ const ProjectsDetail = ({ post }) => {
             className="blue-title"
             dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}
           />
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: (content || {}).rendered }}
-          />
+          <p dangerouslySetInnerHTML={{ __html: (content || {}).rendered }} />
         </div>
       </Col>
     </Row>

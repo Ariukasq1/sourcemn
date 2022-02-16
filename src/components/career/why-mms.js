@@ -100,8 +100,8 @@ const WhyMMs = ({ posts, data, contact }) => {
                           loader={() => data.icon}
                           src={data.icon}
                           alt="icon"
-                          width="60px"
-                          height="60px"
+                          width="50px"
+                          height="50px"
                           objectFit="contain"
                         />
                         {data.text}
