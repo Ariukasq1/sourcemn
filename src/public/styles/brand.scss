@@ -4,6 +4,10 @@
     position: relative;
     height: 450px;
 
+    @include med-laptops {
+      height: 300px;
+    }
+
     &::after {
       content: "";
       width: 100%;
@@ -28,6 +32,9 @@
       > h1 {
         color: #fff;
         font-size: 4rem;
+        @include med-laptops {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -52,6 +59,9 @@
             color: #fff;
             font-size: 1.3rem;
             font-weight: 600;
+            @include med-laptops {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -74,6 +84,9 @@
           text-align: center;
           letter-spacing: 0.64px;
           font-weight: 600;
+          @include med-laptops {
+            font-size: 2rem;
+          }
         }
 
         p {
@@ -81,9 +94,15 @@
           font-size: 1.3rem;
           line-height: 1.5;
           margin-bottom: 10px;
+          @include med-laptops {
+            font-size: 1rem;
+          }
           span {
             font-size: 1rem;
             font-weight: 500 !important;
+            @include med-laptops {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -99,6 +118,9 @@
         color: #141f48;
         .detail-text-title {
           font-size: 37px;
+          @include med-laptops {
+            font-size: 2rem;
+          }
         }
         .detail-text-ul {
           padding-left: 20px;
@@ -107,6 +129,9 @@
               font-size: 1rem;
               margin-bottom: 0;
               list-style: disc;
+              @include med-laptops {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -124,6 +149,9 @@
           .cert-image {
             position: relative;
             height: 100px;
+            @include med-laptops {
+              height: 80px;
+            }
           }
         }
       }
@@ -133,6 +161,9 @@
 
 .brand-details {
   padding: 0 8rem 60px 8rem;
+  @include med-laptops {
+    padding: 0 4rem 40px 4rem;
+  }
   .blue-title {
     display: flex;
     justify-content: space-between;
@@ -163,6 +194,10 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
+
+    @include med-laptops {
+      gap: 1rem;
+    }
     .one-brochure {
       .broch-overlay {
         width: 80%;
@@ -175,6 +210,10 @@
         @include big-laptops {
           font-size: 14px;
           top: 5px;
+        }
+
+        @include med-laptops {
+          font-size: 12px;
         }
       }
     }

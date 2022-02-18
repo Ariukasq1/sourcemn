@@ -416,6 +416,10 @@
       top: 60%;
       font-size: 14px;
     }
+
+    @include med-laptops {
+      font-size: 12px;
+    }
   }
 
   &:hover {

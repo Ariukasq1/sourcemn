@@ -2173,6 +2173,11 @@ footer .container .footer .contactUs label {
   position: relative;
   height: 450px;
 }
+@media (max-width: 1199px) {
+  .brand .brand-banner {
+    height: 300px;
+  }
+}
 .brand .brand-banner::after {
   content: "";
   width: 100%;
@@ -2193,6 +2198,11 @@ footer .container .footer .contactUs label {
 .brand .brand-banner .container > h1 {
   color: #fff;
   font-size: 4rem;
+}
+@media (max-width: 1199px) {
+  .brand .brand-banner .container > h1 {
+    font-size: 2rem;
+  }
 }
 .brand .second-level-wrapper {
   width: 100%;
@@ -2216,6 +2226,11 @@ footer .container .footer .contactUs label {
   font-size: 1.3rem;
   font-weight: 600;
 }
+@media (max-width: 1199px) {
+  .brand .second-level-wrapper .container ul li span {
+    font-size: 1rem;
+  }
+}
 .brand .about-brand {
   padding: 60px 0 60px 0;
   background: #00498e;
@@ -2234,15 +2249,30 @@ footer .container .footer .contactUs label {
   letter-spacing: 0.64px;
   font-weight: 600;
 }
+@media (max-width: 1199px) {
+  .brand .about-brand .container .intro-content h1 {
+    font-size: 2rem;
+  }
+}
 .brand .about-brand .container .intro-content p {
   color: #fff;
   font-size: 1.3rem;
   line-height: 1.5;
   margin-bottom: 10px;
 }
+@media (max-width: 1199px) {
+  .brand .about-brand .container .intro-content p {
+    font-size: 1rem;
+  }
+}
 .brand .about-brand .container .intro-content p span {
   font-size: 1rem;
   font-weight: 500 !important;
+}
+@media (max-width: 1199px) {
+  .brand .about-brand .container .intro-content p span {
+    font-size: 14px;
+  }
 }
 .brand .detail-brand {
   padding: 60px 0;
@@ -2255,6 +2285,11 @@ footer .container .footer .contactUs label {
 .brand .detail-brand .container .details .detail-text-title {
   font-size: 37px;
 }
+@media (max-width: 1199px) {
+  .brand .detail-brand .container .details .detail-text-title {
+    font-size: 2rem;
+  }
+}
 .brand .detail-brand .container .details .detail-text-ul {
   padding-left: 20px;
 }
@@ -2262,6 +2297,11 @@ footer .container .footer .contactUs label {
   font-size: 1rem;
   margin-bottom: 0;
   list-style: disc;
+}
+@media (max-width: 1199px) {
+  .brand .detail-brand .container .details .detail-text-ul ul li {
+    font-size: 14px;
+  }
 }
 .brand .cert-brand {
   padding: 0 0 60px 0;
@@ -2274,9 +2314,19 @@ footer .container .footer .contactUs label {
   position: relative;
   height: 100px;
 }
+@media (max-width: 1199px) {
+  .brand .cert-brand .container .cert > div .cert-image {
+    height: 80px;
+  }
+}
 
 .brand-details {
   padding: 0 8rem 60px 8rem;
+}
+@media (max-width: 1199px) {
+  .brand-details {
+    padding: 0 4rem 40px 4rem;
+  }
 }
 .brand-details .blue-title {
   display: flex;
@@ -2305,6 +2355,11 @@ footer .container .footer .contactUs label {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
 }
+@media (max-width: 1199px) {
+  .brand-details .brochures {
+    gap: 1rem;
+  }
+}
 .brand-details .brochures .one-brochure .broch-overlay {
   width: 80%;
   height: 80%;
@@ -2316,6 +2371,11 @@ footer .container .footer .contactUs label {
   .brand-details .brochures .one-brochure .broch-title {
     font-size: 14px;
     top: 5px;
+  }
+}
+@media (max-width: 1199px) {
+  .brand-details .brochures .one-brochure .broch-title {
+    font-size: 12px;
   }
 }
 @media (max-width: 991px) {
@@ -2772,6 +2832,11 @@ footer .container .footer .contactUs label {
   .one-brochure .download {
     top: 60%;
     font-size: 14px;
+  }
+}
+@media (max-width: 1199px) {
+  .one-brochure .download {
+    font-size: 12px;
   }
 }
 .one-brochure:hover {
