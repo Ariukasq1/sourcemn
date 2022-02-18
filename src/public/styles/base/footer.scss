@@ -3,6 +3,10 @@ footer {
   background-color: #262626;
   color: #fff;
 
+  @include tablets {
+    height: auto;
+  }
+
   .container {
     padding-top: 200px;
 
@@ -12,6 +16,10 @@ footer {
 
     @include med-laptops {
       padding-top: 0;
+    }
+
+    @include tablets {
+      padding: 30px 20px;
     }
 
     .footer {
@@ -50,6 +58,9 @@ footer {
 
       .contactUs {
         padding-left: 20px;
+        @include tablets {
+          padding-left: 0;
+        }
         > div {
           position: relative;
           margin: 0 0 2rem 0;

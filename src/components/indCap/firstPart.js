@@ -19,7 +19,12 @@ const FirstPart = ({ data, clas }) => {
             const image = getData(_embedded, "image");
             return (
               <Col
-                span={6}
+                xxl={6}
+                xl={6}
+                lg={6}
+                md={24}
+                sm={24}
+                xs={24}
                 key={ind}
                 data-aos="fade-down"
                 data-aos-easing="ease"

@@ -18,7 +18,7 @@ const Culture = ({ data }) => {
             const image = getData(card._embedded, "image");
 
             return (
-              <Col span={6} key={ind}>
+              <Col xxl={6} xl={6} lg={6} md={12} sm={24} xs={24} key={ind}>
                 <Link
                   href={"/careers/[careers]"}
                   as={generateLink(`/careers/${card.slug}`)}

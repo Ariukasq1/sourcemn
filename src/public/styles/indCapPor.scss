@@ -12,6 +12,9 @@
       @include med-laptops {
         padding: 0 10px;
       }
+      @include tablets {
+        padding: 10px;
+      }
       .industries-image {
         height: 400px;
         margin-top: 1rem;
@@ -51,7 +54,9 @@
 
 .secondPart {
   height: calc(100vh - 114px);
-
+  @include tablets {
+    height: auto;
+  }
   .product-cards {
     .half-text-container {
       padding-top: 20px;
@@ -146,6 +151,11 @@
   position: relative;
   display: flex;
   align-items: center;
+  @include tablets {
+    height: auto;
+    margin: 30px 0;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -160,6 +170,9 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    @include tablets {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
     .facts {
       z-index: 2;
       display: flex;
@@ -176,6 +189,10 @@
 
       @include med-laptops {
         padding: 1rem;
+      }
+
+      @include tablets {
+        border-bottom: 1px solid #ffffff;
       }
 
       img {
@@ -222,9 +239,15 @@
       &:nth-child(2) {
         border-bottom: 1px solid #ffffff;
         border-left: 1px solid #ffffff;
+        @include tablets {
+          border-left: none;
+        }
       }
       &:nth-child(4) {
         border-left: 1px solid #ffffff;
+        @include tablets {
+          border: none;
+        }
       }
     }
   }
@@ -234,6 +257,9 @@
 .even {
   display: flex;
   align-items: center;
+  @include tablets {
+    padding: 30px 0 30px 0 !important;
+  }
   .add-text {
     background-color: #004894;
     width: 100%;
@@ -310,11 +336,18 @@
 
 .relations {
   height: calc(100vh - 114px);
+  @include tablets {
+    height: auto;
+  }
   .container {
     padding-top: 1rem;
 
     @include med-laptops {
       padding-top: 10px;
+    }
+
+    @include tablets {
+      padding-bottom: 30px;
     }
 
     .relations-list {
@@ -335,6 +368,10 @@
         gap: 2rem;
         @include med-laptops {
           gap: 1rem;
+        }
+
+        @include tablets {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
         .one-brochure {
           margin-top: 0;
@@ -392,6 +429,11 @@
   position: relative;
   height: calc(100vh - 114px);
 
+  @include tablets {
+    height: 400px;
+    margin: 30px 0;
+  }
+
   .project-list {
     position: absolute;
     top: 150px;
@@ -429,6 +471,11 @@
 
 .project-detail {
   height: calc(100vh - 114px);
+
+  @include tablets {
+    height: auto;
+    flex-wrap: wrap-reverse;
+  }
 
   .detail-content {
     height: 100%;
@@ -473,6 +520,10 @@
 
   .detail-image {
     height: 100%;
+    @include tablets {
+      height: 400px;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -480,6 +531,10 @@
   height: calc(100vh - 114px);
   background-image: url("/images/materialBack.jpg");
   position: relative;
+  @include tablets {
+    height: 450px;
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -522,6 +577,11 @@
         @include med-laptops {
           gap: 1rem;
         }
+
+        @include tablets {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         > div {
           display: flex;
           align-items: center;

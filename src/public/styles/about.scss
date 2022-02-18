@@ -48,6 +48,10 @@
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
         grid-gap: 2rem;
+
+        @include tablets {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
         > div {
           display: flex;
           flex-direction: column;

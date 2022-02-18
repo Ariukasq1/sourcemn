@@ -4,6 +4,10 @@
   flex-direction: column;
   justify-content: center;
 
+  @include tablets {
+    height: auto;
+  }
+
   .gold-title {
     margin-bottom: 10px;
     margin-left: 20px;
@@ -22,6 +26,10 @@
       background-color: #ffffff;
       position: relative;
       margin: 0 20px;
+
+      @include tablets {
+        margin: 20px;
+      }
 
       .big-card-image {
         position: relative;

@@ -1,10 +1,22 @@
 .fp-tableCell {
   vertical-align: bottom !important;
+  @include tablets {
+    vertical-align: top !important;
+    height: auto !important;
+  }
+}
+
+.section {
+  height: auto !important;
 }
 
 .top {
   height: 100vh;
   padding-top: 114px;
+  @include tablets {
+    padding-top: 82px;
+    height: auto;
+  }
 }
 
 .page {
@@ -21,6 +33,11 @@
   @include med-laptops {
     max-width: 956px;
   }
+
+  @include tablets {
+    height: auto;
+    max-width: 700px;
+  }
 }
 
 .container {
@@ -35,6 +52,10 @@
 
   @include med-laptops {
     max-width: 956px;
+  }
+
+  @include tablets {
+    max-width: 700px;
   }
 }
 
@@ -94,6 +115,11 @@
   @include med-laptops {
     max-width: 460px;
   }
+
+  @include tablets {
+    max-width: 700px;
+    padding: 20px;
+  }
 }
 
 .read-more-detail {
@@ -139,6 +165,10 @@
 .simple-half-image {
   height: 100%;
   position: relative;
+  @include tablets {
+    height: 400px;
+    position: relative;
+  }
 }
 
 .sub-title {
@@ -270,6 +300,9 @@
 .overlay-half-image {
   height: 100%;
   position: relative;
+  @include tablets {
+    height: 400px;
+  }
   &:after {
     content: "";
     position: absolute;
