@@ -107,7 +107,11 @@ const HomeBrands = ({ brandCats, brands }) => {
   };
 
   return (
-    <div className="homeBrands top" data-aos="zoom-in" data-aos-duration="300">
+    <div
+      className="homeBrands top relative"
+      data-aos="zoom-in"
+      data-aos-duration="300"
+    >
       <div className="container">
         <div className="gold-title">{__("Brands")}</div>
         <div className="sub-title">{__("Our products")}</div>

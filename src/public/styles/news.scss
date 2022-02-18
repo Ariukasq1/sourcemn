@@ -25,6 +25,9 @@
       position: relative;
       width: 100%;
       height: 500px;
+      @include med-laptops {
+        height: 300px;
+      }
     }
 
     .blue-title {
@@ -32,8 +35,12 @@
     }
 
     .news-content {
+      position: relative;
       p {
         font-size: 1rem;
+        @include med-laptops {
+          font-size: 14px;
+        }
       }
     }
   }

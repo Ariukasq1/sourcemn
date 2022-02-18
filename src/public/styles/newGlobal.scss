@@ -9,13 +9,17 @@
 
 .page {
   height: 100vh;
-  padding-top: 114px;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
+  padding: 114px 20px 0 20px;
 
   @include big-laptops {
     max-width: 1160px;
+  }
+
+  @include med-laptops {
+    max-width: 956px;
   }
 }
 
@@ -28,6 +32,10 @@
   @include big-laptops {
     max-width: 1160px;
   }
+
+  @include med-laptops {
+    max-width: 956px;
+  }
 }
 
 .page-title {
@@ -36,6 +44,10 @@
   line-height: normal;
   margin-bottom: 20px;
   text-transform: capitalize;
+  @include med-laptops {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
 }
 
 .gold-title {
@@ -46,6 +58,10 @@
 
   @include big-laptops {
     font-size: 1.3rem;
+  }
+
+  @include med-laptops {
+    font-size: 1rem;
   }
 }
 
@@ -59,6 +75,10 @@
   @include big-laptops {
     font-size: 1.3rem;
   }
+
+  @include med-laptops {
+    font-size: 1rem;
+  }
 }
 
 .half-text-container {
@@ -69,6 +89,10 @@
 
   @include big-laptops {
     max-width: 560px;
+  }
+
+  @include med-laptops {
+    max-width: 460px;
   }
 }
 
@@ -83,6 +107,10 @@
   width: max-content;
   color: #004a8f;
   line-height: normal;
+
+  @include med-laptops {
+    font-size: 14px;
+  }
 }
 
 .read-more-button {
@@ -97,6 +125,10 @@
   transition: all 0.3s ease;
   line-height: normal;
   width: max-content;
+
+  @include med-laptops {
+    font-size: 14px;
+  }
 
   &:hover {
     background-position: 100%;
@@ -123,6 +155,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 30px;
+
+  @include med-laptops {
+    margin-bottom: 10px;
+  }
+
   > div {
     border-right: 1px solid rgba(0, 0, 0, 0.7);
     padding: 0 0.5rem;
@@ -132,6 +169,10 @@
     color: rgba(0, 0, 0, 0.7);
     line-height: normal;
     margin-bottom: 10px;
+
+    @include med-laptops {
+      font-size: 14px;
+    }
 
     &:last-child {
       border: none;
@@ -156,6 +197,11 @@
     bottom: -40px;
     font-size: 30px;
   }
+
+  @include med-laptops {
+    bottom: -25px;
+    font-size: 20px;
+  }
 }
 
 .prev-arrow {
@@ -167,6 +213,11 @@
   @include big-laptops {
     bottom: -40px;
     font-size: 30px;
+  }
+
+  @include med-laptops {
+    bottom: -25px;
+    font-size: 20px;
   }
 }
 
@@ -187,6 +238,9 @@
     font-size: 1rem;
     margin-bottom: 0;
     line-height: 1.5;
+    @include med-laptops {
+      font-size: 14px;
+    }
   }
 }
 
@@ -206,6 +260,10 @@
 
   @include big-laptops {
     margin-bottom: 10px;
+  }
+
+  @include med-laptops {
+    font-size: 1rem;
   }
 }
 
@@ -264,10 +322,16 @@
   .overlay-title {
     font-weight: 700;
     font-size: 1.125rem;
+    @include med-laptops {
+      font-size: 1rem;
+    }
   }
 
   .overlay-content {
     font-size: 1rem;
+    @include med-laptops {
+      font-size: 14px;
+    }
     p {
       margin-bottom: 0;
       line-height: 1.5;
@@ -296,6 +360,10 @@
 
   @include big-laptops {
     height: 150px;
+  }
+
+  @include med-laptops {
+    height: 140px;
   }
 
   img {
@@ -328,6 +396,11 @@
 
     @include big-laptops {
       font-size: 1rem;
+    }
+
+    @include med-laptops {
+      top: 0px;
+      font-size: 14px;
     }
   }
 
@@ -370,6 +443,10 @@
       height: 10rem;
     }
 
+    @include med-laptops {
+      height: 8rem;
+    }
+
     .project-title {
       color: #fff;
       position: absolute;
@@ -382,6 +459,10 @@
 
       @include big-laptops {
         font-size: 1rem;
+      }
+
+      @include med-laptops {
+        font-size: 14px;
       }
     }
 
@@ -399,6 +480,10 @@
       @include big-laptops {
         font-size: 1rem;
       }
+
+      @include med-laptops {
+        font-size: 14px;
+      }
     }
 
     .read-more-project {
@@ -412,6 +497,10 @@
 
       @include big-laptops {
         font-size: 12px;
+      }
+
+      @include med-laptops {
+        bottom: 20px;
       }
     }
 

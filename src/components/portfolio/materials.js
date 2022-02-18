@@ -21,13 +21,16 @@ const Materials = ({ materials }) => {
                   data-aos-duration="1000"
                   data-aos-offset="300"
                 >
-                  <Image
-                    loader={() => image}
-                    src={image}
-                    alt="mater"
-                    width="80px"
-                    height="80px"
-                  />
+                  <div className="image-mater">
+                    <Image
+                      loader={() => image}
+                      src={image}
+                      alt="mater"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+
                   <p
                     dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                   />

@@ -32,8 +32,16 @@
         justify-content: center;
         align-items: center;
         padding: 50px 0;
+
         @include big-laptops {
           padding: 30px 0;
+        }
+
+        @include med-laptops {
+          img {
+            height: 80px !important;
+            width: 100px !important;
+          }
         }
       }
 
@@ -45,8 +53,17 @@
           padding: 20px 10px;
         }
 
+        @include med-laptops {
+          min-height: 120px;
+          padding: 10px;
+        }
+
         .blue-title {
           font-size: 1.125rem;
+
+          @include med-laptops {
+            font-size: 14px;
+          }
         }
 
         .card-content {
@@ -57,6 +74,9 @@
               margin: 0;
               font-size: 1rem;
               line-height: 1.5;
+              @include med-laptops {
+                font-size: 12px;
+              }
             }
           }
         }
@@ -117,6 +137,11 @@
     }
 
     .half-text-container {
+      @include med-laptops {
+        p {
+          font-size: 12px;
+        }
+      }
       .benefits-icons {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -131,6 +156,14 @@
           @include big-laptops {
             font-size: 12px;
           }
+          @include med-laptops {
+            line-height: normal;
+            font-size: 10px;
+            img {
+              width: 30px !important;
+              height: 30px !important;
+            }
+          }
         }
       }
     }
@@ -143,6 +176,9 @@
   .tourOffice-content {
     p {
       font-size: 1rem;
+      @include med-laptops {
+        font-size: 12px;
+      }
     }
 
     .gold-title {
@@ -295,6 +331,10 @@
       @include big-laptops {
         max-width: 670px;
       }
+
+      @include med-laptops {
+        max-width: 500px;
+      }
       .gold-title {
         margin: 20px 0;
       }
@@ -306,6 +346,11 @@
 
         @include big-laptops {
           height: 200px;
+        }
+
+        @include med-laptops {
+          height: 150px;
+          margin-bottom: 10px;
         }
         p {
           position: absolute;
@@ -360,11 +405,17 @@
             font-size: 3rem;
             line-height: normal;
           }
+          @include med-laptops {
+            font-size: 2rem;
+          }
         }
         > h2 {
           font-weight: 600;
           font-size: 1rem;
           margin-bottom: 0;
+          @include med-laptops {
+            font-size: 14px;
+          }
         }
         > p {
           line-height: 1.5;
@@ -372,6 +423,10 @@
           margin-bottom: 0;
           @include big-laptops {
             line-height: 1.3;
+          }
+
+          @include med-laptops {
+            font-size: 10px;
           }
         }
       }
@@ -390,13 +445,31 @@
     padding: 0 5rem;
   }
 
+  @include med-laptops {
+    padding: 0 4rem;
+  }
+
   .sub-title {
     margin-top: 10px;
     margin-bottom: 20px;
+    @include med-laptops {
+      margin-bottom: 10px;
+    }
   }
 
   .collapse {
+    @include med-laptops {
+      .ant-collapse-item > .ant-collapse-header {
+        padding: 10px;
+      }
+    }
+
     .ant-collapse-content {
+      @include med-laptops {
+        .ant-collapse-content-box {
+          padding: 10px;
+        }
+      }
       p {
         color: gray;
       }
@@ -404,6 +477,9 @@
     p {
       font-size: 1rem;
       margin-bottom: 0;
+      @include med-laptops {
+        font-size: 12px;
+      }
     }
   }
 }

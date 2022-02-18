@@ -10,6 +10,10 @@ footer {
       padding-top: 20px;
     }
 
+    @include med-laptops {
+      padding-top: 0;
+    }
+
     .footer {
       width: 100%;
 
@@ -49,6 +53,10 @@ footer {
         > div {
           position: relative;
           margin: 0 0 2rem 0;
+
+          @include med-laptops {
+            margin: 0 0 15px 0;
+          }
         }
 
         input,
@@ -61,6 +69,9 @@ footer {
           box-sizing: border-box;
           color: #e4e4e4;
           font-size: 1rem;
+          @include med-laptops {
+            font-size: 14px;
+          }
         }
 
         input {
@@ -71,6 +82,10 @@ footer {
 
         textArea {
           height: 10rem;
+
+          @include med-laptops {
+            height: 6rem;
+          }
         }
 
         label {
@@ -81,6 +96,9 @@ footer {
           padding: 0 1rem;
           font-size: 1rem;
           font-weight: 500;
+          @include med-laptops {
+            font-size: 14px;
+          }
         }
       }
     }

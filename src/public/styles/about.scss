@@ -9,10 +9,17 @@
     margin: 136px 0 180px 0;
     width: 100%;
 
+    @include med-laptops {
+      margin: 50px 0 100px 0;
+    }
+
     .about-us-text {
       padding: 20px;
       p {
         font-size: 1rem;
+        @include med-laptops {
+          font-size: 14px;
+        }
       }
     }
 
@@ -29,6 +36,9 @@
     .gold-title {
       margin-bottom: 5px;
       font-size: 1.5rem;
+      @include med-laptops {
+        font-size: 1rem;
+      }
     }
     .sub-title {
       margin-bottom: 30px;
@@ -55,6 +65,9 @@
               line-height: normal;
               margin-top: 15px;
               height: 32px;
+              @include med-laptops {
+                font-size: 12px;
+              }
             }
             .serviceIcon {
               display: flex;
@@ -76,6 +89,9 @@
                 list-style: disc;
                 margin: 0;
                 line-height: 1.5;
+                @include med-laptops {
+                  font-size: 12px;
+                }
               }
             }
           }
@@ -97,6 +113,9 @@
       font-size: 3rem;
       font-weight: 400;
       text-align: center;
+      @include med-laptops {
+        font-size: 2rem;
+      }
     }
     .slider-time {
       position: relative;

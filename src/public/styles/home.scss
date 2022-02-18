@@ -19,6 +19,10 @@
         width: 1050px;
       }
 
+      @include med-laptops {
+        width: 900px;
+      }
+
       h1 {
         font-size: 5rem;
         line-height: normal;
@@ -28,12 +32,20 @@
         @include big-laptops {
           font-size: 4rem;
         }
+
+        @include med-laptops {
+          font-size: 3rem;
+        }
       }
 
       h2 {
         font-size: 1.5rem;
         line-height: 1.5;
         margin: 0;
+
+        @include med-laptops {
+          font-size: 1.125rem;
+        }
       }
     }
 
@@ -77,6 +89,10 @@
         p {
           font-size: 1rem;
           margin: 0;
+
+          @include med-laptops {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -108,6 +124,11 @@
           margin-bottom: 1.5rem;
         }
 
+        @include med-laptops {
+          font-size: 3rem;
+          margin-bottom: 10px;
+        }
+
         span {
           margin-left: 20px;
         }
@@ -118,6 +139,10 @@
 
         @include big-laptops {
           margin-top: 2rem;
+        }
+
+        @include med-laptops {
+          margin-top: 1rem;
         }
       }
     }
@@ -145,6 +170,9 @@
       align-items: center;
       font-size: 1rem;
       color: #fff;
+      @include med-laptops {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -159,17 +187,29 @@
     align-items: center;
     .sub-title {
       margin-bottom: 30px;
+
+      @include med-laptops {
+        margin-bottom: 10px;
+      }
     }
   }
 
   .brandList {
     width: 100%;
 
+    @include med-laptops {
+      margin-bottom: 20px;
+    }
+
     .slick-slide {
       max-width: 365px !important;
 
       @include big-laptops {
         max-width: 280px !important;
+      }
+
+      @include med-laptops {
+        max-width: 239px !important;
       }
     }
 
@@ -182,6 +222,11 @@
         height: 50px;
         width: 180px;
       }
+
+      @include med-laptops {
+        height: 40px;
+        width: 150px;
+      }
     }
 
     .brand-image {
@@ -193,6 +238,11 @@
       @include big-laptops {
         height: 10rem;
         max-width: 280px;
+      }
+
+      @include med-laptops {
+        height: 8rem;
+        max-width: 239px;
       }
     }
   }

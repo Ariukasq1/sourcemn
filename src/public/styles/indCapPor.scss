@@ -9,6 +9,9 @@
     width: 100%;
     .industries-part {
       padding: 0 1rem;
+      @include med-laptops {
+        padding: 0 10px;
+      }
       .industries-image {
         height: 400px;
         margin-top: 1rem;
@@ -18,6 +21,10 @@
         @include big-laptops {
           margin-top: 10px;
           height: 300px;
+        }
+
+        @include med-laptops {
+          height: 230px;
         }
 
         img {
@@ -36,6 +43,9 @@
 
   .page-title {
     margin-left: 1rem;
+    @include med-laptops {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -55,6 +65,10 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1rem;
 
+        @include med-laptops {
+          gap: 10px;
+        }
+
         .card {
           display: flex;
           flex-direction: column;
@@ -71,6 +85,11 @@
           @include big-laptops {
             font-size: 12px;
             padding: 10px;
+          }
+
+          @include med-laptops {
+            padding: 5px;
+            font-size: 10px;
           }
 
           &:hover {
@@ -94,6 +113,10 @@
             @include big-laptops {
               font-size: 12px !important;
             }
+
+            @include med-laptops {
+              font-size: 10px !important;
+            }
           }
 
           img {
@@ -105,6 +128,11 @@
 
             @include big-laptops {
               margin-bottom: 10px;
+            }
+
+            @include med-laptops {
+              width: 30px;
+              height: 30px;
             }
           }
         }
@@ -146,12 +174,21 @@
         padding: 1rem 2rem;
       }
 
+      @include med-laptops {
+        padding: 1rem;
+      }
+
       img {
         filter: invert(1);
         margin-bottom: 1rem;
         @include big-laptops {
           width: 50px !important;
           height: 50px !important;
+        }
+
+        @include med-laptops {
+          width: 40px !important;
+          height: 40px !important;
         }
       }
 
@@ -160,6 +197,9 @@
         font-weight: 800;
         @include big-laptops {
           font-size: 2.5rem;
+        }
+        @include med-laptops {
+          font-size: 2rem;
         }
       }
 
@@ -170,6 +210,9 @@
           line-height: 1.5;
           margin-bottom: 0;
           font-size: 14px;
+        }
+        @include med-laptops {
+          font-size: 12px;
         }
       }
 
@@ -198,6 +241,12 @@
     padding: 20px;
     border-radius: 10px;
     font-size: 1rem;
+
+    @include med-laptops {
+      font-size: 14px;
+      padding: 10px;
+    }
+
     > h4 {
       font-weight: 700;
       font-size: 1.125rem;
@@ -210,21 +259,34 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 20px;
+      @include med-laptops {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
     }
 
     p {
       line-height: 1.5;
       margin-bottom: 0;
+      @include med-laptops {
+        line-height: 1.3;
+      }
     }
 
     ul {
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 10px;
+      @include med-laptops {
+        margin-bottom: 5px;
+      }
       li {
         list-style: inside;
         margin: 0 10px 0 0;
         line-height: 1.5;
+        @include med-laptops {
+          line-height: 1.3;
+        }
       }
     }
   }
@@ -251,17 +313,29 @@
   .container {
     padding-top: 1rem;
 
+    @include med-laptops {
+      padding-top: 10px;
+    }
+
     .relations-list {
       margin-top: 30px;
-
+      @include med-laptops {
+        margin-top: 10px;
+      }
       .gold-title {
         margin-bottom: 20px;
+        @include med-laptops {
+          margin-bottom: 5px;
+        }
       }
 
       .list-of-relations {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 2rem;
+        @include med-laptops {
+          gap: 1rem;
+        }
         .one-brochure {
           margin-top: 0;
           padding: 0 90px 60px 0;
@@ -277,9 +351,15 @@
   .simple-half-text {
     .half-text-container {
       padding-top: 20px;
+      @include med-laptops {
+        padding-top: 10px;
+      }
 
       .blue-title {
         margin-bottom: 20px;
+        @include med-laptops {
+          margin-bottom: 10px;
+        }
       }
 
       p {
@@ -288,13 +368,20 @@
         @include big-laptops {
           line-height: 1.3;
         }
+        @include med-laptops {
+          font-size: 12px;
+        }
       }
 
       ul {
+        padding-left: 1rem;
         li {
           margin-bottom: 0;
           list-style: inside;
           font-size: 1rem;
+          @include med-laptops {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -315,6 +402,10 @@
 
     @include big-laptops {
       top: 50px;
+    }
+
+    @include med-laptops {
+      top: 30px;
     }
 
     .container {
@@ -346,6 +437,10 @@
     .half-text-container {
       .blue-title {
         margin-bottom: 20px;
+
+        @include med-laptops {
+          margin-bottom: 10px;
+        }
       }
 
       p {
@@ -355,13 +450,22 @@
         @include big-laptops {
           line-height: 1.3;
         }
+
+        @include med-laptops {
+          font-size: 12px;
+        }
       }
 
       ul {
+        padding-left: 1rem;
         li {
           margin-bottom: 0;
-          list-style: inside;
+          list-style: disc;
           font-size: 1rem;
+
+          @include med-laptops {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -396,6 +500,10 @@
     bottom: 0;
     .container {
       padding-top: 100px;
+
+      @include med-laptops {
+        padding-top: 50px;
+      }
       .gold-title {
         color: #ffffff;
         text-transform: uppercase;
@@ -410,14 +518,38 @@
         @include big-laptops {
           gap: 2rem;
         }
+
+        @include med-laptops {
+          gap: 1rem;
+        }
         > div {
           display: flex;
           align-items: center;
           background-color: #ffffff;
+
           p {
-            margin: 0 10px;
             font-size: 1rem;
             line-height: normal;
+            width: calc(100% - 80px);
+
+            @include med-laptops {
+              font-size: 12px;
+            }
+          }
+
+          .image-mater {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 5px;
+            @include med-laptops {
+              width: 50px;
+              height: 50px;
+            }
+            img {
+              border-radius: 50%;
+            }
           }
         }
       }

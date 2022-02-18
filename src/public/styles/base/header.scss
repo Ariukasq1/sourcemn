@@ -12,6 +12,10 @@
 
   .logo {
     width: 6rem;
+
+    @include tablets {
+      width: 4rem;
+    }
     object-fit: contain;
     object-position: center;
     cursor: pointer;
@@ -23,6 +27,10 @@
     justify-content: space-around;
 
     .topMenu {
+      @include tablets {
+        display: none;
+      }
+
       .topMenuList {
         margin-left: auto;
       }
@@ -61,6 +69,9 @@
 
       .botMenuList {
         border-right: 1px solid #00498e;
+        @include tablets {
+          display: none;
+        }
       }
 
       a {
