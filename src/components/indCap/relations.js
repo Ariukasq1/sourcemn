@@ -24,11 +24,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
             {relbrands.map((item, ind) => {
               const image = getData(item._embedded, "image");
               return (
-                <Link
-                  key={ind}
-                  href={`/brands/[brands]`}
-                  as={`/brands/${item.slug}`}
-                >
+                <Link key={ind} href={`/brands/${item.slug}`}>
                   <div className="one-brochure">
                     <Image
                       loader={() => image}
@@ -58,11 +54,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
               const image = getData(item._embedded, "image");
 
               return (
-                <Link
-                  key={ind}
-                  href={`/${relations}/[${relations}]`}
-                  as={`/${relations}/${item.slug}`}
-                >
+                <Link key={ind} href={`/${relations}/${item.slug}`}>
                   <div className="one-brochure">
                     <Image
                       loader={() => image}

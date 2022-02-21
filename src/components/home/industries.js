@@ -65,7 +65,7 @@ const HomeIndustries = ({ data }) => {
               );
             })}
 
-          <Link href={"/industries"}>
+          <Link href="/industries">
             <div className="read-more-button">{__("Read more")}</div>
           </Link>
         </div>

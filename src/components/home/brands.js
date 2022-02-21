@@ -80,7 +80,7 @@ const HomeBrands = ({ brandCats, brands }) => {
                 />
               </div>
 
-              <Link href={"/brands/[brands]"} as={`/brands/${brand.slug}`}>
+              <Link href={`/brands/${brand.slug}`}>
                 <a className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
                 </a>
