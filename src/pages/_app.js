@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, mainMenu, topMenu }) {
   );
 }
 
-MyApp.getInitialProps = async (appContext) => {
+MyApp.getInitialProps = async () => {
   const mainMenu = await fetcher(`${config.menuUrl}/nav-menu`);
   const topMenu = await fetcher(`${config.menuUrl}/nav-menu-top`);
 
