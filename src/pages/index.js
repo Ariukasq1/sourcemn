@@ -41,8 +41,8 @@ const Index = ({
   );
 };
 
-Index.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const contact = await wp
     .posts()
@@ -89,13 +89,15 @@ Index.getInitialProps = async (context) => {
   const brandsCat = await wp.categories().parent(brandsID.id).embed();
 
   return {
-    contact,
-    sliders,
-    capability,
-    industries,
-    brandsCat,
-    brands,
+    props: {
+      contact,
+      sliders,
+      capability,
+      industries,
+      brandsCat,
+      brands,
+    },
   };
-};
+}
 
 export default Index;

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { getLangParam } from "../../utils";
-import { generateLink } from "../../config";
 
 class TopMenu extends React.Component {
   renderLang() {
@@ -38,7 +37,7 @@ class TopMenu extends React.Component {
         <div className="topMenuList">
           {topMenu.items.map((item, ind) => {
             return (
-              <Link key={ind} href={generateLink(`/${item.slug}`)}>
+              <Link key={ind} href={`/${item.slug}`}>
                 <a>{item.title}</a>
               </Link>
             );

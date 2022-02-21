@@ -1,7 +1,6 @@
 import React from "react";
-import Layout from "../components/layouts/Layout";
 import WPAPI from "wpapi";
-import config, { fetcher } from "../config";
+import config from "../config";
 import AboutUs from "../components/about/aboutUs";
 import Service from "../components/about/aboutService";
 import TimeLine from "../components/about/timeline";
@@ -20,8 +19,8 @@ const About = ({ service, serviceCats, data, contact, timeline }) => {
   );
 };
 
-About.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const contact = await wp
     .posts()
@@ -68,12 +67,14 @@ About.getInitialProps = async (context) => {
     .embed();
 
   return {
-    service,
-    serviceCats,
-    data,
-    contact,
-    timeline,
+    props: {
+      service,
+      serviceCats,
+      data,
+      contact,
+      timeline,
+    },
   };
-};
+}
 
 export default About;

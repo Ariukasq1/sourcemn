@@ -11,8 +11,8 @@ const News = ({ data, childCats }) => {
   );
 };
 
-News.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const catId = await wp
     .categories()
@@ -30,7 +30,7 @@ News.getInitialProps = async (context) => {
     .parent((catId || {}).id)
     .embed();
 
-  return { data, childCats };
-};
+  return { props: { data, childCats } };
+}
 
 export default News;

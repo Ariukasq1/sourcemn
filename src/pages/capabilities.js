@@ -11,8 +11,8 @@ const Capabilities = ({ data }) => {
   );
 };
 
-Capabilities.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const catId = await wp
     .categories()
@@ -25,7 +25,7 @@ Capabilities.getInitialProps = async (context) => {
     .categories((catId || {}).id)
     .embed();
 
-  return { data };
-};
+  return { props: { data } };
+}
 
 export default Capabilities;

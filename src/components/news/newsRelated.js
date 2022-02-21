@@ -2,7 +2,6 @@ import React from "react";
 import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Slider from "react-slick";
 import Link from "next/link";
-import { generateLink } from "../../config";
 import Image from "next/image";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
@@ -53,11 +52,7 @@ const RelatedNews = ({ data, slug }) => {
             const image = getData(news._embedded, "image");
 
             return (
-              <Link
-                key={ind}
-                href={"/news/[news]"}
-                as={generateLink(`/news/${news.slug}`)}
-              >
+              <Link key={ind} href={"/news/[news]"} as={`/news/${news.slug}`}>
                 <div className="slider-image-back">
                   {image && (
                     <Image

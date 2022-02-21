@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import { getData, SampleNextArrow, SamplePrevArrow, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { generateLink } from "../../config";
 import Image from "next/image";
 
 const HomeBrands = ({ brandCats, brands }) => {
@@ -81,10 +80,7 @@ const HomeBrands = ({ brandCats, brands }) => {
                 />
               </div>
 
-              <Link
-                href={"/brands/[brands]"}
-                as={generateLink(`/brands/${brand.slug}`)}
-              >
+              <Link href={"/brands/[brands]"} as={`/brands/${brand.slug}`}>
                 <a className="read-more-detail">
                   {__("Read more")} <ArrowRightOutlined />
                 </a>

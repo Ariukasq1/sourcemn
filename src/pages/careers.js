@@ -11,8 +11,8 @@ const Careers = ({ data }) => {
   );
 };
 
-Careers.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const catId = await wp
     .categories()
@@ -25,7 +25,7 @@ Careers.getInitialProps = async (context) => {
     .categories((catId || {}).id)
     .embed();
 
-  return { data };
-};
+  return { props: { data } };
+}
 
 export default Careers;

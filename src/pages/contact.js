@@ -11,8 +11,8 @@ const Contact = ({ contact }) => {
   );
 };
 
-Contact.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const contact = await wp
     .posts()
@@ -21,7 +21,7 @@ Contact.getInitialProps = async (context) => {
     .embed()
     .then((data) => data[0]);
 
-  return { contact };
-};
+  return { props: { contact } };
+}
 
 export default Contact;

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import DrawerToggle from "./sideDrawer/drawerToggle";
-import { generateLink } from "../../config";
 
 const MainMenu = ({ menu, handler }) => {
   return (
@@ -9,7 +8,7 @@ const MainMenu = ({ menu, handler }) => {
       <div className="botMenuList">
         {menu.items.map((item, ind) => {
           return (
-            <Link key={ind} href={generateLink(`/${item.slug}`)}>
+            <Link key={ind} href={`/${item.slug}`}>
               <a>{item.title}</a>
             </Link>
           );

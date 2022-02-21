@@ -2,7 +2,6 @@ import React from "react";
 import SideMenuWithChilds from "../side-menu";
 import TopMenu from "../top-menu";
 import { getLangParam, __ } from "../../../utils";
-import { generateLink } from "../../../config";
 
 const SideDrawer = ({ botMenu, topMenu, onClose }) => {
   const currentLang = getLangParam();

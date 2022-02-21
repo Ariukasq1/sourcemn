@@ -2,7 +2,6 @@ import React from "react";
 import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { Col, Row } from "antd";
-import { generateLink } from "../../config";
 import Image from "next/image";
 
 const HomeCapabilty = ({ capability }) => {
@@ -46,7 +45,7 @@ const HomeCapabilty = ({ capability }) => {
             className="content"
             dangerouslySetInnerHTML={{ __html: content.rendered }}
           />
-          <Link href={generateLink("/capabilities")}>
+          <Link href={"/capabilities"}>
             <a className="read-more-button">{__("Read more")}</a>
           </Link>
         </div>

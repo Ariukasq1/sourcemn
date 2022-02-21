@@ -6,10 +6,10 @@ const Facility = ({}) => {
   return <div className="page"></div>;
 };
 
-Facility.getInitialProps = async (context) => {
-  const wp = new WPAPI({ endpoint: config(context).apiUrl });
+export async function getStaticProps() {
+  const wp = new WPAPI({ endpoint: config.apiUrl });
 
-  return {};
-};
+  return { props: {} };
+}
 
 export default Facility;

@@ -3,7 +3,6 @@ import { __, getData } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Row, Col } from "antd";
-import { generateLink } from "../../config";
 import Image from "next/image";
 
 const HomeIndustries = ({ data }) => {
@@ -66,7 +65,7 @@ const HomeIndustries = ({ data }) => {
               );
             })}
 
-          <Link href={generateLink("/industries")}>
+          <Link href={"/industries"}>
             <div className="read-more-button">{__("Read more")}</div>
           </Link>
         </div>

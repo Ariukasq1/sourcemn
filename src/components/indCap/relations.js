@@ -1,5 +1,4 @@
 import React from "react";
-import { generateLink } from "../../config";
 import { __, getData } from "../../utils";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,7 +27,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
                 <Link
                   key={ind}
                   href={`/brands/[brands]`}
-                  as={generateLink(`/brands/${item.slug}`)}
+                  as={`/brands/${item.slug}`}
                 >
                   <div className="one-brochure">
                     <Image
@@ -62,7 +61,7 @@ const Relations = ({ brandData, post, relPosts, relations }) => {
                 <Link
                   key={ind}
                   href={`/${relations}/[${relations}]`}
-                  as={generateLink(`/${relations}/${item.slug}`)}
+                  as={`/${relations}/${item.slug}`}
                 >
                   <div className="one-brochure">
                     <Image
