@@ -23,7 +23,6 @@ Capabilities.getInitialProps = async (context) => {
   const data = await wp
     .posts()
     .categories((catId || {}).id)
-    .perPage(100)
     .embed();
 
   return { data };

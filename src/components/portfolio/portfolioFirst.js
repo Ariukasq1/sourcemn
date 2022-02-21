@@ -42,7 +42,10 @@ const FirstPart = ({ data }) => {
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
 
-                <Link href={`/portfolio/${slug}`}>
+                <Link
+                  href={`/portfolio/${slug}`}
+                  onClick={() => fullpageApi.moveSectionDown()}
+                >
                   <a className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </a>
