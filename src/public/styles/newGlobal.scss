@@ -3,6 +3,9 @@
   @include tablets {
     vertical-align: top !important;
     height: auto !important;
+    .fp-scrollable {
+      height: auto !important;
+    }
   }
 }
 
@@ -38,6 +41,18 @@
     height: auto;
     max-width: 700px;
   }
+
+  @include mini-tablets {
+    max-width: 540px;
+  }
+
+  @include max-phone {
+    max-width: 440px;
+  }
+
+  @include phone {
+    max-width: 320px;
+  }
 }
 
 .container {
@@ -56,6 +71,18 @@
 
   @include tablets {
     max-width: 700px;
+  }
+
+  @include mini-tablets {
+    max-width: 540px;
+  }
+
+  @include max-phone {
+    max-width: 400px;
+  }
+
+  @include phone {
+    max-width: 320px;
   }
 }
 
@@ -202,6 +229,12 @@
 
     @include med-laptops {
       font-size: 14px;
+    }
+
+    @include phone {
+      font-size: 12px;
+      border: none;
+      text-align: center;
     }
 
     &:last-child {
@@ -352,11 +385,20 @@
   padding-bottom: 30px;
   font-weight: 500;
 
+  @include phone {
+    bottom: 10px;
+    padding-bottom: 10px;
+  }
+
   .overlay-title {
     font-weight: 700;
     font-size: 1.125rem;
     @include med-laptops {
       font-size: 1rem;
+    }
+
+    @include phone {
+      font-size: 14px;
     }
   }
 
@@ -364,6 +406,9 @@
     font-size: 1rem;
     @include med-laptops {
       font-size: 14px;
+    }
+    @include phone {
+      font-size: 12px;
     }
     p {
       margin-bottom: 0;

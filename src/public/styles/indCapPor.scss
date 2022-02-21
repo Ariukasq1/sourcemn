@@ -15,6 +15,7 @@
       @include tablets {
         padding: 10px;
       }
+
       .industries-image {
         height: 400px;
         margin-top: 1rem;
@@ -28,6 +29,10 @@
 
         @include med-laptops {
           height: 230px;
+        }
+
+        @include phone {
+          height: 180px;
         }
 
         img {
@@ -72,6 +77,10 @@
 
         @include med-laptops {
           gap: 10px;
+        }
+
+        @include max-phone {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .card {
@@ -260,6 +269,7 @@
   @include tablets {
     padding: 30px 0 30px 0 !important;
   }
+
   .add-text {
     background-color: #004894;
     width: 100%;
@@ -271,6 +281,10 @@
     @include med-laptops {
       font-size: 14px;
       padding: 10px;
+    }
+
+    @include phone {
+      font-size: 12px;
     }
 
     > h4 {
@@ -288,6 +302,10 @@
       @include med-laptops {
         font-size: 1rem;
         margin-bottom: 10px;
+      }
+
+      @include phone {
+        font-size: 14px;
       }
     }
 
@@ -346,10 +364,6 @@
       padding-top: 10px;
     }
 
-    @include tablets {
-      padding-bottom: 30px;
-    }
-
     .relations-list {
       margin-top: 30px;
       @include med-laptops {
@@ -373,6 +387,15 @@
         @include tablets {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
+
+        @include tablets {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include max-phone {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
         .one-brochure {
           margin-top: 0;
           padding: 0 90px 60px 0;
@@ -532,7 +555,7 @@
   background-image: url("/images/materialBack.jpg");
   position: relative;
   @include tablets {
-    height: 450px;
+    height: 600px;
   }
 
   &:before {
@@ -582,6 +605,10 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        @include max-phone {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
         > div {
           display: flex;
           align-items: center;
@@ -591,7 +618,7 @@
             font-size: 1rem;
             line-height: normal;
             width: calc(100% - 80px);
-
+            margin-bottom: 0;
             @include med-laptops {
               font-size: 12px;
             }

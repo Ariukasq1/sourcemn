@@ -45,7 +45,7 @@ const Brand = ({ post }) => {
       <div className="about-brand">
         <div className="container">
           <Row className="intro-content">
-            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={20}>
+            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={24}>
               <h1 dangerouslySetInnerHTML={{ __html: slogan }} />
               <p dangerouslySetInnerHTML={{ __html: about }} />
             </Col>
@@ -56,7 +56,7 @@ const Brand = ({ post }) => {
       <div className="detail-brand">
         <div className="container">
           <Row className="details">
-            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={20}>
+            <Col xxl={17} xl={17} lg={17} md={20} sm={20} xs={24}>
               <div className="detail-text-title">
                 <span
                   dangerouslySetInnerHTML={{ __html: (title || {}).rendered }}

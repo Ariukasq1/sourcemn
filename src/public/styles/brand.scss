@@ -87,6 +87,9 @@
           @include med-laptops {
             font-size: 2rem;
           }
+          @include mini-tablets {
+            font-size: 1.5rem;
+          }
         }
 
         p {
@@ -152,6 +155,10 @@
             @include med-laptops {
               height: 80px;
             }
+
+            @include mini-tablets {
+              height: 50px;
+            }
           }
         }
       }
@@ -164,6 +171,11 @@
   @include med-laptops {
     padding: 0 4rem 40px 4rem;
   }
+
+  @include phone {
+    padding: 20px;
+  }
+
   .blue-title {
     display: flex;
     justify-content: space-between;

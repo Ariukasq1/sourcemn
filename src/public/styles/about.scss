@@ -13,6 +13,10 @@
       margin: 50px 0 100px 0;
     }
 
+    @include tablets {
+      margin: 0;
+    }
+
     .about-us-text {
       padding: 20px;
       p {
@@ -52,6 +56,11 @@
         @include tablets {
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
+
+        @include max-phone {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         > div {
           display: flex;
           flex-direction: column;
@@ -81,9 +90,17 @@
               width: 70px;
               height: 70px;
               border: 1px solid #00498e;
+              @include tablets {
+                height: 50px;
+                width: 50px;
+              }
               > img {
                 max-width: 45px;
                 height: 45px;
+                @include tablets {
+                  height: 30px;
+                  max-width: 30px;
+                }
               }
             }
           }

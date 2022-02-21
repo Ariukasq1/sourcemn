@@ -115,3 +115,11 @@ footer {
     }
   }
 }
+
+.foot {
+  footer {
+    @include tablets {
+      min-height: calc(100vh - 82px);
+    }
+  }
+}

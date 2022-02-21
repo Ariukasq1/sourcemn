@@ -51,7 +51,15 @@ const WhyMMs = ({ posts, data, contact }) => {
 
           <div className="section">
             <Row className="benefits">
-              <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
+              <Col
+                xxl={12}
+                xl={12}
+                lg={12}
+                md={24}
+                sm={24}
+                xs={24}
+                className="simple-half-image"
+              >
                 <Image
                   loader={() => ben_image}
                   src={ben_image}
@@ -110,12 +118,6 @@ const WhyMMs = ({ posts, data, contact }) => {
                   </div>
                 </div>
               </Col>
-              {/* <div className="long-half-text">
-            
-            
-            
-            
-          </div> */}
             </Row>
           </div>
 

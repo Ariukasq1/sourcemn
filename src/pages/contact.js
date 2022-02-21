@@ -5,7 +5,7 @@ import Footer from "../components/layouts/footer";
 
 const Contact = ({ contact }) => {
   return (
-    <div className="top relative">
+    <div className="top relative foot">
       <Footer contact={contact} />
     </div>
   );

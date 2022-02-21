@@ -30,6 +30,18 @@
         width: 700px;
       }
 
+      @include mini-tablets {
+        width: 500px;
+      }
+
+      @include max-phone {
+        width: 400px;
+      }
+
+      @include phone {
+        width: 280px;
+      }
+
       h1 {
         font-size: 5rem;
         line-height: normal;
@@ -47,6 +59,10 @@
         @include tablets {
           font-size: 2.5rem;
         }
+
+        @include phone {
+          font-size: 2rem;
+        }
       }
 
       h2 {
@@ -56,6 +72,10 @@
 
         @include med-laptops {
           font-size: 1.125rem;
+        }
+
+        @include phone {
+          font-size: 14px;
         }
       }
     }
@@ -71,6 +91,10 @@
 
       @include tablets {
         right: 3rem;
+      }
+
+      @include max-phone {
+        right: 2rem;
       }
 
       > h2 {
@@ -155,6 +179,10 @@
           margin-bottom: 10px;
         }
 
+        @include phone {
+          font-size: 2rem;
+        }
+
         span {
           margin-left: 20px;
         }
@@ -199,6 +227,10 @@
       @include med-laptops {
         font-size: 14px;
       }
+
+      @include phone {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -219,6 +251,10 @@
 
       @include med-laptops {
         margin-bottom: 10px;
+      }
+      @include phone {
+        text-align: center;
+        margin-top: 10px;
       }
     }
   }
@@ -272,6 +308,10 @@
       @include med-laptops {
         height: 8rem;
         max-width: 239px;
+      }
+
+      @include phone {
+        max-width: 480px;
       }
     }
   }
