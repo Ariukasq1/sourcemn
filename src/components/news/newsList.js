@@ -69,7 +69,7 @@ const NewsList = ({ data, cats }) => {
           const image = getData(news._embedded, "image");
 
           return (
-            <Link key={ind} href={"/news/[news]"} as={`/news/${news.slug}`}>
+            <Link key={ind} href={`/news/${news.slug}`}>
               <div className="slider-image-back">
                 {image && (
                   <Image

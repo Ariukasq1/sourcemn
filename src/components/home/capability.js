@@ -45,7 +45,7 @@ const HomeCapabilty = ({ capability }) => {
             className="content"
             dangerouslySetInnerHTML={{ __html: content.rendered }}
           />
-          <Link href={"/capabilities"}>
+          <Link href="/capabilities">
             <a className="read-more-button">{__("Read more")}</a>
           </Link>
         </div>

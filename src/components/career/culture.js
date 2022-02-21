@@ -18,7 +18,7 @@ const Culture = ({ data }) => {
 
             return (
               <Col xxl={6} xl={6} lg={6} md={12} sm={24} xs={24} key={ind}>
-                <Link href={"/careers/[careers]"} as={`/careers/${card.slug}`}>
+                <Link href={`/careers/${card.slug}`}>
                   <div className="big-card">
                     <div className="big-card-image">
                       <Image

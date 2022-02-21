@@ -54,7 +54,7 @@ class MenuComponent extends React.Component {
 
     return (
       <div className="main-header">
-        <Link href={currentLanguage === "mn" ? "/?lang=mn" : "/?lang="}>
+        <Link href="/">
           <a>
             <img className="logo" src="/images/mms-logo.png" alt="logo" />
           </a>
