@@ -11,7 +11,7 @@ import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
 import Layout from "../components/layouts/Layout";
 
-function MyApp({ Component, pageProps, mainMenu, topMenu, lang }) {
+function MyApp({ Component, pageProps, mainMenu, topMenu }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps, mainMenu, topMenu, lang }) {
   }, []);
 
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu} lang={lang}>
+    <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <div className="next">
         <Component {...pageProps} />
       </div>
@@ -45,13 +45,10 @@ function MyApp({ Component, pageProps, mainMenu, topMenu, lang }) {
 }
 
 MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-
   const mainMenu = await fetcher(`${config.menuUrl}/nav-menu`);
   const topMenu = await fetcher(`${config.menuUrl}/nav-menu-top`);
 
   return {
-    ...appProps,
     mainMenu,
     topMenu,
   };
