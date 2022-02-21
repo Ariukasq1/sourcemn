@@ -1,5 +1,4 @@
 import React from "react";
-import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
 import config, { fetcher } from "../config";
