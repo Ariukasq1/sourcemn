@@ -19,7 +19,7 @@ const About = ({ service, serviceCats, data, contact, timeline }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const wp = new WPAPI({ endpoint: config.apiUrl });
 
   const contact = await wp
