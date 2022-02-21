@@ -1,4 +1,5 @@
 import React from "react";
+import App from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
 import config, { fetcher } from "../config";
@@ -10,7 +11,7 @@ import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
 import Layout from "../components/layouts/Layout";
 
-function MyApp({ Component, pageProps, mainMenu, topMenu }) {
+function MyApp({ Component, pageProps, mainMenu, topMenu, lang }) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -35,7 +36,7 @@ function MyApp({ Component, pageProps, mainMenu, topMenu }) {
   }, []);
 
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
+    <Layout mainMenu={mainMenu} topMenu={topMenu} lang={lang}>
       <div className="next">
         <Component {...pageProps} />
       </div>
@@ -43,11 +44,14 @@ function MyApp({ Component, pageProps, mainMenu, topMenu }) {
   );
 }
 
-MyApp.getInitialProps = async () => {
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext);
+
   const mainMenu = await fetcher(`${config.menuUrl}/nav-menu`);
   const topMenu = await fetcher(`${config.menuUrl}/nav-menu-top`);
 
   return {
+    ...appProps,
     mainMenu,
     topMenu,
   };
