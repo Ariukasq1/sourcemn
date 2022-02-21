@@ -64,7 +64,14 @@ const SecondPart = ({ post }) => {
         xs={24}
         className="overlay-half-image"
       >
-        <Image loader={() => image} src={image} alt="image" layout="fill" />
+        <Image
+          loader={() => image}
+          src={image}
+          alt="image"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
         <div className="overlay-half-text">
           <div
             className="overlay-title"
