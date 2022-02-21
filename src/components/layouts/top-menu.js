@@ -12,7 +12,7 @@ class TopMenu extends React.Component {
           className={`mr-1 ${
             currentLang === "en" ? "font-bold text-menuTextColor" : ""
           }`}
-          href="?lang="
+          href="en"
         >
           EN
         </a>
@@ -21,7 +21,7 @@ class TopMenu extends React.Component {
           className={`ml-1 ${
             currentLang === "mn" ? "font-bold text-menuTextColor" : ""
           }`}
-          href="?lang=mn"
+          href="mn"
         >
           MN
         </a>
