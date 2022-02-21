@@ -8,7 +8,7 @@ import Relations from "../../components/indCap/relations";
 
 const wp = new WPAPI({ endpoint: config.apiUrl });
 
-const CapabilitiesDetail = ({ data }) => {
+const CapabilitiesDetail = ({ data, post, brands, relationsPosts }) => {
   return (
     <Fullpage
       children={
@@ -17,19 +17,19 @@ const CapabilitiesDetail = ({ data }) => {
             <div className="page">
               <FirstPart data={data} clas="capabilities" />
             </div>
+          </div>
 
-            <div className="section">
-              <SecondPart post={post} />
-            </div>
+          <div className="section">
+            <SecondPart post={post} />
+          </div>
 
-            <div className="section">
-              <Relations
-                brandData={brands}
-                post={post}
-                relPosts={relationsPosts}
-                relations="industries"
-              />
-            </div>
+          <div className="section">
+            <Relations
+              brandData={brands}
+              post={post}
+              relPosts={relationsPosts}
+              relations="industries"
+            />
           </div>
         </div>
       }
