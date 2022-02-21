@@ -42,7 +42,6 @@ PortfolioD.getInitialProps = async (context) => {
   const data = await wp
     .posts()
     .categories((catId || {}).id)
-    .perPage(100)
     .embed();
 
   const post = await wp
@@ -73,7 +72,6 @@ PortfolioD.getInitialProps = async (context) => {
   const materials = await wp
     .posts()
     .categories((materialsID || {}).id)
-    .perPage(100)
     .embed();
 
   return { data, post, child_data, materials };

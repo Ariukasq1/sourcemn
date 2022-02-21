@@ -39,8 +39,6 @@ const HomeCapabilty = ({ capability }) => {
         xs={24}
         className="simple-half-text"
         data-aos="fade-up"
-        data-aos-easing="ease"
-        data-aos-delay="0"
       >
         <div className="half-text-container">
           <div className="gold-title">{__("Capabilities")}</div>
