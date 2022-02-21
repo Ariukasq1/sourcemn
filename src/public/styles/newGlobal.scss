@@ -613,3 +613,33 @@
     background: #004a8f !important;
   }
 }
+
+.slick-dots {
+  position: absolute;
+  bottom: 5rem;
+  left: 3rem;
+
+  @include tablets {
+    left: 1rem;
+    bottom: 1rem;
+  }
+  > li {
+    > button {
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: none;
+      color: #000;
+      text-indent: 999px;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+  .slick-active {
+    > button {
+      background-color: #fff;
+    }
+  }
+}

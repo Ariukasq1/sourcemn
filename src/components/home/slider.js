@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HomeSlider = ({ sliders }) => {
   const settings = {
-    dots: false,
+    dots: true,
     arrows: false,
     infinite: true,
     speed: 1000,
