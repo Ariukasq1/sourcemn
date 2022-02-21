@@ -1,0 +1,49 @@
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin big-laptops {
+  @media (max-width: 1599px) {
+    @content;
+  }
+}
+
+@mixin med-laptops {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin mini-tablets {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin max-phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

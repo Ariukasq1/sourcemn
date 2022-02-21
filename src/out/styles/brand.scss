@@ -1,0 +1,239 @@
+.brand {
+  .brand-banner {
+    width: 100%;
+    position: relative;
+    height: 450px;
+
+    @include med-laptops {
+      height: 300px;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(0, 51, 141, 0),
+        #00498e
+      );
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 99;
+      > h1 {
+        color: #fff;
+        font-size: 4rem;
+        @include med-laptops {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .second-level-wrapper {
+    width: 100%;
+    background-color: #00498e;
+    float: left;
+
+    .container {
+      ul {
+        list-style: none;
+        list-style-position: outside;
+        list-style-type: none;
+        li {
+          float: left;
+          position: relative;
+          padding: 9px 16px 9px 10px;
+          span {
+            line-height: normal;
+            letter-spacing: 0.64px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            @include med-laptops {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-brand {
+    padding: 60px 0 60px 0;
+    background: #00498e;
+    border-bottom-left-radius: 50% 8%;
+    border-bottom-right-radius: 50% 8%;
+    .container {
+      .intro-content {
+        width: 100%;
+        justify-content: center;
+        h1 {
+          font-size: 37px;
+          color: #fff;
+          margin-bottom: 23px;
+          text-align: center;
+          letter-spacing: 0.64px;
+          font-weight: 600;
+          @include med-laptops {
+            font-size: 2rem;
+          }
+          @include mini-tablets {
+            font-size: 1.5rem;
+          }
+        }
+
+        p {
+          color: #fff;
+          font-size: 1.3rem;
+          line-height: 1.5;
+          margin-bottom: 10px;
+          @include med-laptops {
+            font-size: 1rem;
+          }
+          span {
+            font-size: 1rem;
+            font-weight: 500 !important;
+            @include med-laptops {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .detail-brand {
+    padding: 60px 0;
+    .container {
+      .details {
+        width: 100%;
+        justify-content: center;
+        color: #141f48;
+        .detail-text-title {
+          font-size: 37px;
+          @include med-laptops {
+            font-size: 2rem;
+          }
+        }
+        .detail-text-ul {
+          padding-left: 20px;
+          ul {
+            li {
+              font-size: 1rem;
+              margin-bottom: 0;
+              list-style: disc;
+              @include med-laptops {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cert-brand {
+    padding: 0 0 60px 0;
+    .container {
+      .cert {
+        width: 100%;
+        justify-content: center;
+        > div {
+          .cert-image {
+            position: relative;
+            height: 100px;
+            @include med-laptops {
+              height: 80px;
+            }
+
+            @include mini-tablets {
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.brand-details {
+  padding: 0 8rem 60px 8rem;
+  @include med-laptops {
+    padding: 0 4rem 40px 4rem;
+  }
+
+  @include phone {
+    padding: 20px;
+  }
+
+  .blue-title {
+    display: flex;
+    justify-content: space-between;
+    .download {
+      position: relative;
+      color: #00498e;
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        right: 120%;
+        font-size: 0.875rem;
+        width: max-content;
+        background: #00498e;
+        color: #fff;
+        padding: 3px;
+        border-radius: 3px;
+      }
+
+      &:hover {
+        .tooltip {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .brochures {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+
+    @include med-laptops {
+      gap: 1rem;
+    }
+    .one-brochure {
+      .broch-overlay {
+        width: 80%;
+        height: 80%;
+      }
+
+      .broch-title {
+        font-size: 1.125rem;
+
+        @include big-laptops {
+          font-size: 14px;
+          top: 5px;
+        }
+
+        @include med-laptops {
+          font-size: 12px;
+        }
+      }
+    }
+    @include tablets {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include max-phone {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}
