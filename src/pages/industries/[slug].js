@@ -19,7 +19,7 @@ const IndustriesDetail = ({ data, post, brands, relationsPosts }) => {
         <div id="fullpage">
           <div className="section">
             <div className="page">
-              <FirstPart data={data} clas="capabilities" />
+              <FirstPart data={data} clas="industries" />
             </div>
           </div>
 
